@@ -1,0 +1,25 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo 'Styling, testing and building your project before commiting'
+
+
+npm run check-format ||
+(
+  echo 'Prettier check failed';
+  false;
+)
+
+npm run check-lint ||
+(
+  echo 'Eslint check failed';
+  false;
+)
+
+npm run build ||
+(
+  echo 'Next build failed';
+  false;
+)
+
+echo 'Code looks good. Commit made properly.'
