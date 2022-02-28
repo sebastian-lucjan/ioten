@@ -18,7 +18,7 @@ module.exports = {
     node: true, // Enables Node.js global variables and Node.js scoping.
     es2021: true,
   },
-  plugins: ['react'],
+  plugins: ['react', 'prettier'],
   extends: [
     'airbnb',
     'eslint:recommended',
