@@ -33,9 +33,19 @@ module.exports = (phase) => {
     ];
   };
 
+  const webpack = (config) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    return config;
+  };
+
   return {
     reactStrictMod,
     env,
     rewrites,
+    webpack,
   };
 };
