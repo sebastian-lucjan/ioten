@@ -2,6 +2,7 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'src/assets/styles/theme';
 import GlobalStyle from 'src/assets/styles/GlobalStyles';
 import Head from 'next/head';
+import { StrictMode } from 'react';
 
 export default function App({ Component, pageProps }) {
   return (
@@ -16,10 +17,12 @@ export default function App({ Component, pageProps }) {
         <meta name="theme-color" content="#ffffff" />
         <title>ioten</title>
       </Head>
-      <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <StrictMode>
+        <GlobalStyle />
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </StrictMode>
     </>
   );
 }
