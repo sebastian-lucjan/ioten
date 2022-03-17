@@ -24,7 +24,7 @@ module.exports = (phase) => {
       },
       {
         source: '/uslugi',
-        destination: '/offer',
+        destination: '/services',
       },
       {
         source: '/blog',
@@ -33,6 +33,10 @@ module.exports = (phase) => {
       {
         source: '/kontakt',
         destination: '/contact',
+      },
+      {
+        source: '/wycena-projektu',
+        destination: '/valuation',
       },
     ];
   };

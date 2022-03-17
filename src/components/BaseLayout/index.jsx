@@ -1,4 +1,4 @@
-import Navigation from '../Navigation';
+import Navigation from 'src/components/Navigation';
 
 const BaseLayout = ({ children }) => {
   return (

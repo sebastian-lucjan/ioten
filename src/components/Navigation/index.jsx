@@ -1,12 +1,18 @@
 import Link from 'next/link';
 // import Logo from 'src/assets/images/ioten-logo.svg';
+import styled from 'styled-components';
+import { Wrapper, StyledValuationButton } from './Navigation.styles';
+
+const StyledLogo = styled.h1`
+  font-size: 24px;
+`;
 
 const Navigation = () => {
   return (
-    <header>
+    <Wrapper>
       <Link href="/">
         {/* <Logo /> */}
-        <h1>ioten</h1>
+        <StyledLogo>ioten</StyledLogo>
       </Link>
       <nav>
         <ul>
@@ -34,8 +40,12 @@ const Navigation = () => {
             </Link>
           </li>
         </ul>
+
+        <Link href="/valuation" as="/wycena-projektu">
+          <StyledValuationButton type="button">Wyceń projekt</StyledValuationButton>
+        </Link>
       </nav>
-    </header>
+    </Wrapper>
   );
 };
 

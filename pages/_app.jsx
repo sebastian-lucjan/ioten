@@ -3,6 +3,7 @@ import theme from 'src/assets/styles/theme';
 import GlobalStyle from 'src/assets/styles/GlobalStyles';
 import Head from 'next/head';
 import { StrictMode } from 'react';
+import 'src/assets/fonts/myriad-pro/style.css';
 
 export default function App({ Component, pageProps }) {
   return (
@@ -18,8 +19,8 @@ export default function App({ Component, pageProps }) {
         <title>ioten</title>
       </Head>
       <StrictMode>
-        <GlobalStyle />
         <ThemeProvider theme={theme}>
+          <GlobalStyle />
           <Component {...pageProps} />
         </ThemeProvider>
       </StrictMode>

@@ -1,7 +1,20 @@
 const theme = {
   color: {
-    black: 'hsl(210, 11%, 30%)', // color from hr course - change for yours
-    primary: '#0070f3',
+    black: 'hsl(0, 0%, 15%)',
+    white: 'hsl(0, 0%, 100%)',
+    darkestGray: 'hsl(0, 0%, 36%)',
+    darkGray: 'hsl(0, 0%, 53%)',
+    gray: 'hsl(0, 0%, 67%)',
+    lightGray: 'hsl(0, 0%, 80%)',
+    beige: 'hsl(27, 33%, 62%)',
+  },
+  gradient: {
+    yellow: {
+      slider: 'linear-gradient(150deg, rgba(221,253,90,1) 0%, rgba(226,251,116,1) 100%)',
+      haveIdea: 'linear-gradient(125deg, rgba(221,253,90,1) 0%, rgba(226,251,116,1) 100%)',
+    },
+    lightGray: 'linear-gradient(40deg, rgba(238,238,238,1) 0%, rgba(250,250,250,1) 100%)',
+    navyBlue: 'linear-gradient(80deg, rgba(76,65,107,1) 0%, rgba(72,59,76,1) 100%)',
   },
   font: {
     size: {
@@ -11,9 +24,10 @@ const theme = {
       paragraph: '1.6rem',
       caption: '1.35rem',
     },
-    family: {},
+    family: 'Myriad Pro Regular',
   },
   mq: {
+    mobile: '@media(min-width: 460px)',
     tablet: '@media(min-width: 768px)',
     desktop: '@media(min-width: 1024px)',
     bigDesktop: '@media(min-width: 1280px)',
