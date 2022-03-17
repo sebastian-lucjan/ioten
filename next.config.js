@@ -18,18 +18,22 @@ module.exports = (phase) => {
   //
   const rewrites = () => {
     return [
-      //         {
-      //             source: '/o-nas',
-      //             destination: '/about',
-      //         },
-      //         {
-      //             source: '/oferta',
-      //             destination: '/offer',
-      //         },
-      //         {
-      //             source: '/kontakt',
-      //             destination: '/contact',
-      //         },
+      {
+        source: '/o-nas',
+        destination: '/about',
+      },
+      {
+        source: '/uslugi',
+        destination: '/offer',
+      },
+      {
+        source: '/blog',
+        destination: '/blog',
+      },
+      {
+        source: '/kontakt',
+        destination: '/contact',
+      },
     ];
   };
 

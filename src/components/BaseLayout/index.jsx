@@ -1,5 +1,12 @@
+import Navigation from '../Navigation';
+
 const BaseLayout = ({ children }) => {
-  return <div>{children}</div>;
+  return (
+    <div>
+      <Navigation />
+      {children}
+    </div>
+  );
 };
 
 export default BaseLayout;
