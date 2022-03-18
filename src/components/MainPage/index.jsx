@@ -1,5 +1,11 @@
+import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
+
 const MainPage = () => {
-  return <section>Main Page - test</section>;
+  return (
+    <MainSectionWrapper colors={{ isGradient: true, bgColor: 'yellowHaveIdea', linesColor: 'yellow' }}>
+      Main Page - test
+    </MainSectionWrapper>
+  );
 };
 
 export default MainPage;

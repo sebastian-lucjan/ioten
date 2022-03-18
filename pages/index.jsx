@@ -12,7 +12,6 @@ export default function Home() {
     <>
       <HeadSection />
       <BaseLayout>
-        <p>test</p>
         <MainPage />
         <MottoInterlude />
         <ServicesAxis />

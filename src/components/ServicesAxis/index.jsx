@@ -1,8 +1,10 @@
+import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
+
 const ServicesAxis = () => {
   return (
-    <section>
+    <MainSectionWrapper colors={{ isGradient: false, bgColor: 'white', linesColor: 'lightGray' }}>
       <div>Services axis - placeholder</div>
-    </section>
+    </MainSectionWrapper>
   );
 };
 

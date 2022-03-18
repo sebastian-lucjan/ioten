@@ -1,4 +1,4 @@
-export const mottoInterlude = { paragraph: '', signature: '' };
+export const mottoInterlude = { paragraph: '', caption: '' };
 
 export const ideaInterlude = {
   heading: 'Masz pomysł? Porozmawiajmy jak go wdrożyć!',
