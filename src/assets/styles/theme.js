@@ -13,18 +13,31 @@ const theme = {
       slider: 'linear-gradient(150deg, rgba(221,253,90,1) 0%, rgba(226,251,116,1) 100%)',
       haveIdea: 'linear-gradient(125deg, rgba(221,253,90,1) 0%, rgba(226,251,116,1) 100%)',
     },
-    lightGray: 'linear-gradient(40deg, rgba(238,238,238,1) 0%, rgba(250,250,250,1) 100%)',
+    lightGray: 'linear-gradient(40deg, rgba(235,235,235,1) 0%, rgba(250,250,250,1) 100%)',
     navyBlue: 'linear-gradient(80deg, rgba(76,65,107,1) 0%, rgba(72,59,76,1) 100%)',
+    rainbow: {
+      highlight:
+        'linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(254,255,0,1) 25%, rgba(1,255,0,1) 50%, rgba(0,39,255,1) 75%, rgba(226,0,255,1) 100%)',
+    },
   },
   font: {
     size: {
       heading: '5rem',
       headingMobile: '5.3rem',
       headingSmall: '4.2rem',
+      mobileMenu: '1.8rem',
       paragraph: '1.6rem',
-      caption: '1.35rem',
+      smallText: '1,4',
+      caption: '1.2rem',
     },
-    family: 'Myriad Pro Regular',
+    family: {
+      myriadPro: {
+        light: 'Myriad Pro Light',
+        regular: 'Myriad Pro Regular',
+        semibold: 'Myriad Pro Semibold',
+        bold: 'Myriad Pro Bold',
+      },
+    },
   },
   mq: {
     mobile: '@media(min-width: 460px)',
