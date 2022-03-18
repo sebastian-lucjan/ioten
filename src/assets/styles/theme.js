@@ -6,6 +6,7 @@ const theme = {
     darkGray: 'hsl(0, 0%, 53%)',
     gray: 'hsl(0, 0%, 67%)',
     lightGray: 'hsl(0, 0%, 80%)',
+    yellow: 'hsl(65, 88%, 48%)',
     beige: 'hsl(27, 33%, 62%)',
   },
   gradient: {
@@ -25,6 +26,8 @@ const theme = {
       heading: '5rem',
       headingMobile: '5.3rem',
       headingSmall: '4.2rem',
+      headingSection: '3.6rem',
+      paragraphBig: '2.2rem',
       mobileMenu: '1.8rem',
       paragraph: '1.6rem',
       smallText: '1,4',
