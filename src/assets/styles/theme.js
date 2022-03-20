@@ -1,13 +1,14 @@
 const theme = {
   color: {
     black: 'hsl(0, 0%, 15%)',
-    white: 'hsl(0, 0%, 100%)',
-    darkestGray: 'hsl(0, 0%, 36%)',
+    darkestGray: 'hsl(0, 0%, 24%)',
+    darkerGray: 'hsl(0, 0%, 36%)',
     darkGray: 'hsl(0, 0%, 53%)',
     gray: 'hsl(0, 0%, 67%)',
     lightGray: 'hsl(0, 0%, 80%)',
-    yellow: 'hsl(65, 88%, 48%)',
+    white: 'hsl(0, 0%, 100%)',
     beige: 'hsl(27, 33%, 62%)',
+    yellow: 'hsl(65, 88%, 48%)',
   },
   gradient: {
     yellowSlider: 'linear-gradient(150deg, rgba(221,253,90,1) 0%, rgba(226,251,116,1) 100%)',
@@ -26,8 +27,8 @@ const theme = {
       headingSmall: '4.2rem',
       headingSection: '3.6rem',
       paragraphBig: '2.2rem',
-      mobileMenu: '1.8rem',
-      paragraph: '1.6rem',
+      paragraph: '1.8rem',
+      paragraphSmall: '1.6rem',
       smallText: '1,4',
       caption: '1.2rem',
     },

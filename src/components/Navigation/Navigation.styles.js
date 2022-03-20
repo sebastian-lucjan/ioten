@@ -38,11 +38,11 @@ export const Wrapper = styled.div`
 export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
-  font-size: ${({ theme }) => theme.font.size.mobileMenu};
+  font-size: ${({ theme }) => theme.font.size.paragraph};
 `;
 
 export const StyledLink = styled.li`
-  font-size: ${({ theme }) => theme.font.size.mobileMenu};
+  font-size: ${({ theme }) => theme.font.size.paragraph};
   list-style: none;
   align-self: center;
   margin: 20px auto;
