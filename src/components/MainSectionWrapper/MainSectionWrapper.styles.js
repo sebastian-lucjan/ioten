@@ -6,9 +6,7 @@ const MainSectionWrapper = styled.section`
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: ${({ theme, colors }) =>
-    colors.isGradient ? theme.gradient[colors.bgColor] : theme.color[colors.bgColor]};
-  border: 1px solid red;
+  background: ${({ colors }) => colors.background};
 
   &::after,
   &::before {
@@ -18,7 +16,7 @@ const MainSectionWrapper = styled.section`
     height: 100%;
     width: 2px;
     top: 0;
-    background-color: ${({ theme, colors }) => theme.color[colors.linesColor]};
+    background: ${({ colors }) => colors.lines};
   }
 
   &::after {

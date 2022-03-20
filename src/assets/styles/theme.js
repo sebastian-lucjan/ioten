@@ -15,6 +15,7 @@ const theme = {
     yellowHaveIdea: 'linear-gradient(125deg, rgba(221,253,90,1) 0%, rgba(226,251,116,1) 100%)',
     lightGray: 'linear-gradient(40deg, rgba(235,235,235,1) 0%, rgba(250,250,250,1) 100%)',
     navyBlue: 'linear-gradient(80deg, rgba(76,65,107,1) 0%, rgba(72,59,76,1) 100%)',
+    yellowToGray: 'linear-gradient(0deg, hsl(0, 0%, 80%) 0%, hsl(0, 0%, 80%) 75%, hsl(65, 88%, 48%) 100%)',
     rainbow: {
       highlight:
         'linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(254,255,0,1) 25%, rgba(1,255,0,1) 50%, rgba(0,39,255,1) 75%, rgba(226,0,255,1) 100%)',
@@ -29,7 +30,7 @@ const theme = {
       paragraphBig: '2.2rem',
       paragraph: '1.8rem',
       paragraphSmall: '1.6rem',
-      smallText: '1,4',
+      smallText: '1.4rem',
       caption: '1.2rem',
     },
     family: {

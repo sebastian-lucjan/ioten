@@ -1,11 +1,12 @@
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
+import theme from 'src/assets/styles/theme';
 
 const MainPage = () => {
-  return (
-    <MainSectionWrapper colors={{ isGradient: true, bgColor: 'yellowHaveIdea', linesColor: 'yellow' }}>
-      Main Page - test
-    </MainSectionWrapper>
-  );
+  const {
+    color: { white, lightGray },
+  } = theme;
+
+  return <MainSectionWrapper colors={{ background: white, lines: lightGray }}>Main Page - test</MainSectionWrapper>;
 };
 
 export default MainPage;

@@ -1,6 +1,10 @@
-export const navigationData = {
-  pages: ['Usługi', 'O nas', 'Blog', 'Kontakt'],
-};
+export const navigationData = [
+  { name: 'Home', href: '/', as: '/' },
+  { name: 'Usługi', href: '/services', as: '/uslugi' },
+  { name: 'O nas', href: '/about', as: '/o-nas' },
+  { name: 'Blog', href: '/blog', as: '/blog' },
+  { name: 'Kontakt', href: '/contact', as: '/kontakt' },
+];
 
 export const services = [
   { heading: 'Strona wizytówka' },
