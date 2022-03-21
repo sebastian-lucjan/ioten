@@ -31,6 +31,11 @@ export const services = {
   ],
 };
 
+export const motto = {
+  text: '"Inwestor jest dla nas członkiem zespołu. Miej wpływ na proces tworzenia strony internetowej na każdym etapie. Z nami stworzysz niesamowicie szybką i funkcjonalną stronę uszytą na Twoją miarę."',
+  caption: 'ioten.io',
+};
+
 export const footerData = {
   ioten: 'ioten.io',
   intro: {

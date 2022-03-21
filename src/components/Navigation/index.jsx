@@ -3,11 +3,17 @@ import Link from 'next/link';
 import { v4 as uuid } from 'uuid';
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import { navigationData } from 'src/data/pageData';
+import theme from 'src/assets/styles/theme';
 import { Wrapper, StyledValuationButton, StyledMenu, StyledLink, StyledLogo } from './Navigation.styles';
 
 const Navigation = () => {
+  const {
+    color: { lightGray },
+    gradient: { lightGray: lightGrayGradient },
+  } = theme;
+
   return (
-    <MainSectionWrapper colors={{ isGradient: false, bgColor: 'white', linesColor: 'lightGray' }}>
+    <MainSectionWrapper colors={{ background: lightGrayGradient, lines: lightGray }} smaller>
       <Wrapper>
         <Link href="/">
           {/* <Logo /> */}
