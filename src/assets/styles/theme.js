@@ -5,7 +5,7 @@ const theme = {
     darkerGray: 'hsl(0, 0%, 36%)',
     darkGray: 'hsl(0, 0%, 53%)',
     gray: 'hsl(0, 0%, 67%)',
-    lightGray: 'hsl(0, 0%, 80%)',
+    lightGray: 'hsl(0, 0%, 90%)',
     white: 'hsl(0, 0%, 100%)',
     beige: 'hsl(27, 33%, 62%)',
     yellow: 'hsl(65, 88%, 48%)',
@@ -32,6 +32,7 @@ const theme = {
       paragraphSmall: '1.6rem',
       smallText: '1.4rem',
       caption: '1.2rem',
+      xsText: '1rem',
     },
     family: {
       myriadPro: {
