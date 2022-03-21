@@ -3,7 +3,9 @@ import Link from 'next/link';
 import theme from 'src/assets/styles/theme';
 import { footerData, navigationData, services } from 'src/data/pageData';
 import { v4 as uuid } from 'uuid';
-import { FooterHeading, FooterItem, FooterSection, FooterSoonItem, Wrapper } from './Footer.styles';
+import { FooterHeading, FooterItem, FooterSoonItem, StyledFooterSection, Wrapper } from './Footer.styles';
+import SocialMedias from '../SocialMedias';
+import FooterRights from '../FooterRights';
 
 const Footer = () => {
   const {
@@ -14,18 +16,20 @@ const Footer = () => {
   const {
     ioten,
     intro: { heading, text },
+    socialMedia: { heading: socialMediaHeading },
   } = footerData;
 
   return (
     <MainSectionWrapper colors={{ background: white, lines: yellowToGray }}>
       <Wrapper>
-        <FooterSection>
+        <StyledFooterSection>
           <FooterHeading>{heading}</FooterHeading>
           {text.map((textLine) => (
             <FooterItem key={uuid()}>{textLine}</FooterItem>
           ))}
-        </FooterSection>
-        <FooterSection>
+        </StyledFooterSection>
+
+        <StyledFooterSection>
           <FooterHeading>{services.intro}</FooterHeading>
           {services.list.map(({ heading: serviceHeading, soon = false }) => {
             if (soon) {
@@ -33,27 +37,32 @@ const Footer = () => {
             }
             return <FooterItem key={uuid()}>{serviceHeading}</FooterItem>;
           })}
-        </FooterSection>
-        <FooterSection>
+        </StyledFooterSection>
+
+        <StyledFooterSection>
           <FooterHeading>{services.serviceStagesIntro}</FooterHeading>
           {services.serviceStages.map(({ heading: serviceHeading }) => (
             <FooterItem key={uuid()}>{serviceHeading}</FooterItem>
           ))}
-        </FooterSection>
-        <FooterSection>
+        </StyledFooterSection>
+
+        <StyledFooterSection>
           <FooterHeading>{ioten}</FooterHeading>
           {navigationData.map(({ name, href, as }) => (
             <Link key={uuid()} href={href} as={as}>
               <FooterItem>{name}</FooterItem>
             </Link>
           ))}
-        </FooterSection>
-        <FooterSection>
-          <div>
-            <h4>Social media</h4>
-            <div>icons</div>
-          </div>
-        </FooterSection>
+        </StyledFooterSection>
+
+        <StyledFooterSection>
+          <FooterHeading>{socialMediaHeading}</FooterHeading>
+          <SocialMedias />
+        </StyledFooterSection>
+
+        <FooterRights />
+        {/* <StyledFooterSection> */}
+        {/* </StyledFooterSection> */}
       </Wrapper>
     </MainSectionWrapper>
   );

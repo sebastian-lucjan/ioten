@@ -53,5 +53,6 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'no-console': 'off',
     'react/function-component-definition': 'off',
+    'react/jsx-no-constructed-context-values': 'off',
   },
 };

@@ -47,5 +47,6 @@ export const footerData = {
     other: { heading: 'Inne', mail: 'hello@ioten.io', mobile: '602 446 335' },
     job: { heading: 'Praca', mail: 'career@ioten.io' },
   },
-  socialMedia: {},
+  socialMedia: { heading: 'Social media' },
+  signature: {},
 };
