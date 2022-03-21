@@ -1,5 +1,6 @@
 import Link from 'next/link';
 // import Logo from 'src/assets/images/ioten-logo.svg';
+import { v4 as uuid } from 'uuid';
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import { navigationData } from 'src/data/pageData';
 import { Wrapper, StyledValuationButton, StyledMenu, StyledLink, StyledLogo } from './Navigation.styles';
@@ -14,9 +15,7 @@ const Navigation = () => {
         </Link>
         <StyledMenu>
           {navigationData.map(({ name, href, as }) => (
-            // ass uuid() keys - when internet available
-            // eslint-disable-next-line react/jsx-key
-            <Link href={href} as={as}>
+            <Link key={uuid()} href={href} as={as}>
               <StyledLink>{name}</StyledLink>
             </Link>
           ))}

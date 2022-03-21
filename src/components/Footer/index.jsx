@@ -1,4 +1,5 @@
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
+import Link from 'next/link';
 import theme from 'src/assets/styles/theme';
 import { footerData, navigationData, services } from 'src/data/pageData';
 import { v4 as uuid } from 'uuid';
@@ -20,12 +21,9 @@ const Footer = () => {
       <Wrapper>
         <FooterSection>
           <FooterHeading>{heading}</FooterHeading>
-          <FooterItem>
-            {/* add key */}
-            {text.map((textLine) => (
-              <p key={uuid()}>{textLine}</p>
-            ))}
-          </FooterItem>
+          {text.map((textLine) => (
+            <FooterItem key={uuid()}>{textLine}</FooterItem>
+          ))}
         </FooterSection>
         <FooterSection>
           <FooterHeading>{services.intro}</FooterHeading>
@@ -44,8 +42,10 @@ const Footer = () => {
         </FooterSection>
         <FooterSection>
           <FooterHeading>{ioten}</FooterHeading>
-          {navigationData.map(({ name }) => (
-            <FooterItem key={uuid()}>{name}</FooterItem>
+          {navigationData.map(({ name, href, as }) => (
+            <Link key={uuid()} href={href} as={as}>
+              <FooterItem>{name}</FooterItem>
+            </Link>
           ))}
         </FooterSection>
         <FooterSection>
