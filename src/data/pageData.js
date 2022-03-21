@@ -43,10 +43,10 @@ export const footerData = {
     ],
   },
   contact: {
-    cooperation: { heading: 'Współpraca / oferta', mail: 'info@ioten.io', mobile: '863 456 331' }, // mobile placeholder
-    other: { heading: 'Inne', mail: 'hello@ioten.io', mobile: '602 446 335' },
-    job: { heading: 'Praca', mail: 'career@ioten.io' },
+    cooperation: { heading: 'Współpraca / oferta:', email: 'info@ioten.io', mobile: '863 456 331' }, // mobile placeholder
+    other: { heading: 'Inne:', email: 'hello@ioten.io', mobile: '602 446 335' },
+    job: { heading: 'Praca:', email: 'career@ioten.io' },
   },
-  socialMedia: { heading: 'Social media' },
+  socialMedia: { heading: 'Obserwuj nas' },
   signature: {},
 };

@@ -5,7 +5,8 @@ import { footerData, navigationData, services } from 'src/data/pageData';
 import { v4 as uuid } from 'uuid';
 import { FooterHeading, FooterItem, FooterSoonItem, StyledFooterSection, Wrapper } from './Footer.styles';
 import SocialMedias from '../SocialMedias';
-import FooterRights from '../FooterRights';
+import FooterContact from './FooterContact';
+import FooterRights from './FooterRights';
 
 const Footer = () => {
   const {
@@ -27,6 +28,7 @@ const Footer = () => {
           {text.map((textLine) => (
             <FooterItem key={uuid()}>{textLine}</FooterItem>
           ))}
+          <FooterContact />
         </StyledFooterSection>
 
         <StyledFooterSection>

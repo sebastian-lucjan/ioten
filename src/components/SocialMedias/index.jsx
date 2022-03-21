@@ -3,7 +3,6 @@ import { BsInstagram, BsTwitter } from 'react-icons/bs';
 import { FiDribbble } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
 import theme from 'src/assets/styles/theme';
-import { v4 as uuid } from 'uuid';
 import Link from 'next/link';
 import StyledSocialMedias from './SocialMedias.styles';
 
@@ -13,17 +12,25 @@ const SocialMedias = () => {
   return (
     <StyledSocialMedias>
       <IconContext.Provider value={iconStyle}>
-        <Link key={uuid()} href="/">
-          <ImFacebook />
+        <Link href="/" passHref>
+          <a>
+            <ImFacebook />
+          </a>
         </Link>
-        <Link key={uuid()} href="/">
-          <BsTwitter />
+        <Link href="/">
+          <a>
+            <BsTwitter />
+          </a>
         </Link>
-        <Link key={uuid()} href="/">
-          <BsInstagram />
+        <Link href="/">
+          <a>
+            <BsInstagram />
+          </a>
         </Link>
-        <Link key={uuid()} href="/">
-          <FiDribbble />
+        <Link href="/">
+          <a>
+            <FiDribbble />
+          </a>
         </Link>
       </IconContext.Provider>
     </StyledSocialMedias>

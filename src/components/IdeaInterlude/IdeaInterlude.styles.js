@@ -24,9 +24,6 @@ export const IdeaParagraph = styled.p`
   font-weight: 400;
   font-size: ${({ theme }) => theme.font.size.paragraph};
   line-height: 32px;
-  /* or 178% */
-
-  letter-spacing: -0.006em;
 `;
 
 export const IdeaButton = styled.button`
@@ -41,6 +38,5 @@ export const IdeaButton = styled.button`
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   font-size: 22px;
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.7);
-  letter-spacing: -0.006em;
   color: ${({ theme }) => theme.color.white};
 `;
