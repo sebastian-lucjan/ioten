@@ -68,12 +68,11 @@ export const StyledLink = styled.li`
   margin: 20px auto;
   cursor: pointer;
 `;
-export const StyledLogo = styled.h1`
+export const StyledLogo = styled.a`
   display: block;
-  font-size: 24px;
+  margin: 16px;
 
   ${({ theme }) => theme.mq.tablet} {
-    display: ${({ isMobile }) => (isMobile ? 'block' : 'none')};
     margin: 12px 48px;
   }
 `;

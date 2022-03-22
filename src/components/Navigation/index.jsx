@@ -1,3 +1,5 @@
+import IotenLogo from 'src/assets/images/ioten-logo-main.svg';
+import IotenNavLogo from 'src/assets/images/ioten-logo.svg';
 import Link from 'next/link';
 import { v4 as uuid } from 'uuid';
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
@@ -19,6 +21,10 @@ const LogoWrapper = styled.div`
   height: 60px;
   padding: 10px 30px;
   z-index: 1;
+
+  ${({ theme: { mq } }) => mq.tablet} {
+    display: none;
+  }
 `;
 
 const Navigation = () => {
@@ -37,8 +43,10 @@ const Navigation = () => {
     <MainSectionWrapper colors={{ background: lightGrayGradient, lines: lightGray }} smaller>
       <LogoWrapper>
         <Link href="/">
-          {/* <Logo /> */}
-          <StyledLogo>ioten</StyledLogo>
+          <StyledLogo>
+            <IotenLogo />
+            {/* <div> ioten</div> */}
+          </StyledLogo>
         </Link>
       </LogoWrapper>
       <StyledBurger onClick={toggleNavigation}>
@@ -48,8 +56,9 @@ const Navigation = () => {
       </StyledBurger>
       <Wrapper isOpen={isOpen}>
         <Link href="/">
-          {/* <Logo /> */}
-          <StyledLogo isMobile>ioten</StyledLogo>
+          <StyledLogo>
+            <IotenNavLogo />
+          </StyledLogo>
         </Link>
         <StyledMenu>
           {navigationData.map(({ name, href, as }) => (
