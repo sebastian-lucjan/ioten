@@ -36,6 +36,17 @@ export const motto = {
   caption: 'ioten.io',
 };
 
+export const testimonials = [
+  {
+    caption: 'Pulire',
+    text: '"ioten jest świetną agencją. W znakomity sposób przełożyli nasze wymagania na finalny design strony. Przez cały etap pracy czuliśmy realny wpływ na projekt przez co finalny efekt był dla nas bardziej niż satysfakcjonujący."',
+  },
+  {
+    caption: 'Elsystem',
+    text: '"Współpraca z ioten przebiegała w sposób nad wyraz optymalny. Czuliśmy się partnerami w cyklu projektowym dlatego decyzje które wcześniej wydawałyby się odważne były dla nas naturalne, a efekt końcowy znakomity."',
+  },
+];
+
 export const footerData = {
   ioten: 'ioten.io',
   intro: {
