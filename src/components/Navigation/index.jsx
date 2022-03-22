@@ -1,12 +1,33 @@
 import Link from 'next/link';
-// import Logo from 'src/assets/images/ioten-logo.svg';
 import { v4 as uuid } from 'uuid';
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import { navigationData } from 'src/data/pageData';
 import theme from 'src/assets/styles/theme';
+import styled from 'styled-components';
+import StyledBurger from 'src/components/Burger/Burger.styles';
+import { useState } from 'react';
 import { Wrapper, StyledValuationButton, StyledMenu, StyledLink, StyledLogo } from './Navigation.styles';
 
+const LogoWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 10px 30px;
+  z-index: 1;
+`;
+
 const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNavigation = () => {
+    setIsOpen(!isOpen);
+  };
+
   const {
     color: { lightGray },
     gradient: { lightGray: lightGrayGradient },
@@ -14,10 +35,21 @@ const Navigation = () => {
 
   return (
     <MainSectionWrapper colors={{ background: lightGrayGradient, lines: lightGray }} smaller>
-      <Wrapper>
+      <LogoWrapper>
         <Link href="/">
           {/* <Logo /> */}
           <StyledLogo>ioten</StyledLogo>
+        </Link>
+      </LogoWrapper>
+      <StyledBurger onClick={toggleNavigation}>
+        <div />
+        <div />
+        <div />
+      </StyledBurger>
+      <Wrapper isOpen={isOpen}>
+        <Link href="/">
+          {/* <Logo /> */}
+          <StyledLogo isMobile>ioten</StyledLogo>
         </Link>
         <StyledMenu>
           {navigationData.map(({ name, href, as }) => (

@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
-    font-family: ${({ theme }) => `${theme.font.family.myriadPro.regular},Roboto, Arial, sans-serif , serif`};
+    // font-family: ${({ theme }) => `${theme.font.family.myriadPro.regular},Roboto, Arial, sans-serif , serif`};
   }
   
   html {
