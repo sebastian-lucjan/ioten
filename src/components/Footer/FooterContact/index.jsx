@@ -1,50 +1,6 @@
 import { footerData } from 'src/data/pageData';
 import Link from 'next/link';
-import styled from 'styled-components';
-
-const StyledFooterContacts = styled.article`
-  margin: 2rem 0;
-
-  .footer__contact-label,
-  .footer__contact-email,
-  .footer__contact-mobile {
-    position: relative;
-
-    line-height: 3rem;
-  }
-
-  .footer__contact-label,
-  .footer__contact-mobile {
-    font-size: ${({ theme }) => theme.font.size.smallText};
-    font-weight: 400;
-  }
-  .footer__contact-email {
-    font-family: ${({ theme }) => theme.font.family.myriadPro.semibold};
-    font-weight: 800;
-  }
-  .inactive {
-    color: ${({ theme }) => theme.color.gray};
-  }
-  .footer__contact-email.inactive {
-    color: ${({ theme }) => theme.color.lightGray};
-    &::after {
-      line-height: 16px;
-      position: absolute;
-      display: block;
-      content: 'SOON';
-      top: 2px;
-      right: -20px;
-      width: 36px;
-      height: 14px;
-      text-align: center;
-      font-weight: 800;
-      background-color: ${({ theme }) => theme.color.lightGray};
-      border-radius: 3px;
-      color: white;
-      font-size: ${({ theme }) => theme.font.size.xsText};
-    }
-  }
-`;
+import StyledFooterContacts from './FooterContact';
 
 const FooterContact = () => {
   const { cooperation, other, job } = footerData.contact;

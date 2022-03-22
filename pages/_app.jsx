@@ -3,7 +3,7 @@ import theme from 'src/assets/styles/theme';
 import GlobalStyle from 'src/assets/styles/GlobalStyles';
 import Head from 'next/head';
 import { StrictMode } from 'react';
-import 'src/assets/fonts/myriad-pro/style.css';
+import 'src/assets/fonts/style.css';
 
 export default function App({ Component, pageProps }) {
   return (

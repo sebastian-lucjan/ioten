@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 `;
 
 export const IdeaHeading = styled.h3`
-  font-family: 'Myriad Pro', Roboto, Arial, serif;
+  font-family: 'Myriad Pro Black', Roboto, Arial, serif;
   font-style: normal;
   font-weight: 700;
   font-size: ${({ theme }) => theme.font.size.headingSection};

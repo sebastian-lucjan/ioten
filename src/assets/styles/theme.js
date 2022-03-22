@@ -38,8 +38,8 @@ const theme = {
       myriadPro: {
         light: 'Myriad Pro Light',
         regular: 'Myriad Pro Regular',
-        semibold: 'Myriad Pro Semibold',
         bold: 'Myriad Pro Bold',
+        black: 'Myriad Pro Black',
       },
     },
   },

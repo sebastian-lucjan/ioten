@@ -52,9 +52,10 @@ export const StyledMenu = styled.nav`
   flex-direction: column;
   width: 40%;
   font-size: ${({ theme }) => theme.font.size.paragraph};
+  //font-family: ${({ theme }) => theme.font.family.myriadPro.light};
+  color: ${({ theme }) => theme.color.darkestGray};
 
   ${({ theme }) => theme.mq.tablet} {
-    font-family: 'Myriad Pro Light', serif;
     flex-direction: row;
     font-weight: 300;
   }
@@ -80,11 +81,12 @@ export const StyledLogo = styled.h1`
 export const StyledValuationButton = styled.button`
   margin-bottom: 80px;
   text-transform: uppercase;
-  font-size: ${({ theme }) => theme.font.size.paragraph};
+  font-size: ${({ theme }) => theme.font.size.smallText};
   border: none;
   position: relative;
-  font-family: 'Myriad Pro Semibold', serif;
+  font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   cursor: pointer;
+  color: ${({ theme }) => theme.color.darkestGray};
 
   ${({ theme }) => theme.mq.tablet} {
     margin: 12px 48px;
