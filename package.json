@@ -2,7 +2,7 @@
   "name": "ioten",
   "version": "0.0.0",
   "description": "ioten - usługi z branży www i it",
-  "main": "index.js",
+  "main": "pages/index.jsx",
   "private": true,
   "scripts": {
     "dev": "next",
