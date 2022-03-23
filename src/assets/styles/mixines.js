@@ -1,3 +1,5 @@
+import theme from './theme';
+
 const mixines = {
   soonLabel: `
       line-height: 16px;
@@ -5,15 +7,14 @@ const mixines = {
       display: block;
       content: 'SOON';
       top: 2px;
-      right: -24px;
       width: 36px;
       height: 14px;
       text-align: center;
-      background-color: hsl(0, 0%, 80%);
+      background-color: ${theme.color.lightGray};
       border-radius: 3px;
-      color: white;
-      font-size: 10px;
-      font-family: Myriad Pro Black;
+      color: ${theme.color.white};
+      font-size: ${theme.font.size.xsText};
+      font-family: ${theme.font.family.myriadPro.black};
   `,
 };
 

@@ -1,25 +1,10 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 100px 40px;
-  color: ${({ theme }) => theme.color.darkestGray};
-`;
-
-export const MottoParagraph = styled.p`
-  font-family: 'Myriad Pro', Roboto, Arial, serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: ${({ theme }) => theme.font.size.paragraph};
-  line-height: 32px;
-`;
-
-export const MottoCaption = styled.p`
+const MottoCaption = styled.p`
   margin-top: 3rem;
-  font-family: 'Myriad Pro', Roboto, Arial, serif;
-  font-weight: 800;
-  font-size: ${({ theme }) => theme.font.size.smallText};
   text-align: right;
+  font-family: ${({ theme }) => theme.font.family.myriadPro.black};
+  font-size: ${({ theme }) => theme.font.size.smallText};
 `;
+
+export default MottoCaption;

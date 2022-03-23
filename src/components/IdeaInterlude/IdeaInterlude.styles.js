@@ -1,29 +1,14 @@
 import styled from 'styled-components';
+import { TextWrapper } from '../TextComponents';
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+export const IdeaWrapper = styled(TextWrapper)`
   height: 100vh;
-  padding: 100px 40px;
-  color: ${({ theme }) => theme.color.darkestGray};
 `;
 
 export const IdeaHeading = styled.h3`
-  font-family: 'Myriad Pro Black', Roboto, Arial, serif;
-  font-style: normal;
-  font-weight: 700;
+  font-family: ${({ theme }) => theme.font.family.myriadPro.black};
   font-size: ${({ theme }) => theme.font.size.headingSection};
   line-height: 115%;
-`;
-
-export const IdeaParagraph = styled.p`
-  font-family: 'Myriad Pro', Roboto, Arial, serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: ${({ theme }) => theme.font.size.paragraph};
-  line-height: 32px;
 `;
 
 export const IdeaButton = styled.button`

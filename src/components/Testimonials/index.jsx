@@ -5,7 +5,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import { testimonials } from 'src/data/pageData';
 import { v4 as uuid } from 'uuid';
 import Slider from 'react-slick';
-import { TestimonialsCaption, TestimonialsParagraph, Wrapper } from './Testimonials.styles';
+import TestimonialsCaption from './Testimonials.styles';
+import { Paragraph, TextWrapper } from '../TextComponents';
 
 const TestimonialsInterlude = () => {
   const {
@@ -24,19 +25,21 @@ const TestimonialsInterlude = () => {
 
   return (
     <MainSectionWrapper colors={{ background: lightGrayGradient, lines: lightGray }} smaller>
-      <Wrapper className="motto">
+      <TextWrapper className="motto">
         <Slider {...settings}>
           {testimonials.map((testimonial) => (
             <div key={uuid()}>
-              <TestimonialsParagraph className="motto__text">{testimonial.text}</TestimonialsParagraph>
+              <Paragraph fontWeight="bold" className="motto__text">
+                {testimonial.text}
+              </Paragraph>
               <TestimonialsCaption className="motto__caption">
-                <span />
+                <span className="motto__caption-line" />
                 <div>{testimonial.caption}</div>
               </TestimonialsCaption>
             </div>
           ))}
         </Slider>
-      </Wrapper>
+      </TextWrapper>
     </MainSectionWrapper>
   );
 };
