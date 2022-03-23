@@ -64,6 +64,7 @@ const theme = {
     hugeDesktop: '@media(min-width: 1440px)',
   },
   zIndex: {
+    highest: 4,
     peak: 3,
     top: 2,
     front: 1,

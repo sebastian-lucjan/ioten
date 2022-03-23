@@ -7,6 +7,7 @@ export const ServiceStage = styled.div`
   font-weight: 400;
   margin-left: 20px;
   color: ${({ theme, color, isActive }) => (isActive ? color : theme.color.darkestGray)};
+  cursor: pointer;
 
   &:after {
     display: block;
@@ -21,7 +22,7 @@ export const ServiceStage = styled.div`
     border: 2px ${({ theme, color, isActive }) => (isActive ? theme.color.lightGray : color)} solid;
     box-shadow: inset 0 0 0 6px ${({ theme }) => theme.color.lightestGray};
     border-radius: 50%;
-    z-index: ${({ theme }) => theme.zIndex.peak};
+    z-index: ${({ theme }) => theme.zIndex.top};
   }
 `;
 
@@ -94,7 +95,7 @@ export const StyledServicesAxis = styled.section`
     width: 2px;
     top: 0;
     background: ${({ colors }) => colors.lines};
-    z-index: ${({ theme }) => theme.zIndex.top};
+    z-index: ${({ theme }) => theme.zIndex.front};
   }
 
   &::after {

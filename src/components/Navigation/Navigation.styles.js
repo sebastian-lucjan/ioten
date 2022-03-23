@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
   flex-direction: column;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   background: ${({ theme, isOpen }) => (isOpen ? theme.gradient.lightGray : 'transparent')};
-  z-index: ${({ theme }) => theme.zIndex.front};
+  z-index: ${({ theme }) => theme.zIndex.peak};
 
   ${({ theme }) => theme.mq.tablet} {
     display: flex;
@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
     height: 72px;
   }
 
-  ${({ theme, isOpen }) => {
+  ${({ isOpen }) => {
     return (
       isOpen &&
       `&::after {
@@ -31,7 +31,6 @@ export const Wrapper = styled.div`
     top: 0;
     left: 20px;
     background-color: hsl(0, 0%, 80%);
-    z-index: ${theme.zIndex.front};
   }
   &::before {
     content: '';
@@ -52,7 +51,6 @@ export const StyledMenu = styled.nav`
   flex-direction: column;
   width: 40%;
   font-size: ${({ theme }) => theme.font.size.paragraph};
-  //font-family: ${({ theme }) => theme.font.family.myriadPro.light};
   color: ${({ theme }) => theme.color.darkestGray};
 
   ${({ theme }) => theme.mq.tablet} {

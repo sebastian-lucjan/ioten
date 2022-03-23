@@ -1,9 +1,10 @@
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import { v4 as uuid } from 'uuid';
 import theme, { rainbowColors } from 'src/assets/styles/theme';
+import { services } from 'src/data/pageData';
 import { StyledWrapper, StyledServicesAxis, ServiceStage } from './ServicesAxis.styles';
 import { TextHeading, TextParagraph } from '../TextComponents';
-import { services } from '../../data/pageData';
+import ServiceDetail from './ServiceDetail';
 
 const ServicesAxis = () => {
   const {
@@ -15,7 +16,7 @@ const ServicesAxis = () => {
   } = theme;
 
   return (
-    <section className="">
+    <section className="services-axis">
       <MainSectionWrapper as="article" smaller colors={{ background: lightGrayAxisSection, lines: lightGray }}>
         <StyledWrapper>
           <article>
@@ -49,6 +50,7 @@ const ServicesAxis = () => {
               </ServiceStage>
             ))}
           </StyledWrapper>
+          <ServiceDetail />
         </StyledServicesAxis>
 
         <StyledWrapper short>
