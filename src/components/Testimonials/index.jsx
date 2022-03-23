@@ -6,12 +6,11 @@ import { testimonials } from 'src/data/pageData';
 import { v4 as uuid } from 'uuid';
 import Slider from 'react-slick';
 import TestimonialsCaption from './Testimonials.styles';
-import { Paragraph, TextWrapper } from '../TextComponents';
+import { TextParagraph, TextWrapper } from '../TextComponents';
 
 const TestimonialsInterlude = () => {
   const {
-    color: { lightGray },
-    gradient: { lightGray: lightGrayGradient },
+    color: { white, lightGray },
   } = theme;
 
   const settings = {
@@ -24,14 +23,14 @@ const TestimonialsInterlude = () => {
   };
 
   return (
-    <MainSectionWrapper colors={{ background: lightGrayGradient, lines: lightGray }} smaller>
+    <MainSectionWrapper colors={{ background: white, lines: lightGray }} smaller>
       <TextWrapper className="motto">
         <Slider {...settings}>
           {testimonials.map((testimonial) => (
             <div key={uuid()}>
-              <Paragraph fontWeight="bold" className="motto__text">
+              <TextParagraph fontWeight="bold" className="motto__text">
                 {testimonial.text}
-              </Paragraph>
+              </TextParagraph>
               <TestimonialsCaption className="motto__caption">
                 <span className="motto__caption-line" />
                 <div>{testimonial.caption}</div>

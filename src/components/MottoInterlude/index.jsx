@@ -2,7 +2,7 @@ import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWra
 import theme from 'src/assets/styles/theme';
 import { motto } from 'src/data/pageData';
 import MottoCaption from './MottoInterlude.styles';
-import { Paragraph, TextWrapper } from '../TextComponents';
+import { TextParagraph, TextWrapper } from '../TextComponents';
 
 const MottoInterlude = () => {
   const {
@@ -12,9 +12,9 @@ const MottoInterlude = () => {
   return (
     <MainSectionWrapper colors={{ background: white, lines: lightGray }} smaller>
       <TextWrapper className="motto">
-        <Paragraph fontWeight="bold" className="motto__text">
+        <TextParagraph fontWeight="bold" className="motto__text">
           {motto.text}
-        </Paragraph>
+        </TextParagraph>
         <MottoCaption className="motto__caption">{motto.caption}</MottoCaption>
       </TextWrapper>
     </MainSectionWrapper>

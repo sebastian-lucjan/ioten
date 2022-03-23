@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   background: ${({ theme, isOpen }) => (isOpen ? theme.gradient.lightGray : 'transparent')};
-  z-index: 1;
+  z-index: ${({ theme }) => theme.zIndex.front};
 
   ${({ theme }) => theme.mq.tablet} {
     display: flex;
@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
     height: 72px;
   }
 
-  ${({ isOpen }) => {
+  ${({ theme, isOpen }) => {
     return (
       isOpen &&
       `&::after {
@@ -31,7 +31,7 @@ export const Wrapper = styled.div`
     top: 0;
     left: 20px;
     background-color: hsl(0, 0%, 80%);
-    z-index: 10;
+    z-index: ${theme.zIndex.front};
   }
   &::before {
     content: '';

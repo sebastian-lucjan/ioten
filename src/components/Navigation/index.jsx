@@ -20,7 +20,7 @@ const LogoWrapper = styled.div`
   width: 100%;
   height: 60px;
   padding: 10px 30px;
-  z-index: 1;
+  z-index: ${({ theme: { zIndex } }) => zIndex.top};
 
   ${({ theme: { mq } }) => mq.tablet} {
     display: none;
