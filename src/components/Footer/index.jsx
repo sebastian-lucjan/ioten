@@ -1,7 +1,8 @@
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import Link from 'next/link';
 import theme from 'src/assets/styles/theme';
-import { footerData, navigationData, services } from 'src/data/pageData';
+import { footerData, navigationData } from 'src/data/pageData';
+import services from 'src/data/servicesData';
 import { v4 as uuid } from 'uuid';
 import { FooterHeading, FooterItem, FooterSoonItem, StyledFooterSection, Wrapper } from './Footer.styles';
 import SocialMedias from '../SocialMedias';
@@ -43,7 +44,7 @@ const Footer = () => {
 
         <StyledFooterSection>
           <FooterHeading>{services.serviceStagesIntro}</FooterHeading>
-          {services.serviceStages.map(({ heading: serviceHeading }) => (
+          {services.stages.map(({ heading: serviceHeading }) => (
             <FooterItem key={uuid()}>{serviceHeading}</FooterItem>
           ))}
         </StyledFooterSection>

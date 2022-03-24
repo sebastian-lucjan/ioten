@@ -6,31 +6,6 @@ export const navigationData = [
   { name: 'Kontakt', href: '/contact', as: '/kontakt' },
 ];
 
-export const services = {
-  intro: 'Usługi',
-  list: [
-    { heading: 'Strona wizytówka' },
-    { heading: 'Strona firmowa z CMSem' },
-    { heading: 'Sklep online', soon: true },
-    { heading: 'Landingpage' },
-    { heading: 'Blog' },
-  ],
-  serviceStagesIntro: 'Etapy',
-  serviceStages: [
-    { heading: 'Idea & Strategia' },
-    { heading: 'Koncept & Wireframing' },
-    {
-      heading: 'Design',
-    },
-    {
-      heading: 'Development',
-    },
-    {
-      heading: 'Optymalizacje & Wsparcie',
-    },
-  ],
-};
-
 export const motto = {
   text: '"Inwestor jest dla nas członkiem zespołu. Miej wpływ na proces tworzenia strony internetowej na każdym etapie. Z nami stworzysz niesamowicie szybką i funkcjonalną stronę uszytą na Twoją miarę."',
   caption: 'ioten.io',

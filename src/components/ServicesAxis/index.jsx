@@ -1,12 +1,15 @@
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import { v4 as uuid } from 'uuid';
 import theme, { rainbowColors } from 'src/assets/styles/theme';
-import { services } from 'src/data/pageData';
+import services from 'src/data/servicesData';
+import useServicePopup from 'src/hooks/useServicePopup';
+import { TextHeading, TextParagraph } from 'src/components/TextComponents';
 import { StyledWrapper, StyledServicesAxis, ServiceStage } from './ServicesAxis.styles';
-import { TextHeading, TextParagraph } from '../TextComponents';
 import ServiceDetail from './ServiceDetail';
 
 const ServicesAxis = () => {
+  const { isOpen, setIsOpen, serviceIndex, handleOpenServiceStage } = useServicePopup();
+
   const {
     color: { lightGray, transparent },
     gradient: {
@@ -44,13 +47,13 @@ const ServicesAxis = () => {
 
         <StyledServicesAxis as="article" colors={{ background: transparent, lines: servicesAxis }}>
           <StyledWrapper>
-            {services.serviceStages.map(({ heading }, index) => (
-              <ServiceStage key={uuid()} color={rainbowColors[index]}>
+            {services.stages.map(({ heading }, index) => (
+              <ServiceStage key={uuid()} color={rainbowColors[index]} onClick={() => handleOpenServiceStage(index)}>
                 {heading}
               </ServiceStage>
             ))}
           </StyledWrapper>
-          <ServiceDetail />
+          {isOpen ? <ServiceDetail index={serviceIndex} handleClose={() => setIsOpen(false)} /> : null}
         </StyledServicesAxis>
 
         <StyledWrapper short>

@@ -28,8 +28,8 @@ export const TextParagraph = styled.p`
         return theme.font.family.myriadPro.regular;
     }
   }};
-  font-size: ${({ theme }) => theme.font.size.paragraph};
-  line-height: 32px;
+  font-size: ${({ theme, small }) => (small ? theme.font.size.smallText : theme.font.size.paragraph)};
+  line-height: ${({ small }) => (small ? '22px' : '32px')};
 `;
 
 export const TextHeading = styled.p`
@@ -40,7 +40,6 @@ export const TextHeading = styled.p`
   font-family: ${({ theme, bolder }) =>
     bolder ? theme.font.family.myriadPro.black : theme.font.family.myriadPro.bold};
   font-weight: normal;
-  //margin-bottom: 20px;
   font-size: ${({ theme, size }) => {
     switch (size) {
       case 'sm':

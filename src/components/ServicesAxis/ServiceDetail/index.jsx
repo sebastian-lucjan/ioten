@@ -1,45 +1,113 @@
+import { RiCloseLine } from 'react-icons/ri';
+import IotenLogo from 'src/assets/images/ioten-logo-main.svg';
+import ThinArrow from 'src/assets/images/service-detail-arrow.svg';
+import { v4 as uuid } from 'uuid';
+import theme from 'src/assets/styles/theme';
+import { IconContext } from 'react-icons';
+import { GrNext, GrPrevious } from 'react-icons/gr';
+import styled from 'styled-components';
+import services from 'src/data/servicesData';
+import { TextHeading, TextParagraph } from 'src/components/TextComponents';
 import StyledServiceDetail from './ServiceDetail.styles';
 
-const ServiceDetail = () => {
+const StyledDetailHeader = styled.div`
+  display: flex;
+  height: 30px;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const StyledLogo = styled.div`
+  position: relative;
+  height: 20px;
+  transform: scale(0.6);
+`;
+
+const StyledIotenLogo = styled(IotenLogo)`
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
+const StyledServicesNav = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  .service-detail__nav-direction {
+    display: flex;
+    align-items: center;
+  }
+`;
+
+const StyledThinArrow = styled(ThinArrow)`
+  color: blue;
+  margin-left: 1.6rem;
+`; // todo: add prop responsible for color
+
+const ServiceDetailFooter = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  .service-detail__read-more {
+    display: flex;
+  }
+`;
+const StyledDetailIntro = styled.div``;
+
+const ServiceDetail = ({ index, handleClose }) => {
+  const iconStyle = {
+    style: { color: theme.color.black, fontSize: theme.font.size.paragraphBig },
+    // className: '',
+  };
+
+  const { stages } = services;
+  const { heading, introParagraph, prosList, endParagraph } = stages[index];
+
   return (
-    <StyledServiceDetail>
-      <div>
-        <div>logo</div>
-        <span>X</span>
-      </div>
+    <StyledServiceDetail detailIndex={index}>
+      <IconContext.Provider value={iconStyle}>
+        <StyledDetailHeader>
+          <StyledLogo>
+            <StyledIotenLogo />
+          </StyledLogo>
+          <RiCloseLine onClick={handleClose} />
+        </StyledDetailHeader>
 
-      <div>
-        <h3>Title</h3>
-        <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit. tenetur ut vel vero!tenetur ut vel vero!</p>
-      </div>
+        <StyledDetailIntro>
+          <TextHeading as="h4">{heading}</TextHeading>
+          <TextParagraph small>{introParagraph}</TextParagraph>
+        </StyledDetailIntro>
 
-      <ul>
-        <li>
-          <span />
-          Text
-        </li>
-        <li>
-          <span />
-          Text
-        </li>
-        <li>
-          <span />
-          Text
-        </li>
-      </ul>
+        <ul>
+          {prosList.map((profit) => (
+            <li key={uuid()}>
+              <span className="service-detail__check" />
+              <TextParagraph small>{profit}</TextParagraph>
+            </li>
+          ))}
+        </ul>
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis exercitationem expedita facilis, fuga nisi
-        Consequatur enim neque saepe voluptatum.
-      </p>
+        <p>{endParagraph}</p>
 
-      <div>
-        <p>pytanie?</p>
-        <div>
-          <p>przeczytaj</p>
-          <span>--</span>
-        </div>
-      </div>
+        <StyledServicesNav>
+          <div className="service-detail__nav-direction">
+            <GrPrevious />
+            <p>previous</p>
+          </div>
+          <div className="service-detail__nav-direction">
+            <p>next</p>
+            <GrNext />
+          </div>
+        </StyledServicesNav>
+
+        <ServiceDetailFooter>
+          <p>pytanie?</p>
+          <div className="service-detail__read-more">
+            <p>przeczytaj</p>
+            <StyledThinArrow />
+          </div>
+        </ServiceDetailFooter>
+      </IconContext.Provider>
     </StyledServiceDetail>
   );
 };
