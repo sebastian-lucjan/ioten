@@ -18,8 +18,8 @@ export const ServiceStage = styled.div`
     left: -50px;
     width: 22px;
     height: 22px;
-    background-color: ${({ theme, color, isActive }) => (isActive ? theme.color.lightGray : color)};
-    border: 2px ${({ theme, color, isActive }) => (isActive ? theme.color.lightGray : color)} solid;
+    background: ${({ theme, color, desaturate }) => (desaturate ? theme.color.lightGray : color)};
+    border: 2px ${({ theme, color, desaturate }) => (desaturate ? theme.color.lightGray : color)} solid;
     box-shadow: inset 0 0 0 6px ${({ theme }) => theme.color.lightestGray};
     border-radius: 50%;
     z-index: ${({ theme }) => theme.zIndex.top};
@@ -72,7 +72,6 @@ export const StyledWrapper = styled.div`
 
     &::after {
       content: '?';
-
       display: block;
     }
   }
@@ -94,7 +93,7 @@ export const StyledServicesAxis = styled.section`
     height: 100%;
     width: 2px;
     top: 0;
-    background: ${({ colors }) => colors.lines};
+    background: ${({ theme, colors, desaturate }) => (desaturate ? theme.color.lightGray : colors.lines)};
     z-index: ${({ theme }) => theme.zIndex.front};
   }
 

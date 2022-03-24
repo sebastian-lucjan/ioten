@@ -45,7 +45,7 @@ const ServicesAxis = () => {
           </article>
         </StyledWrapper>
 
-        <StyledServicesAxis as="article" colors={{ background: transparent, lines: servicesAxis }}>
+        <StyledServicesAxis as="article" desaturate={isOpen} colors={{ background: transparent, lines: servicesAxis }}>
           <StyledWrapper>
             {services.stages.map(({ heading }, index) => (
               <ServiceStage key={uuid()} color={rainbowColors[index]} onClick={() => handleOpenServiceStage(index)}>

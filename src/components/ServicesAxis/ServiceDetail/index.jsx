@@ -52,7 +52,11 @@ const ServiceDetailFooter = styled.div`
     display: flex;
   }
 `;
-const StyledDetailIntro = styled.div``;
+const StyledDetailIntro = styled.div`
+  p {
+    margin: 20px 0 40px 0;
+  }
+`;
 
 const ServiceDetail = ({ index, handleClose }) => {
   const iconStyle = {

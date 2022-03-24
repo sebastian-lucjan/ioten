@@ -16,6 +16,7 @@ export const TextParagraph = styled.p`
   /* props */
   //fontWeight -> choose font, different weights
   position: relative;
+  display: block;
   font-family: ${({ theme, fontWeight }) => {
     switch (fontWeight) {
       case 'light':
