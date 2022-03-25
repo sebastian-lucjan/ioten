@@ -20,8 +20,8 @@ const ServicesAxis = () => {
 
   return (
     <section className="services-axis">
-      <MainSectionWrapper as="article" smaller colors={{ background: lightGrayAxisSection, lines: lightGray }}>
-        <StyledWrapper>
+      <MainSectionWrapper as="article" colors={{ background: lightGrayAxisSection, lines: lightGray }}>
+        <StyledWrapper short>
           <article>
             <TextHeading as="h2" size="md">
               Zbuduj usługę uszytą na swoją miarę

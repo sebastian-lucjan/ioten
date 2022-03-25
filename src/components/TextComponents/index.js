@@ -4,9 +4,11 @@ export const TextWrapper = styled.div`
   /* props */
   //short -> smaller Y padding from 100px to 60px
   //fullHeight -> 100vh or unset
+  //noAlign -> disable align-items if causes problems (e.g. Testimonials)
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  ${({ noAlign }) => (noAlign ? null : 'align-items: flex-start')}; //align-item would break testimonials slider
   padding: ${({ short }) => (short ? '40px 40px 80px 40px' : '100px 40px')};
   color: ${({ theme }) => theme.color.darkestGray};
   height: ${({ fullHeight }) => (fullHeight ? '100vh' : 'unset')};
@@ -43,6 +45,8 @@ export const TextHeading = styled.p`
   font-weight: normal;
   font-size: ${({ theme, size }) => {
     switch (size) {
+      case 'xs':
+        return theme.font.size.paragraphSmall;
       case 'sm':
         return theme.font.size.headingSmall;
       case 'md':
@@ -53,4 +57,14 @@ export const TextHeading = styled.p`
         return theme.font.size.headingSmall;
     }
   }};
+  ${({ color }) => (color ? `color: ${color}` : '')}//passed color
+`;
+
+export const TextCaption = styled.p`
+  display: block;
+  text-transform: uppercase;
+  font-family: ${({ theme }) => theme.font.family.myriadPro.black};
+  font-size: ${({ theme }) => theme.font.size.smallText};
+  margin: 1rem 0 1rem 0;
+  color: ${({ theme, color }) => color || theme.color.black};
 `;

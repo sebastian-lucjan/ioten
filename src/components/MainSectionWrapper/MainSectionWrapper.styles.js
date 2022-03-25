@@ -5,6 +5,7 @@ const MainSectionWrapper = styled.section`
   flex-direction: column;
   position: relative;
   width: 100%;
+  color: black;
   min-height: ${({ smaller }) => (smaller ? 'unset' : '100vh')};
   background: ${({ colors }) => colors.background};
 

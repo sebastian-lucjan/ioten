@@ -24,7 +24,7 @@ const TestimonialsInterlude = () => {
 
   return (
     <MainSectionWrapper colors={{ background: white, lines: lightGray }} smaller>
-      <TextWrapper className="motto">
+      <TextWrapper noAlign className="motto">
         <Slider {...settings}>
           {testimonials.map((testimonial) => (
             <div key={uuid()}>

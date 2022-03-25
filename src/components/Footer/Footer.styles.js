@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import mixines from '../../assets/styles/mixines';
+import mixines from 'src/assets/styles/mixines';
 
 export const Wrapper = styled.div`
   padding: 60px 40px 0 40px;
