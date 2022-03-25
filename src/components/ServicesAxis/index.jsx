@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import { v4 as uuid } from 'uuid';
 import theme, { rainbowColors } from 'src/assets/styles/theme';
@@ -27,10 +28,9 @@ const ServicesAxis = () => {
               Zbuduj usługę uszytą na swoją miarę
             </TextHeading>
             <TextParagraph className="services-axis__paragraph">
-              Współpraca z nami przebiega w kilku etapach, to od Ciebie zależy w którym momencie Twojego pomysłu się
-              spotkamy. Z <span className="services-axis__emphasis">ioten</span> możesz przedyskutować swoją strategię
-              działania, obudować merytorycznie swój koncept a następnie uczestniczyć w procesie tworzenia strony od
-              designu aż po wdrożenie.
+              Współpraca z nami przebiega w kilku etapach, to od Ciebie zależy w którym momencie Twojego pomysłu się spotkamy. Z{' '}
+              <span className="services-axis__emphasis">ioten</span> możesz przedyskutować swoją strategię działania, obudować merytorycznie swój
+              koncept a następnie uczestniczyć w procesie tworzenia strony od designu aż po wdrożenie.
             </TextParagraph>
           </article>
           <article>
@@ -39,8 +39,7 @@ const ServicesAxis = () => {
               <span className="services-axis__sign-axis-start" />
             </TextHeading>
             <TextParagraph className="services-axis__paragraph">
-              Zakres projektu jest dostosowywany do wymagań klienta ale przykładową kolejność działań możesz zobaczyć
-              pod spodem.
+              Zakres projektu jest dostosowywany do wymagań klienta ale przykładową kolejność działań możesz zobaczyć pod spodem.
             </TextParagraph>
           </article>
         </StyledWrapper>
@@ -48,7 +47,7 @@ const ServicesAxis = () => {
         <StyledServicesAxis as="article" desaturate={isOpen} colors={{ background: transparent, lines: servicesAxis }}>
           <StyledWrapper>
             {services.stages.map(({ heading }, index) => (
-              <ServiceStage key={uuid()} color={rainbowColors[index]} onClick={() => handleOpenServiceStage(index)}>
+              <ServiceStage desaturate={isOpen} key={uuid()} color={rainbowColors[index]} onClick={() => handleOpenServiceStage(index)}>
                 {heading}
               </ServiceStage>
             ))}
@@ -61,8 +60,7 @@ const ServicesAxis = () => {
             Zakończenie współpracy
           </TextHeading>
           <TextParagraph className="services-axis__paragraph">
-            Kiedy kończy się współpraca? To zależy od Ciebie. Bez problemy możemy zostać z Tobą i uczestniczyć w dalszym
-            rozwoju Twojej firmy.
+            Kiedy kończy się współpraca? To zależy od Ciebie. Bez problemy możemy zostać z Tobą i uczestniczyć w dalszym rozwoju Twojej firmy.
             <span className="services-axis__sign-question-mark" />
           </TextParagraph>
         </StyledWrapper>

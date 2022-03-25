@@ -40,8 +40,7 @@ export const TextHeading = styled.p`
   //bolder -> choose fontWeight between bold and black
   //size -> heading 3 sizes to choose
   position: relative;
-  font-family: ${({ theme, bolder }) =>
-    bolder ? theme.font.family.myriadPro.black : theme.font.family.myriadPro.bold};
+  font-family: ${({ theme, bolder }) => (bolder ? theme.font.family.myriadPro.black : theme.font.family.myriadPro.bold)};
   font-weight: normal;
   font-size: ${({ theme, size }) => {
     switch (size) {

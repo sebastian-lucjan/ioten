@@ -11,8 +11,8 @@ const StyledServiceDetail = styled.article`
   padding: 1.2rem 1.6rem;
   margin: 60px 40px 20px 40px;
   border-radius: 1rem;
-  box-shadow: 0 0 2.7px rgba(0, 0, 0, 0.017), 0 0 6.9px rgba(0, 0, 0, 0.024), 0 0 14.2px rgba(0, 0, 0, 0.029),
-    0 0 29.2px rgba(0, 0, 0, 0.035), 0 0 80px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 2.7px rgba(0, 0, 0, 0.017), 0 0 6.9px rgba(0, 0, 0, 0.024), 0 0 14.2px rgba(0, 0, 0, 0.029), 0 0 29.2px rgba(0, 0, 0, 0.035),
+    0 0 80px rgba(0, 0, 0, 0.05);
   z-index: ${({ theme }) => theme.zIndex.highest};
   background-color: ${({ theme }) => theme.color.white};
 `;

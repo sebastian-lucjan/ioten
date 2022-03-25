@@ -19,8 +19,7 @@ const services = {
         'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
         'Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
       ],
-      endParagraph:
-        'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie, biznesu. Estetyka i funkcjonalność ma u nas.',
+      endParagraph: 'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie, biznesu. Estetyka i funkcjonalność ma u nas.',
     },
     {
       heading: 'Koncept & Wireframing',
@@ -31,8 +30,7 @@ const services = {
         'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
         'Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
       ],
-      endParagraph:
-        'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie, biznesu. Estetyka i funkcjonalność ma u nas.',
+      endParagraph: 'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie, biznesu. Estetyka i funkcjonalność ma u nas.',
     },
     {
       heading: 'Design',
@@ -43,8 +41,7 @@ const services = {
         'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
         'Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
       ],
-      endParagraph:
-        'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie, biznesu. Estetyka i funkcjonalność ma u nas.',
+      endParagraph: 'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie, biznesu. Estetyka i funkcjonalność ma u nas.',
     },
     {
       heading: 'Development',
@@ -55,8 +52,7 @@ const services = {
         'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
         'Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
       ],
-      endParagraph:
-        'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie, biznesu. Estetyka i funkcjonalność ma u nas.',
+      endParagraph: 'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie, biznesu. Estetyka i funkcjonalność ma u nas.',
     },
     {
       heading: 'Optymalizacje & Wsparcie',
@@ -67,8 +63,7 @@ const services = {
         'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
         'Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
       ],
-      endParagraph:
-        'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie, biznesu. Estetyka i funkcjonalność ma u nas.',
+      endParagraph: 'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie, biznesu. Estetyka i funkcjonalność ma u nas.',
     },
   ],
 };

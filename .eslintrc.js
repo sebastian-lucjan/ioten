@@ -33,14 +33,14 @@ module.exports = {
       {
         semi: true,
         tabWidth: 2,
-        printWidth: 120,
+        printWidth: 150,
         singleQuote: true,
         trailingComma: 'all',
         jsxBracketSameLine: true,
       },
       { usePrettierrc: true },
     ], // Use our .prettierrc file as source
-    'react/jsx-first-prop-new-line': 2,
+    // 'react/jsx-first-prop-new-line': 'off',
     'react/react-in-jsx-scope': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
@@ -54,5 +54,7 @@ module.exports = {
     'no-console': 'off',
     'react/function-component-definition': 'off',
     'react/jsx-no-constructed-context-values': 'off',
+    'react/jsx-max-props-per-line': [1, { maximum: 6 }],
+    // 'object-curly-newline': 'off',
   },
 };

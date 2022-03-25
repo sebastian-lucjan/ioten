@@ -23,8 +23,7 @@ const theme = {
     navyBlue: 'linear-gradient(80deg, rgba(76,65,107,1) 0%, rgba(72,59,76,1) 100%)',
     yellowToGray: 'linear-gradient(0deg, hsl(0, 0%, 80%) 0%, hsl(0, 0%, 80%) 75%, hsl(65, 88%, 48%) 100%)',
     grayToYellow: 'linear-gradient(180deg, hsl(0, 0%, 80%) 0%, hsl(0, 0%, 80%) 75%, hsl(65, 88%, 48%) 100%)',
-    lightGrayTransparantLightGray:
-      'linear-gradient(180deg, hsl(0, 0%, 80%, 0) 0%, hsl(0, 0%, 96%) 30%, hsl(0, 0%, 96%) 70% ,hsl(0, 0%, 0%, 0) 100%)',
+    lightGrayTransparantLightGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 0) 0%, hsl(0, 0%, 96%) 30%, hsl(0, 0%, 96%) 70% ,hsl(0, 0%, 0%, 0) 100%)',
     rainbow: {
       highlight:
         'linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(254,255,0,1) 25%, rgba(1,255,0,1) 50%, rgba(0,39,255,1) 75%, rgba(226,0,255,1) 100%)',
