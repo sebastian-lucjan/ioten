@@ -16,11 +16,11 @@ export const TextWrapper = styled.div`
 
 export const TextParagraph = styled.p`
   /* props */
-  //fontWeight -> choose font, different weights
+  //weight -> choose font, different weights
   position: relative;
   display: block;
-  font-family: ${({ theme, fontWeight }) => {
-    switch (fontWeight) {
+  font-family: ${({ theme, weight }) => {
+    switch (weight) {
       case 'light':
         return theme.font.family.myriadPro.light;
       case 'bold':
@@ -31,8 +31,40 @@ export const TextParagraph = styled.p`
         return theme.font.family.myriadPro.regular;
     }
   }};
-  font-size: ${({ theme, small }) => (small ? theme.font.size.smallText : theme.font.size.paragraph)};
-  line-height: ${({ small }) => (small ? '22px' : '32px')};
+
+  font-size: ${({ theme, size }) => {
+    switch (size) {
+      case 'xs': // 1rem
+        return theme.font.size.xsText;
+      case 'sm': // 1.4rem
+        return theme.font.size.smallText;
+      case 'md': // 1.6rem
+        return theme.font.size.paragraphSmall;
+      case 'lg': // 1.8rem
+        return theme.font.size.paragraph;
+      case 'xl': // 2.4rem
+        return theme.font.size.paragraphBig;
+      default:
+        return theme.font.size.paragraphSmall; // 1.4rem
+    }
+  }};
+
+  line-height: ${({ theme, lh }) => {
+    switch (lh) {
+      case 'xs': // 1.8rem
+        return theme.font.size.paragraph;
+      case 'sm': // 2rem
+        return theme.font.size.headingSmall;
+      case 'md': // 2.4rem
+        return theme.font.size.headingMedium;
+      case 'lg': // 2.8rem
+        return theme.font.size.headingSection;
+      case 'xl': // 2.8rem
+        return theme.font.size.headingSection;
+      default:
+        return '32px'; // 3.2rem
+    }
+  }};
 `;
 
 export const TextHeading = styled.p`
@@ -40,20 +72,31 @@ export const TextHeading = styled.p`
   //bolder -> choose fontWeight between bold and black
   //size -> heading 3 sizes to choose
   position: relative;
-  font-family: ${({ theme, bolder }) => (bolder ? theme.font.family.myriadPro.black : theme.font.family.myriadPro.bold)};
+  font-family: ${({ theme, weight }) => {
+    switch (weight) {
+      case 'light':
+        return theme.font.family.myriadPro.light;
+      case 'regular':
+        return theme.font.family.myriadPro.bold;
+      case 'black':
+        return theme.font.family.myriadPro.black;
+      default:
+        return theme.font.family.myriadPro.bold;
+    }
+  }};
   font-weight: normal;
   font-size: ${({ theme, size }) => {
     switch (size) {
-      case 'xs':
-        return theme.font.size.paragraphSmall;
-      case 'sm':
+      case 'xs': // 1.4rem
+        return theme.font.size.smallText;
+      case 'sm': // 2rem
         return theme.font.size.headingSmall;
-      case 'md':
+      case 'md': // 2.8rem
         return theme.font.size.headingMedium;
-      case 'lg':
+      case 'lg': // 3.6rem
         return theme.font.size.headingSection;
       default:
-        return theme.font.size.headingSmall;
+        return theme.font.size.headingSmall; // 2rem
     }
   }};
   ${({ color }) => (color ? `color: ${color}` : '')}//passed color

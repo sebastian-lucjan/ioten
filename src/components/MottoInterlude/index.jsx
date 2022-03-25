@@ -12,7 +12,7 @@ const MottoInterlude = () => {
   return (
     <MainSectionWrapper colors={{ background: white, lines: lightGray }} smaller>
       <TextWrapper className="motto">
-        <TextParagraph fontWeight="bold" className="motto__text">
+        <TextParagraph weight="bold" className="motto__text">
           {motto.text}
         </TextParagraph>
         <MottoCaption className="motto__caption">{motto.caption}</MottoCaption>

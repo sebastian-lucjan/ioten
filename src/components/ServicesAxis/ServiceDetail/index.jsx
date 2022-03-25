@@ -116,7 +116,7 @@ const ServiceDetail = ({ index, handleClose }) => {
             <TextHeading as="h4" color={accentColor}>
               {heading}
             </TextHeading>
-            <TextParagraph small>{introParagraph}</TextParagraph>
+            <TextParagraph size="sm">{introParagraph}</TextParagraph>
           </StyledDetailIntro>
         </StyledDetailHeader>
       </IconContext.Provider>
@@ -125,12 +125,12 @@ const ServiceDetail = ({ index, handleClose }) => {
         {prosList.map((profit) => (
           <StyledBenefits key={uuid()}>
             <ColorCheckIcon color={accentColor} className="service-detail__check" />
-            <TextParagraph small>{profit}</TextParagraph>
+            <TextParagraph size="sm">{profit}</TextParagraph>
           </StyledBenefits>
         ))}
       </ul>
 
-      <TextParagraph small>{endParagraph}</TextParagraph>
+      <TextParagraph size="sm">{endParagraph}</TextParagraph>
 
       <ServiceDetailFooter>
         <TextHeading as="h5" size="xs" className="service-detail__question">

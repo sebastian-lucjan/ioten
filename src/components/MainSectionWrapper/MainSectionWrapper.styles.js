@@ -18,6 +18,7 @@ const MainSectionWrapper = styled.section`
     width: 2px;
     top: 0;
     background: ${({ colors }) => colors.lines};
+    z-index: ${({ theme }) => theme.zIndex.front};
   }
 
   &::after {

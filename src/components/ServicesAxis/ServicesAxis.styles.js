@@ -22,7 +22,7 @@ export const ServiceStage = styled.div`
     border: 2px ${({ theme, color, desaturate }) => (desaturate ? theme.color.lightGray : color)} solid;
     box-shadow: inset 0 0 0 6px ${({ theme }) => theme.color.lightestGray};
     border-radius: 50%;
-    z-index: ${({ theme }) => theme.zIndex.top};
+    z-index: ${({ theme }) => theme.zIndex.peak};
   }
 `;
 
@@ -53,7 +53,7 @@ export const StyledWrapper = styled.div`
     width: 24px;
     height: 4px;
     background-color: ${({ theme }) => theme.color.black};
-    z-index: ${({ theme }) => theme.zIndex.front};
+    z-index: ${({ theme }) => theme.zIndex.peak};
   }
 
   .services-axis__sign-question-mark {
@@ -68,7 +68,7 @@ export const StyledWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: ${({ theme }) => theme.zIndex.front};
+    z-index: ${({ theme }) => theme.zIndex.peak};
 
     &::after {
       content: '?';
@@ -94,7 +94,7 @@ export const StyledServicesAxis = styled.section`
     width: 2px;
     top: 0;
     background: ${({ theme, colors, desaturate }) => (desaturate ? theme.color.lightGray : colors.lines)};
-    z-index: ${({ theme }) => theme.zIndex.front};
+    z-index: ${({ theme }) => theme.zIndex.top};
   }
 
   &::after {

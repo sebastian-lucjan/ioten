@@ -33,8 +33,8 @@ const theme = {
   font: {
     size: {
       headingSection: '3.6rem',
-      headingMedium: '2.4rem',
-      paragraphBig: '2.2rem',
+      headingMedium: '2.8rem',
+      paragraphBig: '2.4rem',
       headingSmall: '2rem',
       paragraph: '1.8rem',
       paragraphSmall: '1.6rem',

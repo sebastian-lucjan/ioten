@@ -28,7 +28,7 @@ const TestimonialsInterlude = () => {
         <Slider {...settings}>
           {testimonials.map((testimonial) => (
             <div key={uuid()}>
-              <TextParagraph fontWeight="bold" className="motto__text">
+              <TextParagraph weight="bold" className="motto__text">
                 {testimonial.text}
               </TextParagraph>
               <TestimonialsCaption className="motto__caption">
