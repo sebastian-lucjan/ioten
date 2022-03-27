@@ -7,7 +7,7 @@ const StyledServiceDetail = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100vh - 120px);
+  //min-height: calc(100vh - 120px);
   padding: 1.2rem 1.6rem;
   margin: 60px 40px 20px 40px;
   border-radius: 1rem;

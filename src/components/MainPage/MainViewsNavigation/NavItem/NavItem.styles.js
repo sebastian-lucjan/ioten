@@ -11,6 +11,7 @@ const StyledNavItem = styled.div`
   display: flex;
   flex-direction: ${({ type }) => (type === 'prev' ? 'row' : 'row-reverse')};
   align-items: center;
+  cursor: pointer;
 
   .styled-nav-item__paragraph {
     display: none;

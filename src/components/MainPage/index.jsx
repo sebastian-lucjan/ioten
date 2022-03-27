@@ -17,7 +17,6 @@ const AnimationPlaceholder = styled.div`
 `;
 
 const MainPage = () => {
-  // eslint-disable-next-line no-unused-vars
   const [currentPage, setCurrentPage] = useState(0);
 
   const {
@@ -27,7 +26,7 @@ const MainPage = () => {
 
   return (
     <MainSectionWrapper colors={{ background: LightGrayGradient, lines: lightGray }}>
-      <MainPageContext.Provider value={{ pageIndex: currentPage }}>
+      <MainPageContext.Provider value={{ pageIndex: currentPage, setCurrentPage }}>
         <Wrapper>
           <AnimationPlaceholder />
           <MainViewsInfo />
