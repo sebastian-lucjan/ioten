@@ -55,6 +55,7 @@ module.exports = {
     'react/function-component-definition': 'off',
     'react/jsx-no-constructed-context-values': 'off',
     'react/jsx-max-props-per-line': [1, { maximum: 6 }],
+    'react/self-closing-comp': 'off',
     // 'object-curly-newline': 'off',
   },
 };
