@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
   z-index: ${({ theme }) => theme.zIndex.peak};
 
   ${({ theme }) => theme.mq.tablet} {
+    background: transparent;
     display: flex;
     flex-direction: row;
     height: 72px;

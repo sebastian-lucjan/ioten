@@ -25,13 +25,23 @@ const StyledBurger = styled.button`
   }
 
   div {
-    width: 2rem;
+    width: 2.1rem;
     height: 0.25rem;
     background: ${({ theme }) => theme.color.darkestGray};
     border-radius: 10px;
-    transition: all 0.3s linear;
+    transition: all 0.2s linear;
     position: relative;
     transform-origin: 1px;
+  }
+
+  div:nth-child(1) {
+    ${({ isOpen }) => (isOpen ? 'transform: rotate(45deg);' : null)}
+  }
+  div:nth-child(2) {
+    ${({ isOpen }) => (isOpen ? 'background-color: transparent;' : null)}
+  }
+  div:nth-child(3) {
+    ${({ isOpen }) => (isOpen ? 'transform: rotate(-45deg);' : null)}
   }
 `;
 

@@ -49,11 +49,13 @@ const Navigation = () => {
           </StyledLogo>
         </Link>
       </LogoWrapper>
-      <StyledBurger onClick={toggleNavigation}>
+      {/* {isOpen ? ( */}
+      <StyledBurger isOpen={isOpen} onClick={toggleNavigation}>
         <div />
         <div />
         <div />
       </StyledBurger>
+      {/* ) : null} */}
       <Wrapper isOpen={isOpen}>
         <Link href="/">
           <StyledLogo>
