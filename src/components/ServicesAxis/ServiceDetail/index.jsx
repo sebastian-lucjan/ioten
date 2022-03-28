@@ -32,11 +32,20 @@ const StyledLogo = styled.div`
 `;
 
 const StyledBenefits = styled.li`
+  position: relative;
   list-style: none;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 0.8rem;
+  height: 100%;
+
+  .service-detail__check {
+    display: flex;
+    align-items: center;
+    height: 32px;
+  }
 `;
+
 const StyledColorCheckIcon = styled.div`
   display: flex;
   justify-content: center;
@@ -71,6 +80,7 @@ const StyledThinArrow = styled(ThinArrow)`
 const ServiceDetailFooter = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 2rem 0 1rem 0;
 
   .service-detail__read-more {
     display: flex;
@@ -124,7 +134,9 @@ const ServiceDetail = ({ index, handleClose }) => {
       <ul>
         {prosList.map((profit) => (
           <StyledBenefits key={uuid()}>
-            <ColorCheckIcon color={accentColor} className="service-detail__check" />
+            <div className="service-detail__check">
+              <ColorCheckIcon color={accentColor} />
+            </div>
             <TextParagraph size="sm">{profit}</TextParagraph>
           </StyledBenefits>
         ))}
