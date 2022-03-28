@@ -5,7 +5,7 @@ import MottoInterlude from 'src/components/MottoInterlude';
 import ServicesAxis from 'src/components/ServicesAxis';
 import BlogShort from 'src/components/BlogShort';
 import IdeaInterlude from 'src/components/IdeaInterlude';
-import Testimonials from '../src/components/Testimonials';
+import Testimonials from 'src/components/Testimonials';
 
 export default function Home() {
   return (
