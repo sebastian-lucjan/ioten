@@ -25,46 +25,40 @@ const services = {
     {
       heading: 'Koncept & Wireframing',
       introParagraph:
-        'W oparciu o analizy, wymagania i pomysły wyklarowane w strategii, tworzone są makiety strony oraz persony mające być odpowiednio szkieletem przyszłej strony',
+        'W oparciu o analizy, wymagania i pomysły wyklarowane w strategii, tworzone są makiety strony oraz persony mające być odpowiednio szkieletem przyszłej strony i drogowskazem dla projektowania doświadczeń użytkownika.',
       prosList: [
-        'Stworzenie Persony czyli hipotetycznego użytkownika produktu',
-        'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
-        'Wireframing strony',
+        'Stworzenie Persony czyli hipotetycznego użytkownika produktu,',
+        'Roadmapa projektu czyli określenie celów i kamieni milowych współpracy,',
+        'Wireflow i wireframing strony',
       ],
-      endParagraph: 'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie, biznesu. Estetyka i funkcjonalność ma u nas.',
+      endParagraph:
+        'Efektem finalnym jest wireframe aplikacji oraz persona użytkownika. Na tym etapie budowany jest fundament pod przyszły design strony.',
     },
     {
       heading: 'Design',
       introParagraph:
-        'Zaprojektujemy i zbudujemy niesamowicie szybką stronę www dla Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
-      prosList: [
-        'Zaprojektujemy i zbudujemy niesamowicie ioten.io',
-        'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
-        'Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
-      ],
-      endParagraph: 'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie, biznesu. Estetyka i funkcjonalność ma u nas.',
+        'Kolejnym etapem po przygotowaniu makiet jest UI Design, czyli opracowanie tego, jak wizualnie będzie wyglądał interfejs użytkownika lub oprogramowanie serwisu. W trakcie projektowania dobierany jest styl wizualny. Obejmuje takie aspekty jak typografia, ikony i kolory, ale także wykorzystanie przestrzeni między poszczególnymi elementami. Mockups Design charakteryzuje się również tym, że przygotowane ekrany wyglądają tak samo, jak będzie wyglądał finalny produkt.',
+      prosList: ['Dobranie kolorystyki, typografii, ikon', 'Przygotowanie wizualnej makiety strony.', 'Akceptacja finalnego wyglądu.'],
+      endParagraph:
+        'Efektem tego etapu jest materializacja większości założeń wypracowanych w poprzednich etapach. Optymalnie przeprowadzony etap designu pozwala płynnie, bez blokad decyzyjnych przeprowadzić etap wdrażania produktu',
     },
     {
       heading: 'Development',
       introParagraph:
-        'Zaprojektujemy i zbudujemy niesamowicie szybką stronę www dla Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
-      prosList: [
-        'Zaprojektujemy i zbudujemy niesamowicie ioten.io',
-        'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
-        'Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
-      ],
-      endParagraph: 'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie, biznesu. Estetyka i funkcjonalność ma u nas.',
+        'Budujemy niesamowicie szybką stronę www dla Twojego biznesu w oparciu o wypracowany we wcześniejszym projekcie design. Używamy nowoczesnych technologii jak biblioteka React, czy framework Next.js.',
+      prosList: ['Dobór optymalnej technologi dla Twojej strony.', 'Przełożenie finalnego designu na kod.', 'Weryfikacja założeń, ostatnie szlify.'],
+      endParagraph: 'Przed finalnym umieszczeniem na serwerze klient może zobaczyć swoją stronę w środowisku tesotowym na testowym hostingu.',
     },
     {
-      heading: 'Optymalizacje & Wsparcie',
-      introParagraph:
-        'Zaprojektujemy i zbudujemy niesamowicie szybką stronę www dla Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
+      heading: 'Optymalizacja & Wsparcie',
+      introParagraph: 'Umieszczenie strony na serwerze. Możliwe rozszerzenie współpracy o wsparcie w trakcie użytkowania strony.',
       prosList: [
-        'Zaprojektujemy i zbudujemy niesamowicie ioten.io',
-        'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
-        'Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
+        'Umieszczenie strony na serwerze,',
+        'Przekazanie niezbędnej wiedzy w celu obsługi strony.',
+        'Ewentualne wsparcie w trakcie funkcjonowania strony.',
       ],
-      endParagraph: 'Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie, biznesu. Estetyka i funkcjonalność ma u nas.',
+      endParagraph:
+        'Zakończenie współpracy albo wręcz przeciwnie... Jesteśmy otwarci na dalszą współpracę w celu doskonalenia strony bądź jej rozbudowywania.',
     },
   ],
 };

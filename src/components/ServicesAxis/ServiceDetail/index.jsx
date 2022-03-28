@@ -31,19 +31,21 @@ const StyledLogo = styled.div`
   transform: scale(0.6);
 `;
 
-const StyledBenefits = styled.li`
+const StyledBenefit = styled.li`
   position: relative;
   list-style: none;
   display: flex;
   align-items: flex-start;
-  margin-bottom: 0.8rem;
-  height: 100%;
 
   .service-detail__check {
     display: flex;
     align-items: center;
     height: 32px;
   }
+`;
+
+const StyledBenefitsList = styled.div`
+  margin: 2rem 0;
 `;
 
 const StyledColorCheckIcon = styled.div`
@@ -76,6 +78,23 @@ const StyledThinArrow = styled(ThinArrow)`
   ${({ color }) => (color ? `color: ${color}` : '')} //passed color
   margin-left: 1.6rem;
 `;
+
+const BenefitsList = ({ prosList, index }) => {
+  const accentColor = rainbowColors[index];
+
+  return (
+    <StyledBenefitsList>
+      {prosList.map((profit) => (
+        <StyledBenefit key={uuid()}>
+          <div className="service-detail__check">
+            <ColorCheckIcon color={accentColor} />
+          </div>
+          <TextParagraph size="sm">{profit}</TextParagraph>
+        </StyledBenefit>
+      ))}
+    </StyledBenefitsList>
+  );
+};
 
 const ServiceDetailFooter = styled.div`
   display: flex;
@@ -131,16 +150,7 @@ const ServiceDetail = ({ index, handleClose }) => {
         </StyledDetailHeader>
       </IconContext.Provider>
 
-      <ul>
-        {prosList.map((profit) => (
-          <StyledBenefits key={uuid()}>
-            <div className="service-detail__check">
-              <ColorCheckIcon color={accentColor} />
-            </div>
-            <TextParagraph size="sm">{profit}</TextParagraph>
-          </StyledBenefits>
-        ))}
-      </ul>
+      <BenefitsList prosList={prosList} index={index} />
 
       <TextParagraph size="sm">{endParagraph}</TextParagraph>
 
