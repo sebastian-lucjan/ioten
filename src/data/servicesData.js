@@ -46,7 +46,12 @@ const services = {
       heading: 'Development',
       introParagraph:
         'Budujemy niesamowicie szybką stronę www dla Twojego biznesu w oparciu o wypracowany we wcześniejszym projekcie design. Używamy nowoczesnych technologii jak biblioteka React, czy framework Next.js.',
-      prosList: ['Dobór optymalnej technologi dla Twojej strony.', 'Przełożenie finalnego designu na kod.', 'Weryfikacja założeń, ostatnie szlify.'],
+      prosList: [
+        'Dobór optymalnej technologi dla Twojej strony.',
+        'Przełożenie finalnego designu na kod.',
+        'Połączenie strony z sytemem zarządzania treścią CMS',
+        'Weryfikacja założeń, ostatnie szlify.',
+      ],
       endParagraph: 'Przed finalnym umieszczeniem na serwerze klient może zobaczyć swoją stronę w środowisku tesotowym na testowym hostingu.',
     },
     {
@@ -58,7 +63,7 @@ const services = {
         'Ewentualne wsparcie w trakcie funkcjonowania strony.',
       ],
       endParagraph:
-        'Zakończenie współpracy albo wręcz przeciwnie... Jesteśmy otwarci na dalszą współpracę w celu doskonalenia strony bądź jej rozbudowywania.',
+        'Zakończenie współpracy albo wręcz przeciwnie... Jesteśmy otwarci na dalszą kooperację w celu doskonalenia strony bądź jej rozbudowywania.',
     },
   ],
 };

@@ -9,6 +9,10 @@ const MainSectionWrapper = styled.section`
   min-height: ${({ smaller }) => (smaller ? 'unset' : '100vh')};
   background: ${({ colors }) => colors.background};
 
+  ${({ theme }) => theme.mq.tablet} {
+    min-height: 0;
+  }
+
   &::after,
   &::before {
     content: '';

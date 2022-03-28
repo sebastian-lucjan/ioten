@@ -24,7 +24,7 @@ const Footer = () => {
   return (
     <MainSectionWrapper colors={{ background: white, lines: yellowToGray }}>
       <Wrapper>
-        <StyledFooterSection>
+        <StyledFooterSection className="footer__contact">
           <FooterHeading>{heading}</FooterHeading>
           {text.map((textLine) => (
             <FooterItem key={uuid()}>{textLine}</FooterItem>
@@ -58,15 +58,12 @@ const Footer = () => {
           ))}
         </StyledFooterSection>
 
-        <StyledFooterSection>
+        <StyledFooterSection className="footer__social-media">
           <FooterHeading>{socialMediaHeading}</FooterHeading>
           <SocialMedias />
         </StyledFooterSection>
-
-        <FooterRights />
-        {/* <StyledFooterSection> */}
-        {/* </StyledFooterSection> */}
       </Wrapper>
+      <FooterRights />
     </MainSectionWrapper>
   );
 };

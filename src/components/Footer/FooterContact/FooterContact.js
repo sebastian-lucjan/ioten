@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import mixines from 'src/assets/styles/mixines';
 
 const StyledFooterContacts = styled.article`
-  margin: 2rem 0;
+  margin: 2rem 0 0 0;
 
   .footer__contact-label,
   .footer__contact-email,
