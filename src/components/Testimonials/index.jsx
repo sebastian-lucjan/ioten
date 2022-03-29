@@ -10,8 +10,7 @@ import IRingFront from 'src/assets/images/i-ring-front-lg.svg';
 import IRingBack from 'src/assets/images/i-ring-back-lg.svg';
 import ORingFront from 'src/assets/images/o-ring-front-md.svg';
 import ORingBack from 'src/assets/images/o-ring-back-md.svg';
-import { TextParagraph, TextWrapper } from '../TextComponents';
-import TestimonialsCaption from './Testimonials.styles';
+import { TestimonialsCaption, TestimonialsParagraph, TestimonialsWrapper } from './Testimonials.styles';
 
 const StyledMediumIRing = styled.div`
   & * {
@@ -51,13 +50,13 @@ const TestimonialsInterlude = () => {
 
   return (
     <MainSectionWrapper colors={{ background: white, lines: lightGray }} smaller>
-      <TextWrapper noAlign className="motto">
+      <TestimonialsWrapper noAlign className="motto">
         <Slider {...settings}>
           {testimonials.map((testimonial) => (
             <div key={uuid()}>
-              <TextParagraph weight="bold" className="motto__text">
+              <TestimonialsParagraph weight="bold" className="motto__text">
                 {testimonial.text}
-              </TextParagraph>
+              </TestimonialsParagraph>
               <TestimonialsCaption className="motto__caption">
                 <span className="motto__caption-line" />
                 <div>{testimonial.caption}</div>
@@ -65,7 +64,7 @@ const TestimonialsInterlude = () => {
             </div>
           ))}
         </Slider>
-      </TextWrapper>
+      </TestimonialsWrapper>
 
       <StyledMediumIRing>
         <IRingFront />
@@ -81,5 +80,3 @@ const TestimonialsInterlude = () => {
 };
 
 export default TestimonialsInterlude;
-
-// todo: motto text should be rewritten

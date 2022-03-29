@@ -1,10 +1,25 @@
 import styled from 'styled-components';
+import { TextWrapper } from 'src/components/TextComponents';
+
+export const WrapperBlogShort = styled(({ short, ...props }) => <TextWrapper short={short} {...props} />)`
+  ${({ theme }) => theme.mq.tablet} {
+    padding: 0 10vw;
+  } ;
+`;
 
 export const ImagePlaceholder = styled.div`
   height: 200px;
   width: 100%;
   background-color: lightgrey;
   margin: 1rem 0;
+`;
+
+export const BlogPostsContainer = styled.div`
+  ${({ theme }) => theme.mq.tablet} {
+    width: 100%;
+    display: flex;
+    //flex-basis: 30%;
+  } ;
 `;
 
 export const StyledPost = styled.div`
@@ -14,6 +29,15 @@ export const StyledPost = styled.div`
     //control all inside paragraphs
     margin: 2rem 0 0 0;
   }
+
+  ${({ theme }) => theme.mq.tablet} {
+    width: 30%;
+    margin: 0 5% 4rem 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  } ;
 `;
 
 export const StyledLink = styled.a`

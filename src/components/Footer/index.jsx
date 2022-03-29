@@ -4,6 +4,7 @@ import theme from 'src/assets/styles/theme';
 import { footerData, navigationData } from 'src/data/pageData';
 import services from 'src/data/servicesData';
 import { v4 as uuid } from 'uuid';
+import Grid from 'src/components/Grid';
 import { FooterHeading, FooterItem, FooterSoonItem, StyledFooterSection, Wrapper } from './Footer.styles';
 import SocialMedias from '../SocialMedias';
 import FooterContact from './FooterContact';
@@ -22,7 +23,7 @@ const Footer = () => {
   } = footerData;
 
   return (
-    <MainSectionWrapper colors={{ background: white, lines: yellowToGray }}>
+    <MainSectionWrapper colors={{ background: white }}>
       <Wrapper>
         <StyledFooterSection className="footer__contact">
           <FooterHeading>{heading}</FooterHeading>
@@ -64,6 +65,7 @@ const Footer = () => {
         </StyledFooterSection>
       </Wrapper>
       <FooterRights />
+      <Grid colors={{ lines: yellowToGray }} />
     </MainSectionWrapper>
   );
 };

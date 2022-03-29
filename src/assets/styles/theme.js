@@ -55,8 +55,8 @@ const theme = {
     bigMobile: '@media(min-width: 460px)',
     tablet: '@media(min-width: 768px)',
     desktop: '@media(min-width: 1024px)',
-    bigDesktop: '@media(min-width: 1280px)',
-    hugeDesktop: '@media(min-width: 1440px)',
+    mediumDesktop: '@media(min-width: 1280px)',
+    bigDesktop: '@media(min-width: 1440px)',
   },
   zIndex: {
     highest: 4,

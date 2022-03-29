@@ -56,6 +56,7 @@ module.exports = {
     'react/jsx-no-constructed-context-values': 'off',
     'react/jsx-max-props-per-line': [1, { maximum: 6 }],
     'react/self-closing-comp': 'off',
+    'react/jsx-filename-extension': 'off',
     // 'object-curly-newline': 'off',
   },
 };

@@ -4,6 +4,7 @@ import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWra
 import theme from 'src/assets/styles/theme';
 import { TextHeading, TextParagraph } from 'src/components/TextComponents';
 import { IdeaButton, IdeaInterludeWrapper } from 'src/components/IdeaInterlude/IdeaInterlude.styles';
+import Grid from '../Grid';
 
 const IdeaInterlude = () => {
   const { heading, paragraph, button } = ideaInterlude;
@@ -14,11 +15,12 @@ const IdeaInterlude = () => {
   } = theme;
 
   return (
-    <MainSectionWrapper colors={{ background: yellowHaveIdea, lines: yellow }}>
+    <MainSectionWrapper colors={{ background: yellowHaveIdea }}>
       <IdeaInterludeWrapper>
         <TextHeading as="h2" size="lg" bolder className="idea-interlude__heading">
           {heading}
         </TextHeading>
+
         <TextParagraph className="idea-interlude__paragraph">{paragraph}</TextParagraph>
         <div className="idea-interlude__button">
           <Link href="/contact" as="/kontakt">
@@ -26,6 +28,7 @@ const IdeaInterlude = () => {
           </Link>
         </div>
       </IdeaInterludeWrapper>
+      <Grid colors={{ lines: yellow }} />
     </MainSectionWrapper>
   );
 };

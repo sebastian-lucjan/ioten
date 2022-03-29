@@ -26,12 +26,14 @@ export const IdeaInterludeWrapper = styled(({ ...props }) => <TextWrapper {...pr
       display: flex;
       align-items: center;
       line-height: 28px;
+      padding: 0 20px;
     }
     .idea-interlude__button {
       height: 100%;
       display: flex;
       align-items: center;
       grid-area: 2 / 2 / 3 / 3;
+      padding: 0 20px;
     }
   }
 `;
