@@ -2,8 +2,8 @@ import { ideaInterlude } from 'src/data/mainPage';
 import Link from 'next/link';
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import theme from 'src/assets/styles/theme';
-import IdeaButton from './IdeaInterlude.styles';
-import { TextHeading, TextParagraph, TextWrapper } from '../TextComponents';
+import { TextHeading, TextParagraph } from 'src/components/TextComponents';
+import { IdeaButton, IdeaInterludeWrapper } from 'src/components/IdeaInterlude/IdeaInterlude.styles';
 
 const IdeaInterlude = () => {
   const { heading, paragraph, button } = ideaInterlude;
@@ -15,15 +15,17 @@ const IdeaInterlude = () => {
 
   return (
     <MainSectionWrapper colors={{ background: yellowHaveIdea, lines: yellow }}>
-      <TextWrapper fullHeight>
-        <TextHeading as="h2" size="lg" bolder>
+      <IdeaInterludeWrapper>
+        <TextHeading as="h2" size="lg" bolder className="idea-interlude__heading">
           {heading}
         </TextHeading>
-        <TextParagraph>{paragraph}</TextParagraph>
-        <Link href="/contact" as="/kontakt">
-          <IdeaButton type="button">{button}</IdeaButton>
-        </Link>
-      </TextWrapper>
+        <TextParagraph className="idea-interlude__paragraph">{paragraph}</TextParagraph>
+        <div className="idea-interlude__button">
+          <Link href="/contact" as="/kontakt">
+            <IdeaButton type="button">{button}</IdeaButton>
+          </Link>
+        </div>
+      </IdeaInterludeWrapper>
     </MainSectionWrapper>
   );
 };
