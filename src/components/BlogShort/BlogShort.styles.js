@@ -3,7 +3,7 @@ import { TextWrapper } from 'src/components/TextComponents';
 
 export const WrapperBlogShort = styled(({ short, ...props }) => <TextWrapper short={short} {...props} />)`
   ${({ theme }) => theme.mq.tablet} {
-    padding: 0 10vw;
+    padding: 10vw;
   } ;
 `;
 
@@ -18,7 +18,6 @@ export const BlogPostsContainer = styled.div`
   ${({ theme }) => theme.mq.tablet} {
     width: 100%;
     display: flex;
-    //flex-basis: 30%;
   } ;
 `;
 

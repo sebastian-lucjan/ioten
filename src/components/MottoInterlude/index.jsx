@@ -4,8 +4,8 @@ import { motto } from 'src/data/pageData';
 import IRingFront from 'src/assets/images/i-ring-front-lg.svg';
 import IRingBack from 'src/assets/images/i-ring-back-lg.svg';
 import styled from 'styled-components';
-import MottoCaption from './MottoInterlude.styles';
-import { TextParagraph, TextWrapper } from '../TextComponents';
+import Grid from 'src/components/Grid';
+import { MottoCaption, MottoParagraph, MottoWrapper } from './MottoInterlude.styles';
 
 const StyledMediumRing = styled.div`
   & * {
@@ -14,7 +14,7 @@ const StyledMediumRing = styled.div`
     right: 0.4rem;
   }
   *:nth-child(1) {
-    z-index: ${({ theme: { zIndex } }) => zIndex.top};
+    z-index: ${({ theme: { zIndex } }) => zIndex.highest};
   }
 `;
 
@@ -25,16 +25,17 @@ const MottoInterlude = () => {
 
   return (
     <MainSectionWrapper colors={{ background: white, lines: lightGray }} smaller>
-      <TextWrapper className="motto">
-        <TextParagraph weight="bold" className="motto__text">
+      <MottoWrapper>
+        <MottoParagraph weight="bold" className="motto__text">
           {motto.text}
-        </TextParagraph>
+        </MottoParagraph>
         <MottoCaption className="motto__caption">{motto.caption}</MottoCaption>
-      </TextWrapper>
+      </MottoWrapper>
       <StyledMediumRing>
         <IRingFront />
         <IRingBack />
       </StyledMediumRing>
+      <Grid />
     </MainSectionWrapper>
   );
 };

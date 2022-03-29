@@ -8,6 +8,7 @@ export const ServiceStage = styled.div`
   margin-left: 20px;
   color: ${({ theme, color, isActive }) => (isActive ? color : theme.color.darkestGray)};
   cursor: pointer;
+  z-index: ${({ theme }) => theme.zIndex.highest};
 
   &:after {
     display: block;
@@ -30,6 +31,7 @@ export const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
   padding: ${({ short }) => (short ? '40px' : '100px 40px')};
   color: ${({ theme }) => theme.color.darkestGray};
   height: ${({ short }) => (short ? 'unset' : '100vh')};
@@ -84,24 +86,4 @@ export const StyledServicesAxis = styled.section`
   width: 100%;
   min-height: ${({ smaller }) => (smaller ? '' : '100vh')};
   background: ${({ colors }) => colors.background};
-
-  &::after,
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 2px;
-    top: 0;
-    background: ${({ theme, colors, desaturate }) => (desaturate ? theme.color.lightGray : colors.lines)};
-    z-index: ${({ theme }) => theme.zIndex.top};
-  }
-
-  &::after {
-    left: 20px;
-  }
-
-  &::before {
-    right: 20px;
-  }
 `;

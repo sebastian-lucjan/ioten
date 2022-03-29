@@ -10,6 +10,7 @@ import IRingFront from 'src/assets/images/i-ring-front-lg.svg';
 import IRingBack from 'src/assets/images/i-ring-back-lg.svg';
 import ORingFront from 'src/assets/images/o-ring-front-md.svg';
 import ORingBack from 'src/assets/images/o-ring-back-md.svg';
+import Grid from 'src/components/Grid';
 import { TestimonialsCaption, TestimonialsParagraph, TestimonialsWrapper } from './Testimonials.styles';
 
 const StyledMediumIRing = styled.div`
@@ -65,6 +66,8 @@ const TestimonialsInterlude = () => {
           ))}
         </Slider>
       </TestimonialsWrapper>
+
+      <Grid />
 
       <StyledMediumIRing>
         <IRingFront />

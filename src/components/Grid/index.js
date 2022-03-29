@@ -1,6 +1,6 @@
 import { StyledGrid, Line } from './Grid.styles';
 
-const Grid = ({ colors }) => {
+const Grid = ({ colors = { lines: 'lightgray' } }) => {
   const lineColor = { ...colors };
 
   if (!lineColor?.innerLines) {

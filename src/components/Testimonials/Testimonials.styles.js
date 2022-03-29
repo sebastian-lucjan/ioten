@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { TextParagraph, TextWrapper } from 'src/components/TextComponents';
 
 export const TestimonialsWrapper = styled(({ ...props }) => <TextWrapper {...props} />)`
-  //margin: 0 20vw;
   ${({ theme }) => theme.mq.tablet} {
     display: flex;
     justify-content: center;

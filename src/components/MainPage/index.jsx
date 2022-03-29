@@ -1,20 +1,12 @@
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import theme from 'src/assets/styles/theme';
-import styled from 'styled-components';
 import { useState } from 'react';
 import MainPageContext from 'src/context/mainPageContext';
+import Grid from 'src/components/Grid';
 import MainViewsNavigation from './MainViewsNavigation';
 import MainViewsInfo from './MainViewsinfo';
 import Wrapper from './MainPage.styles';
-
-const AnimationPlaceholder = styled.div`
-  position: absolute;
-  top: 25vh;
-  left: 0;
-  width: 100%;
-  height: 40vh;
-  background-color: #ff5659;
-`;
+import { AnimationPlaceholder } from './MainViewsInfo/MainViewInfo.styles';
 
 const MainPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -30,8 +22,9 @@ const MainPage = () => {
         <Wrapper>
           <AnimationPlaceholder />
           <MainViewsInfo />
-          <MainViewsNavigation />
         </Wrapper>
+        <MainViewsNavigation />
+        <Grid />
       </MainPageContext.Provider>
     </MainSectionWrapper>
   );

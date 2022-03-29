@@ -6,6 +6,13 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  ${({ theme }) => theme.mq.desktop} {
+    //background-color: blue;
+    flex-direction: row;
+    top: unset;
+    position: unset;
+  } ;
 `;
 
 export default Wrapper;

@@ -5,6 +5,7 @@ import theme, { rainbowColors } from 'src/assets/styles/theme';
 import services from 'src/data/servicesData';
 import useServicePopup from 'src/hooks/useServicePopup';
 import { TextHeading, TextParagraph } from 'src/components/TextComponents';
+import Grid from 'src/components/Grid';
 import { StyledWrapper, StyledServicesAxis, ServiceStage } from './ServicesAxis.styles';
 import ServiceDetail from './ServiceDetail';
 
@@ -21,7 +22,7 @@ const ServicesAxis = () => {
 
   return (
     <section className="services-axis">
-      <MainSectionWrapper as="article" colors={{ background: lightGrayAxisSection, lines: lightGray }}>
+      <MainSectionWrapper as="article" colors={{ background: lightGrayAxisSection }}>
         <StyledWrapper short>
           <article>
             <TextHeading as="h2" size="md">
@@ -42,6 +43,7 @@ const ServicesAxis = () => {
               Zakres projektu jest dostosowywany do wymagań klienta ale przykładową kolejność działań możesz zobaczyć pod spodem.
             </TextParagraph>
           </article>
+          <Grid />
         </StyledWrapper>
 
         <StyledServicesAxis as="article" desaturate={isOpen} colors={{ background: transparent, lines: servicesAxis }}>
@@ -53,6 +55,7 @@ const ServicesAxis = () => {
             ))}
           </StyledWrapper>
           {isOpen ? <ServiceDetail index={serviceIndex} handleClose={() => setIsOpen(false)} /> : null}
+          <Grid colors={{ lines: servicesAxis, innerLines: lightGray }} />
         </StyledServicesAxis>
 
         <StyledWrapper short>
@@ -63,6 +66,7 @@ const ServicesAxis = () => {
             Kiedy kończy się współpraca? To zależy od Ciebie. Bez problemy możemy zostać z Tobą i uczestniczyć w dalszym rozwoju Twojej firmy.
             <span className="services-axis__sign-question-mark" />
           </TextParagraph>
+          <Grid />
         </StyledWrapper>
       </MainSectionWrapper>
     </section>

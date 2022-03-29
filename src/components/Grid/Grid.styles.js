@@ -10,6 +10,7 @@ export const StyledGrid = styled.div`
 `;
 
 export const Line = styled.span`
+  position: absolute;
   height: 100%;
   width: 1px;
   background: ${({ color }) => color};

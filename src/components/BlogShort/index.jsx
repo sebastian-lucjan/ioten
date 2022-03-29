@@ -4,19 +4,20 @@ import { blogData, blogPosts } from 'src/data/blogData';
 import { TextCaption, TextHeading } from 'src/components/TextComponents';
 import { v4 as uuid } from 'uuid';
 import Link from 'next/link';
+import Grid from 'src/components/Grid';
+import BlogPost from 'src/components/BlogShort/BlogPost';
 import { BlogPostsContainer, StyledLink, WrapperBlogShort } from './BlogShort.styles';
-import BlogPost from './BlogPost';
 
 const BlogShort = () => {
   const {
     color: { white },
-    gradient: { grayToYellow },
+    gradient: { grayToYellow, yellowTransparentGray },
   } = theme;
 
   const { category, heading, blogLink } = blogData.intro;
 
   return (
-    <MainSectionWrapper colors={{ background: white, lines: grayToYellow }}>
+    <MainSectionWrapper colors={{ background: white }}>
       <WrapperBlogShort short>
         <TextCaption>{category}</TextCaption>
         <TextHeading size="md">{heading}</TextHeading>
@@ -30,6 +31,7 @@ const BlogShort = () => {
         </BlogPostsContainer>
         {/* <Image loader={() => 'myLoader'} src="me.png" alt="Picture of the author" width={500} height={500} /> */}
       </WrapperBlogShort>
+      <Grid colors={{ lines: grayToYellow, innerLines: yellowTransparentGray }} />
     </MainSectionWrapper>
   );
 };
