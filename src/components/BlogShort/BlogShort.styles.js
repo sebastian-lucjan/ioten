@@ -4,7 +4,15 @@ import { TextWrapper } from 'src/components/TextComponents';
 export const WrapperBlogShort = styled(({ short, ...props }) => <TextWrapper short={short} {...props} />)`
   ${({ theme }) => theme.mq.tablet} {
     padding: 10vw;
-  } ;
+  }
+
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    padding: 10vw 15vw;
+  }
+
+  ${({ theme }) => theme.mq.hugeDesktop} {
+    padding: 10vw 20vw;
+  }
 `;
 
 export const ImagePlaceholder = styled.div`
@@ -12,6 +20,19 @@ export const ImagePlaceholder = styled.div`
   width: 100%;
   background-color: lightgrey;
   margin: 1rem 0;
+`;
+
+export const BlogIntroHeading = styled.p`
+  position: relative;
+  z-index: ${({ theme }) => theme.zIndex.top};
+  font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
+  font-weight: normal;
+  font-size: ${({ theme }) => theme.font.size.headingMedium};
+  ${({ color }) => (color ? `color: ${color}` : '')} //passed color
+  
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    font-size: ${({ theme }) => theme.font.size.headingSection};
+  } ;
 `;
 
 export const BlogPostsContainer = styled.div`

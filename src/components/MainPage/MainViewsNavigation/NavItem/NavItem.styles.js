@@ -31,11 +31,11 @@ export const StyledNavItem = styled.div`
   }
 
   ${({ theme }) => theme.mq.smallDesktop} {
-    width: 30%;
+    width: 35%;
   }
 
   ${({ theme }) => theme.mq.mediumDesktop} {
-    width: 26%;
+    width: 28%;
   }
 
   ${({ theme }) => theme.mq.hugeDesktop} {
@@ -46,6 +46,10 @@ export const StyledNavItem = styled.div`
 export const StyledTextContent = styled.div`
   width: 70%;
   text-align: ${({ type }) => (type === 'next' ? 'right' : 'left')};
+
+  ${({ theme }) => theme.mq.tablet} {
+    padding: 0 0.8rem;
+  } ;
 `;
 
 export const StyledHeading = styled.h3`
@@ -62,6 +66,10 @@ export const StyledHeading = styled.h3`
   }
 
   ${({ theme }) => theme.mq.smallDesktop} {
+    font-size: ${({ theme }) => theme.font.size.paragraphSmall};
+  }
+
+  ${({ theme }) => theme.mq.desktop} {
     font-size: ${({ theme }) => theme.font.size.paragraph};
   }
 
@@ -82,6 +90,10 @@ export const StyledParagraph = styled.p`
 
   ${({ theme }) => theme.mq.tablet} {
     display: block;
+  }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    font-size: ${({ theme }) => theme.font.size.smallText};
   }
 
   ${({ theme }) => theme.mq.mediumDesktop} {

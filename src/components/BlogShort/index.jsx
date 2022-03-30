@@ -1,12 +1,12 @@
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import theme from 'src/assets/styles/theme';
 import { blogData, blogPosts } from 'src/data/blogData';
-import { TextCaption, TextHeading } from 'src/components/TextComponents';
+import { TextCaption } from 'src/components/TextComponents';
 import { v4 as uuid } from 'uuid';
 import Link from 'next/link';
 import Grid from 'src/components/Grid';
 import BlogPost from 'src/components/BlogShort/BlogPost';
-import { BlogPostsContainer, StyledLink, WrapperBlogShort } from './BlogShort.styles';
+import { BlogIntroHeading, BlogPostsContainer, StyledLink, WrapperBlogShort } from './BlogShort.styles';
 
 const BlogShort = () => {
   const {
@@ -20,7 +20,7 @@ const BlogShort = () => {
     <MainSectionWrapper colors={{ background: white }}>
       <WrapperBlogShort short>
         <TextCaption>{category}</TextCaption>
-        <TextHeading size="md">{heading}</TextHeading>
+        <BlogIntroHeading size="md">{heading}</BlogIntroHeading>
         <Link href="/blog">
           <StyledLink>{blogLink}</StyledLink>
         </Link>

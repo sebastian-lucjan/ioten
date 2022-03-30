@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { TextHeading } from 'src/components/TextComponents';
 
 export const ServiceStage = styled.div`
   position: relative;
@@ -25,6 +26,18 @@ export const ServiceStage = styled.div`
     border-radius: 50%;
     z-index: ${({ theme }) => theme.zIndex.peak};
   }
+
+  ${({ theme }) => theme.mq.desktop} {
+    font-size: ${({ theme }) => theme.font.size.headingSmall};
+  }
+
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    font-size: ${({ theme }) => theme.font.size.paragraphBig};
+  }
+
+  ${({ theme }) => theme.mq.hugeDesktop} {
+    font-size: ${({ theme }) => theme.font.size.headingMedium};
+  } ;
 `;
 
 export const StyledWrapper = styled.div`
@@ -98,4 +111,33 @@ export const StyledServicesAxis = styled.section`
   width: 100%;
   min-height: ${({ smaller }) => (smaller ? '' : '100vh')};
   background: ${({ colors }) => colors.background};
+`;
+
+export const IntroHeading = styled(({ ...props }) => <TextHeading as="h2" size="md" {...props} />)`
+  ${({ theme }) => theme.mq.desktop} {
+    font-size: ${({ theme }) => theme.font.size.paragraphBig};
+  }
+
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    font-size: ${({ theme }) => theme.font.size.headingMedium};
+  }
+
+  ${({ theme }) => theme.mq.hugeDesktop} {
+    font-size: ${({ theme }) => theme.font.size.headingSection};
+    padding: 30px 0 10px 0;
+  } ;
+`;
+
+export const OtherHeading = styled(({ ...props }) => <TextHeading as="h3" size="sm" {...props} />)`
+  ${({ theme }) => theme.mq.desktop} {
+    font-size: ${({ theme }) => theme.font.size.paragraph};
+  }
+
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    font-size: ${({ theme }) => theme.font.size.headingSmall};
+  }
+
+  ${({ theme }) => theme.mq.hugeDesktop} {
+    font-size: ${({ theme }) => theme.font.size.headingMedium};
+  } ;
 `;
