@@ -9,7 +9,7 @@ export const TestimonialsWrapper = styled(({ ...props }) => <TextWrapper {...pro
     padding: 10vh 15vw;
   }
 
-  ${({ theme }) => theme.mq.desktop} {
+  ${({ theme }) => theme.mq.smallDesktop} {
     padding: 10vh 20vw;
   } ;
 `;
@@ -19,7 +19,7 @@ export const TestimonialsParagraph = styled(({ ...props }) => <TextParagraph {..
     font-size: ${({ theme }) => theme.font.size.headingMedium};
     line-height: 42px;
   }
-  ${({ theme }) => theme.mq.desktop} {
+  ${({ theme }) => theme.mq.smallDesktop} {
   } ;
 `;
 

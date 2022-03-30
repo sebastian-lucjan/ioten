@@ -6,8 +6,8 @@ import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWra
 import { navigationData } from 'src/data/pageData';
 import theme from 'src/assets/styles/theme';
 import styled from 'styled-components';
-import StyledBurger from 'src/components/Burger/Burger.styles';
 import { useState } from 'react';
+import Index from 'src/components/Burger';
 import { Wrapper, StyledValuationButton, StyledMenu, StyledLink, StyledLogo } from './Navigation.styles';
 
 const LogoWrapper = styled.div`
@@ -45,17 +45,10 @@ const Navigation = () => {
         <Link href="/">
           <StyledLogo>
             <IotenLogo />
-            {/* <div> ioten</div> */}
           </StyledLogo>
         </Link>
       </LogoWrapper>
-      {/* {isOpen ? ( */}
-      <StyledBurger isOpen={isOpen} onClick={toggleNavigation}>
-        <div />
-        <div />
-        <div />
-      </StyledBurger>
-      {/* ) : null} */}
+      <Index isOpen={isOpen} toggleNavigation={toggleNavigation} />
       <Wrapper isOpen={isOpen}>
         <Link href="/">
           <StyledLogo>

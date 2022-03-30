@@ -4,7 +4,7 @@ import { useState } from 'react';
 import MainPageContext from 'src/context/mainPageContext';
 import Grid from 'src/components/Grid';
 import MainViewsNavigation from './MainViewsNavigation';
-import MainViewsInfo from './MainViewsinfo';
+import MainViewsInfo from './MainViewsInfo';
 import Wrapper from './MainPage.styles';
 import { AnimationPlaceholder } from './MainViewsInfo/MainViewInfo.styles';
 

@@ -5,12 +5,16 @@ export const StyledLink = styled.a`
   font-size: 22px;
   transform: ${({ type }) => (type === 'next' ? 'scaleX(-1)' : null)};
   line-height: 22px;
+  color: ${({ theme }) => theme.color.darkestGray};
+
+  ${({ theme }) => theme.mq.tablet} {
+    color: ${({ theme }) => theme.color.darkGray};
+  }
 `;
 
 export const StyledNavItem = styled.div`
   display: flex;
   flex-direction: ${({ type }) => (type === 'prev' ? 'row' : 'row-reverse')};
-  align-items: center;
   width: 50%;
   cursor: pointer;
 
@@ -33,9 +37,16 @@ export const StyledHeading = styled.h3`
   font-weight: normal;
   font-size: ${({ theme }) => theme.font.size.smallText};
   text-align: ${({ type }) => (type === 'next' ? 'right' : 'left')};
+  line-height: 24px;
+  color: ${({ theme }) => theme.color.darkestGray};
 
   ${({ theme }) => theme.mq.tablet} {
-    line-height: 32px;
+    color: ${({ theme }) => theme.color.darkerGray};
+    line-height: 24px;
+  }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    font-size: ${({ theme }) => theme.font.size.paragraph};
   } ;
 `;
 

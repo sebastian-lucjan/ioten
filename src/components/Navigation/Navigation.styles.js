@@ -87,13 +87,12 @@ export const StyledValuationButton = styled.button`
   color: ${({ theme }) => theme.color.darkestGray};
 
   ${({ theme }) => theme.mq.tablet} {
-    margin: 12px 48px;
+    margin: 12px 48px 12px 0;
     text-transform: unset;
     color: ${({ theme }) => theme.color.white};
     padding: 12px 28px;
     background-color: ${({ theme }) => theme.color.darkestGray};
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.7);
-    //display: none;
   }
 
   &::before {

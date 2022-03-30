@@ -12,7 +12,9 @@ const MainViewsInfo = () => {
   return (
     <StyledMainViewsInfo>
       <Wrapper>
-        <TextHeading size="md">{heading}</TextHeading>
+        <TextHeading as="h2" size="md">
+          {heading}
+        </TextHeading>
         <TextParagraph size="sm" lh="sm" weight="light">
           {paragraph}
         </TextParagraph>

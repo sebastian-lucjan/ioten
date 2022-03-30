@@ -20,11 +20,11 @@ const StyledMediumRing = styled.div`
 
 const MottoInterlude = () => {
   const {
-    color: { white, lightGray },
+    color: { white },
   } = theme;
 
   return (
-    <MainSectionWrapper colors={{ background: white, lines: lightGray }} smaller>
+    <MainSectionWrapper colors={{ background: white }} smaller>
       <MottoWrapper>
         <MottoParagraph weight="bold" className="motto__text">
           {motto.text}

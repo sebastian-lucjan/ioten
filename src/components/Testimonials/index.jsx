@@ -37,7 +37,7 @@ const StyledMediumORing = styled.div`
 
 const TestimonialsInterlude = () => {
   const {
-    color: { white, lightGray },
+    color: { white },
   } = theme;
 
   const settings = {
@@ -50,7 +50,7 @@ const TestimonialsInterlude = () => {
   };
 
   return (
-    <MainSectionWrapper colors={{ background: white, lines: lightGray }} smaller>
+    <MainSectionWrapper colors={{ background: white }} smaller>
       <TestimonialsWrapper noAlign className="motto">
         <Slider {...settings}>
           {testimonials.map((testimonial) => (

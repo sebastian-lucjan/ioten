@@ -12,7 +12,7 @@ export const TextWrapper = styled.div`
   padding: ${({ short }) => (short ? '40px 40px 80px 40px' : '100px 40px')};
   color: ${({ theme }) => theme.color.darkestGray};
   height: ${({ fullHeight }) => (fullHeight ? '100vh' : 'unset')};
-  z-index: ${({ theme }) => theme.zIndex.highest};
+  z-index: ${({ theme }) => theme.zIndex.top};
 `;
 
 export const TextParagraph = styled.p`
@@ -20,7 +20,7 @@ export const TextParagraph = styled.p`
   //weight -> choose font, different weights
   position: relative;
   display: block;
-  z-index: ${({ theme }) => theme.zIndex.highest};
+  z-index: ${({ theme }) => theme.zIndex.top};
 
   font-family: ${({ theme, weight }) => {
     switch (weight) {
@@ -75,7 +75,7 @@ export const TextHeading = styled.p`
   //bolder -> choose fontWeight between bold and black
   //size -> heading 3 sizes to choose
   position: relative;
-  z-index: ${({ theme }) => theme.zIndex.highest};
+  z-index: ${({ theme }) => theme.zIndex.top};
 
   font-family: ${({ theme, weight }) => {
     switch (weight) {

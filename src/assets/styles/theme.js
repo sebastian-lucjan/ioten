@@ -4,7 +4,7 @@ const theme = {
   color: {
     black: 'hsl(0, 0%, 15%)',
     darkestGray: 'hsl(0, 0%, 24%)',
-    darkerGray: 'hsl(0, 0%, 36%)',
+    darkerGray: 'hsl(0, 0%, 42%)',
     darkGray: 'hsl(0, 0%, 53%)',
     gray: 'hsl(0, 0%, 67%)',
     lightGray: 'hsl(0, 0%, 80%)',
@@ -23,6 +23,7 @@ const theme = {
     navyBlue: 'linear-gradient(80deg, rgba(76,65,107,1) 0%, rgba(72,59,76,1) 100%)',
     yellowToGray: 'linear-gradient(0deg, hsl(0, 0%, 80%) 0%, hsl(0, 0%, 80%) 75%, hsl(65, 88%, 48%) 100%)',
     yellowTransparentGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 1) 0%, hsl(0, 0%, 96%, 0) 20%, hsl(0, 0%, 96%, 0) 80% ,hsl(65, 88%, 48%) 100%)',
+    grayTransparentGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 1) 0%, hsl(0, 0%, 96%, 0) 20%, hsl(0, 0%, 96%, 0) 80% ,hsl(0, 0%, 80%, 1) 100%)',
     grayToYellow: 'linear-gradient(180deg, hsl(0, 0%, 80%) 0%, hsl(0, 0%, 80%) 75%, hsl(65, 88%, 48%) 100%)',
     lightGrayTransparantLightGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 0) 0%, hsl(0, 0%, 96%) 30%, hsl(0, 0%, 96%) 70% ,hsl(0, 0%, 0%, 0) 100%)',
     rainbow: {
@@ -33,6 +34,7 @@ const theme = {
   },
   font: {
     size: {
+      headingPage: '5.2rem',
       headingSection: '3.6rem',
       headingMedium: '2.8rem',
       paragraphBig: '2.4rem',
@@ -55,9 +57,10 @@ const theme = {
   mq: {
     bigMobile: '@media(min-width: 460px)',
     tablet: '@media(min-width: 768px)',
-    desktop: '@media(min-width: 1024px)',
-    mediumDesktop: '@media(min-width: 1280px)',
-    bigDesktop: '@media(min-width: 1440px)',
+    smallDesktop: '@media(min-width: 1024px)',
+    desktop: '@media(min-width: 1280px)',
+    mediumDesktop: '@media(min-width: 1440px)',
+    bigDesktop: '@media(min-width: 1600px)',
   },
   zIndex: {
     highest: 4,

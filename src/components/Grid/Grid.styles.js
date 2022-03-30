@@ -6,7 +6,7 @@ export const StyledGrid = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: ${({ theme }) => theme.zIndex.top};
+  z-index: ${({ theme }) => theme.zIndex.front};
 `;
 
 export const Line = styled.span`
@@ -32,7 +32,7 @@ export const Line = styled.span`
     top: 0;
     left: calc(25% + 10px);
 
-    ${({ theme }) => theme.mq.desktop} {
+    ${({ theme }) => theme.mq.smallDesktop} {
       display: block;
     }
   }
@@ -52,7 +52,7 @@ export const Line = styled.span`
     top: 0;
     left: calc(75% - 10px);
 
-    ${({ theme }) => theme.mq.desktop} {
+    ${({ theme }) => theme.mq.smallDesktop} {
       display: block;
     }
   }
