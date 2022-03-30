@@ -19,7 +19,7 @@ export const IdeaInterludeWrapper = styled(({ ...props }) => <TextWrapper {...pr
       display: flex;
       align-items: center;
       height: 100%;
-      padding: 20px;
+      padding: 40px;
     }
     .idea-interlude__paragraph {
       grid-area: 1 / 2 / 2 / 3;
@@ -33,7 +33,22 @@ export const IdeaInterludeWrapper = styled(({ ...props }) => <TextWrapper {...pr
       display: flex;
       align-items: center;
       grid-area: 2 / 2 / 3 / 3;
-      padding: 0 20px;
+      padding: 20px;
+    }
+  }
+
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    .idea-interlude__heading {
+      grid-area: 1 / 2 / 3 / 3;
+    }
+    .idea-interlude__paragraph {
+      font-size: ${({ theme }) => theme.font.size.paragraph};
+      grid-area: 1 / 3 / 2 / 4;
+    }
+    .idea-interlude__button {
+      grid-area: 2 / 3 / 3 / 4;
     }
   }
 `;
@@ -53,11 +68,19 @@ export const IdeaButton = styled.button`
   color: ${({ theme }) => theme.color.white};
 
   ${({ theme }) => theme.mq.tablet} {
-    //padding: 20px 0;
-    //height: 60px;
     font-size: ${({ theme }) => theme.font.size.paragraph};
     width: unset;
     margin: 0;
     padding: 1.4rem 4rem;
+  }
+
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    width: 100%;
+    font-size: ${({ theme }) => theme.font.size.headingSmall};
+  }
+
+  ${({ theme }) => theme.mq.hugeDesktop} {
+    width: unset;
+    font-size: ${({ theme }) => theme.font.size.headingSmall};
   }
 `;

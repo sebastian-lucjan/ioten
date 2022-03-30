@@ -27,27 +27,27 @@ const ServicesAxis = () => {
     return { lines: servicesAxis, innerLines: lightGray };
   };
 
+  const { intro, axisStart, axisEnd } = services.axisStages;
+
   return (
     <section className="services-axis">
       <MainSectionWrapper as="article" colors={{ background: lightGrayAxisSection }}>
         <StyledWrapper short>
           <article>
             <TextHeading as="h2" size="md">
-              Zbuduj usługę uszytą na swoją miarę
+              {intro.heading}
             </TextHeading>
             <TextParagraph className="services-axis__paragraph">
-              Współpraca z nami przebiega w kilku etapach, to od Ciebie zależy w którym momencie Twojego pomysłu się spotkamy. Z{' '}
-              <span className="services-axis__emphasis">ioten</span> możesz przedyskutować swoją strategię działania, obudować merytorycznie swój
+              Współpraca z nami przebiega w kilku etapach, to od Ciebie zależy w którym momencie Twojego pomysłu się spotkamy. Z
+              <span className="services-axis__emphasis"> ioten</span> możesz przedyskutować swoją strategię działania, obudować merytorycznie swój
               koncept a następnie uczestniczyć w procesie tworzenia strony od designu aż po wdrożenie.
             </TextParagraph>
           </article>
           <article>
             <TextHeading as="h3" size="sm" className="services-axis__sign-axis-start">
-              Oś czasu Twojego projektu
+              {axisStart.heading}
             </TextHeading>
-            <TextParagraph className="services-axis__paragraph">
-              Zakres projektu jest dostosowywany do wymagań klienta ale przykładową kolejność działań możesz zobaczyć pod spodem.
-            </TextParagraph>
+            <TextParagraph className="services-axis__paragraph">{axisStart.paragraph}</TextParagraph>
           </article>
           <Grid />
         </StyledWrapper>
@@ -66,12 +66,12 @@ const ServicesAxis = () => {
 
         <StyledWrapper short>
           <span className="services-axis__sign-question-mark">?</span>
-          <TextHeading as="h3" size="sm">
-            Zakończenie współpracy
-          </TextHeading>
-          <TextParagraph className="services-axis__paragraph">
-            Kiedy kończy się współpraca? To zależy od Ciebie. Bez problemy możemy zostać z Tobą i uczestniczyć w dalszym rozwoju Twojej firmy.
-          </TextParagraph>
+          <article>
+            <TextHeading as="h3" size="sm">
+              {axisEnd.heading}
+            </TextHeading>
+            <TextParagraph className="services-axis__paragraph">{axisEnd.paragraph}</TextParagraph>
+          </article>
           <Grid />
         </StyledWrapper>
       </MainSectionWrapper>

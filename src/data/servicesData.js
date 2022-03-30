@@ -9,6 +9,20 @@ const services = {
   ],
   serviceStagesIntro: 'Etapy',
   servicesStagesFooter: { heading: 'Chcesz poczytać więcej o ioten?', cta: 'Przeczytaj nasz wpis' },
+  axisStages: {
+    intro: {
+      heading: 'Zbuduj usługę uszytą na swoją miarę',
+      paragraph: `Współpraca z nami przebiega w kilku etapach, to od Ciebie zależy w którym momencie Twojego pomysłu się spotkamy. Z ioten możesz przedyskutować swoją strategię działania, obudować merytorycznie swój koncept a następnie uczestniczyć w procesie tworzenia strony od designu aż po wdrożenie.`,
+    },
+    axisStart: {
+      heading: 'Oś czasu Twojego projektu',
+      paragraph: 'Zakres projektu jest dostosowywany do wymagań klienta ale przykładową kolejność działań możesz zobaczyć pod spodem.',
+    },
+    axisEnd: {
+      heading: 'Zakończenie współpracy',
+      paragraph: 'Kiedy kończy się współpraca? To zależy od Ciebie. Bez problemy możemy zostać z Tobą i uczestniczyć w dalszym rozwoju Twojej firmy.',
+    },
+  },
   stages: [
     {
       heading: 'Strategia & Idea',

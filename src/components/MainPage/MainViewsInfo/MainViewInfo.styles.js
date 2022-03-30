@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { TextWrapper } from 'src/components/TextComponents';
 import AnimationOnePlaceholder from 'src/assets/images/animation-1-placeholder.svg';
+// import AnimationOnePlaceholderBricks from 'src/assets/images/text-io-block.svg';
+// import AnimationOnePlaceholderBricks from 'src/assets/images/text-io-block.svg';
 
 export const Wrapper = styled(TextWrapper)`
   padding: 0 40px;
@@ -59,6 +61,7 @@ export const StyledMainViewsInfo = styled.div`
   } ;
 `;
 
+// export const AnimationPlaceholder = styled(AnimationOnePlaceholder)`
 export const AnimationPlaceholder = styled(AnimationOnePlaceholder)`
   position: absolute;
   top: 20vh;
@@ -74,9 +77,17 @@ export const AnimationPlaceholder = styled(AnimationOnePlaceholder)`
 
   ${({ theme }) => theme.mq.smallDesktop} {
     margin-left: 0;
-    transform: scale(0.9);
+    transform: scale(1);
     height: 60vh;
     top: unset;
     position: unset;
-  } ;
+  }
+
+  // ${({ theme }) => theme.mq.smallDesktop} {
+  //   margin-left: 0;
+  //   transform: scale(1.6);
+  //   height: 60vh;
+  //   top: unset;
+  //   position: unset;
+  // } ;
 `;

@@ -22,3 +22,5 @@ export default function Home() {
     </>
   );
 }
+
+// todo: customize scrollbar -> not supported by firefox and IE (usage from 76% to 90%)

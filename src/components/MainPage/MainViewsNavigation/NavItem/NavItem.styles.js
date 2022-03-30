@@ -25,6 +25,22 @@ export const StyledNavItem = styled.div`
       display: block;
     }
   }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    width: 40%;
+  }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    width: 30%;
+  }
+
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    width: 26%;
+  }
+
+  ${({ theme }) => theme.mq.hugeDesktop} {
+    width: 25%;
+  }
 `;
 
 export const StyledTextContent = styled.div`
@@ -47,7 +63,12 @@ export const StyledHeading = styled.h3`
 
   ${({ theme }) => theme.mq.smallDesktop} {
     font-size: ${({ theme }) => theme.font.size.paragraph};
-  } ;
+  }
+
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    font-size: ${({ theme }) => theme.font.size.headingSmall};
+    line-height: 28px;
+  }
 `;
 
 export const StyledParagraph = styled.p`
@@ -61,5 +82,10 @@ export const StyledParagraph = styled.p`
 
   ${({ theme }) => theme.mq.tablet} {
     display: block;
+  }
+
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    font-size: ${({ theme }) => theme.font.size.paragraphSmall};
+    line-height: 24px;
   }
 `;

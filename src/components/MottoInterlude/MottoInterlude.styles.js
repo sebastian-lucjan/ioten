@@ -4,6 +4,7 @@ import { TextParagraph, TextWrapper } from '../TextComponents';
 export const MottoWrapper = styled(({ ...props }) => <TextWrapper {...props} />)`
   //margin: 0 20vw;
   ${({ theme }) => theme.mq.tablet} {
+    //position: relative;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -11,8 +12,14 @@ export const MottoWrapper = styled(({ ...props }) => <TextWrapper {...props} />)
   }
 
   ${({ theme }) => theme.mq.smallDesktop} {
-    padding: 10vh 20vw;
-  } ;
+    width: 45%;
+    margin: 0 auto;
+    padding: 10vh 0;
+  }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    padding: 15vh 0 12vh 0;
+  }
 `;
 
 export const MottoParagraph = styled(({ ...props }) => <TextParagraph {...props} />)`

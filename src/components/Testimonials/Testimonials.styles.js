@@ -10,8 +10,14 @@ export const TestimonialsWrapper = styled(({ ...props }) => <TextWrapper {...pro
   }
 
   ${({ theme }) => theme.mq.smallDesktop} {
-    padding: 10vh 20vw;
-  } ;
+    width: 45%;
+    margin: 0 auto;
+    padding: 10vh 0;
+  }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    padding: 15vh 0 12vh 0;
+  }
 `;
 
 export const TestimonialsParagraph = styled(({ ...props }) => <TextParagraph {...props} />)`

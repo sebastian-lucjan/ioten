@@ -61,6 +61,7 @@ const theme = {
     desktop: '@media(min-width: 1280px)',
     mediumDesktop: '@media(min-width: 1440px)',
     bigDesktop: '@media(min-width: 1600px)',
+    hugeDesktop: '@media(min-width: 1920px)',
   },
   zIndex: {
     10: 10,

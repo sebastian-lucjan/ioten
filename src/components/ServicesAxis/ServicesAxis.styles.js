@@ -36,6 +36,20 @@ export const StyledWrapper = styled.div`
   color: ${({ theme }) => theme.color.darkestGray};
   height: ${({ short }) => (short ? 'unset' : '100vh')};
 
+  ${({ theme }) => theme.mq.tablet} {
+    padding: 80px 40px;
+
+    article {
+      width: 48%;
+    }
+  }
+
+  ${({ theme }) => theme.mq.desktop} {
+    article {
+      width: 23%;
+    }
+  }
+
   article:nth-child(1) {
     padding: 0 0 60px 0;
   }
