@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   background: ${({ theme, isOpen }) => (isOpen ? theme.gradient.lightGray : 'transparent')};
-  z-index: ${({ theme }) => theme.zIndex.peak};
+  z-index: ${({ theme }) => theme.zIndex.highest};
 
   ${({ theme }) => theme.mq.tablet} {
     background: transparent;

@@ -8,7 +8,7 @@ export const ServiceStage = styled.div`
   margin-left: 20px;
   color: ${({ theme, color, isActive }) => (isActive ? color : theme.color.darkestGray)};
   cursor: pointer;
-  z-index: ${({ theme }) => theme.zIndex.highest};
+  z-index: ${({ theme }) => theme.zIndex.peak};
 
   &:after {
     display: block;
@@ -49,13 +49,16 @@ export const StyledWrapper = styled.div`
   }
 
   .services-axis__sign-axis-start {
-    position: absolute;
-    top: calc(50% - 2px);
-    left: -32px;
-    width: 24px;
-    height: 4px;
-    background-color: ${({ theme }) => theme.color.black};
-    z-index: ${({ theme }) => theme.zIndex.peak};
+    &:after {
+      content: '';
+      position: absolute;
+      top: calc(50% - 2px);
+      left: -32px;
+      width: 24px;
+      height: 4px;
+      background-color: ${({ theme }) => theme.color.black};
+      z-index: ${({ theme }) => theme.zIndex[10]};
+    }
   }
 
   .services-axis__sign-question-mark {
@@ -63,7 +66,7 @@ export const StyledWrapper = styled.div`
     top: 0;
     width: 32px;
     height: 100%;
-    left: -34px;
+    left: 5px;
     background: ${({ theme }) => theme.gradient.lightGrayTransparantLightGray};
     font-size: ${({ theme }) => theme.font.size.headingSection};
     color: ${({ theme }) => theme.color.lightGray};
@@ -71,11 +74,6 @@ export const StyledWrapper = styled.div`
     justify-content: center;
     align-items: center;
     z-index: ${({ theme }) => theme.zIndex.peak};
-
-    &::after {
-      content: '?';
-      display: block;
-    }
   }
 `;
 

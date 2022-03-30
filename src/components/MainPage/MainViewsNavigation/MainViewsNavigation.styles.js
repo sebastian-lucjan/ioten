@@ -6,6 +6,7 @@ const StyledMainViewsNavigation = styled(TextWrapper)`
   top: 85vh;
   width: 100%;
   height: 15vh;
+  z-index: ${({ theme }) => theme.zIndex.peak};
 
   //flex inherit from TextWrapper
   flex-direction: row;

@@ -63,6 +63,7 @@ const theme = {
     bigDesktop: '@media(min-width: 1600px)',
   },
   zIndex: {
+    10: 10,
     highest: 4,
     peak: 3,
     top: 2,

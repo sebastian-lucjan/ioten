@@ -14,7 +14,7 @@ const StyledBurger = styled.button`
   border: none;
   cursor: pointer;
   margin: 20px 30px;
-  z-index: ${({ theme }) => theme.zIndex.highest};
+  z-index: ${({ theme }) => theme.zIndex['10']};
 
   ${({ theme }) => theme.mq.tablet} {
     display: none;

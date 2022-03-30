@@ -14,7 +14,7 @@ const StyledMediumRing = styled.div`
     right: 0.4rem;
   }
   *:nth-child(1) {
-    z-index: ${({ theme: { zIndex } }) => zIndex.highest};
+    z-index: ${({ theme: { zIndex } }) => zIndex.peak};
   }
 `;
 
@@ -31,11 +31,13 @@ const MottoInterlude = () => {
         </MottoParagraph>
         <MottoCaption className="motto__caption">{motto.caption}</MottoCaption>
       </MottoWrapper>
+
+      <Grid />
+
       <StyledMediumRing>
         <IRingFront />
         <IRingBack />
       </StyledMediumRing>
-      <Grid />
     </MainSectionWrapper>
   );
 };

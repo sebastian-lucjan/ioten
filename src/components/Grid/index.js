@@ -1,6 +1,7 @@
+import theme from 'src/assets/styles/theme';
 import { StyledGrid, Line } from './Grid.styles';
 
-const Grid = ({ colors = { lines: 'lightgray' } }) => {
+const Grid = ({ colors = { lines: theme.color.lightGray } }) => {
   const lineColor = { ...colors };
 
   if (!lineColor?.innerLines) {

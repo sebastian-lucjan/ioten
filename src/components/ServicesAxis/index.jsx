@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import { v4 as uuid } from 'uuid';
 import theme, { rainbowColors } from 'src/assets/styles/theme';
@@ -20,6 +19,14 @@ const ServicesAxis = () => {
     },
   } = theme;
 
+  const colorsObj = () => {
+    if (isOpen) {
+      return { lines: lightGray, innerLines: lightGray };
+    }
+
+    return { lines: servicesAxis, innerLines: lightGray };
+  };
+
   return (
     <section className="services-axis">
       <MainSectionWrapper as="article" colors={{ background: lightGrayAxisSection }}>
@@ -35,9 +42,8 @@ const ServicesAxis = () => {
             </TextParagraph>
           </article>
           <article>
-            <TextHeading as="h3" size="sm">
+            <TextHeading as="h3" size="sm" className="services-axis__sign-axis-start">
               Oś czasu Twojego projektu
-              <span className="services-axis__sign-axis-start" />
             </TextHeading>
             <TextParagraph className="services-axis__paragraph">
               Zakres projektu jest dostosowywany do wymagań klienta ale przykładową kolejność działań możesz zobaczyć pod spodem.
@@ -55,16 +61,16 @@ const ServicesAxis = () => {
             ))}
           </StyledWrapper>
           {isOpen ? <ServiceDetail index={serviceIndex} handleClose={() => setIsOpen(false)} /> : null}
-          <Grid colors={{ lines: servicesAxis, innerLines: lightGray }} />
+          <Grid colors={colorsObj()} />
         </StyledServicesAxis>
 
         <StyledWrapper short>
+          <span className="services-axis__sign-question-mark">?</span>
           <TextHeading as="h3" size="sm">
             Zakończenie współpracy
           </TextHeading>
           <TextParagraph className="services-axis__paragraph">
             Kiedy kończy się współpraca? To zależy od Ciebie. Bez problemy możemy zostać z Tobą i uczestniczyć w dalszym rozwoju Twojej firmy.
-            <span className="services-axis__sign-question-mark" />
           </TextParagraph>
           <Grid />
         </StyledWrapper>

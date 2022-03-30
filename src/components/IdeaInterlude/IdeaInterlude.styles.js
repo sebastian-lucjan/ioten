@@ -5,7 +5,7 @@ export const IdeaInterludeWrapper = styled(({ ...props }) => <TextWrapper {...pr
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 70vh;
+  height: 80vh;
   margin: auto 0;
 
   ${({ theme }) => theme.mq.tablet} {
@@ -40,8 +40,8 @@ export const IdeaInterludeWrapper = styled(({ ...props }) => <TextWrapper {...pr
 
 export const IdeaButton = styled.button`
   position: relative;
-  width: 100%;
-  padding: 20px 0;
+  height: 60px;
+  width: calc(100vw - 80px);
   margin: 0 auto;
   background: ${({ theme }) => theme.color.darkestGray};
   border: none;
@@ -53,6 +53,7 @@ export const IdeaButton = styled.button`
   color: ${({ theme }) => theme.color.white};
 
   ${({ theme }) => theme.mq.tablet} {
+    //padding: 20px 0;
     //height: 60px;
     font-size: ${({ theme }) => theme.font.size.paragraph};
     width: unset;

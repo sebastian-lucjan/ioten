@@ -48,6 +48,7 @@ export const StyledMainViewsInfo = styled.div`
   top: 70vh;
   width: 100%;
   height: 100%;
+  z-index: ${({ theme }) => theme.zIndex.peak};
 
   ${({ theme }) => theme.mq.smallDesktop} {
     position: unset;
@@ -65,7 +66,7 @@ export const AnimationPlaceholder = styled(AnimationOnePlaceholder)`
   width: 100%;
   height: 50vh;
   transform: scale(0.9);
-  z-index: ${({ theme }) => theme.zIndex.top};
+  z-index: ${({ theme }) => theme.zIndex.peak};
 
   ${({ theme }) => theme.mq.tablet} {
     transform: scale(0.9);

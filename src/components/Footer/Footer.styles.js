@@ -2,11 +2,12 @@ import styled from 'styled-components';
 import mixines from 'src/assets/styles/mixines';
 
 export const Wrapper = styled.div`
-  padding: 60px 20px 0 20px;
+  padding: 60px 20px 0 40px;
   font-size: ${({ theme }) => theme.font.size.smallText};
   color: ${({ theme }) => theme.color.darkerGray};
 
   ${({ theme }) => theme.mq.tablet} {
+    padding: 60px 20px 0 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;

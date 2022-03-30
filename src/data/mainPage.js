@@ -5,12 +5,12 @@ export const mainView = [
     heading: 'Zbuduj z nami swój biznes online',
     paragraph:
       'Zaprojektujemy i zbudujemy niesamowicie szybką stronę www dla Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
-    short: { heading: 'Biznes Online', paragraph: '' },
+    short: { heading: 'Biznes Online', paragraph: 'Zaprojektujemy i zbudujemy niesamowicie szybką stronę www dla Twojego biznesu.' },
   },
   {
     heading: 'Design i Funkcjonalność',
     paragraph:
-      'Do każdego projektu podchodzimy indywidualnie. Strona którą zaprojektujemy dla Ciebie będzie spójna wizualnie i estetyczna. Na ostateczny produkt patrzymy jednak nie tylko przez pryzmat designu ale też funkcjonalności. Doświadczenie użytkownika wynikacjące z interakcji z Twoją stroną będzie wypadkową pozytywnego odbioru wizualnego oraz świetnych doświadczeń związanych prostotą i logiką przyjętych rozwiązań.',
+      'Strona którą zaprojektujemy dla Ciebie będzie spójna wizualnie i estetyczna. Doświadczenie użytkownika będzie wypadkową pozytywnego odbioru wizualnego oraz świetnych doświadczeń związanych prostotą i logiką przyjętych rozwiązań.',
     short: { heading: 'Design i Funkcjonalność', paragraph: 'Estetyka oparta o indywidualny projekt oraz najlepsze doświadczenia dla użytkownika' },
   },
   {
