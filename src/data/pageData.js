@@ -1,3 +1,7 @@
+export const pageData = {
+  headSection: { title: 'Fast & Beautiful Websites | ioten', description: '' },
+};
+
 export const navigationData = [
   { name: 'Home', href: '/', as: '/' },
   { name: 'Usługi', href: '/services', as: '/uslugi' },

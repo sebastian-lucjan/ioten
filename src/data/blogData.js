@@ -4,6 +4,7 @@ export const blogData = {
     heading: 'Idee, historie, nasze postrzeganie świata designu i kodu.',
     blogLink: 'Visit or blog',
   },
+  headSection: { title: 'ioten - blog', description: '' },
 };
 
 export const blogPosts = [

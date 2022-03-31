@@ -8,7 +8,6 @@ const Wrapper = styled.div`
   align-items: center;
 
   ${({ theme }) => theme.mq.smallDesktop} {
-    //background-color: blue;
     flex-direction: row;
     top: unset;
     position: unset;

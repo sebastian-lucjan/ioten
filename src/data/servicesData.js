@@ -1,4 +1,4 @@
-const services = {
+const servicesData = {
   intro: 'Usługi',
   list: [
     { heading: 'Strona wizytówka' },
@@ -7,6 +7,7 @@ const services = {
     { heading: 'Landing page' },
     { heading: 'Blog' },
   ],
+  headSection: { title: 'ioten - usługi', description: '' },
   serviceStagesIntro: 'Etapy',
   servicesStagesFooter: { heading: 'Chcesz poczytać więcej o ioten?', cta: 'Przeczytaj nasz wpis' },
   axisStages: {
@@ -82,4 +83,4 @@ const services = {
   ],
 };
 
-export default services;
+export default servicesData;
