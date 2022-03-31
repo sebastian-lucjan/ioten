@@ -34,6 +34,7 @@ const theme = {
   },
   font: {
     size: {
+      headingGargantuan: '7.2rem',
       headingPage: '5.2rem',
       headingSection: '3.6rem',
       headingMedium: '2.8rem',
