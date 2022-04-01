@@ -20,7 +20,6 @@ const ServicesAxisCore = () => {
     if (isOpen) {
       return { lines: lightGray, innerLines: lightGray };
     }
-
     return { lines: servicesAxis, innerLines: lightGray };
   };
 

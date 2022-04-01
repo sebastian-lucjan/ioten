@@ -25,7 +25,7 @@ const theme = {
     yellowTransparentGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 1) 0%, hsl(0, 0%, 96%, 0) 20%, hsl(0, 0%, 96%, 0) 80% ,hsl(65, 88%, 48%) 100%)',
     grayTransparentGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 1) 0%, hsl(0, 0%, 96%, 0) 20%, hsl(0, 0%, 96%, 0) 80% ,hsl(0, 0%, 80%, 1) 100%)',
     grayToYellow: 'linear-gradient(180deg, hsl(0, 0%, 80%) 0%, hsl(0, 0%, 80%) 75%, hsl(65, 88%, 48%) 100%)',
-    lightGrayTransparantLightGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 0) 0%, hsl(0, 0%, 96%) 30%, hsl(0, 0%, 96%) 70% ,hsl(0, 0%, 0%, 0) 100%)',
+    lightGrayTransparentLightGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 0) 0%, hsl(0, 0%, 96%) 30%, hsl(0, 0%, 96%) 70% ,hsl(0, 0%, 0%, 0) 100%)',
     rainbow: {
       highlight:
         'linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(254,255,0,1) 25%, rgba(1,255,0,1) 50%, rgba(0,39,255,1) 75%, rgba(226,0,255,1) 100%)',

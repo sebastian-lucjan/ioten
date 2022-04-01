@@ -1,8 +1,8 @@
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import theme from 'src/assets/styles/theme';
-import ServicesAxisIntro from 'src/components/ServicesAxisIntro';
-import ServicesAxisCore from 'src/components/ServicesAxisCore';
-import ServicesAxisEnd from 'src/components/ServicesAxisEnd';
+import ServicesAxisIntro from 'src/components/ServicesAxis/ServicesAxisIntro';
+import ServicesAxisCore from 'src/components/ServicesAxis/ServicesAxisCore';
+import ServicesAxisEnd from 'src/components/ServicesAxis/ServicesAxisEnd';
 
 const ServicesAxis = () => {
   const {
@@ -10,13 +10,11 @@ const ServicesAxis = () => {
   } = theme;
 
   return (
-    <section className="services-axis">
-      <MainSectionWrapper as="article" colors={{ background: lightGrayAxisSection }}>
-        <ServicesAxisIntro />
-        <ServicesAxisCore />
-        <ServicesAxisEnd />
-      </MainSectionWrapper>
-    </section>
+    <MainSectionWrapper as="section" colors={{ background: lightGrayAxisSection }}>
+      <ServicesAxisIntro />
+      <ServicesAxisCore />
+      <ServicesAxisEnd />
+    </MainSectionWrapper>
   );
 };
 

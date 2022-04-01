@@ -41,10 +41,10 @@ export const ServiceStage = styled.div`
 `;
 
 export const StyledWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
   padding: ${({ short }) => (short ? '40px' : '100px 40px')};
   color: ${({ theme }) => theme.color.darkestGray};
   height: ${({ short }) => (short ? 'unset' : '100vh')};
@@ -94,7 +94,7 @@ export const StyledWrapper = styled.div`
     width: 32px;
     height: 100%;
     left: 5px;
-    background: ${({ theme }) => theme.gradient.lightGrayTransparantLightGray};
+    background: ${({ theme }) => theme.gradient.lightGrayTransparentLightGray};
     font-size: ${({ theme }) => theme.font.size.headingSection};
     color: ${({ theme }) => theme.color.lightGray};
     display: flex;
@@ -105,9 +105,9 @@ export const StyledWrapper = styled.div`
 `;
 
 export const StyledServicesAxis = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
   width: 100%;
   min-height: ${({ smaller }) => (smaller ? '' : '100vh')};
   background: ${({ colors }) => colors.background};
