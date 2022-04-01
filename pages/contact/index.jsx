@@ -1,6 +1,8 @@
 import HeadSection from 'src/components/HeadSection';
 import BaseLayout from 'src/components/BaseLayout';
 import contactData from 'src/data/contactData';
+import ContactMainView from 'src/components/ContactMainView';
+import BriefShortInterlude from 'src/components/BriefShortInterlude';
 
 const Contact = () => {
   const {
@@ -11,7 +13,8 @@ const Contact = () => {
     <>
       <HeadSection title={title} description={description} />
       <BaseLayout>
-        <section>Contact</section>
+        <ContactMainView />
+        <BriefShortInterlude />
       </BaseLayout>
     </>
   );

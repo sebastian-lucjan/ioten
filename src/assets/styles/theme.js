@@ -31,6 +31,7 @@ const theme = {
         'linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(254,255,0,1) 25%, rgba(1,255,0,1) 50%, rgba(0,39,255,1) 75%, rgba(226,0,255,1) 100%)',
       servicesAxis: `linear-gradient(180deg, hsl(0, 0%, 80%) 0%, ${rainbowColors[0]} 16.66%, ${rainbowColors[1]} 33.33%, ${rainbowColors[2]} 50%, ${rainbowColors[3]} 66.66%, ${rainbowColors[4]} 83.33%, hsl(0, 0%, 80%) 100%)`,
     },
+    blackBrief: 'linear-gradient(135deg, rgba(67,67,67,1) 0%, rgba(47,47,47,1) 100%);',
   },
   font: {
     size: {
