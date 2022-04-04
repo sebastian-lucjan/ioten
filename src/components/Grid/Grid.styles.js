@@ -1,19 +1,12 @@
 import styled from 'styled-components';
 
-export const StyledGrid = styled.div`
+const Line = styled.span`
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: ${({ theme }) => theme.zIndex.front};
-`;
-
-export const Line = styled.span`
-  position: absolute;
   height: 100%;
   width: 1px;
   background: ${({ color }) => color};
+  z-index: ${({ theme }) => theme.zIndex.front};
 
   &:first-child,
   &:last-child {
@@ -63,3 +56,5 @@ export const Line = styled.span`
     right: 20px;
   }
 `;
+
+export default Line;

@@ -6,8 +6,10 @@ export default function ContactForm() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => console.log(data);
-  console.log(errors);
+
+  console.log('errors -> ', errors);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -22,7 +24,8 @@ export default function ContactForm() {
         <option value="Inne">Inne</option>
       </select>
       <textarea {...register('Twoja wiadomość', { required: true, min: 5, maxLength: 1000 })} />
-
+      <input type="checkbox" placeholder="policy" {...register('policy', { required: true })} />
+      <input type="checkbox" placeholder="nda" {...register('nda', {})} />
       <input type="submit" />
     </form>
   );

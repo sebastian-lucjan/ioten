@@ -6,14 +6,13 @@ import services from 'src/data/servicesData';
 import { v4 as uuid } from 'uuid';
 import Grid from 'src/components/Grid';
 import { FooterHeading, FooterItem, FooterSoonItem, StyledFooterSection, Wrapper } from './Footer.styles';
-import SocialMedias from '../SocialMedias';
+import SocialMedia from '../SocialMedia';
 import FooterContact from './FooterContact';
 import FooterRights from './FooterRights';
 
-const Footer = () => {
+const Footer = ({ footerGridColor }) => {
   const {
     color: { white },
-    gradient: { yellowToGray },
   } = theme;
 
   const {
@@ -61,11 +60,11 @@ const Footer = () => {
 
         <StyledFooterSection className="footer__social-media">
           <FooterHeading>{socialMediaHeading}</FooterHeading>
-          <SocialMedias />
+          <SocialMedia />
         </StyledFooterSection>
       </Wrapper>
       <FooterRights />
-      <Grid colors={{ lines: yellowToGray }} />
+      <Grid colors={{ lines: footerGridColor }} />
     </MainSectionWrapper>
   );
 };

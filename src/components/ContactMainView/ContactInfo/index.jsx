@@ -1,8 +1,16 @@
+import styled from 'styled-components';
+import ContactText from './ContactText';
+import ContactDetails from './ContactDetails';
+
 export default function ContactInfo() {
   return (
-    <section>
-      <h2>Test</h2>
-      <p>We are champs</p>
-    </section>
+    <StyledContactInfo>
+      <ContactText />
+      <ContactDetails />
+    </StyledContactInfo>
   );
 }
+
+const StyledContactInfo = styled.div`
+  padding: 100px 40px; // copy from some wrapper
+`;
