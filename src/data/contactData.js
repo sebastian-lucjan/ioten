@@ -18,6 +18,34 @@ const contactData = {
       other: { heading: 'Inne:', email: 'hello@ioten.io', mobile: '602 446 335' },
       job: { heading: 'Praca:', email: 'career@ioten.io' },
     },
+    form: {
+      button: 'Wyślij wiadomość',
+      conditions: {
+        nameStringConditions: {
+          required: 'To pole jest wymagane.',
+          minLength: { value: 3, message: 'Minimalna długość imienia to 3 znaki.' },
+          maxLength: { value: 80, message: 'Maksymalna długość imienia to 80 znaków.' },
+        },
+        emailStringConditions: { required: 'To pole jest wymagane.', pattern: { value: /^\S+@\S+$/i, message: 'Wpisz poprawny adres email.' } },
+        companyStringConditions: {
+          required: 'To pole jest wymagane.',
+          minLength: { value: 3, message: 'Minimalna długość nazwy firmy to 3 znaki.' },
+          maxLength: { value: 80, message: 'Maksymalna długość nazwy firmy to 80 znaków.' },
+        },
+        phoneNumberStringConditions: {
+          required: false,
+          minLength: { value: 7, message: 'Minimalna długość numeru telefonu to 7 znaków.' },
+          maxLength: { value: 18, message: 'Maksymalna długość numeru telefonu to 18 znaków.' },
+        },
+        textareaStringConditions: {
+          required: 'To pole jest wymagane.',
+          minLength: { value: 5, message: 'Wiadomość jest zbyt krótka, postaraj się bardziej!' },
+          maxLength: { value: 1000, message: 'Wiadomość jest zbyt długa, przekroczyła 1000 znaków.' },
+        },
+        policyCheckboxConditions: { required: 'To pole jest wymagane.' },
+        ndaCheckboxConditions: {},
+      },
+    },
   },
 };
 

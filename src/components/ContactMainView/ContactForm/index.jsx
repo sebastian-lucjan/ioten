@@ -1,4 +1,8 @@
 import { useForm } from 'react-hook-form';
+import contactData from 'src/data/contactData';
+import { Wrapper } from './ContactForm.styles';
+import SubmitButton from './SubmitButton';
+import { CheckboxInput, TextArea, TextInput } from './FormFields';
 
 export default function ContactForm() {
   const {
@@ -11,22 +15,40 @@ export default function ContactForm() {
 
   console.log('errors -> ', errors);
 
+  const {
+    nameStringConditions,
+    emailStringConditions,
+    companyStringConditions,
+    phoneNumberStringConditions,
+    textareaStringConditions,
+    policyCheckboxConditions,
+    ndaCheckboxConditions,
+  } = contactData.contactContent.form.conditions;
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="text" placeholder="Imię" {...register('Imię', { required: true, max: 80, min: 3, maxLength: 80 })} />
-      <input type="text" placeholder="Email" {...register('Email', { required: true, pattern: /^\S+@\S+$/i })} />
-      <input type="text" placeholder="Nazwa firmy" {...register('Nazwa firmy', { required: true, max: 80, min: 3, maxLength: 80 })} />
-      <input type="tel" placeholder="Numer telefonu" {...register('Numer telefonu', { required: true, max: 18, min: 7, maxLength: 18 })} />
-      <select {...register}>
-        <option value="Reklama">Reklama</option>
-        <option value="Social media">Social media</option>
-        <option value="Od innej osoby">Od innej osoby</option>
-        <option value="Inne">Inne</option>
-      </select>
-      <textarea {...register('Twoja wiadomość', { required: true, min: 5, maxLength: 1000 })} />
-      <input type="checkbox" placeholder="policy" {...register('policy', { required: true })} />
-      <input type="checkbox" placeholder="nda" {...register('nda', {})} />
-      <input type="submit" />
-    </form>
+    <Wrapper as="form" onSubmit={handleSubmit(onSubmit)}>
+      <TextInput name="name" register={register} required text="Imię" inputConditions={nameStringConditions} />
+      <TextInput name="email" register={register} required text="Email" inputConditions={emailStringConditions} />
+      <TextInput name="company" register={register} text="Nazwa firmy" inputConditions={companyStringConditions} />
+      <TextInput name="mobile" register={register} text="Numer telefonu" inputConditions={phoneNumberStringConditions} />
+      {/* <SelectInput register={register} /> */}
+      <TextArea name="message" register={register} required inputConditions={textareaStringConditions} />
+      <CheckboxInput
+        text="Akceptuję politykę prywatności"
+        name="policy"
+        register={register}
+        required
+        placeholderText="policy"
+        inputConditions={policyCheckboxConditions}
+      />
+      <CheckboxInput
+        text="Przed przekazaniem szczegółowych informacji potrzebuję podpisać NDA"
+        name="nda"
+        register={register}
+        placeholderText="nda"
+        inputConditions={ndaCheckboxConditions}
+      />
+      <SubmitButton />
+    </Wrapper>
   );
 }
