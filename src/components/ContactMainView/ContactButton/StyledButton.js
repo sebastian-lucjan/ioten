@@ -28,7 +28,6 @@ const StyledButton = styled.button`
   }
 
   ${({ theme }) => theme.mq.hugeDesktop} {
-    width: unset;
     font-size: ${({ theme }) => theme.font.size.headingSmall};
   }
 `;

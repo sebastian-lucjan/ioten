@@ -20,14 +20,6 @@ const StyledContactInfo = styled.div`
     width: 50%;
   }
 
-  // ${({ theme }) => theme.mq.desktop} {
-  //   padding: 100px 100px 100px 40px;
-  //   width: 40%;
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  // }
-
   ${({ theme }) => theme.mq.desktop} {
     padding: 0;
     width: 50%;
@@ -36,7 +28,6 @@ const StyledContactInfo = styled.div`
     align-items: center;
 
     .contact-info__container {
-      //height: 60vh;
       display: flex;
       flex-direction: column;
       width: 70%;

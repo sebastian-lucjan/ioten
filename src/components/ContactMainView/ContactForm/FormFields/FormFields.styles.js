@@ -47,10 +47,6 @@ export const StyledTextInput = styled.div`
     }
     font-size: ${({ theme }) => theme.font.size.smallText};
   }
-
-  ${({ theme }) => theme.mq.smallDesktop} {
-    //width: calc(50% - 10px);
-  } ;
 `;
 
 export const StyledTextAreaInput = styled(StyledTextInput)`
@@ -92,15 +88,6 @@ export const StyledTextAreaInput = styled(StyledTextInput)`
   }
 `;
 
-export const StyledSelectInput = styled(StyledTextInput)`
-  select {
-    border: none;
-    width: 100%;
-    border-bottom: 1px ${({ theme }) => theme.color.black} solid;
-    height: 32px;
-  }
-`;
-
 export const StyledCheckbox = styled.div`
   height: 32px;
   width: 100%;
@@ -127,3 +114,12 @@ export const StyledCheckbox = styled.div`
     }
   }
 `;
+
+// export const StyledSelectInput = styled(StyledTextInput)`
+//   select {
+//     border: none;
+//     width: 100%;
+//     border-bottom: 1px ${({ theme }) => theme.color.black} solid;
+//     height: 32px;
+//   }
+// `;

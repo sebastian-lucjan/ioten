@@ -45,6 +45,15 @@ export const IdeaInterludeWrapper = styled(({ ...props }) => <TextWrapper {...pr
     }
   }
 
+  ${({ theme }) => theme.mq.hugeDesktop} {
+    .idea-interlude__paragraph,
+    .brief-interlude__paragraph,
+    .idea-interlude__button,
+    .brief-interlude__button {
+      padding: 40px;
+    }
+  }
+
   ${({ theme }) => theme.mq.mediumDesktop} {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 

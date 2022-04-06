@@ -14,7 +14,6 @@ export const StyledSubmitButton = styled.button`
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   font-size: ${({ theme }) => theme.font.size.headingSmall};
   color: ${({ theme, textColor }) => textColor || theme.color.white};
-  //box-shadow: 4px 4px 0 hsl(0, 0%, 15%, 0.7);
   border: none;
 
   ${({ theme }) => theme.mq.tablet} {
@@ -25,9 +24,7 @@ export const StyledSubmitButton = styled.button`
   }
 
   ${({ theme }) => theme.mq.smallDesktop} {
-    //padding: 10px 2rem;
     font-size: ${({ theme }) => theme.font.size.paragraphSmall};
-    text-transform: uppercase;
     width: 100%;
     height: 48px;
   }
@@ -40,5 +37,6 @@ export const StyledSubmitButton = styled.button`
   ${({ theme }) => theme.mq.hugeDesktop} {
     width: unset;
     font-size: ${({ theme }) => theme.font.size.headingSmall};
+    height: 60px;
   }
 `;
