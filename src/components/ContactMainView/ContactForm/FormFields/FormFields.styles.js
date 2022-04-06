@@ -49,21 +49,13 @@ export const StyledTextInput = styled.div`
   }
 
   ${({ theme }) => theme.mq.smallDesktop} {
-    width: calc(50% - 10px);
-
-    &:nth-child(2n + 1) {
-      margin-right: 10px;
-    }
-
-    &:nth-child(2n) {
-      margin-left: 10px;
-    }
+    //width: calc(50% - 10px);
   } ;
 `;
 
 export const StyledTextAreaInput = styled(StyledTextInput)`
   position: relative;
-  height: 100%;
+  height: unset;
   margin-bottom: 2rem;
 
   label {

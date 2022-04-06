@@ -22,10 +22,11 @@ const StyledContactText = styled.div`
   color: ${({ theme }) => theme.color.black};
 
   .contact-details__header {
-    margin-bottom: 3rem;
+    margin: 0 0 3rem 0;
     font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
     font-weight: lighter;
     font-size: ${({ theme }) => theme.font.size.headingMedium};
+    line-height: ${({ theme }) => theme.font.size.headingMedium};
   }
 
   .contact-details__paragraph {
@@ -42,5 +43,9 @@ const StyledContactText = styled.div`
     .contact-details__paragraph {
       font-size: ${({ theme }) => theme.font.size.paragraph};
     }
+  }
+
+  ${({ theme }) => theme.mq.desktop} {
+    margin-bottom: 0;
   } ;
 `;

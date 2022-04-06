@@ -9,8 +9,8 @@ const contactData = {
     intro: {
       heading: 'Zbudujmy coś razem!',
       text: [
-        'Zapraszamy do kontaktu z nami. Zawsze jesteśmy otwarci na temat świetnych projektów, kreatywnych rozwiązań i niebanalnych pomysłów.',
-        'Napisz do nas. Jeśli nie otrzymasz odpowiedzi od razu to bardzo możliwe, że pracujemy nad naszym kolejnym projektem. Wkrótce skontaktujemy się z Tobą.',
+        'Napisz do nas. Zawsze jesteśmy otwarci na świetne projekty, kreatywne rozwiązania i niebanalne pomysły.',
+        'Jeśli nie otrzymasz odpowiedzi od razu to bardzo możliwe, że pracujemy nad naszym kolejnym projektem. Wkrótce skontaktujemy się z Tobą.',
       ],
     },
     contact: {

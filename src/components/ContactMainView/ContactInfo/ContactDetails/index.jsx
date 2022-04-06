@@ -78,5 +78,9 @@ const StyledContactDetails = styled.div`
     .contact-details__paragraph {
       font-size: ${({ theme }) => theme.font.size.paragraph};
     }
+  }
+
+  ${({ theme }) => theme.mq.desktop} {
+    margin-top: 4rem;
   } ;
 `;

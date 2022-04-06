@@ -6,13 +6,13 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  ${({ theme }) => theme.mq.tablet} {
-  }
-
   ${({ theme }) => theme.mq.smallDesktop} {
     flex-direction: row;
-    min-height: 90vh;
-  } ;
+  }
+
+  ${({ theme }) => theme.mq.desktop} {
+    justify-content: center;
+  }
 `;
 
 export default Wrapper;
