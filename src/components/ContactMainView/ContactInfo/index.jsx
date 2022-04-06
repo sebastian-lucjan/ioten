@@ -12,5 +12,8 @@ export default function ContactInfo() {
 }
 
 const StyledContactInfo = styled.div`
-  padding: 100px 40px; // copy from some wrapper
+  padding: 100px 40px;
+  width: 50%;
+
+  //background-color: yellow;
 `;

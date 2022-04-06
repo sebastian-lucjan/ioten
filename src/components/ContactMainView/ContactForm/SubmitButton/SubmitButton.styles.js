@@ -8,18 +8,28 @@ export const StyledSubmitButton = styled.button`
   margin: 2rem auto 0 auto;
   background: ${({ theme, backgroundColor }) => backgroundColor || theme.color.darkestGray};
 
+  word-spacing: 5px;
+
   line-height: 100%;
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   font-size: ${({ theme }) => theme.font.size.headingSmall};
   color: ${({ theme, textColor }) => textColor || theme.color.white};
-  box-shadow: 4px 4px 0 hsl(0, 0%, 15%, 0.7);
+  //box-shadow: 4px 4px 0 hsl(0, 0%, 15%, 0.7);
   border: none;
 
   ${({ theme }) => theme.mq.tablet} {
     font-size: ${({ theme }) => theme.font.size.paragraph};
     width: unset;
-    margin: 0;
+    margin: 1rem 0;
     padding: 1.4rem 4rem;
+  }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    //padding: 10px 2rem;
+    font-size: ${({ theme }) => theme.font.size.paragraphSmall};
+    text-transform: uppercase;
+    width: 100%;
+    height: 48px;
   }
 
   ${({ theme }) => theme.mq.mediumDesktop} {

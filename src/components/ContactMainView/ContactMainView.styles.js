@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   position: relative;
-  min-height: 200vh; //todo: change back
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 

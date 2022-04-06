@@ -6,6 +6,19 @@ export const StyledTextInput = styled.div`
   width: 100%;
   height: 36px;
 
+  input:focus ~ p {
+    color: gray;
+    transform: scale(0.7);
+    transform-origin: top left;
+  }
+
+  p {
+    transition: 0.4s;
+    color: ${({ notEmpty }) => (notEmpty ? 'gray' : 'black')};
+    transform: ${({ notEmpty }) => (notEmpty ? 'scale(0.7)' : 'scale(1)')};
+    transform-origin: top left;
+  }
+
   input {
     position: absolute;
     bottom: 0;
@@ -13,7 +26,7 @@ export const StyledTextInput = styled.div`
     height: 20px;
     border: none;
     width: 100%;
-    border-bottom: 1px black solid;
+    border-bottom: 1px ${({ theme }) => theme.color.black} solid;
   }
 
   label {
@@ -34,6 +47,18 @@ export const StyledTextInput = styled.div`
     }
     font-size: ${({ theme }) => theme.font.size.smallText};
   }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    width: calc(50% - 10px);
+
+    &:nth-child(2n + 1) {
+      margin-right: 10px;
+    }
+
+    &:nth-child(2n) {
+      margin-left: 10px;
+    }
+  } ;
 `;
 
 export const StyledTextAreaInput = styled(StyledTextInput)`
@@ -41,10 +66,37 @@ export const StyledTextAreaInput = styled(StyledTextInput)`
   height: 100%;
   margin-bottom: 2rem;
 
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
   textarea {
     border: none;
     width: 100%;
-    border-bottom: 1px black solid;
+    border-bottom: 1px ${({ theme }) => theme.color.black} solid;
+  }
+
+  textarea:focus ~ p {
+    color: gray;
+    transform: scale(0.7);
+    transform-origin: top left;
+  }
+
+  p {
+    transition: 0.4s;
+    color: ${({ notEmpty }) => (notEmpty ? 'gray' : 'black')};
+    transform: ${({ notEmpty }) => (notEmpty ? 'scale(0.7)' : 'scale(1)')};
+    transform-origin: top left;
+  }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    width: 100%;
+
+    &:nth-child(2n + 1) {
+      margin-right: 0;
+    }
   }
 `;
 
@@ -52,11 +104,8 @@ export const StyledSelectInput = styled(StyledTextInput)`
   select {
     border: none;
     width: 100%;
-    border-bottom: 1px black solid;
+    border-bottom: 1px ${({ theme }) => theme.color.black} solid;
     height: 32px;
-  }
-
-  .input-select__title {
   }
 `;
 

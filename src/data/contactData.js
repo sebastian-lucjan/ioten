@@ -19,7 +19,7 @@ const contactData = {
       job: { heading: 'Praca:', email: 'career@ioten.io' },
     },
     form: {
-      button: 'Wyślij wiadomość',
+      button: 'Wyślij  wiadomość',
       conditions: {
         nameStringConditions: {
           required: 'To pole jest wymagane.',
@@ -28,7 +28,6 @@ const contactData = {
         },
         emailStringConditions: { required: 'To pole jest wymagane.', pattern: { value: /^\S+@\S+$/i, message: 'Wpisz poprawny adres email.' } },
         companyStringConditions: {
-          required: 'To pole jest wymagane.',
           minLength: { value: 3, message: 'Minimalna długość nazwy firmy to 3 znaki.' },
           maxLength: { value: 80, message: 'Maksymalna długość nazwy firmy to 80 znaków.' },
         },

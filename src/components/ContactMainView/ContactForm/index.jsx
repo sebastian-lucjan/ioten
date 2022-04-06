@@ -8,10 +8,17 @@ export default function ContactForm() {
   const {
     register,
     handleSubmit,
+    reset,
+    watch,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  // todo: think if you want small gray caption when not focused but full of characters - you need common state for all form
+
+  const onSubmit = (data) => {
+    reset();
+    console.log(data);
+  };
 
   console.log('errors -> ', errors);
 
@@ -27,12 +34,12 @@ export default function ContactForm() {
 
   return (
     <Wrapper as="form" onSubmit={handleSubmit(onSubmit)}>
-      <TextInput name="name" register={register} required text="Imię" inputConditions={nameStringConditions} />
-      <TextInput name="email" register={register} required text="Email" inputConditions={emailStringConditions} />
-      <TextInput name="company" register={register} text="Nazwa firmy" inputConditions={companyStringConditions} />
-      <TextInput name="mobile" register={register} text="Numer telefonu" inputConditions={phoneNumberStringConditions} />
-      {/* <SelectInput register={register} /> */}
-      <TextArea name="message" register={register} required inputConditions={textareaStringConditions} />
+      <TextInput watch={watch} name="name" register={register} required text="Imię" inputConditions={nameStringConditions} />
+      <TextInput watch={watch} name="email" register={register} required text="Email" inputConditions={emailStringConditions} />
+      <TextInput watch={watch} name="company" register={register} text="Nazwa firmy" inputConditions={companyStringConditions} />
+      <TextInput watch={watch} name="mobile" register={register} text="Numer telefonu" inputConditions={phoneNumberStringConditions} />
+      {/* <SelectInput watch={watch} register={register} /> //to many form fields */}
+      <TextArea watch={watch} name="message" register={register} text="Twoja wiadomość" required inputConditions={textareaStringConditions} />
       <CheckboxInput
         text="Akceptuję politykę prywatności"
         name="policy"
