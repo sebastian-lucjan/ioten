@@ -5,7 +5,7 @@ import { TextCaption } from 'src/components/TextComponents';
 import { v4 as uuid } from 'uuid';
 import Link from 'next/link';
 import Grid from 'src/components/Grid';
-import BlogPost from 'src/components/BlogShort/BlogPost';
+import BlogPost from 'src/components/Blog/BlogPostAll/BlogPost';
 import { BlogIntroHeading, BlogPostsContainer, StyledLink, WrapperBlogShort } from './BlogShort.styles';
 
 const BlogShort = () => {
@@ -16,6 +16,12 @@ const BlogShort = () => {
 
   const { category, heading, blogLink } = blogData.intro;
 
+  const selectPreferancePosts = (() => {
+    const prefPosts = blogPosts.filter((post) => post.preference);
+
+    return prefPosts.splice(0, 3);
+  })();
+
   return (
     <MainSectionWrapper colors={{ background: white }}>
       <WrapperBlogShort short>
@@ -25,7 +31,7 @@ const BlogShort = () => {
           <StyledLink>{blogLink}</StyledLink>
         </Link>
         <BlogPostsContainer>
-          {blogPosts.map((post) => (
+          {selectPreferancePosts.map((post) => (
             <BlogPost key={uuid()} post={post} />
           ))}
         </BlogPostsContainer>

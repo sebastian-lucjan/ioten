@@ -22,7 +22,7 @@ const theme = {
     lightGrayAxisSection: 'linear-gradient(135deg, hsl(0, 0%, 93%) 0%, hsl(0, 0%, 97%) 100%)',
     navyBlue: 'linear-gradient(80deg, rgba(76,65,107,1) 0%, rgba(72,59,76,1) 100%)',
     yellowToGray: 'linear-gradient(0deg, hsl(0, 0%, 80%) 0%, hsl(0, 0%, 80%) 75%, hsl(65, 88%, 48%) 100%)',
-    yellowTransparentGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 1) 0%, hsl(0, 0%, 96%, 0) 20%, hsl(0, 0%, 96%, 0) 80% ,hsl(65, 88%, 48%) 100%)',
+    yellowTransparentGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 1) 0%, hsl(0, 0%, 96%, 0) 10%, hsl(0, 0%, 96%, 0) 80% ,hsl(65, 88%, 48%) 100%)',
     grayTransparentGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 1) 0%, hsl(0, 0%, 96%, 0) 20%, hsl(0, 0%, 96%, 0) 80% ,hsl(0, 0%, 80%, 1) 100%)',
     grayToYellow: 'linear-gradient(180deg, hsl(0, 0%, 80%) 0%, hsl(0, 0%, 80%) 75%, hsl(65, 88%, 48%) 100%)',
     grayToBlack: 'linear-gradient(0deg, hsl(0, 0%, 80%) 0%, hsl(0, 0%, 80%) 75%, hsl(0, 0%, 30%) 100%)',

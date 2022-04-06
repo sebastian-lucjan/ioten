@@ -7,6 +7,7 @@ import BlogShort from 'src/components/BlogShort';
 import IdeaInterlude from 'src/components/IdeaInterlude';
 import Testimonials from 'src/components/Testimonials';
 import { pageData } from 'src/data/pageData';
+import theme from 'src/assets/styles/theme';
 
 export default function Home() {
   const {
@@ -16,7 +17,7 @@ export default function Home() {
   return (
     <>
       <HeadSection title={title} description={description} />
-      <BaseLayout>
+      <BaseLayout footerGridColor={theme.gradient.yellowToGray}>
         <MainPage />
         <MottoInterlude />
         <ServicesAxis />
