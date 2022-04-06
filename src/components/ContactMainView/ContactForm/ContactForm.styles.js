@@ -14,18 +14,11 @@ export const Wrapper = styled.div`
 
   ${({ theme }) => theme.mq.tablet} {
     padding: 0 40px 240px 40px;
-  }
-
-  ${({ theme }) => theme.mq.smallDesktop} {
-    padding: 0 40px;
-    width: 50%;
-    justify-content: center;
 
     .form-duel {
       display: flex;
       flex-direction: row;
     }
-
     //form input margin for Email and Mobile
     .form-duel > div:nth-child(2n) {
       margin-left: 10px;
@@ -35,6 +28,12 @@ export const Wrapper = styled.div`
     .form-duel > div:nth-child(2n + 1) {
       margin-right: 10px;
     }
+  }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    padding: 0 40px;
+    width: 50%;
+    justify-content: center;
   }
 
   ${({ theme }) => theme.mq.desktop} {

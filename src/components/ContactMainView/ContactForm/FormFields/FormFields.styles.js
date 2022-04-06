@@ -62,6 +62,7 @@ export const StyledTextAreaInput = styled(StyledTextInput)`
 
   textarea {
     border: none;
+    padding-top: 24px;
     width: 100%;
     border-bottom: 1px ${({ theme }) => theme.color.black} solid;
   }
