@@ -9,7 +9,7 @@ import { BlogPostContainer, StyledBlogPostAll } from './BlogPostAll.styles';
 export default function BlogPostsAll() {
   const {
     color: { white },
-    gradient: { grayToYellow, yellowTransparentGray },
+    gradient: { grayToYellow, transparentToYellow },
   } = theme;
 
   return (
@@ -22,7 +22,7 @@ export default function BlogPostsAll() {
             <BlogPost key={uuid()} post={post} index={index} />
           ))}
         </BlogPostContainer>
-        <Grid colors={{ lines: grayToYellow, innerLines: yellowTransparentGray }} />
+        <Grid colors={{ lines: grayToYellow, innerLines: transparentToYellow }} />
       </StyledBlogPostAll>
     </MainSectionWrapper>
   );

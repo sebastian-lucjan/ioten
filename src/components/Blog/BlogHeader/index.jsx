@@ -9,7 +9,7 @@ export default function BlogHeader() {
   const { category, heading } = blogData.intro;
   const {
     color: { lightGray },
-    gradient: { lightGray: lightGrayGradient },
+    gradient: { lightGray: lightGrayGradient, grayToTransparent },
   } = theme;
 
   return (
@@ -17,7 +17,7 @@ export default function BlogHeader() {
       <StyledBlogHeader>
         <TextCaption className="blog-header__category">{category}</TextCaption>
         <h1 className="blog-header__heading">{heading}</h1>
-        <Grid colors={{ lines: lightGray }} />
+        <Grid colors={{ lines: lightGray, innerLines: grayToTransparent }} />
       </StyledBlogHeader>
     </MainSectionWrapper>
   );

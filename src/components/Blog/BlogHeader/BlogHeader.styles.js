@@ -13,4 +13,26 @@ export const StyledBlogHeader = styled.div`
     font-weight: 100;
     color: ${({ theme }) => theme.color.black};
   }
+
+  ${({ theme }) => theme.mq.tablet} {
+    padding: 10vw;
+
+    .blog-header__heading {
+      width: 70%;
+    }
+  }
+
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    padding: 10vw 15vw;
+  }
+
+  ${({ theme }) => theme.mq.bigDesktop} {
+    .blog-header__heading {
+      width: 60%;
+    }
+  }
+
+  ${({ theme }) => theme.mq.hugeDesktop} {
+    padding: 10vw 20vw;
+  }
 `;
