@@ -8,7 +8,78 @@ const servicesData = {
     { heading: 'Blog' },
   ],
   headSection: { title: 'ioten - usługi', description: '' },
-  servicesIntro: {},
+
+  servicesIntro: {
+    caption: 'Intro',
+    heading: 'Ioten to coś więcej niż strony internetowe',
+    paragraphs: [
+      'Strona internetowa nie jest dla nas tylko wizualną prezentacją danych tekstowych, jest też sposobem na budowanie i wzmacnianie Twojej marki.',
+      'Nasze podejście bazuje na analizie i szukaniu miejsc w których możesz wyróżnić się na tle konkurencji. Szczególną uwagę przykładamy do projektowania interfejsów które ułatwiają interakcję i budują zaangażowanie.',
+    ],
+    prosList: [
+      'Funkcjonalność na pierwszym miejscu',
+      'Unikalny Design',
+      'Zbudowana w oparciu o nowoczesne technologie',
+      'Superszybka i SEO friendly',
+    ],
+    buttonLabel: 'Napisz do nas',
+  },
+
+  benefit: {
+    caption: 'Benefity',
+    heading: 'Nowoczesne technologie to nie tylko slogan',
+    paragraph:
+      'Dzięki użyciu nowoczesnych technologii jak next.js (SSG), react.js, GSAP, headless CMS i wielu innych, nasze strony są nieprawdopodobnie szybkie, przyjazne SEO i użytkownikowi.',
+    buttonLabel: 'Porozmawiajmy',
+  },
+
+  services: {
+    caption: 'Usługi',
+    heading: 'Strona internetowa nie jedno ma imię...',
+    paragraph: 'Działamy w szerokim spektrum definicji strony internetowej. Jeśli w liście poniżej znajdziesz produkt który Cię interesuje, napisz.',
+    buttonLabel: 'Wyceń projekt',
+    servicesList: [
+      {
+        heading: 'Strona wizytówka (one page) / Landingpage ',
+        description: [
+          'Strona docelowa bez rozbudowanej struktury. Jej celem może być zaprezentowanie swoich usług (wizytówka), przekazanie informacji,  reklama, bądź zachęcenie do dalszej interakcji z produktem (CTA - call to action).',
+        ],
+      },
+      {
+        heading: 'Strona o rozbudowanej strukturze',
+        description: [
+          'Strona o kilku podstronach dostępnych z reprezentatywnej strony głównej. Dzięki takiej stronie firma może przekazać większą ilość informacji np.: oferta, kontakt, o nas, historia, referecje przez co zwiększa swoją wiarygodność i rozpoznawalność w sieci.',
+        ],
+      },
+      {
+        heading: 'Strona firmowa z CMSem',
+        description: [
+          'Strona o różnym poziomie rozbudowania, połączona z systemem zarządzania treścią (content management system, czyli: CMS).',
+          'Przeznaczona do stron których treści będą edytowane wraz z biegiem czasu. ',
+        ],
+      },
+      {
+        heading: 'Strona PRO',
+        description: [
+          'Jest to strona która może mieć bardzo rozbudowaną strukturę. Dodatkowe zaawansowane funkcjonalności jak: ',
+          '- kontakt za pomocą “chat widget”,',
+          '- rozbudowane formularze kontaktowe bądź ankietowe,',
+          '- rozwiązania analityczne do śledzenia ruchu na stronie,',
+          '- zaawansowana filtracja (np.: biuro nieruchomości),',
+          '- systemy logowania i tworzenia użytkownika (np.: szkoła języka angielskiego)',
+          '- i.... wiele więcej',
+        ],
+      },
+      {
+        heading: 'Animacja PRO',
+        description: [
+          'Idealna gdy chcesz opowiedzieć historię w której centrum jesteś Ty, Twoja idea i Twój produkt. Strona o zaawansowanej warstwie wizualnej i dużej złożoności interakcyjnej.',
+          'Poziom animacji wykracza poza standardowe rozwiązania jak pojawianie się tekstu od boku strony.',
+        ],
+      },
+    ],
+  },
+
   serviceStagesIntro: 'Etapy',
   servicesStagesFooter: { heading: 'Chcesz poczytać więcej o ioten?', cta: 'Przeczytaj nasz wpis' },
   axisStages: {
@@ -82,6 +153,14 @@ const servicesData = {
         'Zakończenie współpracy albo wręcz przeciwnie... Jesteśmy otwarci na dalszą kooperację w celu doskonalenia strony bądź jej rozbudowywania.',
     },
   ],
+
+  servicesForm: {
+    heading: '“Ok, teraz już coś wiem, ale...',
+    paragraphs: [
+      '...mam jeszcze więcej pytań”',
+      'W takim razie zapraszamy do kontaktu. Zaproponowane usługi oraz etapowanie może być dostosowane do indywidualnych wymagań klienta dlatego jeśli masz wątliwości, czy Twój pomysł znajdzie aprobatę ioten... pisz!',
+    ],
+  },
 };
 
 export default servicesData;

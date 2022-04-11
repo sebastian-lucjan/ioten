@@ -22,7 +22,7 @@ export const ImagePlaceholder = styled.div`
   margin: 1rem 0;
 `;
 
-export const BlogIntroHeading = styled.p`
+export const BlogIntroHeading = styled.h2`
   position: relative;
   z-index: ${({ theme }) => theme.zIndex.top};
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};

@@ -16,7 +16,7 @@ const BlogShort = () => {
 
   const { category, heading, blogLink } = blogData.intro;
 
-  const selectPreferancePosts = (() => {
+  const selectPreferentialPosts = (() => {
     const prefPosts = blogPosts.filter((post) => post.preference);
 
     return prefPosts.splice(0, 3);
@@ -26,12 +26,12 @@ const BlogShort = () => {
     <MainSectionWrapper colors={{ background: white }}>
       <WrapperBlogShort short>
         <TextCaption>{category}</TextCaption>
-        <BlogIntroHeading size="md">{heading}</BlogIntroHeading>
+        <BlogIntroHeading>{heading}</BlogIntroHeading>
         <Link href="/blog">
           <StyledLink>{blogLink}</StyledLink>
         </Link>
         <BlogPostsContainer>
-          {selectPreferancePosts.map((post) => (
+          {selectPreferentialPosts.map((post) => (
             <BlogPost key={uuid()} post={post} />
           ))}
         </BlogPostsContainer>
