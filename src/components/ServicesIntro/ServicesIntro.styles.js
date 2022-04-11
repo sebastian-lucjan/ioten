@@ -8,6 +8,10 @@ export const Button = styled.button`
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   background: ${({ theme }) => theme.gradient.yellow};
   box-shadow: 1.3px 1px 4.1px rgba(0, 0, 0, 0.028), 4.2px 3.4px 13.6px rgba(0, 0, 0, 0.042), 19px 15px 61px rgba(0, 0, 0, 0.07);
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    width: 400px;
+  } ;
 `;
 
 export const SectionHeading = styled.p`
@@ -49,8 +53,84 @@ export const Wrapper = styled.div`
   position: relative;
   padding: 100px 40px;
 
-  .services__text-content {
+  ${({ theme }) => theme.mq.tablet} {
+    padding: 100px 100px;
   }
+
+  .services__text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+
+    & > div,
+    & > ul,
+    button {
+      margin: 20px 0;
+    }
+  }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    padding: 80px 40px;
+    display: flex;
+    justify-content: space-between;
+
+    .services__text-content {
+      width: 50%;
+      padding-right: 20px;
+
+      & > div,
+      & > ul,
+      button {
+        margin: 6px 0;
+      }
+    }
+
+    .services__image-container {
+      width: 50%;
+      padding-left: 20px;
+    }
+  }
+
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    padding: 80px;
+
+    .services__text-content {
+      padding-right: 60px;
+    }
+
+    .services__image-container {
+      padding-left: 60px;
+    }
+  }
+
+  ${({ theme }) => theme.mq.bigDesktop} {
+    padding: 100px;
+
+    .services__text-content {
+      padding-right: 80px;
+    }
+
+    .services__image-container {
+      padding-left: 80px;
+    }
+  }
+
+  ${({ theme }) => theme.mq.hugeDesktop} {
+    padding: 60px 180px;
+
+    .services__text-content {
+      & > div,
+      & > ul {
+        margin-bottom: 20px;
+      }
+      padding-right: 180px;
+    }
+
+    .services__image-container {
+      padding-left: 120px;
+    }
+  } ;
 `;
 
 export const ImagePlaceholder = styled.div`
@@ -58,4 +138,13 @@ export const ImagePlaceholder = styled.div`
   width: 100%;
   height: 40vh;
   margin: 20vh 0 10vh 0;
+
+  ${({ theme }) => theme.mq.tablet} {
+    margin: 10vh 0 10vh 0;
+  }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    height: 62vh;
+    //width: 50%;
+  } ;
 `;

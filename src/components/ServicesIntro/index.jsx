@@ -15,12 +15,14 @@ export default function ServicesIntro() {
   return (
     <Wrapper>
       <div className="services__text-content">
-        <TextCaption>{servicesIntro.caption}</TextCaption>
-        <SectionHeading as="h1">{servicesIntro.heading}</SectionHeading>
-
-        <SectionParagraphs>{servicesIntro.paragraphs[0]}</SectionParagraphs>
-        <SectionParagraphs>{servicesIntro.paragraphs[1]}</SectionParagraphs>
-
+        <div>
+          <TextCaption>{servicesIntro.caption}</TextCaption>
+          <SectionHeading as="h1">{servicesIntro.heading}</SectionHeading>
+        </div>
+        <div>
+          <SectionParagraphs>{servicesIntro.paragraphs[0]}</SectionParagraphs>
+          <SectionParagraphs>{servicesIntro.paragraphs[1]}</SectionParagraphs>
+        </div>
         <ProsList>
           {servicesIntro.prosList.map((adventage) => (
             <li key={uuid()}>
@@ -33,7 +35,9 @@ export default function ServicesIntro() {
         </ProsList>
         <Button>Wyślij wiadomość</Button>
       </div>
-      <ImagePlaceholder />
+      <div className="services__image-container">
+        <ImagePlaceholder />
+      </div>
       <Grid colors={{ lines: grayToNavyBlue }} />
     </Wrapper>
   );
