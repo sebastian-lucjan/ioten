@@ -36,13 +36,17 @@ export const BlogIntroHeading = styled.p`
 `;
 
 export const BlogPostsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
   ${({ theme }) => theme.mq.tablet} {
     width: 100%;
-    display: flex;
   } ;
 `;
 
 export const StyledPost = styled.div`
+  width: 30%;
   margin: 4rem 0;
 
   p {
@@ -51,8 +55,8 @@ export const StyledPost = styled.div`
   }
 
   ${({ theme }) => theme.mq.tablet} {
-    width: 30%;
-    margin: 0 5% 4rem 0;
+    //width: 25%;
+    margin: 0 0 4rem 0;
 
     &:last-child {
       margin-right: 0;

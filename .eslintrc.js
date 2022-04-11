@@ -57,6 +57,8 @@ module.exports = {
     'react/jsx-max-props-per-line': [1, { maximum: 6 }],
     'react/self-closing-comp': 'off',
     'react/jsx-filename-extension': 'off',
+    'import/prefer-default-export': 'off',
+    'jsx-closing-bracket-location': 'off',
     // 'object-curly-newline': 'off',
   },
 };

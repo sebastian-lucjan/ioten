@@ -6,12 +6,12 @@ const StyledBaseLayout = styled.main`
   overflow: hidden;
 `;
 
-const BaseLayout = ({ children }) => {
+const BaseLayout = ({ children, footerGridColor }) => {
   return (
     <StyledBaseLayout>
       <Navigation />
       {children}
-      <Footer />
+      <Footer footerGridColor={footerGridColor} />
     </StyledBaseLayout>
   );
 };

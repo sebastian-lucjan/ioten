@@ -8,6 +8,7 @@ const servicesData = {
     { heading: 'Blog' },
   ],
   headSection: { title: 'ioten - usługi', description: '' },
+  servicesIntro: {},
   serviceStagesIntro: 'Etapy',
   servicesStagesFooter: { heading: 'Chcesz poczytać więcej o ioten?', cta: 'Przeczytaj nasz wpis' },
   axisStages: {

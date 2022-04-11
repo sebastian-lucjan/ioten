@@ -1,6 +1,8 @@
 import HeadSection from 'src/components/HeadSection';
 import BaseLayout from 'src/components/BaseLayout';
 import servicesData from 'src/data/servicesData';
+import theme from 'src/assets/styles/theme';
+import IdeaInterlude from 'src/components/IdeaInterlude';
 
 const Services = () => {
   const {
@@ -10,8 +12,9 @@ const Services = () => {
   return (
     <>
       <HeadSection title={title} description={description} />
-      <BaseLayout>
+      <BaseLayout footerGridColor={theme.gradient.yellowToGray}>
         <section>Services</section>
+        <IdeaInterlude />
       </BaseLayout>
     </>
   );

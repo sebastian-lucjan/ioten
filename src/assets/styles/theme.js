@@ -22,15 +22,21 @@ const theme = {
     lightGrayAxisSection: 'linear-gradient(135deg, hsl(0, 0%, 93%) 0%, hsl(0, 0%, 97%) 100%)',
     navyBlue: 'linear-gradient(80deg, rgba(76,65,107,1) 0%, rgba(72,59,76,1) 100%)',
     yellowToGray: 'linear-gradient(0deg, hsl(0, 0%, 80%) 0%, hsl(0, 0%, 80%) 75%, hsl(65, 88%, 48%) 100%)',
-    yellowTransparentGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 1) 0%, hsl(0, 0%, 96%, 0) 20%, hsl(0, 0%, 96%, 0) 80% ,hsl(65, 88%, 48%) 100%)',
+    yellowTransparentGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 1) 0%, hsl(0, 0%, 96%, 0) 10%, hsl(0, 0%, 96%, 0) 80% ,hsl(65, 88%, 48%) 100%)',
     grayTransparentGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 1) 0%, hsl(0, 0%, 96%, 0) 20%, hsl(0, 0%, 96%, 0) 80% ,hsl(0, 0%, 80%, 1) 100%)',
     grayToYellow: 'linear-gradient(180deg, hsl(0, 0%, 80%) 0%, hsl(0, 0%, 80%) 75%, hsl(65, 88%, 48%) 100%)',
+    grayToBlack: 'linear-gradient(0deg, hsl(0, 0%, 80%) 0%, hsl(0, 0%, 80%) 75%, hsl(0, 0%, 30%) 100%)',
+    grayToTransparent: 'linear-gradient(0deg, hsl(0, 0%, 80%, 0) 0%, hsl(0, 0%, 96%, 0) 10%, hsl(0, 0%, 96%, 0) 70% ,hsl(0, 0%, 70%, 1) 100%)',
+    blackToGray: 'linear-gradient(180deg, hsl(0, 0%, 80%) 0%, hsl(0, 0%, 80%) 75%, hsl(0, 0%, 30%) 100%)',
+    blackToTransparent: 'linear-gradient(180deg, hsl(0, 0%, 80%, 0) 0%, hsl(0, 0%, 80%, 0) 85%, hsl(0, 0%, 80%) 92.5%, hsl(0, 0%, 30%) 100%)',
     lightGrayTransparentLightGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 0) 0%, hsl(0, 0%, 96%) 30%, hsl(0, 0%, 96%) 70% ,hsl(0, 0%, 0%, 0) 100%)',
+    transparentToYellow: 'linear-gradient(180deg, hsl(0, 0%, 80%, 0) 0%, hsl(0, 0%, 96%, 0) 10%, hsl(0, 0%, 96%, 0) 90% ,hsl(65, 88%, 48%) 100%)',
     rainbow: {
       highlight:
         'linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(254,255,0,1) 25%, rgba(1,255,0,1) 50%, rgba(0,39,255,1) 75%, rgba(226,0,255,1) 100%)',
       servicesAxis: `linear-gradient(180deg, hsl(0, 0%, 80%) 0%, ${rainbowColors[0]} 16.66%, ${rainbowColors[1]} 33.33%, ${rainbowColors[2]} 50%, ${rainbowColors[3]} 66.66%, ${rainbowColors[4]} 83.33%, hsl(0, 0%, 80%) 100%)`,
     },
+    blackBrief: 'linear-gradient(135deg, rgba(67,67,67,1) 0%, rgba(47,47,47,1) 100%);',
   },
   font: {
     size: {

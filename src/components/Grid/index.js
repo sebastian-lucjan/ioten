@@ -1,5 +1,5 @@
 import theme from 'src/assets/styles/theme';
-import { StyledGrid, Line } from './Grid.styles';
+import Line from './Grid.styles';
 
 const Grid = ({ colors = { lines: theme.color.lightGray } }) => {
   const lineColor = { ...colors };
@@ -9,13 +9,13 @@ const Grid = ({ colors = { lines: theme.color.lightGray } }) => {
   }
 
   return (
-    <StyledGrid>
+    <div>
       <Line color={lineColor.lines} />
       <Line color={lineColor.innerLines} />
       <Line color={lineColor.innerLines} />
       <Line color={lineColor.innerLines} />
       <Line color={lineColor.lines} />
-    </StyledGrid>
+    </div>
   );
 };
 

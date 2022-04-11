@@ -21,6 +21,7 @@ export const TextParagraph = styled.p`
   position: relative;
   display: block;
   z-index: ${({ theme }) => theme.zIndex.top};
+  ${({ color }) => (color ? `color: ${color}` : '')}; //passed color
 
   font-family: ${({ theme, weight }) => {
     switch (weight) {
