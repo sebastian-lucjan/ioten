@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { TextParagraph } from '../TextComponents';
 
 export const Wrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,7 +30,7 @@ export const Wrapper = styled.div`
   ${({ theme }) => theme.mq.desktop} {
     height: 50vh;
     width: 100%;
-    padding: 0 80px;
+    padding: 0 100px;
   }
 
   ${({ theme }) => theme.mq.bigDesktop} {

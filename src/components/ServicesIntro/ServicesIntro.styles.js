@@ -54,18 +54,17 @@ export const ProsList = styled.ul`
 `;
 
 export const Wrapper = styled.div`
-  position: relative;
-  padding: 100px 40px;
+  padding: 40px 40px;
 
   ${({ theme }) => theme.mq.tablet} {
-    padding: 100px 100px;
+    padding: 0 100px;
   }
 
   .services__text-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 80vh;
+    min-height: 100vh;
 
     & > div,
     & > ul,
@@ -75,7 +74,6 @@ export const Wrapper = styled.div`
   }
 
   ${({ theme }) => theme.mq.smallDesktop} {
-    padding: 80px 40px;
     display: flex;
     justify-content: space-between;
 
@@ -91,14 +89,12 @@ export const Wrapper = styled.div`
     }
 
     .services__image-container {
+      padding: 80px 40px;
       width: 50%;
-      padding-left: 20px;
     }
   }
 
   ${({ theme }) => theme.mq.mediumDesktop} {
-    padding: 80px;
-
     .services__text-content {
       padding-right: 60px;
     }
@@ -109,8 +105,6 @@ export const Wrapper = styled.div`
   }
 
   ${({ theme }) => theme.mq.bigDesktop} {
-    padding: 100px;
-
     .services__text-content {
       padding-right: 80px;
     }
@@ -121,7 +115,7 @@ export const Wrapper = styled.div`
   }
 
   ${({ theme }) => theme.mq.hugeDesktop} {
-    padding: 60px 180px;
+    padding: 0 180px;
 
     .services__text-content {
       & > div,
@@ -141,14 +135,13 @@ export const ImagePlaceholder = styled.div`
   background-color: lightgray;
   width: 100%;
   height: 40vh;
-  margin: 20vh 0 10vh 0;
+  margin: 10vh 0 10vh 0;
 
   ${({ theme }) => theme.mq.tablet} {
     margin: 10vh 0 10vh 0;
-  }
+  } //todo: if won't change, delete.
 
   ${({ theme }) => theme.mq.smallDesktop} {
     height: 62vh;
-    //width: 50%;
   } ;
 `;

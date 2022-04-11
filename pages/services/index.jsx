@@ -6,6 +6,7 @@ import IdeaInterlude from 'src/components/IdeaInterlude';
 import ServicesIntro from 'src/components/ServicesIntro';
 // import ServicesForm from 'src/components/ServicesForm';
 import ServicesBenefit from 'src/components/ServicesBenefit';
+import ServicesTypes from '../../src/components/ServiceTypes';
 // import ServicesStages from 'src/components/ServiceStages';
 // import ServicesTypes from 'src/components/ServiceTypes';
 
@@ -20,7 +21,7 @@ const Services = () => {
       <BaseLayout footerGridColor={theme.gradient.yellowToGray}>
         <ServicesIntro />
         <ServicesBenefit />
-        {/* <ServicesTypes /> */}
+        <ServicesTypes />
         <IdeaInterlude />
         {/* <ServicesStages /> */}
         {/* <ServicesForm /> */}

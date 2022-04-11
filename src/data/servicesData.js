@@ -44,12 +44,14 @@ const servicesData = {
         description: [
           'Strona docelowa bez rozbudowanej struktury. Jej celem może być zaprezentowanie swoich usług (wizytówka), przekazanie informacji,  reklama, bądź zachęcenie do dalszej interakcji z produktem (CTA - call to action).',
         ],
+        icon: 'gg:website',
       },
       {
         heading: 'Strona o rozbudowanej strukturze',
         description: [
           'Strona o kilku podstronach dostępnych z reprezentatywnej strony głównej. Dzięki takiej stronie firma może przekazać większą ilość informacji np.: oferta, kontakt, o nas, historia, referecje przez co zwiększa swoją wiarygodność i rozpoznawalność w sieci.',
         ],
+        icon: 'gridicons:site',
       },
       {
         heading: 'Strona firmowa z CMSem',
@@ -57,6 +59,7 @@ const servicesData = {
           'Strona o różnym poziomie rozbudowania, połączona z systemem zarządzania treścią (content management system, czyli: CMS).',
           'Przeznaczona do stron których treści będą edytowane wraz z biegiem czasu. ',
         ],
+        icon: 'ci:calendar-edit',
       },
       {
         heading: 'Strona PRO',
@@ -69,6 +72,7 @@ const servicesData = {
           '- systemy logowania i tworzenia użytkownika (np.: szkoła języka angielskiego)',
           '- i.... wiele więcej',
         ],
+        icon: 'eos-icons:subscriptions-created-outlined',
       },
       {
         heading: 'Animacja PRO',
@@ -76,6 +80,7 @@ const servicesData = {
           'Idealna gdy chcesz opowiedzieć historię w której centrum jesteś Ty, Twoja idea i Twój produkt. Strona o zaawansowanej warstwie wizualnej i dużej złożoności interakcyjnej.',
           'Poziom animacji wykracza poza standardowe rozwiązania jak pojawianie się tekstu od boku strony.',
         ],
+        icon: 'clarity:animation-line',
       },
     ],
   },
