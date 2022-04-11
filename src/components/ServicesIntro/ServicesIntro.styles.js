@@ -17,6 +17,10 @@ export const Button = styled.button`
 export const SectionHeading = styled.p`
   font-size: ${({ theme }) => theme.font.size.headingSection};
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
+
+  ${({ theme }) => theme.mq.hugeDesktop} {
+    font-size: ${({ theme }) => theme.font.size.headingPage};
+  }
 `;
 export const SectionParagraphs = styled.p`
   margin-bottom: 2rem;

@@ -1,82 +1,83 @@
 import styled from 'styled-components';
-import { TextWrapper } from '../TextComponents';
+import { TextParagraph } from '../TextComponents';
 
-export const InterludeWrapper = styled(({ ...props }) => <TextWrapper {...props} />)`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   height: 80vh;
   margin: auto 0;
+  padding: 0 40px;
 
-  a {
-    //container for button - need to customize sizes of button
-    width: 100%;
+  & > div > * {
+    margin: 2rem 0;
   }
 
   ${({ theme }) => theme.mq.tablet} {
-    height: unset;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    flex-direction: row;
+    height: 40vh;
 
-    .idea-interlude__heading,
-    .services-interlude__heading,
-    .brief-interlude__heading {
-      grid-area: 1 / 1 / 3 / 2;
-      display: flex;
-      align-items: center;
-      height: 100%;
-      padding: 40px;
-    }
-    .idea-interlude__paragraph,
-    .services-interlude__paragraph,
-    .brief-interlude__paragraph {
-      grid-area: 1 / 2 / 2 / 3;
-      display: flex;
-      align-items: center;
-      line-height: 28px;
-      padding: 0 20px;
-    }
-    .idea-interlude__button,
-    .services-interlude__button,
-    .brief-interlude__button {
+    & > div {
+      width: 50%;
       height: 100%;
       display: flex;
-      align-items: center;
-      grid-area: 2 / 2 / 3 / 3;
-      padding: 20px;
+      flex-direction: column;
+      justify-content: center;
     }
+  }
+
+  ${({ theme }) => theme.mq.desktop} {
+    height: 50vh;
+    width: 100%;
+    padding: 0 80px;
+  }
+
+  ${({ theme }) => theme.mq.bigDesktop} {
+    padding: 0 100px;
   }
 
   ${({ theme }) => theme.mq.hugeDesktop} {
-    .idea-interlude__paragraph,
-    .services-interlude__paragraph,
-    .brief-interlude__paragraph,
-    .idea-interlude__button,
-    .services-interlude__button,
-    .brief-interlude__button {
-      padding: 40px;
+    padding: 0 180px;
+  } ;
+`;
+
+export const StyledHeadingWrapper = styled.div`
+  ${({ theme }) => theme.mq.tablet} {
+    padding-right: 20px;
+
+    & > :nth-child(1) {
+      margin: 0;
     }
   }
+`;
 
+export const StyledContentWrapper = styled.div`
+  ${({ theme }) => theme.mq.tablet} {
+    padding-left: 20px;
+  }
+`;
+
+export const StyledHeading = styled.p`
+  font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
+  font-size: ${({ theme }) => theme.font.size.headingSection};
+  color: ${({ theme, color }) => color || theme.color.white}; //passed color
+
+  ${({ theme }) => theme.mq.bigDesktop} {
+    font-size: ${({ theme }) => theme.font.size.headingBigDesktop};
+    padding-right: 20px;
+  }
+
+  ${({ theme }) => theme.mq.hugeDesktop} {
+    font-size: ${({ theme }) => theme.font.size.headingPage};
+  }
+`;
+
+export const StyledParagraph = styled(({ ...props }) => <TextParagraph {...props} />)`
   ${({ theme }) => theme.mq.mediumDesktop} {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 50%;
+  }
 
-    .idea-interlude__heading,
-    .services-interlude__heading,
-    .brief-interlude__heading {
-      grid-area: 1 / 2 / 3 / 3;
-    }
-    .idea-interlude__paragraph,
-    .services-interlude__paragraph,
-    .brief-interlude__paragraph {
-      font-size: ${({ theme }) => theme.font.size.paragraph};
-      grid-area: 1 / 3 / 2 / 4;
-    }
-    .idea-interlude__button,
-    .services-interlude__button,
-    .brief-interlude__button {
-      grid-area: 2 / 3 / 3 / 4;
-    }
+  ${({ theme }) => theme.mq.bigDesktop} {
+    font-size: ${({ theme }) => theme.font.size.paragraph};
   }
 `;

@@ -1,19 +1,10 @@
 import theme from 'src/assets/styles/theme';
-import styled from 'styled-components';
-import Grid from '../Grid';
+import servicesData from 'src/data/servicesData';
+import { StyledContentWrapper, StyledHeading, StyledHeadingWrapper, StyledParagraph, Wrapper } from 'src/components/Interlude/Interlude.styles';
+import Button from 'src/components/Button';
+import Grid from 'src/components/Grid';
 import MainSectionWrapper from '../MainSectionWrapper/MainSectionWrapper.styles';
-import { TextCaption, TextHeading, TextParagraph } from '../TextComponents';
-import Button from '../Button';
-import servicesData from '../../data/servicesData';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 80vh;
-  margin: auto 0;
-  padding: 0 40px;
-`;
+import { TextCaption } from '../TextComponents';
 
 export default function ServicesBenefit() {
   const {
@@ -21,21 +12,24 @@ export default function ServicesBenefit() {
   } = servicesData;
 
   const {
-    color: { darkNavy, lightGray, white },
+    color: { darkNavy, darkerNavy, lightGray, white },
   } = theme;
 
   return (
     <MainSectionWrapper colors={{ background: darkNavy }}>
       <Wrapper>
-        <TextCaption color={lightGray}>{caption}</TextCaption>
-        <TextHeading color={white} size="lg">
-          {heading}
-        </TextHeading>
-        <TextParagraph color={white}>{paragraph}</TextParagraph>
-        <Button text={buttonLabel} textColor={darkNavy} backgroundColor={white} type="button" />
-
-        <Grid />
+        <StyledHeadingWrapper>
+          <TextCaption color={lightGray}>{caption}</TextCaption>
+          <StyledHeading color={white} as="h2" size="lg">
+            {heading}
+          </StyledHeading>
+        </StyledHeadingWrapper>
+        <StyledContentWrapper>
+          <StyledParagraph color={white}>{paragraph}</StyledParagraph>
+          <Button text={buttonLabel} textColor={darkNavy} backgroundColor={white} type="button" />
+        </StyledContentWrapper>
       </Wrapper>
+      <Grid colors={{ lines: darkerNavy }} />
     </MainSectionWrapper>
   );
 }

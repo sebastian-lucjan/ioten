@@ -7,6 +7,7 @@ const theme = {
     darkerGray: 'hsl(0, 0%, 42%)',
     darkGray: 'hsl(0, 0%, 53%)',
     darkNavy: 'hsla(197, 58%, 8%, 1)',
+    darkerNavy: 'hsla(197, 58%, 0%, 1)',
     gray: 'hsl(0, 0%, 67%)',
     green: 'hsl(119, 47%, 49%)',
     lightGray: 'hsl(0, 0%, 80%)',
@@ -46,6 +47,7 @@ const theme = {
     size: {
       headingGargantuan: '7.2rem',
       headingPage: '5.2rem',
+      headingBigDesktop: '4.2rem',
       headingSection: '3.6rem',
       headingMedium: '2.8rem',
       paragraphBig: '2.4rem',
