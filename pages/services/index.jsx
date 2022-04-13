@@ -7,6 +7,7 @@ import ServicesIntro from 'src/components/ServicesIntro';
 // import ServicesForm from 'src/components/ServicesForm';
 import ServicesBenefit from 'src/components/ServicesBenefit';
 import ServicesTypes from '../../src/components/ServiceTypes';
+import ServicesStages from '../../src/components/ServiceStages';
 // import ServicesStages from 'src/components/ServiceStages';
 // import ServicesTypes from 'src/components/ServiceTypes';
 
@@ -23,7 +24,7 @@ const Services = () => {
         <ServicesBenefit />
         <ServicesTypes />
         <IdeaInterlude />
-        {/* <ServicesStages /> */}
+        <ServicesStages />
         {/* <ServicesForm /> */}
       </BaseLayout>
     </>

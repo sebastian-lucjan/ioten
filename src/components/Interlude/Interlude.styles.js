@@ -61,7 +61,7 @@ export const StyledContentWrapper = styled.div`
 export const StyledHeading = styled.p`
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   font-size: ${({ theme }) => theme.font.size.headingSection};
-  color: ${({ theme, color }) => color || theme.color.white}; //passed color
+  color: ${({ theme, color }) => color || theme.color.black}; //passed color
 
   ${({ theme }) => theme.mq.bigDesktop} {
     font-size: ${({ theme }) => theme.font.size.headingBigDesktop};
@@ -74,8 +74,9 @@ export const StyledHeading = styled.p`
 `;
 
 export const StyledParagraph = styled(({ ...props }) => <TextParagraph {...props} />)`
-  ${({ theme }) => theme.mq.mediumDesktop} {
+  ${({ theme }) => theme.mq.smallDesktop} {
     width: 50%;
+    padding-right: 2rem;
   }
 
   ${({ theme }) => theme.mq.bigDesktop} {

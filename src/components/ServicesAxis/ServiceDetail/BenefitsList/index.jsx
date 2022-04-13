@@ -22,7 +22,7 @@ const BenefitsList = ({ prosList, index }) => {
           <div className="service-detail__check">
             <ColorCheckIcon color={accentColor} />
           </div>
-          <TextParagraph size="sm">{profit}</TextParagraph>
+          <TextParagraph size="sm">{profit.text}</TextParagraph>
         </StyledBenefit>
       ))}
     </StyledBenefitsList>

@@ -9,7 +9,7 @@ const theme = {
     darkNavy: 'hsla(197, 58%, 8%, 1)',
     darkerNavy: 'hsla(197, 58%, 0%, 1)',
     gray: 'hsl(0, 0%, 67%)',
-    green: 'hsl(119, 47%, 49%)',
+    green: 'hsl(119, 55%, 63%)',
     lightGray: 'hsl(0, 0%, 80%)',
     lighterGray: 'hsl(0, 0%, 87%)',
     lightestGray: 'hsl(0, 0%, 95%)',
