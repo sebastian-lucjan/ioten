@@ -16,7 +16,7 @@ export default function ServicesBenefit() {
   } = theme;
 
   return (
-    <MainSectionWrapper colors={{ background: darkNavy }}>
+    <MainSectionWrapper background={darkNavy}>
       <Wrapper>
         <StyledHeadingWrapper>
           <TextCaption color={lightGray}>{caption}</TextCaption>

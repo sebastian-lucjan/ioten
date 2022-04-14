@@ -6,7 +6,7 @@ const Line = styled.span`
   min-height: 100%;
   width: 1px;
   background: ${({ color }) => color};
-  z-index: ${({ theme }) => theme.zIndex.front};
+  z-index: ${({ theme }) => theme.zIndex.top};
 
   &:first-child,
   &:last-child {

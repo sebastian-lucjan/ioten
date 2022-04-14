@@ -24,7 +24,7 @@ const MottoInterlude = () => {
   } = theme;
 
   return (
-    <MainSectionWrapper colors={{ background: white }} smaller>
+    <MainSectionWrapper background={white} smaller>
       <MottoWrapper>
         <MottoParagraph weight="bold" className="motto__text">
           {motto.text}

@@ -10,7 +10,7 @@ import { ImageContainer, ImagePlaceholder, StyledContentWrapper, StyledHeadingWr
 export default function ServicesTypes() {
   const {
     color: { black },
-    gradient: { red },
+    gradient: { red, navyToYellow },
   } = theme;
 
   const {
@@ -34,8 +34,8 @@ export default function ServicesTypes() {
         <ServicesList />
 
         <Button backgroundColor={red} text={buttonLabel} />
-        <Grid />
       </StyledContentWrapper>
+      <Grid colors={{ lines: navyToYellow }} />
     </Wrapper>
   );
 }

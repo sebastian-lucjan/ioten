@@ -1,9 +1,12 @@
 import servicesData from 'src/data/servicesData';
 import Grid from 'src/components/Grid';
 import theme from 'src/assets/styles/theme';
+import styled from 'styled-components';
 import StagesList from './StagesList';
 import StagesIntro from './StagesIntro';
 import MainSectionWrapper from '../MainSectionWrapper/MainSectionWrapper.styles';
+
+const Wrapper = styled.div``;
 
 export default function ServicesStages() {
   const {
@@ -16,13 +19,17 @@ export default function ServicesStages() {
 
   const {
     color: { white },
+    gradient: { yellowGrayYellow },
   } = theme;
 
   return (
-    <MainSectionWrapper colors={{ background: white }}>
-      <StagesIntro heading={heading} paragraph={paragraph} stagesCaption={stagesCaption} />
-      <StagesList stages={stagesArray} />
-      <Grid />
+    <MainSectionWrapper background={white}>
+      <Wrapper>
+        <Grid colors={{ lines: yellowGrayYellow }} />
+
+        <StagesIntro heading={heading} paragraph={paragraph} stagesCaption={stagesCaption} />
+        <StagesList stages={stagesArray} />
+      </Wrapper>
     </MainSectionWrapper>
   );
 }

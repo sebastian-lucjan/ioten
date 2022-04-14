@@ -55,6 +55,7 @@ export const ProsList = styled.ul`
 
 export const Wrapper = styled.div`
   padding: 40px 40px;
+  z-index: ${({ theme }) => theme.zIndex.peak};
 
   ${({ theme }) => theme.mq.tablet} {
     padding: 0 100px;

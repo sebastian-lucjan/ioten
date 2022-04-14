@@ -13,7 +13,7 @@ export default function BlogPostsAll() {
   } = theme;
 
   return (
-    <MainSectionWrapper colors={{ background: white }}>
+    <MainSectionWrapper background={white}>
       <StyledBlogPostAll>
         {/* <BlogNavigation/> */}
         {/* <BlogPost /> */}

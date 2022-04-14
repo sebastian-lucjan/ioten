@@ -35,12 +35,11 @@ const Navigation = () => {
   };
 
   const {
-    color: { lightGray },
     gradient: { lightGray: lightGrayGradient },
   } = theme;
 
   return (
-    <MainSectionWrapper colors={{ background: lightGrayGradient, lines: lightGray }} smaller>
+    <MainSectionWrapper background={lightGrayGradient} smaller>
       <LogoWrapper>
         <Link href="/">
           <StyledLogo>

@@ -2,12 +2,7 @@ import theme from 'src/assets/styles/theme';
 import styled from 'styled-components';
 import Line from './Grid.styles';
 
-const StyledLines = styled.div`
-  //position: absolute;
-  //top: 0;
-  //left: 0;
-  //min-height: 120vh;
-`;
+const StyledLines = styled.div``;
 
 const Grid = ({ colors = { lines: theme.color.lightGray } }) => {
   const lineColor = { ...colors };

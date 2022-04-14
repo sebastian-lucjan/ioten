@@ -1,7 +1,7 @@
 import theme from 'src/assets/styles/theme';
 import { TextCaption } from 'src/components/TextComponents';
 import { StyledHeading, StyledParagraph } from 'src/components/Interlude/Interlude.styles';
-import ProsList from '../ProsList';
+import ProsList from 'src/components/ServiceStages/StagesList/ProsList';
 import { StyledStage } from './Stage.styles';
 
 export default function Stage({ stageData }) {

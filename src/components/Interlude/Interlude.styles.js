@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   height: 80vh;
   margin: auto 0;
   padding: 0 40px;
+  z-index: ${({ theme }) => theme.zIndex.peak};
 
   & > div > * {
     margin: 2rem 0;
@@ -62,6 +63,7 @@ export const StyledHeading = styled.p`
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   font-size: ${({ theme }) => theme.font.size.headingSection};
   color: ${({ theme, color }) => color || theme.color.black}; //passed color
+  z-index: ${({ theme }) => theme.zIndex.peak};
 
   ${({ theme }) => theme.mq.bigDesktop} {
     font-size: ${({ theme }) => theme.font.size.headingBigDesktop};

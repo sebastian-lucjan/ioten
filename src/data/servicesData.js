@@ -109,9 +109,9 @@ const servicesData = {
         'Celem tego etapu jest wprowadzenie ioten w świat pomysłu / biznesu inwestora. Przeprowadzamy wnikliwą analizę wymagań i inspiracji a następnie wyciągamy wnioski, na których budujemy naszą współpracę',
       prosList: [
         { text: 'Wstępny wywiad / ankieta w celu wstępnego zaadresowania potrzeb klienta', icon: 'clarity:talk-bubbles-line' },
-        { text: 'Wywiad i analiza jako etap podbudowy merytorycznej', icon: 'clarity:talk-bubbles-line' },
-        { text: 'Analiza konkurencji i inspiracji', icon: 'clarity:talk-bubbles-line' },
-        { text: 'Raport / przedstawienie wniosków', icon: 'clarity:talk-bubbles-line' },
+        { text: 'Wywiad i analiza jako etap podbudowy merytorycznej', icon: 'ic:outline-phone-in-talk' },
+        { text: 'Analiza konkurencji i inspiracji', icon: 'carbon:text-link-analysis' },
+        { text: 'Raport / przedstawienie wniosków', icon: 'carbon:report' },
       ],
       endParagraph: 'Efektem finalnym tego etapu jest raport / przedstawienie wniosków i opracowanie szczegółowego modelu dalszej współpracy.',
     },
@@ -121,9 +121,9 @@ const servicesData = {
       introParagraph:
         'W oparciu o analizy, wymagania i pomysły wyklarowane w strategii, tworzone są makiety strony oraz persony mające być odpowiednio szkieletem przyszłej strony i drogowskazem dla projektowania doświadczeń użytkownika.',
       prosList: [
-        { text: 'Stworzenie Persony czyli hipotetycznego użytkownika produktu,', icon: 'clarity:talk-bubbles-line' },
-        { text: 'Roadmapa projektu czyli określenie celów i kamieni milowych współpracy,', icon: 'clarity:talk-bubbles-line' },
-        { text: 'Wireflow i wireframing strony', icon: 'clarity:talk-bubbles-line' },
+        { text: 'Stworzenie Persony czyli hipotetycznego użytkownika produktu,', icon: 'akar-icons:person' },
+        { text: 'Roadmapa projektu czyli określenie celów i kamieni milowych współpracy,', icon: 'akar-icons:map' },
+        { text: 'Wireflow i wireframing strony', icon: 'charm:square-cross' },
       ],
       endParagraph:
         'Efektem finalnym jest wireframe aplikacji oraz persona użytkownika. Na tym etapie budowany jest fundament pod przyszły design strony.',
@@ -134,9 +134,9 @@ const servicesData = {
       introParagraph:
         'Kolejnym etapem po przygotowaniu makiet jest UI Design, czyli opracowanie tego, jak wizualnie będzie wyglądał interfejs użytkownika lub oprogramowanie serwisu. W trakcie projektowania dobierany jest styl wizualny. Obejmuje takie aspekty jak typografia, ikony i kolory, ale także wykorzystanie przestrzeni między poszczególnymi elementami. Mockups Design charakteryzuje się również tym, że przygotowane ekrany wyglądają tak samo, jak będzie wyglądał finalny produkt.',
       prosList: [
-        { text: 'Dobranie kolorystyki, typografii, ikon', icon: 'clarity:talk-bubbles-line' },
-        { text: 'Przygotowanie wizualnej makiety strony.', icon: 'clarity:talk-bubbles-line' },
-        { text: 'Akceptacja finalnego wyglądu.', icon: 'clarity:talk-bubbles-line' },
+        { text: 'Dobranie kolorystyki, typografii, ikon', icon: 'ant-design:bg-colors-outlined' },
+        { text: 'Przygotowanie wizualnej makiety strony.', icon: 'iconoir:3d-select-solid' },
+        { text: 'Akceptacja finalnego wyglądu.', icon: 'eos-icons:system-ok-outlined' },
       ],
       endParagraph:
         'Efektem tego etapu jest materializacja większości założeń wypracowanych w poprzednich etapach. Optymalnie przeprowadzony etap designu pozwala płynnie, bez blokad decyzyjnych przeprowadzić etap wdrażania produktu',
@@ -147,10 +147,10 @@ const servicesData = {
       introParagraph:
         'Budujemy niesamowicie szybką stronę www dla Twojego biznesu w oparciu o wypracowany we wcześniejszym projekcie design. Używamy nowoczesnych technologii jak biblioteka React, czy framework Next.js.',
       prosList: [
-        { text: 'Dobór optymalnej technologi dla Twojej strony.', icon: 'clarity:talk-bubbles-line' },
-        { text: 'Przełożenie finalnego designu na kod.', icon: 'clarity:talk-bubbles-line' },
-        { text: 'Połączenie strony z sytemem zarządzania treścią CMS', icon: 'clarity:talk-bubbles-line' },
-        { text: 'Weryfikacja założeń, ostatnie szlify.', icon: 'clarity:talk-bubbles-line' },
+        { text: 'Dobór optymalnej technologi dla Twojej strony.', icon: 'carbon:task-approved' },
+        { text: 'Przełożenie finalnego designu na kod.', icon: 'ant-design:code-outlined' },
+        { text: 'Połączenie strony z sytemem zarządzania treścią CMS', icon: 'fa6-regular:pen-to-square' },
+        { text: 'Weryfikacja założeń, ostatnie szlify.', icon: 'bx:diamond' },
       ],
       endParagraph: 'Przed finalnym umieszczeniem na serwerze klient może zobaczyć swoją stronę w środowisku tesotowym na testowym hostingu.',
     },
@@ -159,9 +159,9 @@ const servicesData = {
       heading: 'Optymalizacja & Wsparcie',
       introParagraph: 'Umieszczenie strony na serwerze. Możliwe rozszerzenie współpracy o wsparcie w trakcie użytkowania strony.',
       prosList: [
-        { text: 'Umieszczenie strony na serwerze,', icon: 'clarity:talk-bubbles-line' },
-        { text: 'Przekazanie niezbędnej wiedzy w celu obsługi strony.', icon: 'clarity:talk-bubbles-line' },
-        { text: 'Ewentualne wsparcie w trakcie funkcjonowania strony.', icon: 'clarity:talk-bubbles-line' },
+        { text: 'Umieszczenie strony na serwerze,', icon: 'carbon:bare-metal-server' },
+        { text: 'Przekazanie niezbędnej wiedzy w celu obsługi strony.', icon: 'bx:book-bookmark' },
+        { text: 'Ewentualne wsparcie w trakcie funkcjonowania strony.', icon: 'mdi:help-network-outline' },
       ],
       endParagraph:
         'Zakończenie współpracy albo wręcz przeciwnie... Jesteśmy otwarci na dalszą kooperację w celu doskonalenia strony bądź jej rozbudowywania.',
@@ -169,6 +169,7 @@ const servicesData = {
   ],
 
   servicesForm: {
+    caption: 'I co teraz?!',
     heading: '“Ok, teraz już coś wiem, ale...',
     paragraphs: [
       '...mam jeszcze więcej pytań”',

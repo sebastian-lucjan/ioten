@@ -15,7 +15,7 @@ export default function BriefShortInterlude() {
   } = theme;
 
   return (
-    <MainSectionWrapper colors={{ background: blackBrief }}>
+    <MainSectionWrapper background={blackBrief}>
       <Wrapper>
         <StyledHeadingWrapper>
           <StyledHeading color={white} as="h2" size="lg">

@@ -17,6 +17,8 @@ export const StyledHeadingWrapper = styled.div`
 `;
 
 export const StyledContentWrapper = styled.div`
+  z-index: ${({ theme }) => theme.zIndex.top};
+
   ${({ theme }) => theme.mq.tablet} {
     width: 50%;
     padding-left: 20px;
@@ -47,6 +49,8 @@ export const Wrapper = styled.div`
 `;
 
 export const ImageContainer = styled.div`
+  z-index: ${({ theme }) => theme.zIndex.peak};
+
   ${({ theme }) => theme.mq.tablet} {
     width: 50%;
     padding-right: 20px;

@@ -14,7 +14,7 @@ export default function ServicesIntro() {
   const { servicesIntro } = servicesData;
 
   return (
-    <MainSectionWrapper colors={{ background: white }}>
+    <MainSectionWrapper background={white}>
       <Wrapper>
         <div className="services__text-content">
           <div>
@@ -40,8 +40,8 @@ export default function ServicesIntro() {
         <div className="services__image-container">
           <ImagePlaceholder />
         </div>
-        <Grid colors={{ lines: grayToNavyBlue }} />
       </Wrapper>
+      <Grid colors={{ lines: grayToNavyBlue }} />
     </MainSectionWrapper>
   );
 }
