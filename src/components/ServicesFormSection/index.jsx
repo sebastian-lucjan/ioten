@@ -3,7 +3,7 @@ import theme from 'src/assets/styles/theme';
 import FormIntro from './FormIntro';
 import ServicesForm from './ServicesForm';
 import MainSectionWrapper from '../MainSectionWrapper/MainSectionWrapper.styles';
-import { StyledServicesForm } from './ServicesForm/ServicesForm.styles';
+import { StyledServicesForm } from './ServicesFormSection.styles';
 
 export default function ServicesFormSection() {
   return (
