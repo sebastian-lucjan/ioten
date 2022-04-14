@@ -4,10 +4,13 @@ import servicesData from 'src/data/servicesData';
 import theme from 'src/assets/styles/theme';
 import IdeaInterlude from 'src/components/IdeaInterlude';
 import ServicesIntro from 'src/components/ServicesIntro';
-// import ServicesForm from 'src/components/ServicesForm';
 import ServicesBenefit from 'src/components/ServicesBenefit';
-// import ServicesStages from 'src/components/ServiceStages';
-// import ServicesTypes from 'src/components/ServiceTypes';
+import ServicesTypes from 'src/components/ServiceTypes';
+import ServicesStages from 'src/components/ServiceStages';
+import ServicesFormSection from 'src/components/ServicesFormSection';
+import styled from 'styled-components';
+
+const Wrapper = styled.section``;
 
 const Services = () => {
   const {
@@ -15,17 +18,17 @@ const Services = () => {
   } = servicesData;
 
   return (
-    <>
+    <Wrapper>
       <HeadSection title={title} description={description} />
       <BaseLayout footerGridColor={theme.gradient.yellowToGray}>
         <ServicesIntro />
         <ServicesBenefit />
-        {/* <ServicesTypes /> */}
+        <ServicesTypes />
         <IdeaInterlude />
-        {/* <ServicesStages /> */}
-        {/* <ServicesForm /> */}
+        <ServicesStages />
+        <ServicesFormSection />
       </BaseLayout>
-    </>
+    </Wrapper>
   );
 };
 

@@ -1,46 +1,41 @@
+import { StyledHeading, StyledParagraph } from 'src/components/Interlude/Interlude.styles';
+import theme from 'src/assets/styles/theme';
+import servicesData from 'src/data/servicesData';
+import Grid from 'src/components/Grid';
+import Button from 'src/components/Button';
+import { TextCaption } from 'src/components/TextComponents';
+import ServicesList from './ServicesList';
+import { ImageContainer, ImagePlaceholder, StyledContentWrapper, StyledHeadingWrapper, Wrapper } from './ServiceTypes.styles';
+
 export default function ServicesTypes() {
+  const {
+    color: { black },
+    gradient: { red, navyToYellow },
+  } = theme;
+
+  const {
+    services: { caption, heading, paragraph, buttonLabel },
+  } = servicesData;
+
   return (
-    <div>
-      <div>
-        <div>IMAGE PLACEHOLDER</div>
-      </div>
-      <div>
-        <p>USŁUGI - rodzaje</p>
-        <h1>Stories and ideas on design, code and startups</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores id illo nostrum quia quidem sed!</p>
-        <ul>
-          <li>
-            <div>
-              <div>&</div>
-              <h3>Strona ...</h3>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus architecto blanditiis ducimus eaque non quasi reprehenderit
-              temporibus velit vitae.
-            </p>
-          </li>
-          <li>
-            <div>
-              <div>&</div>
-              <h3>Strona ...</h3>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores assumenda consequatur, deserunt ducimus laborum molestias
-              quasi totam ut! Repudiandae!
-            </p>
-          </li>
-          <li>
-            <div>
-              <div>&</div>
-              <h3>Strona ...</h3>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim id minus odit rem sit. Accusantium alias aspernatur excepturi sint velit?
-            </p>
-          </li>
-        </ul>
-        <button type="button">Wyślij wiadomość</button>
-      </div>
-    </div>
+    <Wrapper>
+      <ImageContainer>
+        <ImagePlaceholder />
+      </ImageContainer>
+      <StyledContentWrapper>
+        <StyledHeadingWrapper>
+          <TextCaption>{caption}</TextCaption>
+          <StyledHeading color={black} as="h2" size="lg">
+            {heading}
+          </StyledHeading>
+          <StyledParagraph color={black}>{paragraph}</StyledParagraph>
+        </StyledHeadingWrapper>
+
+        <ServicesList />
+
+        <Button backgroundColor={red} text={buttonLabel} />
+      </StyledContentWrapper>
+      <Grid colors={{ lines: navyToYellow }} />
+    </Wrapper>
   );
 }

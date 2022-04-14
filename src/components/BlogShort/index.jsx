@@ -23,7 +23,7 @@ const BlogShort = () => {
   })();
 
   return (
-    <MainSectionWrapper colors={{ background: white }}>
+    <MainSectionWrapper background={white}>
       <WrapperBlogShort short>
         <TextCaption>{category}</TextCaption>
         <BlogIntroHeading>{heading}</BlogIntroHeading>

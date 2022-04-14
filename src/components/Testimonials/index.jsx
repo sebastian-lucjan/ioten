@@ -50,7 +50,7 @@ const TestimonialsInterlude = () => {
   };
 
   return (
-    <MainSectionWrapper colors={{ background: white }} smaller>
+    <MainSectionWrapper background={white} smaller>
       <TestimonialsWrapper noAlign className="motto">
         <Slider {...settings}>
           {testimonials.map((testimonial) => (

@@ -44,12 +44,14 @@ const servicesData = {
         description: [
           'Strona docelowa bez rozbudowanej struktury. Jej celem może być zaprezentowanie swoich usług (wizytówka), przekazanie informacji,  reklama, bądź zachęcenie do dalszej interakcji z produktem (CTA - call to action).',
         ],
+        icon: 'gg:website',
       },
       {
         heading: 'Strona o rozbudowanej strukturze',
         description: [
           'Strona o kilku podstronach dostępnych z reprezentatywnej strony głównej. Dzięki takiej stronie firma może przekazać większą ilość informacji np.: oferta, kontakt, o nas, historia, referecje przez co zwiększa swoją wiarygodność i rozpoznawalność w sieci.',
         ],
+        icon: 'gridicons:site',
       },
       {
         heading: 'Strona firmowa z CMSem',
@@ -57,6 +59,7 @@ const servicesData = {
           'Strona o różnym poziomie rozbudowania, połączona z systemem zarządzania treścią (content management system, czyli: CMS).',
           'Przeznaczona do stron których treści będą edytowane wraz z biegiem czasu. ',
         ],
+        icon: 'ci:calendar-edit',
       },
       {
         heading: 'Strona PRO',
@@ -69,6 +72,7 @@ const servicesData = {
           '- systemy logowania i tworzenia użytkownika (np.: szkoła języka angielskiego)',
           '- i.... wiele więcej',
         ],
+        icon: 'eos-icons:subscriptions-created-outlined',
       },
       {
         heading: 'Animacja PRO',
@@ -76,6 +80,7 @@ const servicesData = {
           'Idealna gdy chcesz opowiedzieć historię w której centrum jesteś Ty, Twoja idea i Twój produkt. Strona o zaawansowanej warstwie wizualnej i dużej złożoności interakcyjnej.',
           'Poziom animacji wykracza poza standardowe rozwiązania jak pojawianie się tekstu od boku strony.',
         ],
+        icon: 'clarity:animation-line',
       },
     ],
   },
@@ -98,56 +103,65 @@ const servicesData = {
   },
   stages: [
     {
+      caption: 'Etap I',
       heading: 'Strategia & Idea',
       introParagraph:
         'Celem tego etapu jest wprowadzenie ioten w świat pomysłu / biznesu inwestora. Przeprowadzamy wnikliwą analizę wymagań i inspiracji a następnie wyciągamy wnioski, na których budujemy naszą współpracę',
       prosList: [
-        'Wstępny wywiad / ankieta w celu wstępnego zaadresowania potrzeb klienta',
-        'Wywiad i analiza jako etap podbudowy merytorycznej',
-        'Analiza konkurencji i inspiracji',
-        'Raport / przedstawienie wniosków',
+        { text: 'Wstępny wywiad / ankieta w celu wstępnego zaadresowania potrzeb klienta', icon: 'clarity:talk-bubbles-line' },
+        { text: 'Wywiad i analiza jako etap podbudowy merytorycznej', icon: 'ic:outline-phone-in-talk' },
+        { text: 'Analiza konkurencji i inspiracji', icon: 'carbon:text-link-analysis' },
+        { text: 'Raport / przedstawienie wniosków', icon: 'carbon:report' },
       ],
       endParagraph: 'Efektem finalnym tego etapu jest raport / przedstawienie wniosków i opracowanie szczegółowego modelu dalszej współpracy.',
     },
     {
+      caption: 'Etap II',
       heading: 'Koncept & Wireframing',
       introParagraph:
         'W oparciu o analizy, wymagania i pomysły wyklarowane w strategii, tworzone są makiety strony oraz persony mające być odpowiednio szkieletem przyszłej strony i drogowskazem dla projektowania doświadczeń użytkownika.',
       prosList: [
-        'Stworzenie Persony czyli hipotetycznego użytkownika produktu,',
-        'Roadmapa projektu czyli określenie celów i kamieni milowych współpracy,',
-        'Wireflow i wireframing strony',
+        { text: 'Stworzenie Persony czyli hipotetycznego użytkownika produktu,', icon: 'akar-icons:person' },
+        { text: 'Roadmapa projektu czyli określenie celów i kamieni milowych współpracy,', icon: 'akar-icons:map' },
+        { text: 'Wireflow i wireframing strony', icon: 'charm:square-cross' },
       ],
       endParagraph:
         'Efektem finalnym jest wireframe aplikacji oraz persona użytkownika. Na tym etapie budowany jest fundament pod przyszły design strony.',
     },
     {
+      caption: 'Etap III',
       heading: 'Design',
       introParagraph:
         'Kolejnym etapem po przygotowaniu makiet jest UI Design, czyli opracowanie tego, jak wizualnie będzie wyglądał interfejs użytkownika lub oprogramowanie serwisu. W trakcie projektowania dobierany jest styl wizualny. Obejmuje takie aspekty jak typografia, ikony i kolory, ale także wykorzystanie przestrzeni między poszczególnymi elementami. Mockups Design charakteryzuje się również tym, że przygotowane ekrany wyglądają tak samo, jak będzie wyglądał finalny produkt.',
-      prosList: ['Dobranie kolorystyki, typografii, ikon', 'Przygotowanie wizualnej makiety strony.', 'Akceptacja finalnego wyglądu.'],
+      prosList: [
+        { text: 'Dobranie kolorystyki, typografii, ikon', icon: 'ant-design:bg-colors-outlined' },
+        { text: 'Przygotowanie wizualnej makiety strony.', icon: 'iconoir:3d-select-solid' },
+        { text: 'Akceptacja finalnego wyglądu.', icon: 'eos-icons:system-ok-outlined' },
+      ],
       endParagraph:
         'Efektem tego etapu jest materializacja większości założeń wypracowanych w poprzednich etapach. Optymalnie przeprowadzony etap designu pozwala płynnie, bez blokad decyzyjnych przeprowadzić etap wdrażania produktu',
     },
     {
+      caption: 'Etap IV',
       heading: 'Development',
       introParagraph:
         'Budujemy niesamowicie szybką stronę www dla Twojego biznesu w oparciu o wypracowany we wcześniejszym projekcie design. Używamy nowoczesnych technologii jak biblioteka React, czy framework Next.js.',
       prosList: [
-        'Dobór optymalnej technologi dla Twojej strony.',
-        'Przełożenie finalnego designu na kod.',
-        'Połączenie strony z sytemem zarządzania treścią CMS',
-        'Weryfikacja założeń, ostatnie szlify.',
+        { text: 'Dobór optymalnej technologi dla Twojej strony.', icon: 'carbon:task-approved' },
+        { text: 'Przełożenie finalnego designu na kod.', icon: 'ant-design:code-outlined' },
+        { text: 'Połączenie strony z sytemem zarządzania treścią CMS', icon: 'fa6-regular:pen-to-square' },
+        { text: 'Weryfikacja założeń, ostatnie szlify.', icon: 'bx:diamond' },
       ],
       endParagraph: 'Przed finalnym umieszczeniem na serwerze klient może zobaczyć swoją stronę w środowisku tesotowym na testowym hostingu.',
     },
     {
+      caption: 'Etap V',
       heading: 'Optymalizacja & Wsparcie',
       introParagraph: 'Umieszczenie strony na serwerze. Możliwe rozszerzenie współpracy o wsparcie w trakcie użytkowania strony.',
       prosList: [
-        'Umieszczenie strony na serwerze,',
-        'Przekazanie niezbędnej wiedzy w celu obsługi strony.',
-        'Ewentualne wsparcie w trakcie funkcjonowania strony.',
+        { text: 'Umieszczenie strony na serwerze,', icon: 'carbon:bare-metal-server' },
+        { text: 'Przekazanie niezbędnej wiedzy w celu obsługi strony.', icon: 'bx:book-bookmark' },
+        { text: 'Ewentualne wsparcie w trakcie funkcjonowania strony.', icon: 'mdi:help-network-outline' },
       ],
       endParagraph:
         'Zakończenie współpracy albo wręcz przeciwnie... Jesteśmy otwarci na dalszą kooperację w celu doskonalenia strony bądź jej rozbudowywania.',
@@ -155,6 +169,7 @@ const servicesData = {
   ],
 
   servicesForm: {
+    caption: 'I co teraz?!',
     heading: '“Ok, teraz już coś wiem, ale...',
     paragraphs: [
       '...mam jeszcze więcej pytań”',

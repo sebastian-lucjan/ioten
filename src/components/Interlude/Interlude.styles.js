@@ -2,12 +2,14 @@ import styled from 'styled-components';
 import { TextParagraph } from '../TextComponents';
 
 export const Wrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 80vh;
   margin: auto 0;
   padding: 0 40px;
+  z-index: ${({ theme }) => theme.zIndex.peak};
 
   & > div > * {
     margin: 2rem 0;
@@ -29,7 +31,7 @@ export const Wrapper = styled.div`
   ${({ theme }) => theme.mq.desktop} {
     height: 50vh;
     width: 100%;
-    padding: 0 80px;
+    padding: 0 100px;
   }
 
   ${({ theme }) => theme.mq.bigDesktop} {
@@ -60,7 +62,8 @@ export const StyledContentWrapper = styled.div`
 export const StyledHeading = styled.p`
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   font-size: ${({ theme }) => theme.font.size.headingSection};
-  color: ${({ theme, color }) => color || theme.color.white}; //passed color
+  color: ${({ theme, color }) => color || theme.color.black}; //passed color
+  z-index: ${({ theme }) => theme.zIndex.peak};
 
   ${({ theme }) => theme.mq.bigDesktop} {
     font-size: ${({ theme }) => theme.font.size.headingBigDesktop};
@@ -73,8 +76,9 @@ export const StyledHeading = styled.p`
 `;
 
 export const StyledParagraph = styled(({ ...props }) => <TextParagraph {...props} />)`
-  ${({ theme }) => theme.mq.mediumDesktop} {
+  ${({ theme }) => theme.mq.smallDesktop} {
     width: 50%;
+    padding-right: 2rem;
   }
 
   ${({ theme }) => theme.mq.bigDesktop} {

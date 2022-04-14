@@ -22,7 +22,7 @@ const Footer = ({ footerGridColor }) => {
   } = footerData;
 
   return (
-    <MainSectionWrapper colors={{ background: white }}>
+    <MainSectionWrapper background={white}>
       <Wrapper>
         <StyledFooterSection className="footer__contact">
           <FooterHeading>{heading}</FooterHeading>

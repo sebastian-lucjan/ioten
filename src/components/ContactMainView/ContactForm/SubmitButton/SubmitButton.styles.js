@@ -35,7 +35,7 @@ export const StyledSubmitButton = styled.button`
   }
 
   ${({ theme }) => theme.mq.hugeDesktop} {
-    width: unset;
+    //width: unset;
     font-size: ${({ theme }) => theme.font.size.headingSmall};
     height: 60px;
   }

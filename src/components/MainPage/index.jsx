@@ -12,12 +12,11 @@ const MainPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const {
-    color: { lightGray },
-    gradient: { lightGray: LightGrayGradient },
+    gradient: { lightGray: lightGrayGradient },
   } = theme;
 
   return (
-    <MainSectionWrapper colors={{ background: LightGrayGradient, lines: lightGray }}>
+    <MainSectionWrapper background={lightGrayGradient}>
       <MainPageContext.Provider value={{ pageIndex: currentPage, setCurrentPage }}>
         <Wrapper>
           <AnimationPlaceholder />

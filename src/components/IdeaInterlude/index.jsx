@@ -15,7 +15,7 @@ const IdeaInterlude = () => {
   } = theme;
 
   return (
-    <MainSectionWrapper colors={{ background: yellowHaveIdea }}>
+    <MainSectionWrapper background={yellowHaveIdea}>
       <Wrapper>
         <StyledHeadingWrapper>
           <StyledHeading color={black} as="h2" size="lg">

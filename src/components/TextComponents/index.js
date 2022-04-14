@@ -115,4 +115,5 @@ export const TextCaption = styled.p`
   font-size: ${({ theme }) => theme.font.size.smallText};
   margin: 1rem 0 1rem 0;
   color: ${({ theme, color }) => color || theme.color.black};
+  z-index: ${({ theme }) => theme.zIndex.top};
 `;

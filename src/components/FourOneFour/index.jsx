@@ -19,7 +19,7 @@ const FourOneFour = () => {
   } = theme;
 
   return (
-    <MainSectionWrapper colors={{ background: LightGrayGradient }}>
+    <MainSectionWrapper background={LightGrayGradient}>
       <Wrapper>
         <FourOneFourImage />
         <FourOneFourInfo />
