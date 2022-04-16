@@ -6,7 +6,9 @@ import theme from 'src/assets/styles/theme';
 import Link from 'next/link';
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import { TextCaption } from 'src/components/TextComponents';
-import { Button, ImagePlaceholder, ProsList, SectionHeading, SectionParagraphs, Wrapper } from './ServicesIntro.styles';
+import Image from 'next/image';
+import servicesImageIntro from 'src/assets/images/services-image-03.jpeg';
+import { Button, ImageContainer, ProsList, SectionHeading, SectionParagraphs, Wrapper } from './ServicesIntro.styles';
 
 export default function ServicesIntro() {
   const {
@@ -41,7 +43,9 @@ export default function ServicesIntro() {
           </Link>
         </div>
         <div className="services__image-container">
-          <ImagePlaceholder />
+          <ImageContainer>
+            <Image src={servicesImageIntro} layout="fill" objectFit="cover" alt="czarna szczotka, narzędzie do sprzątania" />
+          </ImageContainer>
         </div>
       </Wrapper>
       <Grid colors={{ lines: grayToNavyBlue }} />

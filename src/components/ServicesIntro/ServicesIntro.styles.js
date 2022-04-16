@@ -96,7 +96,7 @@ export const Wrapper = styled.div`
     }
 
     .services__image-container {
-      padding: 80px 40px;
+      padding: 80px 0 80px 40px;
       width: 50%;
     }
   }
@@ -138,7 +138,8 @@ export const Wrapper = styled.div`
   } ;
 `;
 
-export const ImagePlaceholder = styled.div`
+export const ImageContainer = styled.div`
+  position: relative;
   background-color: lightgray;
   width: 100%;
   height: 40vh;

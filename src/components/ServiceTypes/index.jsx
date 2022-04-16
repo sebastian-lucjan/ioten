@@ -5,8 +5,10 @@ import servicesData from 'src/data/servicesData';
 import Grid from 'src/components/Grid';
 import Button from 'src/components/Button';
 import { TextCaption } from 'src/components/TextComponents';
+import Image from 'next/image';
+import servicesImageStages from 'src/assets/images/services-image-02.jpeg';
 import ServicesList from './ServicesList';
-import { ImageContainer, ImagePlaceholder, StyledContentWrapper, StyledHeadingWrapper, Wrapper } from './ServiceTypes.styles';
+import { ImageContainer, StyledContentWrapper, StyledHeadingWrapper, Wrapper } from './ServiceTypes.styles';
 
 export default function ServicesTypes() {
   const {
@@ -21,7 +23,7 @@ export default function ServicesTypes() {
   return (
     <Wrapper>
       <ImageContainer>
-        <ImagePlaceholder />
+        <Image src={servicesImageStages} layout="fill" objectFit="cover" alt="czarna szczotka, narzędzie do sprzątania" />
       </ImageContainer>
       <StyledContentWrapper>
         <StyledHeadingWrapper>

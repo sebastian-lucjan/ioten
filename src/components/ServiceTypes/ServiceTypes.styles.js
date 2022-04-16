@@ -49,6 +49,10 @@ export const Wrapper = styled.div`
 `;
 
 export const ImageContainer = styled.div`
+  position: relative;
+  margin: 20px 40px 0 0;
+  width: 100%;
+  height: 80vh;
   z-index: ${({ theme }) => theme.zIndex.peak};
 
   ${({ theme }) => theme.mq.tablet} {
