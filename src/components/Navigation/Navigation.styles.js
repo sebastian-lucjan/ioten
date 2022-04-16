@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
   flex-direction: column;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -11,15 +11,16 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   background: ${({ theme, isOpen }) => (isOpen ? theme.gradient.lightGray : 'transparent')};
-  z-index: ${({ theme }) => theme.zIndex.front};
+  z-index: ${({ theme }) => theme.zIndex.highest};
 
   ${({ theme }) => theme.mq.tablet} {
+    background: transparent;
     display: flex;
     flex-direction: row;
     height: 72px;
   }
 
-  ${({ theme, isOpen }) => {
+  ${({ isOpen }) => {
     return (
       isOpen &&
       `&::after {
@@ -31,7 +32,6 @@ export const Wrapper = styled.div`
     top: 0;
     left: 20px;
     background-color: hsl(0, 0%, 80%);
-    z-index: ${theme.zIndex.front};
   }
   &::before {
     content: '';
@@ -52,7 +52,6 @@ export const StyledMenu = styled.nav`
   flex-direction: column;
   width: 40%;
   font-size: ${({ theme }) => theme.font.size.paragraph};
-  //font-family: ${({ theme }) => theme.font.family.myriadPro.light};
   color: ${({ theme }) => theme.color.darkestGray};
 
   ${({ theme }) => theme.mq.tablet} {
@@ -84,17 +83,22 @@ export const StyledValuationButton = styled.button`
   border: none;
   position: relative;
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
-  cursor: pointer;
   color: ${({ theme }) => theme.color.darkestGray};
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:active {
+    box-shadow: 0 0 0 #0008;
+    transform: translate(4px, 4px);
+  }
 
   ${({ theme }) => theme.mq.tablet} {
-    margin: 12px 48px;
+    margin: 12px 48px 12px 0;
     text-transform: unset;
     color: ${({ theme }) => theme.color.white};
     padding: 12px 28px;
     background-color: ${({ theme }) => theme.color.darkestGray};
     box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.7);
-    //display: none;
   }
 
   &::before {

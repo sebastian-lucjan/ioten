@@ -5,26 +5,12 @@ const MainSectionWrapper = styled.section`
   flex-direction: column;
   position: relative;
   width: 100%;
-  min-height: ${({ smaller }) => (smaller ? '' : '100vh')};
-  background: ${({ colors }) => colors.background};
+  color: black;
+  min-height: ${({ smaller }) => (smaller ? 'unset' : '100vh')};
+  background: ${({ background }) => background};
 
-  &::after,
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 2px;
-    top: 0;
-    background: ${({ colors }) => colors.lines};
-  }
-
-  &::after {
-    left: 20px;
-  }
-
-  &::before {
-    right: 20px;
+  ${({ theme }) => theme.mq.tablet} {
+    min-height: 0;
   }
 `;
 

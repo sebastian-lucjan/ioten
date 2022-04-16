@@ -14,7 +14,7 @@ const StyledBurger = styled.button`
   border: none;
   cursor: pointer;
   margin: 20px 30px;
-  z-index: ${({ theme }) => theme.zIndex.top};
+  z-index: ${({ theme }) => theme.zIndex['10']};
 
   ${({ theme }) => theme.mq.tablet} {
     display: none;
@@ -25,13 +25,23 @@ const StyledBurger = styled.button`
   }
 
   div {
-    width: 2rem;
+    width: 2.1rem;
     height: 0.25rem;
     background: ${({ theme }) => theme.color.darkestGray};
     border-radius: 10px;
-    transition: all 0.3s linear;
+    transition: all 0.2s linear;
     position: relative;
     transform-origin: 1px;
+  }
+
+  div:nth-child(1) {
+    ${({ isOpen }) => (isOpen ? 'transform: rotate(45deg);' : null)}
+  }
+  div:nth-child(2) {
+    ${({ isOpen }) => (isOpen ? 'background-color: transparent;' : null)}
+  }
+  div:nth-child(3) {
+    ${({ isOpen }) => (isOpen ? 'transform: rotate(-45deg);' : null)}
   }
 `;
 

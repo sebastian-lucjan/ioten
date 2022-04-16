@@ -1,6 +1,35 @@
 import styled from 'styled-components';
+import { TextParagraph, TextWrapper } from 'src/components/TextComponents';
 
-const TestimonialsCaption = styled.div`
+export const TestimonialsWrapper = styled(({ ...props }) => <TextWrapper {...props} />)`
+  ${({ theme }) => theme.mq.tablet} {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10vh 15vw;
+  }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    width: 45%;
+    margin: 0 auto;
+    padding: 10vh 0;
+  }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    padding: 15vh 0 12vh 0;
+  }
+`;
+
+export const TestimonialsParagraph = styled(({ ...props }) => <TextParagraph {...props} />)`
+  ${({ theme }) => theme.mq.tablet} {
+    font-size: ${({ theme }) => theme.font.size.headingMedium};
+    line-height: 42px;
+  }
+  ${({ theme }) => theme.mq.smallDesktop} {
+  } ;
+`;
+
+export const TestimonialsCaption = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-top: 3rem;
@@ -14,5 +43,3 @@ const TestimonialsCaption = styled.div`
     background-color: ${({ theme }) => theme.color.black};
   }
 `;
-
-export default TestimonialsCaption;

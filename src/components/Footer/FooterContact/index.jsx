@@ -29,12 +29,12 @@ const FooterContact = () => {
         </Link>
       </StyledFooterContacts>
 
-      <StyledFooterContacts>
+      <StyledFooterContacts soon>
         <h5 className="footer__contact-label inactive">{footerData.contact.job.heading}</h5>
 
-        <Link href={`mailto:${job.email}`}>
-          <p className="footer__contact-email inactive">{job.email}</p>
-        </Link>
+        {/* <Link href={`mailto:${job.email}`}> */}
+        <p className="footer__contact-email inactive">{job.email}</p>
+        {/* </Link> */}
       </StyledFooterContacts>
     </div>
   );

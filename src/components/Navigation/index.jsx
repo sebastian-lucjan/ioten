@@ -6,8 +6,8 @@ import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWra
 import { navigationData } from 'src/data/pageData';
 import theme from 'src/assets/styles/theme';
 import styled from 'styled-components';
-import StyledBurger from 'src/components/Burger/Burger.styles';
 import { useState } from 'react';
+import Index from 'src/components/Burger';
 import { Wrapper, StyledValuationButton, StyledMenu, StyledLink, StyledLogo } from './Navigation.styles';
 
 const LogoWrapper = styled.div`
@@ -20,7 +20,7 @@ const LogoWrapper = styled.div`
   width: 100%;
   height: 60px;
   padding: 10px 30px;
-  z-index: ${({ theme: { zIndex } }) => zIndex.top};
+  z-index: ${({ theme: { zIndex } }) => zIndex.highest};
 
   ${({ theme: { mq } }) => mq.tablet} {
     display: none;
@@ -35,25 +35,19 @@ const Navigation = () => {
   };
 
   const {
-    color: { lightGray },
     gradient: { lightGray: lightGrayGradient },
   } = theme;
 
   return (
-    <MainSectionWrapper colors={{ background: lightGrayGradient, lines: lightGray }} smaller>
+    <MainSectionWrapper background={lightGrayGradient} smaller>
       <LogoWrapper>
         <Link href="/">
           <StyledLogo>
             <IotenLogo />
-            {/* <div> ioten</div> */}
           </StyledLogo>
         </Link>
       </LogoWrapper>
-      <StyledBurger onClick={toggleNavigation}>
-        <div />
-        <div />
-        <div />
-      </StyledBurger>
+      <Index isOpen={isOpen} toggleNavigation={toggleNavigation} />
       <Wrapper isOpen={isOpen}>
         <Link href="/">
           <StyledLogo>

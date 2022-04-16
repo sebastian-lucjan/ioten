@@ -2,28 +2,37 @@ import { ideaInterlude } from 'src/data/mainPage';
 import Link from 'next/link';
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import theme from 'src/assets/styles/theme';
-import IdeaButton from './IdeaInterlude.styles';
-import { TextHeading, TextParagraph, TextWrapper } from '../TextComponents';
+import { StyledContentWrapper, StyledHeading, StyledHeadingWrapper, StyledParagraph, Wrapper } from 'src/components/Interlude/Interlude.styles';
+import Grid from 'src/components/Grid';
+import Button from 'src/components/Button';
 
 const IdeaInterlude = () => {
   const { heading, paragraph, button } = ideaInterlude;
 
   const {
-    color: { yellow },
+    color: { yellow, black },
     gradient: { yellowHaveIdea },
   } = theme;
 
   return (
-    <MainSectionWrapper colors={{ background: yellowHaveIdea, lines: yellow }}>
-      <TextWrapper fullHeight>
-        <TextHeading as="h2" size="lg" bolder>
-          {heading}
-        </TextHeading>
-        <TextParagraph>{paragraph}</TextParagraph>
-        <Link href="/contact" as="/kontakt">
-          <IdeaButton type="button">{button}</IdeaButton>
-        </Link>
-      </TextWrapper>
+    <MainSectionWrapper background={yellowHaveIdea}>
+      <Wrapper>
+        <StyledHeadingWrapper>
+          <StyledHeading color={black} as="h2" size="lg">
+            {heading}
+          </StyledHeading>
+        </StyledHeadingWrapper>
+
+        <StyledContentWrapper>
+          <StyledParagraph>{paragraph}</StyledParagraph>
+          <Link href="/contact" as="/kontakt">
+            <a>
+              <Button backgroundColor={black} type="button" text={button} />
+            </a>
+          </Link>
+        </StyledContentWrapper>
+      </Wrapper>
+      <Grid colors={{ lines: yellow }} />
     </MainSectionWrapper>
   );
 };

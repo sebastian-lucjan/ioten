@@ -1,17 +1,18 @@
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import Link from 'next/link';
 import theme from 'src/assets/styles/theme';
-import { footerData, navigationData, services } from 'src/data/pageData';
+import { footerData, navigationData } from 'src/data/pageData';
+import services from 'src/data/servicesData';
 import { v4 as uuid } from 'uuid';
+import Grid from 'src/components/Grid';
 import { FooterHeading, FooterItem, FooterSoonItem, StyledFooterSection, Wrapper } from './Footer.styles';
-import SocialMedias from '../SocialMedias';
+import SocialMedia from '../SocialMedia';
 import FooterContact from './FooterContact';
 import FooterRights from './FooterRights';
 
-const Footer = () => {
+const Footer = ({ footerGridColor }) => {
   const {
     color: { white },
-    gradient: { yellowToGray },
   } = theme;
 
   const {
@@ -21,12 +22,14 @@ const Footer = () => {
   } = footerData;
 
   return (
-    <MainSectionWrapper colors={{ background: white, lines: yellowToGray }}>
+    <MainSectionWrapper background={white}>
       <Wrapper>
-        <StyledFooterSection>
+        <StyledFooterSection className="footer__contact">
           <FooterHeading>{heading}</FooterHeading>
           {text.map((textLine) => (
-            <FooterItem key={uuid()}>{textLine}</FooterItem>
+            <FooterItem noLink key={uuid()}>
+              {textLine}
+            </FooterItem>
           ))}
           <FooterContact />
         </StyledFooterSection>
@@ -35,16 +38,22 @@ const Footer = () => {
           <FooterHeading>{services.intro}</FooterHeading>
           {services.list.map(({ heading: serviceHeading, soon = false }) => {
             if (soon) {
-              return <FooterSoonItem key={uuid()}>{serviceHeading}</FooterSoonItem>;
+              return <FooterSoonItem>{serviceHeading}</FooterSoonItem>;
             }
-            return <FooterItem key={uuid()}>{serviceHeading}</FooterItem>;
+            return (
+              <Link key={uuid()} href="/services" as="/uslugi">
+                <FooterItem key={uuid()}>{serviceHeading}</FooterItem>
+              </Link>
+            );
           })}
         </StyledFooterSection>
 
         <StyledFooterSection>
           <FooterHeading>{services.serviceStagesIntro}</FooterHeading>
-          {services.serviceStages.map(({ heading: serviceHeading }) => (
-            <FooterItem key={uuid()}>{serviceHeading}</FooterItem>
+          {services.stages.map(({ heading: serviceHeading }) => (
+            <Link key={uuid()} href="/services" as="/uslugi">
+              <FooterItem key={uuid()}>{serviceHeading}</FooterItem>
+            </Link>
           ))}
         </StyledFooterSection>
 
@@ -57,15 +66,13 @@ const Footer = () => {
           ))}
         </StyledFooterSection>
 
-        <StyledFooterSection>
+        <StyledFooterSection className="footer__social-media">
           <FooterHeading>{socialMediaHeading}</FooterHeading>
-          <SocialMedias />
+          <SocialMedia />
         </StyledFooterSection>
-
-        <FooterRights />
-        {/* <StyledFooterSection> */}
-        {/* </StyledFooterSection> */}
       </Wrapper>
+      <FooterRights />
+      <Grid colors={{ lines: footerGridColor }} />
     </MainSectionWrapper>
   );
 };

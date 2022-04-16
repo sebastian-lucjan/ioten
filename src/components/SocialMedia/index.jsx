@@ -6,8 +6,8 @@ import theme from 'src/assets/styles/theme';
 import Link from 'next/link';
 import StyledSocialMedias from './SocialMedias.styles';
 
-const SocialMedias = () => {
-  const iconStyle = { style: { color: theme.color.gray, marginRight: '30px' }, className: 'global-class-name' };
+const SocialMedias = ({ black }) => {
+  const iconStyle = { style: { color: black ? theme.color.black : theme.color.gray, marginRight: '30px' }, className: 'global-class-name' };
 
   return (
     <StyledSocialMedias>

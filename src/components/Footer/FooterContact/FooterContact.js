@@ -2,7 +2,11 @@ import styled from 'styled-components';
 import mixines from 'src/assets/styles/mixines';
 
 const StyledFooterContacts = styled.article`
-  margin: 2rem 0;
+  margin: 2rem 0 0 0;
+
+  p {
+    cursor: ${({ soon }) => (soon ? 'unset' : 'pointer')};
+  }
 
   .footer__contact-label,
   .footer__contact-email,

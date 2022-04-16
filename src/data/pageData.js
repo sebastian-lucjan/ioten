@@ -1,3 +1,12 @@
+export const pageData = {
+  headSection: {
+    title: 'Fast & Beautiful Websites | ioten',
+    description:
+      'Ioten rozumie potrzeby klienta oraz specyfikę projektu i pomaga osiągnąć cel zgodnie z przyjętną strategią. Celem ioten jest budowa stron które rozwiną Twoój biznes.',
+    canonical: 'https://www.ioten.io/',
+  },
+};
+
 export const navigationData = [
   { name: 'Home', href: '/', as: '/' },
   { name: 'Usługi', href: '/services', as: '/uslugi' },
@@ -5,31 +14,6 @@ export const navigationData = [
   { name: 'Blog', href: '/blog', as: '/blog' },
   { name: 'Kontakt', href: '/contact', as: '/kontakt' },
 ];
-
-export const services = {
-  intro: 'Usługi',
-  list: [
-    { heading: 'Strona wizytówka' },
-    { heading: 'Strona firmowa z CMSem' },
-    { heading: 'Sklep online', soon: true },
-    { heading: 'Landingpage' },
-    { heading: 'Blog' },
-  ],
-  serviceStagesIntro: 'Etapy',
-  serviceStages: [
-    { heading: 'Idea & Strategia' },
-    { heading: 'Koncept & Wireframing' },
-    {
-      heading: 'Design',
-    },
-    {
-      heading: 'Development',
-    },
-    {
-      heading: 'Optymalizacje & Wsparcie',
-    },
-  ],
-};
 
 export const motto = {
   text: '"Inwestor jest dla nas członkiem zespołu. Miej wpływ na proces tworzenia strony internetowej na każdym etapie. Z nami stworzysz niesamowicie szybką i funkcjonalną stronę uszytą na Twoją miarę."',

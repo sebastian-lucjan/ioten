@@ -13,9 +13,10 @@ const HeadSection = ({ title, description, indexing = false }) => {
       <meta property="og:type" content="website" />
       <title>{title}</title>
       {indexing ? <meta name="robots" content="all" /> : <meta name="robots" content="none" />}
-      {/* //todo: change in production to: {index ? <meta name="robots" content="all" /> : <meta name="robots" content="none" />} */}
     </Head>
   );
 };
 
 export default HeadSection;
+
+/* //todo: change in production to: {index ? <meta name="robots" content="all" /> : <meta name="robots" content="none" />} */

@@ -5,12 +5,39 @@ import 'slick-carousel/slick/slick-theme.css';
 import { testimonials } from 'src/data/pageData';
 import { v4 as uuid } from 'uuid';
 import Slider from 'react-slick';
-import TestimonialsCaption from './Testimonials.styles';
-import { TextParagraph, TextWrapper } from '../TextComponents';
+import styled from 'styled-components';
+import IRingFront from 'src/assets/images/i-ring-front-lg.svg';
+import IRingBack from 'src/assets/images/i-ring-back-lg.svg';
+import ORingFront from 'src/assets/images/o-ring-front-md.svg';
+import ORingBack from 'src/assets/images/o-ring-back-md.svg';
+import Grid from 'src/components/Grid';
+import { TestimonialsCaption, TestimonialsParagraph, TestimonialsWrapper } from './Testimonials.styles';
+
+const StyledMediumIRing = styled.div`
+  & * {
+    position: absolute;
+    top: 20%;
+    right: 0.4rem;
+  }
+  *:nth-child(1) {
+    z-index: ${({ theme: { zIndex } }) => zIndex.top};
+  }
+`;
+
+const StyledMediumORing = styled.div`
+  & * {
+    position: absolute;
+    bottom: 20%;
+    left: 0.8rem;
+  }
+  *:nth-child(1) {
+    z-index: ${({ theme: { zIndex } }) => zIndex.top};
+  }
+`;
 
 const TestimonialsInterlude = () => {
   const {
-    color: { white, lightGray },
+    color: { white },
   } = theme;
 
   const settings = {
@@ -23,14 +50,14 @@ const TestimonialsInterlude = () => {
   };
 
   return (
-    <MainSectionWrapper colors={{ background: white, lines: lightGray }} smaller>
-      <TextWrapper className="motto">
+    <MainSectionWrapper background={white} smaller>
+      <TestimonialsWrapper noAlign className="motto">
         <Slider {...settings}>
           {testimonials.map((testimonial) => (
             <div key={uuid()}>
-              <TextParagraph fontWeight="bold" className="motto__text">
+              <TestimonialsParagraph weight="bold" className="motto__text">
                 {testimonial.text}
-              </TextParagraph>
+              </TestimonialsParagraph>
               <TestimonialsCaption className="motto__caption">
                 <span className="motto__caption-line" />
                 <div>{testimonial.caption}</div>
@@ -38,11 +65,21 @@ const TestimonialsInterlude = () => {
             </div>
           ))}
         </Slider>
-      </TextWrapper>
+      </TestimonialsWrapper>
+
+      <Grid />
+
+      <StyledMediumIRing>
+        <IRingFront />
+        <IRingBack />
+      </StyledMediumIRing>
+
+      <StyledMediumORing>
+        <ORingFront />
+        <ORingBack />
+      </StyledMediumORing>
     </MainSectionWrapper>
   );
 };
 
 export default TestimonialsInterlude;
-
-// todo: motto text should be rewritten
