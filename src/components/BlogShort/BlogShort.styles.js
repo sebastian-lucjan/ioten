@@ -46,7 +46,8 @@ export const BlogPostsContainer = styled.div`
 `;
 
 export const StyledPost = styled.div`
-  width: 30%;
+  width: 100%;
+
   margin: 4rem 0;
 
   p {
@@ -55,6 +56,7 @@ export const StyledPost = styled.div`
   }
 
   ${({ theme }) => theme.mq.tablet} {
+    width: 30%;
     //width: 25%;
     margin: 0 0 4rem 0;
 

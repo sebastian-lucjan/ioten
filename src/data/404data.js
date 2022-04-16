@@ -4,7 +4,8 @@ const data404 = {
   cta: { text: 'Idź do strony głównej', href: '/' },
   headSection: {
     title: 'ioten - 404',
-    description: '',
+    description:
+      'Celem ioten jest budowa stron które rozwiną Twój biznes. Stron internetowych które są szybkie, funkcjonalne i przyjazne dla użytkownika.',
   },
 };
 

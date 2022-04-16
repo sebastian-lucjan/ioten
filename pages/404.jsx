@@ -1,8 +1,8 @@
 import BaseLayout from 'src/components/BaseLayout';
-import HeadSection from 'src/components/HeadSection';
 import FourOneFour from 'src/components/FourOneFour';
 import IdeaInterlude from 'src/components/IdeaInterlude';
 import data404 from 'src/data/404data';
+import { NextSeo } from 'next-seo';
 
 export default function Page404() {
   const {
@@ -11,7 +11,7 @@ export default function Page404() {
 
   return (
     <>
-      <HeadSection title={title} description={description} indexing={false} />
+      <NextSeo title={title} description={description} />
       <BaseLayout>
         <FourOneFour />
         <IdeaInterlude />

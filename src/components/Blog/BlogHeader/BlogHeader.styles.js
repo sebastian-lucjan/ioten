@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledBlogHeader = styled.div`
-  padding: 100px 40px;
+  padding: 100px 40px 40px 40px;
 
   .blog-header__category {
     color: ${({ theme }) => theme.color.darkerGray};
@@ -15,7 +15,7 @@ export const StyledBlogHeader = styled.div`
   }
 
   ${({ theme }) => theme.mq.tablet} {
-    padding: 10vw;
+    padding: 10vw 10vw 0 10vw;
 
     .blog-header__heading {
       width: 70%;

@@ -1,6 +1,6 @@
-import HeadSection from 'src/components/HeadSection';
 import BaseLayout from 'src/components/BaseLayout';
 import valuationData from 'src/data/valuationData';
+import { NextSeo } from 'next-seo';
 
 const Valuation = () => {
   const {
@@ -9,7 +9,7 @@ const Valuation = () => {
 
   return (
     <>
-      <HeadSection title={title} description={description} />
+      <NextSeo title={title} description={description} />
       <BaseLayout>
         <section>Valuation</section>
       </BaseLayout>

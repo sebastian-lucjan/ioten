@@ -4,7 +4,11 @@ export const blogData = {
     heading: 'Idee, historie, nasze postrzeganie świata designu i kodu.',
     blogLink: 'Visit or blog',
   },
-  headSection: { title: 'ioten - blog', description: '' },
+  headSection: {
+    title: 'ioten - blog',
+    description:
+      'Ioten to szybkie, funkcjonalne strony internetowe dla firm oraz osób prywatnych. Jeśli chcesz nas poznać zapraszamy na naszego bloga w którym piszemy o ioten od środka, przybliżamy technologie w jakich pracujemy oraz opisujemy idee jakie nam towarzyszą.',
+  },
 };
 
 export const blogPosts = [
