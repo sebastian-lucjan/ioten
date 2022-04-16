@@ -83,8 +83,14 @@ export const StyledValuationButton = styled.button`
   border: none;
   position: relative;
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
-  cursor: pointer;
   color: ${({ theme }) => theme.color.darkestGray};
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:active {
+    box-shadow: 0 0 0 #0008;
+    transform: translate(4px, 4px);
+  }
 
   ${({ theme }) => theme.mq.tablet} {
     margin: 12px 48px 12px 0;

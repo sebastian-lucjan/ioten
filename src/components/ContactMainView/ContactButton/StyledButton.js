@@ -14,6 +14,13 @@ const StyledButton = styled.button`
   color: ${({ theme, textColor }) => textColor || theme.color.white};
   box-shadow: 4px 4px 0 hsl(0, 0%, 100%, 0.5);
   border: none;
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:active {
+    box-shadow: 4px 4px 0 hsl(0, 0%, 100%, 0.5);
+    transform: translate(4px, 4px);
+  }
 
   ${({ theme }) => theme.mq.tablet} {
     font-size: ${({ theme }) => theme.font.size.paragraph};

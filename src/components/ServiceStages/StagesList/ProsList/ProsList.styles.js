@@ -25,7 +25,7 @@ export const Pros = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: 0.3s;
+  transition: 0.2s;
 
   &:hover {
     transform: scale(1.04);

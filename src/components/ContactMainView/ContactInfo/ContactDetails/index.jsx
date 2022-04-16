@@ -46,6 +46,10 @@ const StyledContactDetails = styled.div`
   margin-top: 8rem;
   color: ${({ theme }) => theme.color.black};
 
+  p {
+    cursor: pointer;
+  }
+
   .contact-details__info-item {
     margin-bottom: 2rem;
     font-size: ${({ theme }) => theme.font.size.paragraphSmall};

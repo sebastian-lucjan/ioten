@@ -3,8 +3,9 @@ import servicesData from 'src/data/servicesData';
 import { StyledContentWrapper, StyledHeading, StyledHeadingWrapper, StyledParagraph, Wrapper } from 'src/components/Interlude/Interlude.styles';
 import Button from 'src/components/Button';
 import Grid from 'src/components/Grid';
-import MainSectionWrapper from '../MainSectionWrapper/MainSectionWrapper.styles';
-import { TextCaption } from '../TextComponents';
+import { TextCaption } from 'src/components/TextComponents';
+import Link from 'next/link';
+import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 
 export default function ServicesBenefit() {
   const {
@@ -26,7 +27,11 @@ export default function ServicesBenefit() {
         </StyledHeadingWrapper>
         <StyledContentWrapper>
           <StyledParagraph color={white}>{paragraph}</StyledParagraph>
-          <Button text={buttonLabel} textColor={darkNavy} backgroundColor={white} type="button" />
+          <Link Link href="/contact" as="/kontakt">
+            <a>
+              <Button text={buttonLabel} textColor={darkNavy} backgroundColor={white} type="button" />
+            </a>
+          </Link>
         </StyledContentWrapper>
       </Wrapper>
       <Grid colors={{ lines: darkerNavy }} />

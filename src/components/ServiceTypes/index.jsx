@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { StyledHeading, StyledParagraph } from 'src/components/Interlude/Interlude.styles';
 import theme from 'src/assets/styles/theme';
 import servicesData from 'src/data/servicesData';
@@ -9,8 +10,8 @@ import { ImageContainer, ImagePlaceholder, StyledContentWrapper, StyledHeadingWr
 
 export default function ServicesTypes() {
   const {
-    color: { black },
-    gradient: { red, navyToYellow },
+    color: { black, red },
+    gradient: { navyToYellow },
   } = theme;
 
   const {
@@ -33,7 +34,11 @@ export default function ServicesTypes() {
 
         <ServicesList />
 
-        <Button backgroundColor={red} text={buttonLabel} />
+        <Link href="/valuation" as="/wycena-projekt">
+          <a>
+            <Button backgroundColor={red} text={buttonLabel} />
+          </a>
+        </Link>
       </StyledContentWrapper>
       <Grid colors={{ lines: navyToYellow }} />
     </Wrapper>

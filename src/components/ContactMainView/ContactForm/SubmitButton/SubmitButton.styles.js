@@ -15,6 +15,15 @@ export const StyledSubmitButton = styled.button`
   font-size: ${({ theme }) => theme.font.size.headingSmall};
   color: ${({ theme, textColor }) => textColor || theme.color.white};
   border: none;
+  box-shadow: 4px 4px 0 #0008;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:active {
+    box-shadow: 0 0 0 #0008;
+
+    transform: translate(4px, 4px);
+  }
 
   ${({ theme }) => theme.mq.tablet} {
     font-size: ${({ theme }) => theme.font.size.paragraph};
