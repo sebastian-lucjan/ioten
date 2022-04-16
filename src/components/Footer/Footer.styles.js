@@ -72,6 +72,7 @@ export const FooterItem = styled.p`
   line-height: 32px;
   font-family: ${({ theme }) => theme.font.family.myriadPro.light};
   font-weight: 500;
+  cursor: ${({ noLink }) => (noLink ? 'unset' : 'pointer')};
 `;
 
 export const FooterSoonItem = styled.p`

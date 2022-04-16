@@ -27,7 +27,9 @@ const Footer = ({ footerGridColor }) => {
         <StyledFooterSection className="footer__contact">
           <FooterHeading>{heading}</FooterHeading>
           {text.map((textLine) => (
-            <FooterItem key={uuid()}>{textLine}</FooterItem>
+            <FooterItem noLink key={uuid()}>
+              {textLine}
+            </FooterItem>
           ))}
           <FooterContact />
         </StyledFooterSection>
@@ -36,16 +38,22 @@ const Footer = ({ footerGridColor }) => {
           <FooterHeading>{services.intro}</FooterHeading>
           {services.list.map(({ heading: serviceHeading, soon = false }) => {
             if (soon) {
-              return <FooterSoonItem key={uuid()}>{serviceHeading}</FooterSoonItem>;
+              return <FooterSoonItem>{serviceHeading}</FooterSoonItem>;
             }
-            return <FooterItem key={uuid()}>{serviceHeading}</FooterItem>;
+            return (
+              <Link key={uuid()} href="/services" as="/uslugi">
+                <FooterItem key={uuid()}>{serviceHeading}</FooterItem>
+              </Link>
+            );
           })}
         </StyledFooterSection>
 
         <StyledFooterSection>
           <FooterHeading>{services.serviceStagesIntro}</FooterHeading>
           {services.stages.map(({ heading: serviceHeading }) => (
-            <FooterItem key={uuid()}>{serviceHeading}</FooterItem>
+            <Link key={uuid()} href="/services" as="/uslugi">
+              <FooterItem key={uuid()}>{serviceHeading}</FooterItem>
+            </Link>
           ))}
         </StyledFooterSection>
 
