@@ -38,6 +38,10 @@ module.exports = (phase) => {
         source: '/wycena-projektu',
         destination: '/valuation',
       },
+      {
+        source: '/polityka-prywatnosci',
+        destination: '/policy',
+      },
     ];
   };
 
