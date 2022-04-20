@@ -7,8 +7,8 @@ import ServicesBenefit from 'src/components/ServicesBenefit';
 import ServicesTypes from 'src/components/ServiceTypes';
 import ServicesStages from 'src/components/ServiceStages';
 import ServicesFormSection from 'src/components/ServicesFormSection';
-import styled from 'styled-components';
 import { NextSeo } from 'next-seo';
+import styled from 'styled-components';
 
 const Wrapper = styled.section``;
 

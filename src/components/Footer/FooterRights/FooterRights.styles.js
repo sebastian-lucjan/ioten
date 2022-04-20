@@ -21,6 +21,12 @@ const StyledFooterRights = styled.div`
     color: ${({ theme }) => theme.color.darkerGray};
     margin: 0 4px;
   }
+
+  a {
+    padding-right: 1rem;
+    color: ${({ theme }) => theme.color.gray};
+    text-decoration: none;
+  }
 `;
 
 export default StyledFooterRights;

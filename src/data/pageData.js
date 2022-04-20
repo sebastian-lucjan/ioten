@@ -2,7 +2,7 @@ export const pageData = {
   headSection: {
     title: 'Fast & Beautiful Websites | ioten',
     description:
-      'Ioten rozumie potrzeby klienta oraz specyfikę projektu i pomaga osiągnąć cel zgodnie z przyjętną strategią. Celem ioten jest budowa stron które rozwiną Twoój biznes.',
+      'Ioten rozumie potrzeby klienta oraz specyfikę projektu i pomaga osiągnąć cel zgodnie z przyjętną strategią. Celem ioten jest budowa stron które rozwiną Twój biznes.',
     canonical: 'https://www.ioten.io/',
   },
 };

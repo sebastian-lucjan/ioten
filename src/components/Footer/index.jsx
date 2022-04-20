@@ -38,7 +38,7 @@ const Footer = ({ footerGridColor }) => {
           <FooterHeading>{services.intro}</FooterHeading>
           {services.list.map(({ heading: serviceHeading, soon = false }) => {
             if (soon) {
-              return <FooterSoonItem>{serviceHeading}</FooterSoonItem>;
+              return <FooterSoonItem key={uuid()}>{serviceHeading}</FooterSoonItem>;
             }
             return (
               <Link key={uuid()} href="/services" as="/uslugi">

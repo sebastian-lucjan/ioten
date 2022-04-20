@@ -6,15 +6,16 @@ const FooterRights = () => {
     <StyledFooterRights>
       <div>
         <div className="terms-wrapper">
-          <Link href="/terms-of-use">
-            <div>
+          <Link href="/policy" as="/polityka-prywatnosci">
+            <a>
               <p>Polityka prywatności</p>
-            </div>
+            </a>
           </Link>
-          <Link href="/terms-of-use">
-            <div>
+          <Link href="/policy" as="/polityka-prywatnosci">
+            {/* <Link href="/terms-of-use"> */}
+            <a>
               <p>Regulamin użytkowania</p>
-            </div>
+            </a>
           </Link>
         </div>
         <p>
@@ -26,5 +27,3 @@ const FooterRights = () => {
 };
 
 export default FooterRights;
-
-// todo: change address of regulamin użytkowana
