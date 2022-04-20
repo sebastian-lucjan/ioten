@@ -6,33 +6,54 @@ const Wrapper = styled.div`
   padding-top: 2rem;
 
   li {
-    //list-style: none;
+    list-style: none;
+    margin: 2rem 0;
+  }
+  p {
+    font-size: 1.6rem;
+    line-height: 32px;
   }
 
-  p {
-    padding-bottom: 2rem;
+  .nested-list {
+    font-size: 1.6rem;
+    line-height: 32px;
+    list-style-type: lower-latin;
+    margin-left: 1.5rem;
   }
+`;
+
+const ListNumber = styled.div`
+  float: left;
+  font-size: 1.6rem;
+  line-height: 32px;
+  width: 20px;
 `;
 
 export default function PolicySection({ sectionData }) {
   return (
     <Wrapper>
       <TextHeading>{sectionData.heading}</TextHeading>
-      {sectionData.paragraphs.map((paragraph) => {
+      {sectionData.paragraphs.map((paragraph, index) => {
         if (!paragraph.list) {
           return (
-            <li>
+            <li key={uuid()}>
+              <ListNumber>{`${index + 1}.`}</ListNumber>
               <TextParagraph>{paragraph}</TextParagraph>
             </li>
           );
         }
         return (
-          <>
-            <li>{paragraph.mainText}</li>
-            {paragraph.list.map((item) => (
-              <p key={uuid()}>{item}</p>
-            ))}
-          </>
+          <li key={uuid()}>
+            <ListNumber>{`${index + 1}.`}</ListNumber>
+            <p>{paragraph.mainText}</p>
+            <ul>
+              {paragraph.list.map((item) => (
+                <li className="nested-list" key={uuid()}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </li>
         );
       })}
     </Wrapper>
