@@ -16,7 +16,7 @@ export const mainView = [
   {
     heading: 'Analiza i Dane',
     paragraph:
-      'Projekt strony internetowej opieramy o analizę prowadzonej działalności ale również stron konkurencji i indywidualnych wymagań inwestora. Stronę integrujemy z narzędziami analitycznymi pomagającymi monitorować ',
+      'Projekt strony internetowej opieramy o analizę prowadzonej działalności ale również stron konkurencji i indywidualnych wymagań inwestora. Stronę integrujemy z narzędziami analitycznymi pomagającymi monitorować aktywność odwiedzających.',
     short: { heading: 'Analiza i Dane', paragraph: 'Analiza na każdym etapie tworzenia strony. Zbieranie danych po wdrożeniu.' },
   },
 ];
