@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import gsap from 'gsap';
+
 import HomeAnimationSVG from 'src/assets/images/home-animation-business-yellow';
 
 const Wrapper = styled.div`
@@ -25,7 +26,7 @@ const Wrapper = styled.div`
   }
 
   svg {
-    border: 1px solid yellowgreen;
+    //border: 1px solid yellowgreen;
     display: block;
     width: 600px;
     margin: 0 auto;
@@ -40,24 +41,28 @@ const Animation = () => {
     console.log('image', image);
     const { current: el } = image;
 
+    // const scene = el.getElementById('home-animation-business');
+
     const womanWithSurroundings = el.getElementById('creative-woman');
-    // const woman = el.getElementById('woman-body');
-    // const plant = el.getElementById('plant');
-    // const ground = el.getElementById('ground');
-    // const pallete = el.getElementById('pallete');
-    // const shape = el.getElementById('shape');
-    // const whirl = el.getElementById('whirl');
+    const woman = el.getElementById('woman-body');
+    const ground = el.getElementById('ground');
+    const plant = el.getElementById('plant');
+    const palette = el.getElementById('palette');
+    const shape = el.getElementById('shape');
+    const whirl = el.getElementById('whirl');
 
-    const mainMobile = el.getElementById('main-mobile');
+    // const mainMobile = el.getElementById('main-mobile');
+    const mainMobileBody = el.getElementById('mobile-body');
+    const hamburger = el.getElementById('hamburger');
+    const buttonSkip = el.getElementById('button-skip');
+    const dotsNav = el.getElementById('dots-nav');
+    const headingLetters = el.querySelectorAll('#heading path');
+    const paragraph = el.getElementById('paragraph');
     const mainMobileShadow = el.getElementById('main-mobile-shadow');
-    // const heading = el.getElementById('heading');
-    // const paragraph = el.getElementById('paragraph');
 
-    const shopRoof = el.getElementById('shop-roof');
-    // const roof = el.getElementById('roof');
-    // const roofShadow = el.getElementById('roof-shadow');
-    // const roofStickLeft = el.getElementById('roof-stick-left');
-    // const roofStickRight = el.getElementById('roof-stick-right');
+    // const shopRoof = el.getElementById('shop-roof');
+    const roof = el.getElementById('roof');
+    const roofShadow = el.getElementById('roof-shadow');
 
     // temporrary
     const messagesFirstGroup = el.getElementById('messages-first-group');
@@ -66,13 +71,72 @@ const Animation = () => {
     const paperPlane = el.getElementById('paper-plane');
     const smallDevices = el.getElementById('devices');
     const smallDevicesLines = el.getElementById('devices-lines');
-
     tl.current = gsap.timeline();
+
+    // tl.current.set(scene, { x: 20 });
+
+    // tl.current.set(mainMobileShadow, { x: -20, y: -20 });
+
     tl.current.set(
       [
-        womanWithSurroundings,
+        woman,
+        ground,
+        plant,
+        palette,
+        shape,
+        whirl,
+        mainMobileBody,
+        headingLetters,
+        paragraph,
+        hamburger,
+        buttonSkip,
+        dotsNav,
+        roof,
+        roofShadow,
+        messagesFirstGroup,
+        messagesSecondGroup,
+        paperPlane,
+        messagesThirdGroup,
+        smallDevices,
+        smallDevicesLines,
         mainMobileShadow,
-        shopRoof,
+      ],
+      {
+        autoAlpha: 0,
+        x: 20,
+        y: 20,
+      },
+    );
+    // // tl.current.set([woman, plant, palette, shape, whirl, ground, mainMobileBody, hamburger, buttonSkip, dotsNav, headingLetters, paragraph], {
+    // //   x: 20,
+    // //   y: 20,
+    // // });
+    tl.current.set([womanWithSurroundings], { scale: 2.2 });
+    tl.current.to([woman, ground, plant, palette, shape, whirl], {
+      autoAlpha: 1,
+      stagger: 0.35,
+      ease: 'power3.inOut',
+    });
+    tl.current.to(womanWithSurroundings, { scale: 1, duration: 1, ease: 'power3.inOut' });
+    tl.current.to([mainMobileBody, hamburger, buttonSkip, dotsNav], { autoAlpha: 1, duration: 1, ease: 'power3.inOut' });
+    // tl.current.set(womanWithSurroundings, { x: -20, y: -20 });
+    tl.current.to(mainMobileShadow, { autoAlpha: 1 });
+    tl.current.to(
+      [
+        woman,
+        ground,
+        plant,
+        palette,
+        shape,
+        whirl,
+        mainMobileBody,
+        headingLetters,
+        paragraph,
+        hamburger,
+        buttonSkip,
+        dotsNav,
+        roof,
+        roofShadow,
         messagesFirstGroup,
         messagesSecondGroup,
         paperPlane,
@@ -81,10 +145,19 @@ const Animation = () => {
         smallDevicesLines,
       ],
       {
-        autoAlpha: 0,
+        x: 5,
+        y: 5,
+        duration: 1,
+        // ease: 'power3.inOut',
       },
     );
-    tl.current.set([mainMobile], { autoAlpha: 0.2 }); // todo: remove after testing
+    tl.current.to([headingLetters, paragraph], { autoAlpha: 1, stagger: 0.15 });
+    // tl.current.to([woman, plant, palette, shape, whirl, ground, mainMobileBody, hamburger, buttonSkip, dotsNav, headingLetters, paragraph], {
+    //   x: 0,
+    //   y: 0,
+    //   duration: 1,
+    // });
+    // tl.current.to([roof, roofShadow], { autoAlpha: 1, stagger: 0.7, ease: 'power3.inOut' });
   }, []);
 
   return (
