@@ -6,7 +6,7 @@ import Grid from 'src/components/Grid';
 import MainViewsNavigation from './MainViewsNavigation';
 import MainViewsInfo from './MainViewsInfo';
 import Wrapper from './MainPage.styles';
-import { AnimationPlaceholder } from './MainViewsInfo/MainViewInfo.styles';
+import { AnimationWrapper } from './MainViewsInfo/MainViewInfo.styles';
 
 const MainPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -19,7 +19,7 @@ const MainPage = () => {
     <MainSectionWrapper background={lightGrayGradient}>
       <MainPageContext.Provider value={{ pageIndex: currentPage, setCurrentPage }}>
         <Wrapper>
-          <AnimationPlaceholder />
+          <AnimationWrapper />
           <MainViewsInfo />
         </Wrapper>
         <MainViewsNavigation />

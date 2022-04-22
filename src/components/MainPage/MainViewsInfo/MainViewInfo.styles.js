@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { TextWrapper } from 'src/components/TextComponents';
 // import AnimationOnePlaceholder from 'src/assets/images/home-animation-business.svg';
 // import AnimationOnePlaceholder from 'src/assets/images/home-animation-business-green.svg';
-import AnimationOnePlaceholder from 'src/assets/images/home-animation-business-yellow.svg';
+// import AnimationOnePlaceholder from 'src/assets/images/home-animation-business-yellow.svg';
 // import AnimationOnePlaceholder from 'src/assets/images/animation-1-placeholder.svg';
 // import AnimationOnePlaceholder from 'src/assets/images/text-io-block-3.svg';
 // import AnimationOnePlaceholder from 'src/assets/images/text-io-block.svg';
@@ -64,7 +64,9 @@ export const StyledMainViewsInfo = styled.div`
   } ;
 `;
 
-export const AnimationPlaceholder = styled(AnimationOnePlaceholder)`
+// export const AnimationPlaceholder = styled(AnimationOnePlaceholder)`
+export const AnimationWrapper = styled.div`
+  background-color: rgba(95, 158, 160, 0.28);
   position: absolute;
   top: 20vh;
   left: 0;
@@ -84,12 +86,4 @@ export const AnimationPlaceholder = styled(AnimationOnePlaceholder)`
     top: unset;
     position: unset;
   }
-  //
-  // ${({ theme }) => theme.mq.smallDesktop} {
-  //   margin-left: 0;
-  //   transform: scale(1.2);
-  //   height: 60vh;
-  //   top: unset;
-  //   position: unset;
-  // } ;
 `;
