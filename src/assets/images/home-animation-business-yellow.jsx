@@ -1127,7 +1127,7 @@ const HomeAnimationSVG = ({ setRef }) => {
             </g>
           </g>
           <g id="info-person" filter="url(#filter7_d_101_2)">
-            <g id="message-1">
+            <g id="info-person__background">
               <path
                 id="path788"
                 d="M106.414 468.218H208.451C211.993 468.218 214.864 465.371 214.864 461.861V421.363C214.864 417.853 211.993 415.009 208.451 415.009H106.414C102.872 415.009 100 417.853 100 421.363V461.861C100 465.371 102.872 468.218 106.414 468.218Z"
@@ -1537,7 +1537,8 @@ const HomeAnimationSVG = ({ setRef }) => {
           <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_101_2" />
           <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_101_2" result="shape" />
         </filter>
-        <filter id="filter3_d_101_2" x="458" y="398" width="83.9998" height="66.9102" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <filter id="filter3_d_101_2" x="458" y="398" width="83.9998" height="66.9102" filterUnits="userSpaceOnUse"
+colorInterpolationFilters="sRGB">
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
           <feOffset dx="4" dy="4" />
@@ -1564,7 +1565,8 @@ const HomeAnimationSVG = ({ setRef }) => {
           <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_101_2" />
           <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_101_2" result="shape" />
         </filter>
-        <filter id="filter5_d_101_2" x="97" y="228" width="98.1466" height="71.3193" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <filter id="filter5_d_101_2" x="97" y="228" width="98.1466" height="71.3193" filterUnits="userSpaceOnUse"
+colorInterpolationFilters="sRGB">
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
           <feOffset dx="4" dy="4" />
@@ -1574,7 +1576,8 @@ const HomeAnimationSVG = ({ setRef }) => {
           <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_101_2" />
           <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_101_2" result="shape" />
         </filter>
-        <filter id="filter6_d_101_2" x="416" y="248" width="140.518" height="78.6565" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <filter id="filter6_d_101_2" x="416" y="248" width="140.518" height="78.6565" filterUnits="userSpaceOnUse"
+colorInterpolationFilters="sRGB">
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
           <feOffset dx="7" dy="4" />

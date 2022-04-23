@@ -65,7 +65,12 @@ const Animation = () => {
     const roofShadow = el.getElementById('roof-shadow');
 
     // temporrary
-    const messagesFirstGroup = el.getElementById('messages-first-group');
+    const msgOneInfoPersonBgc = el.getElementById('info-person__background');
+    const msgOneInfoPersonAvatar = el.getElementById('avatar');
+    const msgOneInfoPersonLines = el.querySelectorAll('#texts > g');
+    const msgOneInfoText = el.getElementById('info-03');
+    const msgOneInfoTrolley = el.getElementById('info-trolley');
+
     const messagesSecondGroup = el.getElementById('messages-second-group');
     const messagesThirdGroup = el.getElementById('messages-third-group');
     const paperPlane = el.getElementById('paper-plane');
@@ -93,7 +98,11 @@ const Animation = () => {
         dotsNav,
         roof,
         roofShadow,
-        messagesFirstGroup,
+        msgOneInfoPersonBgc,
+        msgOneInfoPersonAvatar,
+        msgOneInfoPersonLines,
+        msgOneInfoText,
+        msgOneInfoTrolley,
         messagesSecondGroup,
         paperPlane,
         messagesThirdGroup,
@@ -107,19 +116,15 @@ const Animation = () => {
         y: 20,
       },
     );
-    // // tl.current.set([woman, plant, palette, shape, whirl, ground, mainMobileBody, hamburger, buttonSkip, dotsNav, headingLetters, paragraph], {
-    // //   x: 20,
-    // //   y: 20,
-    // // });
     tl.current.set([womanWithSurroundings], { scale: 2.2 });
-    tl.current.to([woman, ground, plant, palette, shape, whirl], {
+    tl.current.to([woman, palette, shape, whirl, ground, plant], {
       autoAlpha: 1,
       stagger: 0.35,
       ease: 'power3.inOut',
     });
     tl.current.to(womanWithSurroundings, { scale: 1, duration: 1, ease: 'power3.inOut' });
     tl.current.to([mainMobileBody, hamburger, buttonSkip, dotsNav], { autoAlpha: 1, duration: 1, ease: 'power3.inOut' });
-    // tl.current.set(womanWithSurroundings, { x: -20, y: -20 });
+    tl.current.to([headingLetters, paragraph], { autoAlpha: 1, stagger: 0.15 });
     tl.current.to(mainMobileShadow, { autoAlpha: 1 });
     tl.current.to(
       [
@@ -137,12 +142,17 @@ const Animation = () => {
         dotsNav,
         roof,
         roofShadow,
-        messagesFirstGroup,
-        messagesSecondGroup,
-        paperPlane,
-        messagesThirdGroup,
-        smallDevices,
-        smallDevicesLines,
+        msgOneInfoPersonBgc,
+        msgOneInfoPersonAvatar,
+        msgOneInfoPersonLines,
+        msgOneInfoText,
+        msgOneInfoTrolley,
+        // messagesFirstGroup,
+        // messagesSecondGroup,
+        // paperPlane,
+        // messagesThirdGroup,
+        // smallDevices,
+        // smallDevicesLines,
       ],
       {
         x: 5,
@@ -151,7 +161,11 @@ const Animation = () => {
         // ease: 'power3.inOut',
       },
     );
-    tl.current.to([headingLetters, paragraph], { autoAlpha: 1, stagger: 0.15 });
+    tl.current.to([roof, roofShadow], { autoAlpha: 1, stagger: 0.5, ease: 'power3.inOut' });
+    tl.current.to([msgOneInfoPersonBgc, msgOneInfoPersonAvatar], { autoAlpha: 1 });
+    tl.current.to(msgOneInfoPersonLines, { autoAlpha: 1, stagger: -0.2 });
+    tl.current.to([msgOneInfoText, msgOneInfoTrolley], { autoAlpha: 1, stagger: 0.4 });
+
     // tl.current.to([woman, plant, palette, shape, whirl, ground, mainMobileBody, hamburger, buttonSkip, dotsNav, headingLetters, paragraph], {
     //   x: 0,
     //   y: 0,

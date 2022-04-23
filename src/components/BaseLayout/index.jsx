@@ -1,18 +1,17 @@
 import Navigation from 'src/components/Navigation';
-// import Footer from 'src/components/Footer';
 import styled from 'styled-components';
+import Footer from '../Footer';
 
 const StyledBaseLayout = styled.main`
   overflow: hidden;
 `;
 
-// const BaseLayout = ({ children, footerGridColor }) => {
-const BaseLayout = ({ children }) => {
+const BaseLayout = ({ children, footerGridColor }) => {
   return (
     <StyledBaseLayout>
       <Navigation />
       {children}
-      {/* <Footer footerGridColor={footerGridColor} /> */}
+      <Footer footerGridColor={footerGridColor} />
     </StyledBaseLayout>
   );
 };
