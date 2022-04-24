@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import gsap from 'gsap';
-
 import HomeAnimationSVG from 'src/assets/images/home-animation-business-yellow';
 
 const Wrapper = styled.div`
@@ -38,10 +37,7 @@ const Animation = () => {
   const tl = useRef(null);
 
   useEffect(() => {
-    console.log('image', image);
     const { current: el } = image;
-
-    // const scene = el.getElementById('home-animation-business');
 
     const womanWithSurroundings = el.getElementById('creative-woman');
     const woman = el.getElementById('woman-body');
@@ -71,7 +67,12 @@ const Animation = () => {
     const msgOneInfoText = el.getElementById('info-03');
     const msgOneInfoTrolley = el.getElementById('info-trolley');
 
-    const messagesSecondGroup = el.getElementById('messages-second-group');
+    // const messagesSecondGroup = el.getElementById('messages-second-group');
+
+    const msgSecInfo = el.getElementById('info-message');
+    const msgSecInfoDots = el.querySelectorAll('#info-message #dots > path');
+    const msgSecEnvelope = el.getElementById('envelope');
+    const msgSecMegaphone = el.getElementById('megaphone');
     const messagesThirdGroup = el.getElementById('messages-third-group');
     const paperPlane = el.getElementById('paper-plane');
     const smallDevices = el.getElementById('devices');
@@ -103,7 +104,10 @@ const Animation = () => {
         msgOneInfoPersonLines,
         msgOneInfoText,
         msgOneInfoTrolley,
-        messagesSecondGroup,
+        msgSecInfo,
+        msgSecInfoDots,
+        msgSecEnvelope,
+        msgSecMegaphone,
         paperPlane,
         messagesThirdGroup,
         smallDevices,
@@ -147,6 +151,9 @@ const Animation = () => {
         msgOneInfoPersonLines,
         msgOneInfoText,
         msgOneInfoTrolley,
+        msgSecInfo,
+        msgSecEnvelope,
+        msgSecInfoDots,
         // messagesFirstGroup,
         // messagesSecondGroup,
         // paperPlane,
@@ -158,20 +165,17 @@ const Animation = () => {
         x: 5,
         y: 5,
         duration: 1,
-        // ease: 'power3.inOut',
       },
     );
     tl.current.to([roof, roofShadow], { autoAlpha: 1, stagger: 0.5, ease: 'power3.inOut' });
     tl.current.to([msgOneInfoPersonBgc, msgOneInfoPersonAvatar], { autoAlpha: 1 });
     tl.current.to(msgOneInfoPersonLines, { autoAlpha: 1, stagger: -0.2 });
     tl.current.to([msgOneInfoText, msgOneInfoTrolley], { autoAlpha: 1, stagger: 0.4 });
+    tl.current.to([msgSecInfo, msgSecEnvelope], { autoAlpha: 1, stagger: 0.4 });
+    tl.current.to(msgSecInfoDots, { autoAlpha: 1, stagger: -0.4, repeat: 10, delay: 0.2, x: -0.5, y: -0.5 });
+    tl.current.to(msgSecInfo, { repeat: 5, duration: 0.2, x: -1 });
 
-    // tl.current.to([woman, plant, palette, shape, whirl, ground, mainMobileBody, hamburger, buttonSkip, dotsNav, headingLetters, paragraph], {
-    //   x: 0,
-    //   y: 0,
-    //   duration: 1,
-    // });
-    // tl.current.to([roof, roofShadow], { autoAlpha: 1, stagger: 0.7, ease: 'power3.inOut' });
+    console.log('RENDER');
   }, []);
 
   return (

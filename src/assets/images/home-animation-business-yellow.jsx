@@ -481,7 +481,7 @@ const HomeAnimationSVG = ({ setRef }) => {
           </g>
         </g>
         <g id="shop-roof">
-          <path id="roof-shadow" opacity="0.4" d="M349 225.007L386 136.007H293L203.5 162.007V225.007H349Z" fill="#6F6F6F" fillOpacity="0.4" />
+          <path id="roof-shadow" opacity="0.4" d="M349 225.007L386 136.007H293L203.5 162.007V225.007H349Z" fill="#6F6F6F" fillOpacity="0.2" />
           <g id="roof">
             <path
               id="roof-stick-right"
@@ -796,7 +796,7 @@ const HomeAnimationSVG = ({ setRef }) => {
           </g>
         </g>
         <g id="messages-second-group">
-          <g id="envelop" filter="url(#filter2_d_101_2)">
+          <g id="envelope" filter="url(#filter2_d_101_2)">
             <path
               id="path326"
               d="M230.384 597.266L231.916 592.755L238.308 573.91L237.845 573.164L215.344 573.04L205.362 592.971L205.824 593.715L225.584 596.572L230.384 597.266Z"
