@@ -30,6 +30,11 @@ const Wrapper = styled.div`
     width: 600px;
     margin: 0 auto;
   }
+
+  #phone,
+  #phone-background {
+    cursor: pointer;
+  }
 `;
 
 const Animation = () => {
@@ -72,16 +77,18 @@ const Animation = () => {
     const msgSecInfo = el.getElementById('info-message');
     const msgSecInfoDots = el.querySelectorAll('#info-message #dots > path');
     const msgSecEnvelope = el.getElementById('envelope');
-    const msgSecMegaphone = el.getElementById('megaphone');
-    const messagesThirdGroup = el.getElementById('messages-third-group');
+    const msgMegaphone = el.getElementById('megaphone');
+    const msgMegaphoneVoice = el.getElementById('megaphone-voice');
+    const phoneIcon = el.getElementById('phone');
+    const phoneBackground = el.getElementById('phone-background');
+    const phoneBackBorder = el.getElementById('phone-back-decor');
+    const iconHeart = el.getElementById('heart');
+    const iconHeartBackground = el.getElementById('heart-background');
+
     const paperPlane = el.getElementById('paper-plane');
     const smallDevices = el.getElementById('devices');
     const smallDevicesLines = el.getElementById('devices-lines');
     tl.current = gsap.timeline();
-
-    // tl.current.set(scene, { x: 20 });
-
-    // tl.current.set(mainMobileShadow, { x: -20, y: -20 });
 
     tl.current.set(
       [
@@ -107,9 +114,14 @@ const Animation = () => {
         msgSecInfo,
         msgSecInfoDots,
         msgSecEnvelope,
-        msgSecMegaphone,
+        msgMegaphone,
+        msgMegaphoneVoice,
+        phoneIcon,
+        phoneBackground,
+        phoneBackBorder,
+        iconHeart,
+        iconHeartBackground,
         paperPlane,
-        messagesThirdGroup,
         smallDevices,
         smallDevicesLines,
         mainMobileShadow,
@@ -154,12 +166,16 @@ const Animation = () => {
         msgSecInfo,
         msgSecEnvelope,
         msgSecInfoDots,
-        // messagesFirstGroup,
-        // messagesSecondGroup,
-        // paperPlane,
-        // messagesThirdGroup,
-        // smallDevices,
-        // smallDevicesLines,
+        msgMegaphone,
+        msgMegaphoneVoice,
+        phoneIcon,
+        phoneBackground,
+        phoneBackBorder,
+        iconHeart,
+        iconHeartBackground,
+        paperPlane,
+        smallDevices,
+        smallDevicesLines,
       ],
       {
         x: 5,
@@ -167,15 +183,39 @@ const Animation = () => {
         duration: 1,
       },
     );
+    tl.current.set(paperPlane, { x: 360, y: -40, rotate: -40 });
+    tl.current.set(smallDevices, { x: -20 });
+    tl.current.set([phoneIcon, phoneBackground, phoneBackBorder], { x: -30 });
+
     tl.current.to([roof, roofShadow], { autoAlpha: 1, stagger: 0.5, ease: 'power3.inOut' });
     tl.current.to([msgOneInfoPersonBgc, msgOneInfoPersonAvatar], { autoAlpha: 1 });
     tl.current.to(msgOneInfoPersonLines, { autoAlpha: 1, stagger: -0.2 });
-    tl.current.to([msgOneInfoText, msgOneInfoTrolley], { autoAlpha: 1, stagger: 0.4 });
-    tl.current.to([msgSecInfo, msgSecEnvelope], { autoAlpha: 1, stagger: 0.4 });
-    tl.current.to(msgSecInfoDots, { autoAlpha: 1, stagger: -0.4, repeat: 10, delay: 0.2, x: -0.5, y: -0.5 });
-    tl.current.to(msgSecInfo, { repeat: 5, duration: 0.2, x: -1 });
+    tl.current.to(msgOneInfoText, { autoAlpha: 1, duration: 0.5, x: -30 });
+    tl.current.to(msgOneInfoTrolley, { autoAlpha: 1, duration: 0.5, x: 50 });
+    tl.current.to(msgSecEnvelope, { autoAlpha: 1, duration: 0.5, y: -10 });
+    tl.current.to(msgSecInfo, { autoAlpha: 1, duration: 0.5 });
+    tl.current.to(msgSecInfoDots, { autoAlpha: 1, stagger: -0.4, repeat: 5, duration: 0.5, delay: 0, x: -0.5, y: -0.5 });
+    tl.current.to(msgMegaphone, { autoAlpha: 1, delay: -7, duration: 0.5, y: -5 });
+    tl.current.to(msgMegaphoneVoice, { autoAlpha: 1, delay: -6.5, duration: 0.5 });
+    tl.current.to(paperPlane, { autoAlpha: 1, duration: 1.5, x: -20, y: 20, delay: -6, rotate: 0 });
+    tl.current.to([phoneIcon, phoneBackground, phoneBackBorder], { autoAlpha: 1, duration: 0.5, x: 0, delay: -5.3 });
+    tl.current.to([phoneIcon, phoneBackground], { x: '-=5', y: '-=5', duration: 1, delay: -4.5 });
+    tl.current.to([iconHeart, iconHeartBackground], { autoAlpha: 1, duration: 0.5, delay: -4.0 });
+    tl.current.to(msgMegaphoneVoice, { repeat: 5, duration: 1, scale: 1.1, x: -1, ease: 'elastic', delay: -3.5 });
+
+    tl.current.to(smallDevices, { autoAlpha: 1, duration: 0.5, x: 10, delay: -5 });
+    tl.current.to(smallDevicesLines, { autoAlpha: 1, duration: 0.5, delay: -3.5 });
 
     console.log('RENDER');
+
+    return () => {
+      // [phoneIcon, phoneBackground].forEach((el) =>
+      //   el.removeEventListener('click', () => {
+      //     console.log('remove');
+      //   }),
+      // );
+      tl.current.kill();
+    };
   }, []);
 
   return (
