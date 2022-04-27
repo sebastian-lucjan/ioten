@@ -1,5 +1,5 @@
-import LumpCore from 'src/assets/images/lump-core.svg';
 import styled from 'styled-components';
+import LumpCoreSVG from 'src/LumpCoreSVG';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -27,13 +27,24 @@ const Wrapper = styled.div`
 
   svg {
     display: block;
+    width: 240px;
+
+    ${({ theme }) => theme.mq.tablet} {
+      width: 500px;
+    }
+    ${({ theme }) => theme.mq.smallDesktop} {
+      width: 320px;
+    }
+    ${({ theme }) => theme.mq.desktop} {
+      width: 360px;
+    }
   }
 `;
 
 export default function AnimationDesign() {
   return (
     <Wrapper>
-      <LumpCore />
+      <LumpCoreSVG />
     </Wrapper>
   );
 }
