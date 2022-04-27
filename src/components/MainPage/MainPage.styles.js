@@ -16,7 +16,7 @@ const Wrapper = styled.div`
       return 'background: rgba(235,235,235,1);';
     }
     if (currentPage === 1) {
-      return 'background: rgba(76,65,107,1);';
+      return 'background: rgba(56,61,84,1);';
     }
     if (currentPage === 2) {
       return 'background: #DAFF4D;';

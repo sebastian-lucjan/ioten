@@ -14,9 +14,10 @@ import MainSectionWrapper from '../MainSectionWrapper/MainSectionWrapper.styles'
 const WavesWrapper = styled.div`
   svg {
     position: absolute;
-    bottom: -7%;
-    transform: scale(0.82);
-    left: -12%;
+    bottom: -4%;
+    width: 100%;
+    //transform: scale(0.82);
+    //left: -12%;
     z-index: 2;
   }
 `;

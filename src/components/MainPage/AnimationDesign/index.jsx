@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   z-index: ${({ theme }) => theme.zIndex.peak};
   display: flex;
   justify-content: center;
+  align-items: center;
 
   ${({ theme }) => theme.mq.tablet} {
     transform: scale(0.9);

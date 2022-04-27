@@ -26,7 +26,7 @@ const theme = {
     blackToTransparent: 'linear-gradient(180deg, hsl(0, 0%, 80%, 0) 0%, hsl(0, 0%, 80%, 0) 85%, hsl(0, 0%, 80%) 92.5%, hsl(0, 0%, 30%) 100%)',
     lightGray: 'linear-gradient(40deg, rgba(235,235,235,1) 0%, rgba(250,250,250,1) 100%)',
     lightGrayAxisSection: 'linear-gradient(135deg, hsl(0, 0%, 93%) 0%, hsl(0, 0%, 97%) 100%)',
-    navyBlue: 'linear-gradient(80deg, rgba(76,65,107,1) 0%, rgba(72,59,76,1) 100%)',
+    navyBlue: 'linear-gradient(80deg, rgba(66,59,76,1) 0%, rgba(72,59,76,1) 100%)',
     yellow: 'linear-gradient(100deg, #DAFF4D 0%, #E3FA7D 100%)',
     yellowToGray: 'linear-gradient(0deg, hsl(0, 0%, 80%) 0%, hsl(0, 0%, 80%) 75%, hsl(65, 88%, 48%) 100%)',
     yellowGrayYellow: 'linear-gradient(0deg, hsl(65, 88%, 48%) 0%, hsl(0, 0%, 80%) 10%,hsl(0, 0%, 80%) 90%, hsl(65, 88%, 48%) 100%)',
