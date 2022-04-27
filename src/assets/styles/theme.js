@@ -6,6 +6,7 @@ const theme = {
     darkestGray: 'hsl(0, 0%, 24%)',
     darkerGray: 'hsl(0, 0%, 42%)',
     darkGray: 'hsl(0, 0%, 53%)',
+    lightNavy: 'hsla(197, 58%, 36%, 1)',
     darkNavy: 'hsla(197, 58%, 8%, 1)',
     darkerNavy: 'hsla(197, 58%, 0%, 1)',
     gray: 'hsl(0, 0%, 67%)',

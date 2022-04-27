@@ -54,6 +54,8 @@ export const StyledMainViewsInfo = styled.div`
   height: 100%;
   z-index: ${({ theme }) => theme.zIndex.peak};
 
+  color: ${({ currentPage }) => (currentPage === 1 ? 'white' : 'black')};
+
   ${({ theme }) => theme.mq.smallDesktop} {
     position: unset;
     top: unset;

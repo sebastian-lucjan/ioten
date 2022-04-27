@@ -25,7 +25,6 @@ const Wrapper = styled.div`
   }
 
   svg {
-    //border: 1px solid yellowgreen;
     display: block;
     width: 600px;
     margin: 0 auto;
@@ -71,8 +70,6 @@ const Animation = () => {
     const msgOneInfoPersonLines = el.querySelectorAll('#texts > g');
     const msgOneInfoText = el.getElementById('info-03');
     const msgOneInfoTrolley = el.getElementById('info-trolley');
-
-    // const messagesSecondGroup = el.getElementById('messages-second-group');
 
     const msgSecInfo = el.getElementById('info-message');
     const msgSecInfoDots = el.querySelectorAll('#info-message #dots > path');
@@ -201,19 +198,15 @@ const Animation = () => {
     tl.current.to([phoneIcon, phoneBackground, phoneBackBorder], { autoAlpha: 1, duration: 0.5, x: 0, delay: -5.3 });
     tl.current.to([phoneIcon, phoneBackground], { x: '-=5', y: '-=5', duration: 1, delay: -4.5 });
     tl.current.to([iconHeart, iconHeartBackground], { autoAlpha: 1, duration: 0.5, delay: -4.0 });
-    tl.current.to(msgMegaphoneVoice, { repeat: 5, duration: 1, scale: 1.1, x: -1, ease: 'elastic', delay: -3.5 });
+    tl.current.to(msgMegaphoneVoice, { repeat: 10, duration: 1, scale: 1.12, x: -1, ease: 'elastic', delay: -3.5 });
 
-    tl.current.to(smallDevices, { autoAlpha: 1, duration: 0.5, x: 10, delay: -5 });
-    tl.current.to(smallDevicesLines, { autoAlpha: 1, duration: 0.5, delay: -3.5 });
+    tl.current.to(smallDevices, { autoAlpha: 1, duration: 0.5, x: 10, delay: -10 });
+    tl.current.to(smallDevicesLines, { autoAlpha: 1, duration: 0.5, delay: -8.5 });
 
     console.log('RENDER');
 
     return () => {
-      // [phoneIcon, phoneBackground].forEach((el) =>
-      //   el.removeEventListener('click', () => {
-      //     console.log('remove');
-      //   }),
-      // );
+      console.log('First animation -> kill()');
       tl.current.kill();
     };
   }, []);
