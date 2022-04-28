@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import LumpCoreSVG from 'src/LumpCoreSVG';
+import LumpCoreSVG from 'src/components/MainPage/AnimationDesign/LumpCoreSVG';
+import { useEffect } from 'react';
+import useCircleTranslateCords from 'src/hooks/useCircleTranslateCords';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -37,13 +39,16 @@ const Wrapper = styled.div`
     }
     ${({ theme }) => theme.mq.desktop} {
       width: 360px;
-    }
-  }
+    }    
 `;
 
 export default function AnimationDesign() {
+  const { translateX, translateY } = useCircleTranslateCords();
+
+  useEffect(() => {}, [translateY, translateY]);
+
   return (
-    <Wrapper>
+    <Wrapper translateX={translateX} translateY={translateY}>
       <LumpCoreSVG />
     </Wrapper>
   );

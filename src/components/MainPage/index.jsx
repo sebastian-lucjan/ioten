@@ -3,6 +3,9 @@ import MainPageContext from 'src/context/mainPageContext';
 import Grid from 'src/components/Grid';
 import styled from 'styled-components';
 import Waves from 'src/assets/images/waves-net.svg';
+// import Image from 'next/image';
+// import crosses from 'src/assets/images/crossies.png';
+// import moon from 'src/assets/images/moon.png';
 import MainViewsNavigation from './MainViewsNavigation';
 import MainViewsInfo from './MainViewsInfo';
 import Wrapper from './MainPage.styles';
@@ -11,16 +14,45 @@ import AnimationDesign from './AnimationDesign';
 import AnimationData from './AnimationData';
 import MainSectionWrapper from '../MainSectionWrapper/MainSectionWrapper.styles';
 
-const WavesWrapper = styled.div`
+const DecorsWrapper = styled.div`
   svg {
     position: absolute;
-    bottom: -4%;
+    bottom: -6%;
     width: 100%;
-    //transform: scale(0.82);
-    //left: -12%;
     z-index: 2;
   }
 `;
+//
+// const CrossesWrapper = styled.div``;
+//
+// const Shape = styled.div`
+//   display: none;
+//
+//   ${({ theme }) => theme.mq.tablet} {
+//     display: block;
+//     position: absolute;
+//   }
+// `;
+// const CrossesOne = styled(Shape)`
+//   ${({ theme }) => theme.mq.tablet} {
+//     top: 20%;
+//     left: 10%;
+//   }
+// `;
+//
+// const CrossesTwo = styled(Shape)`
+//   ${({ theme }) => theme.mq.tablet} {
+//     top: 50%;
+//     left: 85%;
+//   }
+// `;
+//
+// const Moon = styled(Shape)`
+//   ${({ theme }) => theme.mq.tablet} {
+//     top: 60%;
+//     left: 7%;
+//   }
+// `;
 
 const MainPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -38,9 +70,20 @@ const MainPage = () => {
         <MainViewsNavigation />
 
         {currentPage === 1 && (
-          <WavesWrapper>
+          <DecorsWrapper>
             <Waves />
-          </WavesWrapper>
+            {/* <CrossesWrapper> */}
+            {/*  <CrossesOne> */}
+            {/*    <Image src={crosses} alt="kształty geometryczne, krzyżyki" width={60} height={60} /> */}
+            {/*  </CrossesOne> */}
+            {/*  <CrossesTwo> */}
+            {/*    <Image src={crosses} alt="kształty geometryczne, krzyżyki" width={50} height={50} /> */}
+            {/*  </CrossesTwo> */}
+            {/*  <Moon> */}
+            {/*    <Image src={moon} alt="kształt małego księżyca" width={70} height={70} /> */}
+            {/*  </Moon> */}
+            {/* </CrossesWrapper> */}
+          </DecorsWrapper>
         )}
 
         <Grid currentPage={currentPage} />

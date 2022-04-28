@@ -4,4 +4,4 @@ node_modules
 *.md
 
 home-animation-business-yellow.jsx
-LumpCoreSVG.jsx
+src/components/MainPage/AnimationDesign/LumpCoreSVG.jsx

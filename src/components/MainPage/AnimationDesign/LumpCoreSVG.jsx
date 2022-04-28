@@ -1,4 +1,4 @@
-import useLumpCoordinates from './hooks/useLumpCoordinates';
+import useLumpCoordinates from 'src/hooks/useLumpCoordinates';
 
 export default function LumpCoreSVG() {
   const { x, y } = useLumpCoordinates();
