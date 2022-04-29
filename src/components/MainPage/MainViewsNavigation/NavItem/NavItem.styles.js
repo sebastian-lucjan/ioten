@@ -5,11 +5,7 @@ export const StyledLink = styled.a`
   font-size: 22px;
   transform: ${({ type }) => (type === 'next' ? 'scaleX(-1)' : null)};
   line-height: 22px;
-  color: ${({ theme }) => theme.color.darkestGray};
-
-  ${({ theme }) => theme.mq.tablet} {
-    color: ${({ theme }) => theme.color.darkGray};
-  }
+  color: ${({ theme, setColor }) => setColor || theme.color.darkestGray};
 `;
 
 export const StyledNavItem = styled.div`
@@ -58,10 +54,9 @@ export const StyledHeading = styled.h3`
   font-size: ${({ theme }) => theme.font.size.smallText};
   text-align: ${({ type }) => (type === 'next' ? 'right' : 'left')};
   line-height: 24px;
-  color: ${({ theme }) => theme.color.darkestGray};
+  color: ${({ theme, color }) => color || theme.color.darkestGray};
 
   ${({ theme }) => theme.mq.tablet} {
-    color: ${({ theme }) => theme.color.darkerGray};
     line-height: 24px;
   }
 
@@ -85,6 +80,7 @@ export const StyledParagraph = styled.p`
   font-weight: normal;
   font-size: ${({ theme }) => theme.font.size.smallText};
   text-align: ${({ type }) => (type === 'next' ? 'right' : 'left')};
+  color: ${({ theme, color }) => color || theme.color.darkestGray};
 
   line-height: 20px;
 
