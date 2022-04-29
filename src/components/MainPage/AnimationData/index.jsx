@@ -26,22 +26,41 @@ const Wrapper = styled.div`
     top: unset;
     position: unset;
   }
-  //transform: translateY(-200px);
 
   svg {
     width: 240px;
+    transform: translateY(-80px);
     height: 100%;
 
     ${({ theme }) => theme.mq.tablet} {
-      width: 500px;
+      transform: translateY(-120px);
+      height: 60vh;
+      width: 400px;
     }
 
     ${({ theme }) => theme.mq.smallDesktop} {
+      transform: translateY(-40px);
       width: 300px;
     }
 
     ${({ theme }) => theme.mq.desktop} {
-      width: 300px;
+      transform: translateY(-80px);
+      height: 75vh;
+      width: 350px;
+    }
+
+    ${({ theme }) => theme.mq.mediumDesktop} {
+      transform: translateY(-100px);
+    }
+
+    ${({ theme }) => theme.mq.mediumDesktop} {
+      transform: translateY(-100px);
+      width: 420px;
+    }
+
+    ${({ theme }) => theme.mq.hugeDesktop} {
+      transform: translateY(-100px);
+      width: 480px;
     }
   }
 `;
@@ -62,7 +81,6 @@ export default function AnimationData() {
 
   useEffect(() => {
     const { current: el } = image;
-    // const allBlocks = el.querySelectorAll('#boxes > g');
 
     const boxMoveSM1 = el.getElementById('xxl-box-air-5-2');
     const boxMoveSM3 = el.getElementById('xl-box-ground-1-4');
@@ -139,13 +157,6 @@ export default function AnimationData() {
         delay: -1,
         y: 0,
         ease: 'power2.out',
-      });
-    }
-    if (dataBooster === 'initial-state') {
-      tl.current.to(boxesMoveLG, {
-        // duration: 1,
-        // y: '0',
-        // ease: 'power3.out',
       });
     }
 

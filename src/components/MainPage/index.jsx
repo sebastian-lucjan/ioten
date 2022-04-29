@@ -17,9 +17,18 @@ import MainSectionWrapper from '../MainSectionWrapper/MainSectionWrapper.styles'
 const DecorsWrapper = styled.div`
   svg {
     position: absolute;
-    bottom: -6%;
-    width: 100%;
+    bottom: -4%;
+    width: 200%;
     z-index: 2;
+
+    ${({ theme }) => theme.mq.tablet} {
+      bottom: -7%;
+      width: 100%;
+    }
+
+    ${({ theme }) => theme.mq.mediumDesktop} {
+      bottom: -8%;
+    }
   }
 `;
 //

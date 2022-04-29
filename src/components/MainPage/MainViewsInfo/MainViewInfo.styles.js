@@ -49,12 +49,15 @@ export const Wrapper = styled(TextWrapper)`
 
 export const StyledMainViewsInfo = styled.div`
   position: absolute;
-  top: 70vh;
+  top: 65vh;
   width: 100%;
   height: 100%;
   z-index: ${({ theme }) => theme.zIndex.peak};
-
   color: ${({ currentPage }) => (currentPage === 1 ? 'white' : 'black')};
+
+  ${({ theme }) => theme.mq.tablet} {
+    top: 68vh;
+  }
 
   ${({ theme }) => theme.mq.smallDesktop} {
     position: unset;

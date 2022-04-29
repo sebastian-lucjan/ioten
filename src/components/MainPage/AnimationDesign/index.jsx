@@ -5,7 +5,7 @@ import useCircleTranslateCords from 'src/hooks/useCircleTranslateCords';
 
 const Wrapper = styled.div`
   position: absolute;
-  top: 20vh;
+  top: 15vh;
   left: 0;
   width: 100%;
   height: 50vh;
@@ -16,16 +16,26 @@ const Wrapper = styled.div`
   align-items: center;
 
   ${({ theme }) => theme.mq.tablet} {
-    transform: scale(0.9);
+    top: 18vh;
   }
 
   ${({ theme }) => theme.mq.smallDesktop} {
     margin-left: 0;
-    transform: scale(0.95);
+    transform: scale(0.9);
     height: 60vh;
     top: unset;
     position: unset;
   }
+  
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    transform: scale(1.1);
+  }
+  
+  ${({ theme }) => theme.mq.bigDesktop} {
+    transform: scale(1.2);
+  }
+  
+}
 
   svg {
     display: block;

@@ -8,26 +8,39 @@ const Wrapper = styled.div`
   top: 20vh;
   left: 0;
   width: 100%;
-  height: 50vh;
   transform: scale(0.9);
   z-index: ${({ theme }) => theme.zIndex.peak};
 
+  svg {
+    display: block;
+    width: 360px;
+    margin: 0 auto;
+  }
+
   ${({ theme }) => theme.mq.tablet} {
-    transform: scale(0.9);
+    svg {
+      width: 640px;
+    }
   }
 
   ${({ theme }) => theme.mq.smallDesktop} {
     margin-left: 0;
-    transform: scale(1);
-    height: 60vh;
     top: unset;
     position: unset;
   }
 
-  svg {
-    display: block;
-    width: 600px;
-    margin: 0 auto;
+  ${({ theme }) => theme.mq.mediumDesktop} {
+  }
+
+  ${({ theme }) => theme.mq.bigDesktop} {
+    svg {
+      width: 680px;
+    }
+  }
+  ${({ theme }) => theme.mq.hugeDesktop} {
+    svg {
+      width: 760px;
+    }
   }
 
   #phone,
