@@ -1,80 +1,12 @@
-import styled from 'styled-components';
-import { useContext } from 'react';
+import gsap from 'gsap';
+import { useContext, useEffect, useRef } from 'react';
 import MainPageContext from 'src/context/mainPageContext';
-
-export const Wrapper = styled.div`
-  position: relative;
-  transition: all 0.3s ease-in-out;
-  margin-left: 20px;
-
-  ${({ theme }) => theme.mq.tablet} {
-    position: unset;
-    margin-left: 30px;
-  }
-
-  ${({ theme }) => `${theme.mq.smallDesktop} and (orientation: landscape)`} {
-    position: relative;
-    margin-left: 30px;
-  } ;
-`;
-
-export const ToggleBody = styled.div`
-  position: relative;
-  width: 50px;
-  height: 24px;
-  border-radius: 100px;
-  background-color: ${({ theme }) => theme.color.darkestGray};
-  cursor: pointer;
-
-  ${({ theme }) => theme.mq.tablet} {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70px;
-    height: 32px;
-  }
-
-  ${({ theme }) => theme.mq.smallDesktop} {
-    transform: translate(0, -6px);
-    width: 90px;
-    height: 48px;
-  }
-  ${({ theme }) => theme.mq.mediumDesktop} {
-    transform: translate(0, 0);
-    width: 90px;
-    height: 48px;
-  } ;
-`;
-
-export const TogglerHandle = styled.div`
-  transition: left 0.3s ease-in-out;
-  position: absolute;
-  top: 0;
-  left: ${({ boost }) => (boost === 'boost-chart' ? '26px' : 0)};
-  height: 24px;
-  width: 24px;
-  border: 3px solid ${({ theme }) => theme.color.darkestGray};
-  border-radius: 100px;
-  background-color: ${({ theme }) => theme.color.yellowLight};
-  cursor: pointer;
-
-  ${({ theme }) => theme.mq.tablet} {
-    height: 32px;
-    width: 32px;
-    border: 4px solid ${({ theme }) => theme.color.darkestGray};
-    left: ${({ boost }) => (boost === 'boost-chart' ? '40px' : 0)};
-  }
-
-  ${({ theme }) => theme.mq.smallDesktop} {
-    height: 48px;
-    width: 48px;
-    border: 6px solid ${({ theme }) => theme.color.darkestGray};
-    left: ${({ boost }) => (boost === 'boost-chart' ? '40px' : 0)};
-  } ;
-`;
+import { ToggleBody, TogglerHandle, Wrapper } from './DataToggler.styles';
 
 export default function DataToggler() {
   const { dataBooster, setDataBooster } = useContext(MainPageContext);
+  const tl = useRef(null);
+  const togglerRef = useRef(null);
 
   const handleClick = () => {
     if (dataBooster === 'boost-chart') {
@@ -84,9 +16,46 @@ export default function DataToggler() {
     }
   };
 
+  useEffect(() => {
+    if (dataBooster === 'initial-state') {
+      const { current: el } = togglerRef;
+      tl.current = gsap.timeline();
+
+      const toggler = el.querySelector('.toggler');
+
+      tl.current.to(toggler, { scale: 1.14, delay: 1.2, duration: 0.5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1, duration: 0.5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1.14, duration: 0.5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1, duration: 0.5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1.14, duration: 0.5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1, duration: 0.5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1.14, duration: 0.5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1, duration: 0.5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1.14, duration: 0.5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1, duration: 0.5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1, duration: 0.1, rotate: 5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1, duration: 0.1, rotate: -5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1, duration: 0.1, rotate: 5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1, duration: 0.1, rotate: -5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1, duration: 0.1, rotate: 5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1, duration: 0.1, rotate: -5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1, duration: 0.1, rotate: 5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1, duration: 0.1, rotate: -5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1, duration: 0.1, rotate: 0, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1, duration: 0.1, rotate: -5, ease: 'power1.inOut' });
+      tl.current.to(toggler, { scale: 1, duration: 0.1, rotate: 0, ease: 'power1.inOut' });
+    }
+    return () => {
+      console.log('toggle animation - kill()');
+      if (dataBooster === 'initial-state') {
+        tl.current.kill();
+      }
+    };
+  }, [dataBooster]);
+
   return (
-    <Wrapper>
-      <ToggleBody onClick={handleClick}>
+    <Wrapper ref={togglerRef}>
+      <ToggleBody className="toggler" onClick={handleClick}>
         <TogglerHandle boost={dataBooster} onClick={handleClick} />
       </ToggleBody>
     </Wrapper>

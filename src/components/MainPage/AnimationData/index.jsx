@@ -1,69 +1,8 @@
-import styled from 'styled-components';
 import { useContext, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import MainPageContext from 'src/context/mainPageContext';
 import DataChartSVG from './DataChartSVG';
-
-const Wrapper = styled.div`
-  position: absolute;
-  top: 20vh;
-  left: 0;
-  width: 100%;
-  height: 50vh;
-  transform: scale(1);
-  z-index: ${({ theme }) => theme.zIndex.peak};
-  display: flex;
-  justify-content: center;
-  //align-items: center;
-
-  ${({ theme }) => theme.mq.tablet} {
-    //transform: scale(0.9);
-  }
-
-  ${({ theme }) => theme.mq.smallDesktop} {
-    margin-left: 0;
-    height: 60vh;
-    top: unset;
-    position: unset;
-  }
-
-  svg {
-    width: 240px;
-    transform: translateY(-80px);
-    height: 100%;
-
-    ${({ theme }) => theme.mq.tablet} {
-      transform: translateY(-120px);
-      height: 60vh;
-      width: 400px;
-    }
-
-    ${({ theme }) => theme.mq.smallDesktop} {
-      transform: translateY(-40px);
-      width: 300px;
-    }
-
-    ${({ theme }) => theme.mq.desktop} {
-      transform: translateY(-80px);
-      height: 75vh;
-      width: 350px;
-    }
-
-    ${({ theme }) => theme.mq.mediumDesktop} {
-      transform: translateY(-100px);
-    }
-
-    ${({ theme }) => theme.mq.mediumDesktop} {
-      transform: translateY(-100px);
-      width: 420px;
-    }
-
-    ${({ theme }) => theme.mq.hugeDesktop} {
-      transform: translateY(-100px);
-      width: 480px;
-    }
-  }
-`;
+import { Wrapper } from './AnimationData.styles';
 
 const movementLvls = {
   sm: -20,

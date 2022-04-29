@@ -1,53 +1,7 @@
 import { useEffect, useRef } from 'react';
-import styled from 'styled-components';
 import gsap from 'gsap';
 import HomeAnimationSVG from 'src/assets/images/home-animation-business-yellow';
-
-const Wrapper = styled.div`
-  position: absolute;
-  top: 20vh;
-  left: 0;
-  width: 100%;
-  transform: scale(0.9);
-  z-index: ${({ theme }) => theme.zIndex.peak};
-
-  svg {
-    display: block;
-    width: 360px;
-    margin: 0 auto;
-  }
-
-  ${({ theme }) => theme.mq.tablet} {
-    svg {
-      width: 640px;
-    }
-  }
-
-  ${({ theme }) => theme.mq.smallDesktop} {
-    margin-left: 0;
-    top: unset;
-    position: unset;
-  }
-
-  ${({ theme }) => theme.mq.mediumDesktop} {
-  }
-
-  ${({ theme }) => theme.mq.bigDesktop} {
-    svg {
-      width: 680px;
-    }
-  }
-  ${({ theme }) => theme.mq.hugeDesktop} {
-    svg {
-      width: 760px;
-    }
-  }
-
-  #phone,
-  #phone-background {
-    cursor: pointer;
-  }
-`;
+import { Wrapper } from './AnimationBusiness.styles';
 
 const Animation = () => {
   const image = useRef(null);
@@ -215,8 +169,6 @@ const Animation = () => {
 
     tl.current.to(smallDevices, { autoAlpha: 1, duration: 0.5, x: 10, delay: -10 });
     tl.current.to(smallDevicesLines, { autoAlpha: 1, duration: 0.5, delay: -8.5 });
-
-    console.log('RENDER');
 
     return () => {
       console.log('First animation -> kill()');
