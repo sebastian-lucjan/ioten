@@ -64,3 +64,7 @@ export const StyledMainViewsInfo = styled.div`
     height: 60vh;
   } ;
 `;
+
+export const HeadingWrapper = styled.div`
+  display: flex;
+`;

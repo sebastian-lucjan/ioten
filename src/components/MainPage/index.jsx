@@ -56,10 +56,11 @@ const DecorsWrapper = styled.div`
 
 const MainPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
+  const [dataBooster, setDataBooster] = useState('initial-state');
 
   return (
     <MainSectionWrapper background="gray">
-      <MainPageContext.Provider value={{ pageIndex: currentPage, setCurrentPage }}>
+      <MainPageContext.Provider value={{ pageIndex: currentPage, setCurrentPage, dataBooster, setDataBooster }}>
         <Wrapper currentPage={currentPage}>
           {currentPage === 0 && <AnimationBusiness />}
           {currentPage === 1 && <AnimationDesign />}
