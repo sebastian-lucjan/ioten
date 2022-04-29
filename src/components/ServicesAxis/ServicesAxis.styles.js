@@ -94,7 +94,7 @@ export const StyledWrapper = styled.div`
     width: 32px;
     height: 100%;
     left: 5px;
-    background: ${({ theme }) => theme.gradient.lightGrayTransparentLightGray};
+    background: ${({ theme }) => theme.gradient.transparentWhiteTransparent};
     font-size: ${({ theme }) => theme.font.size.headingSection};
     color: ${({ theme }) => theme.color.lightGray};
     display: flex;

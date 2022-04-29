@@ -7,6 +7,7 @@ const Line = styled.span`
   width: 1px;
   background: ${({ color }) => color};
   z-index: ${({ theme }) => theme.zIndex.top};
+  transition: background 1s ease;
 
   &:first-child,
   &:last-child {

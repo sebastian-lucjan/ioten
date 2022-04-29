@@ -2,3 +2,6 @@ node_modules
 .next
 .husky
 *.md
+
+home-animation-business-yellow.jsx
+src/components/MainPage/AnimationDesign/LumpCoreSVG.jsx
