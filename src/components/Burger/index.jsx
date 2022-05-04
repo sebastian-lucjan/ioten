@@ -1,8 +1,10 @@
 import StyledBurger from './Burger.styles';
 
-const Index = ({ isOpen, toggleNavigation }) => {
+const Burger = ({ isOpen, toggleNavigation, isWhite, setRef }) => {
+  // const { burgerRef } = useContext(MainPageContext);
+
   return (
-    <StyledBurger isOpen={isOpen} onClick={toggleNavigation}>
+    <StyledBurger ref={setRef} className="burger-navigation" isOpen={isOpen} isWhite={isWhite} onClick={toggleNavigation}>
       <div />
       <div />
       <div />
@@ -10,4 +12,4 @@ const Index = ({ isOpen, toggleNavigation }) => {
   );
 };
 
-export default Index;
+export default Burger;

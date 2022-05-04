@@ -15,7 +15,6 @@ const StyledBurger = styled.button`
   cursor: pointer;
   margin: 20px 30px;
   z-index: ${({ theme }) => theme.zIndex['10']};
-
   ${({ theme }) => theme.mq.tablet} {
     display: none;
   }
@@ -27,7 +26,7 @@ const StyledBurger = styled.button`
   div {
     width: 2.1rem;
     height: 0.25rem;
-    background: ${({ theme }) => theme.color.darkestGray};
+    background: ${({ theme, isWhite, isOpen }) => (isWhite && !isOpen ? theme.color.white : theme.color.darkestGray)};
     border-radius: 10px;
     transition: all 0.2s linear;
     position: relative;

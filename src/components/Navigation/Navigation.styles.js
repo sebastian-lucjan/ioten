@@ -58,6 +58,19 @@ export const StyledMenu = styled.nav`
     flex-direction: row;
     font-weight: 300;
   }
+
+  ${({ asPath }) =>
+    asPath === '/uslugi' || asPath === '/kontakt'
+      ? `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      background-color: ${({ theme }) => theme.color.lightGray};
+      z-index: ${({ theme }) => theme.zIndex.highest};
+    `
+      : null}
 `;
 
 export const StyledLink = styled.li`
@@ -66,7 +79,12 @@ export const StyledLink = styled.li`
   align-self: center;
   margin: 20px auto;
   cursor: pointer;
+
+  ${({ theme }) => theme.mq.tablet} {
+    color: ${({ theme, whiteNavigationText }) => (whiteNavigationText ? theme.color.white : theme.color.darkestGray)};
+  }
 `;
+
 export const StyledLogo = styled.a`
   display: block;
   margin: 16px;

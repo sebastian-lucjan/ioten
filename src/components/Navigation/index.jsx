@@ -1,13 +1,15 @@
 import IotenLogo from 'src/assets/images/ioten-logo-main.svg';
 import IotenNavLogo from 'src/assets/images/ioten-logo.svg';
 import Link from 'next/link';
+import useIsWhiteTextIntersection from 'src/hooks/useIsWhiteTextIntersection';
 import { v4 as uuid } from 'uuid';
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import { navigationData } from 'src/data/pageData';
 import theme from 'src/assets/styles/theme';
 import styled from 'styled-components';
 import { useState } from 'react';
-import Index from 'src/components/Burger';
+import Burger from 'src/components/Burger';
+import { useRouter } from 'next/router';
 import { Wrapper, StyledValuationButton, StyledMenu, StyledLink, StyledLogo } from './Navigation.styles';
 
 const LogoWrapper = styled.div`
@@ -27,12 +29,13 @@ const LogoWrapper = styled.div`
   }
 `;
 
-const Navigation = () => {
+const Navigation = ({ whiteNavigationText, setRef }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const isWhite = useIsWhiteTextIntersection(whiteNavigationText);
 
-  const toggleNavigation = () => {
-    setIsOpen(!isOpen);
-  };
+  const { asPath } = useRouter();
+
+  const toggleNavigation = () => setIsOpen(!isOpen);
 
   const {
     gradient: { lightGray: lightGrayGradient },
@@ -47,17 +50,19 @@ const Navigation = () => {
           </StyledLogo>
         </Link>
       </LogoWrapper>
-      <Index isOpen={isOpen} toggleNavigation={toggleNavigation} />
+
+      <Burger setRef={setRef} isWhite={isWhite} isOpen={isOpen} toggleNavigation={toggleNavigation} />
+
       <Wrapper isOpen={isOpen}>
         <Link href="/">
           <StyledLogo>
             <IotenNavLogo />
           </StyledLogo>
         </Link>
-        <StyledMenu>
+        <StyledMenu asPath={asPath}>
           {navigationData.map(({ name, href, as }) => (
             <Link key={uuid()} href={href} as={as}>
-              <StyledLink>{name}</StyledLink>
+              <StyledLink whiteNavigationText={isWhite}>{name}</StyledLink>
             </Link>
           ))}
         </StyledMenu>

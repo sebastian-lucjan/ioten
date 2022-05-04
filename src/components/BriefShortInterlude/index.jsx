@@ -16,7 +16,7 @@ export default function BriefShortInterlude() {
 
   return (
     <MainSectionWrapper background={blackBrief}>
-      <Wrapper>
+      <Wrapper className="test-observer">
         <StyledHeadingWrapper>
           <StyledHeading color={white} as="h2" size="lg">
             {heading}
