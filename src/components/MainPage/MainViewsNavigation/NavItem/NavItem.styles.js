@@ -15,24 +15,37 @@ export const StyledNavItem = styled.div`
   transition: all 0.3s ease;
 
   color: ${({ theme, pageIndex }) => {
+    if (typeof window !== 'undefined' && 'ontouchstart' in document.documentElement) {
+      console.log('touch');
+    }
     if (pageIndex === 1) {
-      return theme.color.lighterGray;
+      return theme.color.lightestGray;
     }
 
-    return theme.color.darkerGray;
+    return theme.color.darkestGray;
   }};
 
-  &:hover {
-    transform: scale(1.02);
-    transform-origin: ${({ type }) => (type === 'prev' ? 'left' : 'right')};
-
+  ${({ theme }) => theme.mq.smallDesktop} {
     color: ${({ theme, pageIndex }) => {
       if (pageIndex === 1) {
-        return theme.color.lightestGray;
+        return theme.color.lighterGray;
       }
 
-      return theme.color.darkestGray;
+      return theme.color.darkerGray;
     }};
+
+    &:hover {
+      transform: scale(1.02);
+      transform-origin: ${({ type }) => (type === 'prev' ? 'left' : 'right')};
+
+      color: ${({ theme, pageIndex }) => {
+        if (pageIndex === 1) {
+          return theme.color.lightestGray;
+        }
+
+        return theme.color.darkestGray;
+      }};
+    }
   }
 
   .styled-nav-item__paragraph {

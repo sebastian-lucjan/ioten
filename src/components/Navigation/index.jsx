@@ -29,11 +29,15 @@ const LogoWrapper = styled.div`
   }
 `;
 
+const closeNavTheSamePath = (currentPath, navButtonPath, setIsOpen) => {
+  if (currentPath === navButtonPath) setIsOpen(false);
+};
+
 const Navigation = ({ whiteNavigationText, setRef }) => {
   const [isOpen, setIsOpen] = useState(false);
   const isWhite = useIsWhiteTextIntersection(whiteNavigationText);
 
-  const { asPath } = useRouter();
+  const { asPath: currentPath } = useRouter();
 
   const toggleNavigation = () => setIsOpen(!isOpen);
 
@@ -59,12 +63,18 @@ const Navigation = ({ whiteNavigationText, setRef }) => {
             <IotenNavLogo />
           </StyledLogo>
         </Link>
-        <StyledMenu asPath={asPath}>
-          {navigationData.map(({ name, href, as }) => (
-            <Link key={uuid()} href={href} as={as}>
-              <StyledLink whiteNavigationText={isWhite}>{name}</StyledLink>
-            </Link>
-          ))}
+        <StyledMenu asPath={currentPath}>
+          {navigationData.map(({ name, href, as: navButtonPath }) => {
+            // const isBold = currentPath === navButtonPath;
+
+            return (
+              <Link key={uuid()} href={href} as={navButtonPath}>
+                <StyledLink whiteNavigationText={isWhite} onClick={() => closeNavTheSamePath(currentPath, navButtonPath, setIsOpen)}>
+                  {name}
+                </StyledLink>
+              </Link>
+            );
+          })}
         </StyledMenu>
         <Link href="/valuation" as="/wycena-projektu">
           <StyledValuationButton type="button">Wyceń projekt</StyledValuationButton>

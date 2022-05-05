@@ -60,8 +60,10 @@ export const StyledMenu = styled.nav`
   }
 `;
 
+// font-family: ${({ theme, isBold }) => (isBold  ? theme.font.family.myriadPro.bold : theme.font.family.myriadPro.regular)};
 export const StyledLink = styled.li`
   font-size: ${({ theme }) => theme.font.size.paragraph};
+
   list-style: none;
   align-self: center;
   margin: 20px auto;
