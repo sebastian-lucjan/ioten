@@ -23,7 +23,7 @@ export const StyledNavItem = styled.div`
   }};
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.02);
     transform-origin: ${({ type }) => (type === 'prev' ? 'left' : 'right')};
 
     color: ${({ theme, pageIndex }) => {

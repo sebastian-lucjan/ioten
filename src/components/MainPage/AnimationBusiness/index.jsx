@@ -171,7 +171,6 @@ const Animation = () => {
     tl.current.to(smallDevicesLines, { autoAlpha: 1, duration: 0.5, delay: -8.5 });
 
     return () => {
-      console.log('First animation -> kill()');
       tl.current.kill();
     };
   }, []);

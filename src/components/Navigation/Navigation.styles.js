@@ -59,18 +59,6 @@ export const StyledMenu = styled.nav`
     font-weight: 300;
   }
 `;
-// ${({ asPath }) =>
-//   asPath === '/uslugi' || asPath === '/kontakt'
-//     ? `
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     // width: 100%;
-//     height: 64px;
-//     background-color: ${({ theme }) => theme.color.lightGray};
-//     z-index: ${({ theme }) => theme.zIndex.highest};
-//   `
-//     : null}
 
 export const StyledLink = styled.li`
   font-size: ${({ theme }) => theme.font.size.paragraph};
@@ -78,8 +66,6 @@ export const StyledLink = styled.li`
   align-self: center;
   margin: 20px auto;
   cursor: pointer;
-  // font-family: ${({ theme }) => theme.font.family.myriadPro.regular};
-  //font-weight: 800;
   letter-spacing: 1px;
   transition: all 0.3s ease-in-out;
 

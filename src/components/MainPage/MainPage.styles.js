@@ -9,8 +9,6 @@ const Wrapper = styled.div`
   transition: background 0.5s ease;
 
   ${({ currentPage }) => {
-    console.log(currentPage);
-
     if (currentPage === 0) {
       return 'background: rgba(235,235,235,1);';
     }

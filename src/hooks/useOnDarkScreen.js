@@ -6,7 +6,6 @@ const useOnDarkScreen = (targetRef, rootMargin) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        console.log('entry:', entry);
         setIsIntersecting(entry.isIntersecting);
       },
       {

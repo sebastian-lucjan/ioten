@@ -9,16 +9,21 @@ import Testimonials from 'src/components/Testimonials';
 import { pageData } from 'src/data/pageData';
 import theme from 'src/assets/styles/theme';
 import { NextSeo } from 'next-seo';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import useOnDarkScreen from 'src/hooks/useOnDarkScreen';
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(0);
   const [dataBooster, setDataBooster] = useState('initial-state');
-  // const [isMobile, setIsMobile] = useState(null);
 
   const ref = useRef(null);
   const onDarkScreen = useOnDarkScreen(ref, '-36px');
+
+  useEffect(() => {
+    return () => {
+      setCurrentPage(0); // reset to initial state
+    };
+  }, []);
 
   const {
     headSection: { title, description, canonical },

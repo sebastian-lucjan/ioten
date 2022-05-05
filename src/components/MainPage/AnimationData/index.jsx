@@ -100,7 +100,6 @@ export default function AnimationData() {
     }
 
     return () => {
-      console.log('Second animation -> kill()');
       tl.current.kill();
     };
   }, [dataBooster]);

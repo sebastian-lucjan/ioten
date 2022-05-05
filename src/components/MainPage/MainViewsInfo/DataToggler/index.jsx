@@ -46,7 +46,6 @@ export default function DataToggler() {
       tl.current.to(toggler, { scale: 1, duration: 0.1, rotate: 0, ease: 'power1.inOut' });
     }
     return () => {
-      console.log('toggle animation - kill()');
       if (dataBooster === 'initial-state') {
         tl.current.kill();
       }
