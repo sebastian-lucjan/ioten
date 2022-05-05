@@ -3,6 +3,7 @@ import contactData from 'src/data/contactData';
 import { Wrapper } from './ContactForm.styles';
 import SubmitButton from './SubmitButton';
 import { CheckboxInput, TextArea, TextInput } from './FormFields';
+import { TextParagraph } from '../../TextComponents';
 
 export default function ContactForm() {
   const {
@@ -60,6 +61,10 @@ export default function ContactForm() {
           placeholderText="nda"
           inputConditions={ndaCheckboxConditions}
         />
+        <TextParagraph size="xs" lh="xs">
+          * Pola tekstowe: telefon, nazwa firmy nie są polami obowiązkowymi. Czuj się swobodnie i bezpiecznie wybierz formę kontaktu dla Ciebie
+          komfortową, my się dostosujemy.
+        </TextParagraph>
         <SubmitButton />
       </div>
     </Wrapper>

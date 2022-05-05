@@ -58,20 +58,19 @@ export const StyledMenu = styled.nav`
     flex-direction: row;
     font-weight: 300;
   }
-
-  ${({ asPath }) =>
-    asPath === '/uslugi' || asPath === '/kontakt'
-      ? `
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 64px;
-      background-color: ${({ theme }) => theme.color.lightGray};
-      z-index: ${({ theme }) => theme.zIndex.highest};
-    `
-      : null}
 `;
+// ${({ asPath }) =>
+//   asPath === '/uslugi' || asPath === '/kontakt'
+//     ? `
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     // width: 100%;
+//     height: 64px;
+//     background-color: ${({ theme }) => theme.color.lightGray};
+//     z-index: ${({ theme }) => theme.zIndex.highest};
+//   `
+//     : null}
 
 export const StyledLink = styled.li`
   font-size: ${({ theme }) => theme.font.size.paragraph};

@@ -1,6 +1,8 @@
 import BaseLayout from 'src/components/BaseLayout';
 import valuationData from 'src/data/valuationData';
 import { NextSeo } from 'next-seo';
+import Grid from 'src/components/Grid';
+import ValuationForm from 'src/components/ValuationForm';
 
 const Valuation = () => {
   const {
@@ -11,7 +13,8 @@ const Valuation = () => {
     <>
       <NextSeo title={title} description={description} />
       <BaseLayout>
-        <section>Valuation</section>
+        <ValuationForm />
+        <Grid />
       </BaseLayout>
     </>
   );

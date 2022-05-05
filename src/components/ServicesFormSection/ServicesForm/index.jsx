@@ -25,8 +25,8 @@ export default function ServicesForm() {
   const {
     nameStringConditions,
     emailStringConditions,
-    companyStringConditions,
-    phoneNumberStringConditions,
+    // companyStringConditions,
+    // phoneNumberStringConditions,
     textareaStringConditions,
     policyCheckboxConditions,
     ndaCheckboxConditions,
@@ -39,10 +39,10 @@ export default function ServicesForm() {
         <TextInput watch={watch} name="email" register={register} required text="Email" inputConditions={emailStringConditions} />
       </FormDuel>
 
-      <FormDuel>
-        <TextInput watch={watch} name="company" register={register} text="Nazwa firmy" inputConditions={companyStringConditions} />
-        <TextInput watch={watch} name="mobile" register={register} text="Numer telefonu" inputConditions={phoneNumberStringConditions} />
-      </FormDuel>
+      {/* <FormDuel> */}
+      {/*  <TextInput watch={watch} name="company" register={register} text="Nazwa firmy" inputConditions={companyStringConditions} /> */}
+      {/*  <TextInput watch={watch} name="mobile" register={register} text="Numer telefonu" inputConditions={phoneNumberStringConditions} /> */}
+      {/* </FormDuel> */}
 
       <TextArea watch={watch} name="message" register={register} text="Twoja wiadomość" required inputConditions={textareaStringConditions} />
 

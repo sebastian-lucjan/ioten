@@ -15,6 +15,8 @@ import useOnDarkScreen from 'src/hooks/useOnDarkScreen';
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(0);
   const [dataBooster, setDataBooster] = useState('initial-state');
+  // const [isMobile, setIsMobile] = useState(null);
+
   const ref = useRef(null);
   const onDarkScreen = useOnDarkScreen(ref, '-36px');
 

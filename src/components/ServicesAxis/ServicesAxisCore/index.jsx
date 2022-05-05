@@ -5,9 +5,10 @@ import theme, { rainbowColors } from 'src/assets/styles/theme';
 import ServiceDetail from 'src/components/ServicesAxis/ServiceDetail';
 import Grid from 'src/components/Grid';
 import useServicePopup from 'src/hooks/useServicePopup';
+import Link from 'next/link';
 
 const ServicesAxisCore = () => {
-  const { isOpen, setIsOpen, serviceIndex, handleOpenServiceStage } = useServicePopup();
+  const { isOpen, setIsOpen, serviceIndex } = useServicePopup();
 
   const {
     color: { lightGray, transparent },
@@ -26,10 +27,13 @@ const ServicesAxisCore = () => {
   return (
     <StyledServicesAxis as="article" desaturate={isOpen} colors={{ background: transparent, lines: servicesAxis }}>
       <StyledWrapper>
-        {services.stages.map(({ heading }, index) => (
-          <ServiceStage desaturate={isOpen} key={uuid()} color={rainbowColors[index]} onClick={() => handleOpenServiceStage(index)}>
-            {heading}
-          </ServiceStage>
+        {services.stages.map(({ heading, serviceID }, index) => (
+          <Link key={uuid()} href={`/uslugi#${serviceID}`}>
+            <ServiceStage id={serviceID} desaturate={isOpen} color={rainbowColors[index]}>
+              {/* <ServiceStage id={serviceID} desaturate={isOpen} key={uuid()} color={rainbowColors[index]} onClick={() => handleOpenServiceStage(index)}> */}
+              {heading}
+            </ServiceStage>
+          </Link>
         ))}
       </StyledWrapper>
       {isOpen ? <ServiceDetail index={serviceIndex} handleClose={() => setIsOpen(false)} /> : null}

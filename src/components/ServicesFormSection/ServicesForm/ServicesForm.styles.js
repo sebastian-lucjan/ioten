@@ -58,6 +58,7 @@ export const StyledTextAreaWrapper = styled.label`
     width: 100%;
     height: 160px;
     border: none;
+    resize: vertical;
   }
 
   p {

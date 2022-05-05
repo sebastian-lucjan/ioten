@@ -24,7 +24,6 @@ export const ServiceStage = styled.div`
     border: 2px ${({ theme, color, desaturate }) => (desaturate ? theme.color.lightGray : color)} solid;
     box-shadow: inset 0 0 0 6px ${({ theme }) => theme.color.lightestGray};
     border-radius: 50%;
-    z-index: ${({ theme }) => theme.zIndex.peak};
   }
 
   ${({ theme }) => theme.mq.desktop} {
@@ -83,7 +82,7 @@ export const StyledWrapper = styled.div`
       left: -32px;
       width: 24px;
       height: 4px;
-      background-color: ${({ theme }) => theme.color.black};
+      background-color: ${({ theme }) => theme.color.lightGray};
       z-index: ${({ theme }) => theme.zIndex[10]};
     }
   }
