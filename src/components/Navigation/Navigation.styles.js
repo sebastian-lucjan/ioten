@@ -78,6 +78,15 @@ export const StyledLink = styled.li`
   align-self: center;
   margin: 20px auto;
   cursor: pointer;
+  // font-family: ${({ theme }) => theme.font.family.myriadPro.regular};
+  //font-weight: 800;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-3px);
+    font-weight: 800;
+  }
 
   ${({ theme }) => theme.mq.tablet} {
     color: ${({ theme, whiteNavigationText }) => (whiteNavigationText ? theme.color.white : theme.color.darkestGray)};
