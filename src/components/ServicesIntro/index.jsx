@@ -44,7 +44,7 @@ export default function ServicesIntro() {
         </div>
         <div className="services__image-container">
           <ImageContainer>
-            <Image src={servicesImageIntro} layout="fill" objectFit="cover" alt="czarna szczotka, narzędzie do sprzątania" />
+            <Image priority src={servicesImageIntro} layout="fill" objectFit="cover" alt="czarna szczotka, narzędzie do sprzątania" />
           </ImageContainer>
         </div>
       </Wrapper>

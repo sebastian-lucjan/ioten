@@ -41,7 +41,7 @@ const Footer = ({ footerGridColor }) => {
               return <FooterSoonItem key={uuid()}>{serviceHeading}</FooterSoonItem>;
             }
             return (
-              <Link key={uuid()} href="/services" as="/uslugi">
+              <Link key={uuid()} href="/src/services" as="/uslugi">
                 <FooterItem key={uuid()}>{serviceHeading}</FooterItem>
               </Link>
             );
@@ -51,7 +51,7 @@ const Footer = ({ footerGridColor }) => {
         <StyledFooterSection>
           <FooterHeading>{services.serviceStagesIntro}</FooterHeading>
           {services.stages.map(({ heading: serviceHeading }) => (
-            <Link key={uuid()} href="/services" as="/uslugi">
+            <Link key={uuid()} href="/src/services" as="/uslugi">
               <FooterItem key={uuid()}>{serviceHeading}</FooterItem>
             </Link>
           ))}

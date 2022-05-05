@@ -1,9 +1,10 @@
 import { useForm } from 'react-hook-form';
 import contactData from 'src/data/contactData';
+import { onSubmit } from 'src/helpers/form';
+import { TextParagraph } from 'src/components/TextComponents';
 import { Wrapper } from './ContactForm.styles';
 import SubmitButton from './SubmitButton';
 import { CheckboxInput, TextArea, TextInput } from './FormFields';
-import { TextParagraph } from '../../TextComponents';
 
 export default function ContactForm() {
   const {
@@ -15,11 +16,6 @@ export default function ContactForm() {
   } = useForm();
 
   // todo: think if you want small gray caption when not focused but full of characters - you need common state for all form
-
-  const onSubmit = (data) => {
-    reset();
-    console.log(data);
-  };
 
   console.log('errors -> ', errors);
 
@@ -34,7 +30,7 @@ export default function ContactForm() {
   } = contactData.contactContent.form.conditions;
 
   return (
-    <Wrapper as="form" onSubmit={handleSubmit(onSubmit)}>
+    <Wrapper as="form" onSubmit={handleSubmit(() => onSubmit(reset, watch))}>
       <div className="form__container">
         <div className="form__name-email form-duel">
           <TextInput watch={watch} name="name" register={register} required text="Imię" inputConditions={nameStringConditions} />
