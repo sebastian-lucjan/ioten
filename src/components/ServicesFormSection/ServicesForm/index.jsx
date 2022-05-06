@@ -3,6 +3,7 @@ import SubmitButton from 'src/components/ContactMainView/ContactForm/SubmitButto
 import contactData from 'src/data/contactData';
 import { CheckboxInput } from 'src/components/ContactMainView/ContactForm/FormFields';
 import { FormDuel, StyledServicesForm, StyledTextAreaWrapper, StyledTextInputWrapper } from './ServicesForm.styles';
+import ServicesFormErrors from './ServicesFormErrors';
 
 export default function ServicesForm() {
   const {
@@ -10,27 +11,26 @@ export default function ServicesForm() {
     handleSubmit,
     reset,
     watch,
+    isSubmitting,
     formState: { errors },
   } = useForm();
 
   // todo: think if you want small gray caption when not focused but full of characters - you need common state for all form
 
   const onSubmit = (data) => {
+    console.log('services form submit()');
     reset();
     console.log(data);
   };
 
   console.log('errors -> ', errors);
 
-  const {
-    nameStringConditions,
-    emailStringConditions,
-    // companyStringConditions,
-    // phoneNumberStringConditions,
-    textareaStringConditions,
-    policyCheckboxConditions,
-    ndaCheckboxConditions,
-  } = contactData.contactContent.form.conditions;
+  const { nameStringConditions, emailStringConditions, textareaStringConditions, policyCheckboxConditions, ndaCheckboxConditions } =
+    contactData.contactContent.form.conditions;
+
+  const isError = () => Object.keys(errors).length > 0;
+
+  console.log('isSubmitting ServicesForm -> ', isSubmitting);
 
   return (
     <StyledServicesForm as="form" onSubmit={handleSubmit(onSubmit)}>
@@ -38,11 +38,6 @@ export default function ServicesForm() {
         <TextInput watch={watch} name="name" register={register} required text="Imię" inputConditions={nameStringConditions} />
         <TextInput watch={watch} name="email" register={register} required text="Email" inputConditions={emailStringConditions} />
       </FormDuel>
-
-      {/* <FormDuel> */}
-      {/*  <TextInput watch={watch} name="company" register={register} text="Nazwa firmy" inputConditions={companyStringConditions} /> */}
-      {/*  <TextInput watch={watch} name="mobile" register={register} text="Numer telefonu" inputConditions={phoneNumberStringConditions} /> */}
-      {/* </FormDuel> */}
 
       <TextArea watch={watch} name="message" register={register} text="Twoja wiadomość" required inputConditions={textareaStringConditions} />
 
@@ -61,7 +56,8 @@ export default function ServicesForm() {
         placeholderText="nda"
         inputConditions={ndaCheckboxConditions}
       />
-      <SubmitButton />
+      <SubmitButton hasError={isError()} />
+      {isError() ? <ServicesFormErrors hasError errors={errors} /> : null}
     </StyledServicesForm>
   );
 }

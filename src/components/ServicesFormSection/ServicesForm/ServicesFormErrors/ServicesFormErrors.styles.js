@@ -1,0 +1,30 @@
+import styled from 'styled-components';
+
+export const Wrapper = styled.div`
+  width: calc(100vw - 80px);
+  margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
+  z-index: ${({ theme }) => theme.zIndex.peak};
+  box-shadow: 4px 4px 0 ${({ hasError }) => (hasError ? 'hsla(0, 84%, 52%, 60%)' : `#0008`)};
+
+  ${({ theme }) => theme.mq.tablet} {
+    font-size: ${({ theme }) => theme.font.size.paragraph};
+    width: calc(50% - 20px);
+    margin: 1rem 0;
+  }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    font-size: ${({ theme }) => theme.font.size.paragraphSmall};
+    width: 100%;
+    box-shadow: 4px 4px 0 ${({ hasError }) => (hasError ? 'hsla(0, 84%, 52%, 60%)' : `#0008`)};
+  }
+
+  ${({ theme }) => theme.mq.desktop} {
+    font-size: ${({ theme }) => theme.font.size.headingSmall};
+  }
+
+  ${({ theme }) => theme.mq.hugeDesktop} {
+    font-size: ${({ theme }) => theme.font.size.headingSmall};
+  }
+`;

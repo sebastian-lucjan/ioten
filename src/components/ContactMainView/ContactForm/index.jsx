@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import contactData from 'src/data/contactData';
 import { onSubmit } from 'src/helpers/form';
 import { TextParagraph } from 'src/components/TextComponents';
+import { useEffect } from 'react';
 import { Wrapper } from './ContactForm.styles';
 import SubmitButton from './SubmitButton';
 import { CheckboxInput, TextArea, TextInput } from './FormFields';
@@ -13,14 +14,12 @@ export default function ContactForm() {
     handleSubmit,
     reset,
     watch,
-    formState,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm();
 
   // todo: think if you want small gray caption when not focused but full of characters - you need common state for all form
 
   console.log('errors -> ', errors.length);
-  console.log('formState -> ', formState);
 
   const {
     nameStringConditions,
@@ -33,6 +32,14 @@ export default function ContactForm() {
   } = contactData.contactContent.form.conditions;
 
   const isError = () => Object.keys(errors).length > 0;
+
+  useEffect(() => {
+    console.log('isSubmitting -> ', isSubmitting);
+    if (!isSubmitting) {
+      console.log('isSubmitting DONE -> ', isSubmitting);
+      // reset();
+    }
+  }, [isSubmitting]);
 
   return (
     <Wrapper hasError={isError()} as="form" onSubmit={handleSubmit(() => onSubmit(reset, watch))}>

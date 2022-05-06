@@ -33,6 +33,7 @@ export const StyledSubmitButton = styled.button`
   }
 
   ${({ theme }) => theme.mq.smallDesktop} {
+    padding: 1.4rem;
     font-size: ${({ theme }) => theme.font.size.paragraphSmall};
     width: 100%;
   }

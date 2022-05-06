@@ -15,6 +15,8 @@ export const FormDuel = styled.div`
 export const Wrapper = styled.div``;
 
 export const StyledServicesForm = styled.div`
+  position: relative;
+
   ${({ theme }) => theme.mq.smallDesktop} {
     width: calc(50% - 20px);
   }
