@@ -15,9 +15,7 @@ export default async (req, res) => {
     case 'POST': {
       console.log('POST api contact -> req.body', req.body);
       try {
-        console.log('error boundary');
         const { payload } = req.body;
-        console.log('payload', payload);
 
         const { name, company, mobile, email, message, policy, nda } = payload;
         // const { name, company, mobile, email, message, policy, nda } = await validateMessageToIoten(...payload);

@@ -22,6 +22,7 @@ export default function Home() {
   useEffect(() => {
     return () => {
       setCurrentPage(0); // reset to initial state
+      setDataBooster('initial-state');
     };
   }, []);
 

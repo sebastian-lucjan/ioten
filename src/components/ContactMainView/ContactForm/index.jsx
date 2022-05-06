@@ -5,6 +5,7 @@ import { TextParagraph } from 'src/components/TextComponents';
 import { Wrapper } from './ContactForm.styles';
 import SubmitButton from './SubmitButton';
 import { CheckboxInput, TextArea, TextInput } from './FormFields';
+import FormErrors from '../../FormErrors';
 
 export default function ContactForm() {
   const {
@@ -12,12 +13,14 @@ export default function ContactForm() {
     handleSubmit,
     reset,
     watch,
+    formState,
     formState: { errors },
   } = useForm();
 
   // todo: think if you want small gray caption when not focused but full of characters - you need common state for all form
 
-  console.log('errors -> ', errors);
+  console.log('errors -> ', errors.length);
+  console.log('formState -> ', formState);
 
   const {
     nameStringConditions,
@@ -29,8 +32,10 @@ export default function ContactForm() {
     ndaCheckboxConditions,
   } = contactData.contactContent.form.conditions;
 
+  const isError = () => Object.keys(errors).length > 0;
+
   return (
-    <Wrapper as="form" onSubmit={handleSubmit(() => onSubmit(reset, watch))}>
+    <Wrapper hasError={isError()} as="form" onSubmit={handleSubmit(() => onSubmit(reset, watch))}>
       <div className="form__container">
         <div className="form__name-email form-duel">
           <TextInput watch={watch} name="name" register={register} required text="Imię" inputConditions={nameStringConditions} />
@@ -61,8 +66,9 @@ export default function ContactForm() {
           * Pola tekstowe: telefon, nazwa firmy nie są polami obowiązkowymi. Czuj się swobodnie i bezpiecznie wybierz formę kontaktu dla Ciebie
           komfortową, my się dostosujemy.
         </TextParagraph>
-        <SubmitButton />
+        <SubmitButton hasError={isError()} />
       </div>
+      {isError() ? <FormErrors hasError errors={errors} /> : null}
     </Wrapper>
   );
 }

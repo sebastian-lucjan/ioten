@@ -31,14 +31,14 @@ export const Wrapper = styled.div`
   }
 
   ${({ theme }) => theme.mq.smallDesktop} {
-    padding: 0 40px;
+    padding: ${({ hasError }) => (hasError ? '80px 40px 40px 40px' : '0 40px')};
     width: 50%;
     justify-content: center;
   }
 
   ${({ theme }) => theme.mq.desktop} {
     width: 50%;
-    padding: 0;
+    padding: ${({ hasError }) => (hasError ? '0 0 0px 0' : '0')};
 
     .form__container {
       width: calc(50% - 10px);

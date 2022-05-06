@@ -18,11 +18,9 @@ const EmailTemplate = ({ name, company, mobile, email, message, policy, nda }) =
         <p>Treść wiadomości:</p>
         <p>{message}</p>
 
-        <p>Policy:</p>
-        <p>{policy}</p>
+        <p>Policy: {policy ? 'TAK' : 'NIE'}</p>
 
-        <p>NDA:</p>
-        <p>{nda}</p>
+        <p>NDA: {nda ? 'TAK' : 'NIE'}</p>
       </div>
 
       <br />
