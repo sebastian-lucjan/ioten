@@ -4,6 +4,7 @@ export const onSubmit = async (reset, getFormValues, setError, token) => {
   // export const onSubmit = async (reset, getFormValues) => {
   try {
     console.log('start submitting');
+    console.log('token', token);
 
     if (!token) {
       setError('Please verify you are human');
