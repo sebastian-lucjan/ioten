@@ -1,16 +1,16 @@
 import axios from 'axios';
 
-// export const onSubmit = async (reset, getFormValues, setError, token) => {
-export const onSubmit = async (reset, getFormValues) => {
+export const onSubmit = async (reset, getFormValues, setError, token) => {
+  // export const onSubmit = async (reset, getFormValues) => {
   try {
     console.log('start submitting');
 
-    // if (!token) {
-    //   setError('Please verify you are human');
-    //   return;
-    // }
-    //
-    // setError('');
+    if (!token) {
+      setError('Please verify you are human');
+      return;
+    }
+
+    setError('');
 
     const payload = getFormValues();
 
