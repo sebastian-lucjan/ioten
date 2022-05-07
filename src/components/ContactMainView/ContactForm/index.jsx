@@ -56,9 +56,9 @@ export default function ContactForm() {
     console.log('captchaRef.current -> ', captchaRef.current);
   };
 
-  useEffect(() => {
-    if (token) console.log(`hCaptcha Token: ${token}`);
-  }, [token]);
+  // useEffect(() => {
+  //   if (token) console.log(`hCaptcha Token: ${token}`);
+  // }, [token]);
 
   const onVerify = (tokenPassed, eKey) => {
     console.log('hCaptcha Token verified: ', tokenPassed);
