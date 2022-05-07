@@ -2,7 +2,8 @@ import { useForm } from 'react-hook-form';
 import contactData from 'src/data/contactData';
 import { onSubmit } from 'src/helpers/form';
 import { TextParagraph } from 'src/components/TextComponents';
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { Wrapper } from './ContactForm.styles';
 import SubmitButton from './SubmitButton';
 import { CheckboxInput, TextArea, TextInput } from './FormFields';
@@ -41,8 +42,25 @@ export default function ContactForm() {
     }
   }, [isSubmitting]);
 
+  const [token, setToken] = useState(null);
+  const captchaRef = useRef(null);
+  const [error, setError] = useState('');
+
+  const onLoad = () => {
+    // this reaches out to the hCaptcha JS API and runs the
+    // execute function on it. you can use other functions as
+    // documented here:
+    // https://docs.hcaptcha.com/configuration#jsapi
+    console.log('hcaptcha loaded');
+    // captchaRef.current.execute();
+  };
+
+  useEffect(() => {
+    if (token) console.log(`hCaptcha Token: ${token}`);
+  }, [token]);
+
   return (
-    <Wrapper hasError={isError()} as="form" onSubmit={handleSubmit(() => onSubmit(reset, watch))}>
+    <Wrapper hasError={isError()} as="form" onSubmit={handleSubmit(() => onSubmit(reset, watch, setError, token))}>
       <div className="form__container">
         <div className="form__name-email form-duel">
           <TextInput watch={watch} name="name" register={register} required text="Imię" inputConditions={nameStringConditions} />
@@ -70,9 +88,25 @@ export default function ContactForm() {
           inputConditions={ndaCheckboxConditions}
         />
         <TextParagraph size="xs" lh="xs">
-          * Pola tekstowe: telefon, nazwa firmy nie są polami obowiązkowymi. Czuj się swobodnie i bezpiecznie wybierz formę kontaktu dla Ciebie
-          komfortową, my się dostosujemy.
+          * Pola tekstowe: telefon, nazwa firmy nie są polami obowiązkowymi.
         </TextParagraph>
+
+        <HCaptcha
+          sitekey={process.env.HCAPTCHA_SITE_KEY}
+          onLoad={onLoad}
+          onVerify={() => setToken(token)}
+          onExpire={() => setToken('')}
+          ref={captchaRef}
+        />
+
+        {error ? (
+          <TextParagraph size="xs" lh="xs" color="red">
+            {error}
+          </TextParagraph>
+        ) : (
+          'OK! hCaptcha is working!'
+        )}
+
         <SubmitButton hasError={isError()} />
       </div>
       {isError() ? <FormErrors hasError errors={errors} /> : null}
