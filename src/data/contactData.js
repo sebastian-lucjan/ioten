@@ -32,6 +32,7 @@ const contactData = {
         },
         emailStringConditions: { required: 'Pole "Email" jest wymagane.', pattern: { value: /^\S+@\S+$/i, message: 'Wpisz poprawny adres email.' } },
         companyStringConditions: {
+          required: false,
           minLength: { value: 3, message: 'Minimalna długość nazwy firmy to 3 znaki.' },
           maxLength: { value: 80, message: 'Maksymalna długość nazwy firmy to 80 znaków.' },
         },
@@ -46,7 +47,7 @@ const contactData = {
           maxLength: { value: 1000, message: 'Wiadomość jest zbyt długa, przekroczyła 1000 znaków.' },
         },
         policyCheckboxConditions: { required: 'Potwierdzenie akceptacji polityki prywatności jest wymagane.' },
-        ndaCheckboxConditions: {},
+        ndaCheckboxConditions: { required: false },
       },
     },
   },

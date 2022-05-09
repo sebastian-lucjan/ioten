@@ -6,7 +6,16 @@ export const StyledSubmitButton = styled.button`
   height: 60px;
   width: calc(100vw - 80px);
   margin: 2rem auto 0 auto;
-  background: ${({ theme, backgroundColor, hasError }) => (hasError ? theme.color.red : backgroundColor || theme.color.darkestGray)};
+  background: ${({ theme, backgroundColor, hasError, isLoading }) => {
+    if (hasError) {
+      return theme.color.red;
+    }
+    if (isLoading) {
+      return theme.color.lightNavy;
+    }
+
+    return backgroundColor || theme.color.darkestGray;
+  }};
 
   word-spacing: 5px;
 

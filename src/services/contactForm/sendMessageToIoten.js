@@ -25,14 +25,14 @@ const plainVersionText = (name, companyName, phoneNumber, email, description) =>
 // const transporterSelected = transporterDev;
 
 const sendMessageToIoten = async (name, company, mobile, email, message, policy, nda) => {
-  console.log('process.env -> ', process.env.NEXT_PUBLIC_EMAIL_PASS);
+  console.log('sendMessage -> ', name);
   const transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
     port: 587,
     secure: false,
     auth: {
-      user: 'elian.ortiz28@ethereal.email',
-      pass: 'y47xaWyYmrpY1eChha',
+      user: process.env.NEXT_PUBLIC_EMAIL_USER,
+      pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
     },
   });
 

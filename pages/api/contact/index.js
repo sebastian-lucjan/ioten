@@ -1,6 +1,6 @@
 import sendMessageToIoten from 'src/services/contactForm/sendMessageToIoten';
-import validateMessageToIoten from '../../../src/services/contactForm/validateMessageToIoten';
-// import validateMessageToIoten from 'src/services/contactForm/validateMessageToIoten';
+import axios from 'axios';
+import validate from 'src/services/contactForm/validateMessageToIoten';
 
 export default async (req, res) => {
   console.log('req.method', req.method);
@@ -14,14 +14,30 @@ export default async (req, res) => {
       break;
     }
     case 'POST': {
-      console.log('POST api contact -> req.body', req.body);
       try {
-        const { payload, isHCaptchaValid } = req.body;
-        // const { payload, isHCaptchaValid } = req.body;
+        const payload = req.body;
+        const { token } = req.body;
 
-        // const { name, company, mobile, email, message, policy, nda } = payload;
+        const hCaptchaResponse = await axios
+          .post(
+            'https://hcaptcha.com/siteverify',
+            `response=${token}&secret=${process.env.HCAPTCHA_SECRET_KEY}`,
+            // {
+            // secret: process.env.HCAPTCHA_SECRET_KEY,
+            // response: token,
+            // }
+          )
+          .then((response) => {
+            console.log('response.data.success', response.data.success);
+            return response;
+          })
+          .catch((error) => console.log('error form.js ->', error));
 
-        const { name, company, mobile, email, message, policy, nda } = await validateMessageToIoten({ ...payload, isHCaptchaValid });
+        console.log('hCaptchaResponse ===>', hCaptchaResponse);
+
+        const isHCaptchaValid = hCaptchaResponse.data.success;
+
+        const { name, company, mobile, email, message, policy, nda } = await validate({ ...payload, isHCaptchaValid });
 
         await sendMessageToIoten(name, company, mobile, email, message, policy, nda);
 
