@@ -1,4 +1,5 @@
 import sendMessageToIoten from 'src/services/contactForm/sendMessageToIoten';
+import validateMessageToIoten from '../../../src/services/contactForm/validateMessageToIoten';
 // import validateMessageToIoten from 'src/services/contactForm/validateMessageToIoten';
 
 export default async (req, res) => {
@@ -15,10 +16,12 @@ export default async (req, res) => {
     case 'POST': {
       console.log('POST api contact -> req.body', req.body);
       try {
-        const { payload } = req.body;
+        const { payload, isHCaptchaValid } = req.body;
+        // const { payload, isHCaptchaValid } = req.body;
 
-        const { name, company, mobile, email, message, policy, nda } = payload;
-        // const { name, company, mobile, email, message, policy, nda } = await validateMessageToIoten(...payload);
+        // const { name, company, mobile, email, message, policy, nda } = payload;
+
+        const { name, company, mobile, email, message, policy, nda } = await validateMessageToIoten({ ...payload, isHCaptchaValid });
 
         await sendMessageToIoten(name, company, mobile, email, message, policy, nda);
 

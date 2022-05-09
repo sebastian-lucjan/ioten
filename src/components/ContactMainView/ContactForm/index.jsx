@@ -52,12 +52,20 @@ export default function ContactForm() {
     // documented here:
     // https://docs.hcaptcha.com/configuration#jsapi
     console.log('hcaptcha loaded');
-    // captchaRef.current.execute();
+    captchaRef.current.execute();
+    console.log('captchaRef.current -> ', captchaRef.current);
   };
 
-  useEffect(() => {
-    if (token) console.log(`hCaptcha Token: ${token}`);
-  }, [token]);
+  // useEffect(() => {
+  //   if (token) console.log(`hCaptcha Token: ${token}`);
+  // }, [token]);
+
+  const onVerify = (tokenPassed, eKey) => {
+    console.log('hCaptcha Token verified: ', tokenPassed);
+    console.log('hCaptcha eKey: ', eKey);
+
+    setToken(tokenPassed);
+  };
 
   return (
     <Wrapper hasError={isError()} as="form" onSubmit={handleSubmit(() => onSubmit(reset, watch, setError, token))}>
@@ -94,7 +102,7 @@ export default function ContactForm() {
         <HCaptcha
           sitekey={process.env.HCAPTCHA_SITE_KEY}
           onLoad={onLoad}
-          onVerify={() => setToken(token)}
+          onVerify={(tokenPassed, eKey) => onVerify(tokenPassed, eKey)}
           onExpire={() => setToken('')}
           ref={captchaRef}
         />
