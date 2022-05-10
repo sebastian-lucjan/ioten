@@ -1,8 +1,8 @@
 import { StyledCheckbox, StyledTextAreaInput, StyledTextInput } from './FormFields.styles';
 
-export function TextInput({ watch, register, text, inputConditions, name, required = false }) {
+export function TextInput({ watch, register, text, inputConditions, name }) {
   return (
-    <StyledTextInput notEmpty={watch()[name]?.length} required={required}>
+    <StyledTextInput notEmpty={watch()[name]?.length}>
       <label htmlFor={name}>
         <input id={name} name={name} type="text" {...register(name, inputConditions)} />
         <p>{text}</p>
@@ -11,9 +11,9 @@ export function TextInput({ watch, register, text, inputConditions, name, requir
   );
 }
 
-export const TextArea = ({ watch, text, register, placeholderText, name, inputConditions, required }) => {
+export const TextArea = ({ watch, text, register, placeholderText, name, inputConditions }) => {
   return (
-    <StyledTextAreaInput notEmpty={watch()[name]?.length} required={required}>
+    <StyledTextAreaInput notEmpty={watch()[name]?.length}>
       <label htmlFor={name}>
         <textarea rows="8" id={name} name={name} placeholder={placeholderText} {...register(name, inputConditions)} />
         <p>{text}</p>
@@ -22,11 +22,11 @@ export const TextArea = ({ watch, text, register, placeholderText, name, inputCo
   );
 };
 
-export const CheckboxInput = ({ text, register, required, name, placeholderText, inputConditions }) => {
+export const CheckboxInput = ({ text, register, name, inputConditions }) => {
   return (
-    <StyledCheckbox required={required}>
+    <StyledCheckbox>
       <label htmlFor={name}>
-        <input id={name} name={name} type="checkbox" placeholder={placeholderText} {...register(name, inputConditions)} />
+        <input id={name} name={name} type="checkbox" {...register(name, inputConditions)} />
         <p>{text}</p>
       </label>
     </StyledCheckbox>

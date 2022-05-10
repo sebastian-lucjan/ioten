@@ -1,19 +1,34 @@
 import axios from 'axios';
 
-export const onSubmit = async (reset, getFormValues) => {
+// export const onSubmit = async (reset, getFormValues, setError, token, captchaRef, invisible = false) => {
+export const onSubmit = async (reset, getFormValues, setError, token, captchaRef) => {
+  // if (invisible) {
+  //   captchaRef.current.execute();
+  // }
+
   try {
-    console.log('submit');
+    if (!token) {
+      setError('Please verify you are human');
+      return;
+    }
+
+    setError('');
 
     const payload = getFormValues();
 
-    console.log('payload ->', payload);
-
-    const response = await axios.post('/api/contact', { payload }).catch((error) => console.log('error form.js ->', error));
+    const response = await axios
+      .post('/api/contact', { ...payload, token })
+      .catch((responseError) => setError(responseError.data.error))
+      .finally(() => {
+        // reset hCaptcha no matter what
+        captchaRef.current.resetCaptcha();
+      });
 
     if (response.status === 200) {
+      // reset form
       reset();
     }
   } catch (error) {
-    console.log(error);
+    console.log('error from Joi', error);
   }
 };

@@ -2,6 +2,8 @@ import { useForm } from 'react-hook-form';
 import SubmitButton from 'src/components/ContactMainView/ContactForm/SubmitButton';
 import contactData from 'src/data/contactData';
 import { CheckboxInput } from 'src/components/ContactMainView/ContactForm/FormFields';
+import { useRef } from 'react';
+import { onSubmit } from 'src/helpers/formServices';
 import { FormDuel, StyledServicesForm, StyledTextAreaWrapper, StyledTextInputWrapper } from './ServicesForm.styles';
 import ServicesFormErrors from './ServicesFormErrors';
 
@@ -11,17 +13,11 @@ export default function ServicesForm() {
     handleSubmit,
     reset,
     watch,
-    isSubmitting,
-    formState: { errors },
+
+    formState: { errors, isSubmitting },
   } = useForm();
 
-  // todo: think if you want small gray caption when not focused but full of characters - you need common state for all form
-
-  const onSubmit = (data) => {
-    console.log('services form submit()');
-    reset();
-    console.log(data);
-  };
+  const captchaRef = useRef(null);
 
   console.log('errors -> ', errors);
 
@@ -33,19 +29,18 @@ export default function ServicesForm() {
   console.log('isSubmitting ServicesForm -> ', isSubmitting);
 
   return (
-    <StyledServicesForm as="form" onSubmit={handleSubmit(onSubmit)}>
+    <StyledServicesForm as="form" onSubmit={handleSubmit(() => onSubmit(reset, watch, captchaRef))}>
       <FormDuel>
-        <TextInput watch={watch} name="name" register={register} required text="Imię" inputConditions={nameStringConditions} />
-        <TextInput watch={watch} name="email" register={register} required text="Email" inputConditions={emailStringConditions} />
+        <TextInput watch={watch} name="name" register={register} text="Imię" inputConditions={nameStringConditions} />
+        <TextInput watch={watch} name="email" register={register} text="Email" inputConditions={emailStringConditions} />
       </FormDuel>
 
-      <TextArea watch={watch} name="message" register={register} text="Twoja wiadomość" required inputConditions={textareaStringConditions} />
+      <TextArea watch={watch} name="message" register={register} text="Twoja wiadomość" inputConditions={textareaStringConditions} />
 
       <CheckboxInput
         text="Akceptuję politykę prywatności"
         name="policy"
         register={register}
-        required
         placeholderText="policy"
         inputConditions={policyCheckboxConditions}
       />
@@ -56,24 +51,39 @@ export default function ServicesForm() {
         placeholderText="nda"
         inputConditions={ndaCheckboxConditions}
       />
-      <SubmitButton hasError={isError()} />
+
+      {/* <HCaptcha */}
+      {/*  size="invisible" */}
+      {/*  sitekey={process.env.HCAPTCHA_SITE_KEY} */}
+      {/*  onVerify={(tokenPassed) => onVerify(tokenPassed)} */}
+      {/*  onExpire={onExpire} */}
+      {/*   ref={captchaRef} */}
+      {/* /> */}
+
+      {/* {error ? ( */}
+      {/*  <TextParagraph size="xs" lh="xs" color="red"> */}
+      {/*    {error} */}
+      {/*  </TextParagraph> */}
+      {/* ) : null} */}
+
+      <SubmitButton loading={isSubmitting} hasError={isError()} />
       {isError() ? <ServicesFormErrors hasError errors={errors} /> : null}
     </StyledServicesForm>
   );
 }
 
-export function TextInput({ watch, register, text, inputConditions, name, required = false }) {
+export function TextInput({ watch, register, text, inputConditions, name }) {
   return (
-    <StyledTextInputWrapper notEmpty={watch().length} required={required} htmlFor={name}>
+    <StyledTextInputWrapper notEmpty={watch().length} htmlFor={name}>
       <p>{text}</p>
       <input id={name} name={name} type="text" {...register(name, inputConditions)} />
     </StyledTextInputWrapper>
   );
 }
 
-export const TextArea = ({ watch, text, register, placeholderText, name, inputConditions, required }) => {
+export const TextArea = ({ watch, text, register, placeholderText, name, inputConditions }) => {
   return (
-    <StyledTextAreaWrapper notEmpty={watch().length} required={required} htmlFor={name}>
+    <StyledTextAreaWrapper notEmpty={watch().length} htmlFor={name}>
       <p>{text}</p>
       <textarea rows="8" id={name} name={name} placeholder={placeholderText} {...register(name, inputConditions)} />
     </StyledTextAreaWrapper>

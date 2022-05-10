@@ -1,5 +1,5 @@
 import sendMessageToIoten from 'src/services/contactForm/sendMessageToIoten';
-import axios from 'axios';
+// import axios from 'axios';
 import validate from 'src/services/contactForm/validateMessageToIoten';
 
 export default async (req, res) => {
@@ -16,30 +16,27 @@ export default async (req, res) => {
     case 'POST': {
       try {
         const payload = req.body;
-        const { token } = req.body;
+        // const { token } = req.body;
 
-        const hCaptchaResponse = await axios
-          .post(
-            'https://hcaptcha.com/siteverify',
-            `response=${token}&secret=${process.env.HCAPTCHA_SECRET_KEY}`,
-            // {
-            // secret: process.env.HCAPTCHA_SECRET_KEY,
-            // response: token,
-            // }
-          )
-          .then((response) => {
-            console.log('response.data.success', response.data.success);
-            return response;
-          })
-          .catch((error) => console.log('error form.js ->', error));
+        // const hCaptchaResponse = await axios
+        //   .post('https://hcaptcha.com/siteverify', `response=${token}&secret=${process.env.HCAPTCHA_SECRET_KEY}`)
+        //   .then((response) => {
+        //     console.log('response.data.success', response.data.success);
+        //     return response;
+        //   })
+        //   .catch((error) => console.log('error form.js ->', error));
 
-        console.log('hCaptchaResponse ===>', hCaptchaResponse);
+        // console.log('hCaptchaResponse ===>', hCaptchaResponse);
 
-        const isHCaptchaValid = hCaptchaResponse.data.success;
+        // const isHCaptchaValid = hCaptchaResponse.data.success;
+
+        const isHCaptchaValid = true;
 
         const { name, company, mobile, email, message, policy, nda } = await validate({ ...payload, isHCaptchaValid });
 
-        await sendMessageToIoten(name, company, mobile, email, message, policy, nda);
+        const from = 'services-contact';
+
+        await sendMessageToIoten(name, company, mobile, email, message, policy, nda, from);
 
         res.status(200).json({
           status: 'payload_sent',
@@ -58,4 +55,4 @@ export default async (req, res) => {
   }
 };
 
-// todo: add validation and hCaptcha
+// todo: add validation and hCaptcha invisible

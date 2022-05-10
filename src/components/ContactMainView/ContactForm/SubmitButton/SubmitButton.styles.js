@@ -6,7 +6,16 @@ export const StyledSubmitButton = styled.button`
   height: 60px;
   width: calc(100vw - 80px);
   margin: 2rem auto 0 auto;
-  background: ${({ theme, backgroundColor, hasError }) => (hasError ? theme.color.red : backgroundColor || theme.color.darkestGray)};
+  background: ${({ theme, backgroundColor, hasError, isLoading }) => {
+    if (hasError) {
+      return theme.color.red;
+    }
+    if (isLoading) {
+      return theme.color.yellow;
+    }
+
+    return backgroundColor || theme.color.darkestGray;
+  }};
 
   word-spacing: 5px;
 
@@ -22,7 +31,9 @@ export const StyledSubmitButton = styled.button`
   &:active {
     box-shadow: 0 0 0 #0008;
 
-    transform: ${({ hasError }) => (hasError ? 'translate(4px, 4px)' : 'translate(0px, 0px)')};
+    transform: translate(4px, 4px);
+
+    ${({ hasError }) => (hasError ? 'translate(4px, 4px)' : 'translate(px, 4px)')};
   }
 
   ${({ theme }) => theme.mq.tablet} {
