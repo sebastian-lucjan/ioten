@@ -11,6 +11,7 @@ const theme = {
     darkerNavy: 'hsla(197, 58%, 0%, 1)',
     gray: 'hsl(0, 0%, 67%)',
     green: 'hsl(119, 55%, 63%)',
+    greenDark: 'hsl(119,35%,50%)', // todo: for now is unused, check later
     lightGray: 'hsl(0, 0%, 80%)',
     lighterGray: 'hsl(0, 0%, 87%)',
     lightestGray: 'hsl(0, 0%, 95%)',
