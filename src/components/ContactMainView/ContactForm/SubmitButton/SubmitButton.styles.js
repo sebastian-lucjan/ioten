@@ -11,7 +11,7 @@ export const StyledSubmitButton = styled.button`
       return theme.color.red;
     }
     if (isLoading) {
-      return theme.color.lightNavy;
+      return theme.color.yellow;
     }
 
     return backgroundColor || theme.color.darkestGray;
@@ -31,7 +31,9 @@ export const StyledSubmitButton = styled.button`
   &:active {
     box-shadow: 0 0 0 #0008;
 
-    transform: ${({ hasError }) => (hasError ? 'translate(4px, 4px)' : 'translate(0px, 0px)')};
+    transform: translate(4px, 4px);
+
+    ${({ hasError }) => (hasError ? 'translate(4px, 4px)' : 'translate(px, 4px)')};
   }
 
   ${({ theme }) => theme.mq.tablet} {

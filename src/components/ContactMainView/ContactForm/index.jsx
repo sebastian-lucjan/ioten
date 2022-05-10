@@ -18,7 +18,9 @@ export default function ContactForm() {
     formState: { errors, isSubmitting },
   } = useForm();
 
-  // todo: think if you want small gray caption when not focused but full of characters - you need common state for all form
+  const [token, setToken] = useState(null);
+  const captchaRef = useRef(null);
+  const [error, setError] = useState('');
 
   console.log('errors -> ', errors.length);
 
@@ -33,18 +35,6 @@ export default function ContactForm() {
   } = contactData.contactContent.form.conditions;
 
   const isError = () => Object.keys(errors).length > 0;
-
-  // useEffect(() => {
-  //   console.log('isSubmitting -> ', isSubmitting);
-  //   if (!isSubmitting) {
-  //     console.log('isSubmitting DONE -> ', isSubmitting);
-  //     // reset();
-  //   }
-  // }, [isSubmitting]);
-
-  const [token, setToken] = useState(null);
-  const captchaRef = useRef(null);
-  const [error, setError] = useState('');
 
   const onVerify = (tokenPassed) => {
     setToken(tokenPassed);

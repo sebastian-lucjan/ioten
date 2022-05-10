@@ -1,4 +1,4 @@
-const EmailTemplate = ({ name, company, mobile, email, message, policy, nda }) => {
+const EmailTemplate = ({ name, company, mobile, email, message, policy, nda, from }) => {
   return (
     <section className="email">
       <div>
@@ -21,6 +21,8 @@ const EmailTemplate = ({ name, company, mobile, email, message, policy, nda }) =
         <p>Policy: {policy ? 'TAK' : 'NIE'}</p>
 
         <p>NDA: {nda ? 'TAK' : 'NIE'}</p>
+
+        <p>Wiadomość przesłana z: {from}</p>
       </div>
 
       <br />

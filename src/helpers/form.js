@@ -1,6 +1,11 @@
 import axios from 'axios';
 
+// export const onSubmit = async (reset, getFormValues, setError, token, captchaRef, invisible = false) => {
 export const onSubmit = async (reset, getFormValues, setError, token, captchaRef) => {
+  // if (invisible) {
+  //   captchaRef.current.execute();
+  // }
+
   try {
     if (!token) {
       setError('Please verify you are human');
