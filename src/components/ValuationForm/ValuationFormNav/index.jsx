@@ -2,13 +2,13 @@ import { useContext } from 'react';
 import styled from 'styled-components';
 import { ValuationSurveyContext } from 'pages/valuation';
 import valuationData from 'src/data/valuationData';
-import { SurveyNextButton, SurveyPrevButton } from './SurveyButton';
+import { SurveyNextButton, SurveyPrevButton, SurveySubmitButton } from './SurveyButton';
 
 const StyledValuationFormNav = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: ${({ surveyStep }) => (surveyStep === valuationData.surveySteps.length - 1 ? 'flex-end' : 'space-between')};
+  justify-content: ${({ surveyStep }) => (surveyStep === valuationData.surveySteps.length - 1 ? 'space-between' : 'space-between')};
   align-items: center;
   width: calc(100% - 80px);
   height: calc(20% - 40px);
@@ -22,6 +22,7 @@ export default function ValuationFormNav() {
 
   return (
     <StyledValuationFormNav surveyStep={surveyStep}>
+      {surveyStep === valuationData.surveySteps.length - 1 ? <SurveySubmitButton /> : null}
       {surveyStep !== valuationData.surveySteps.length - 1 ? <SurveyNextButton /> : null}
       {surveyStep !== 0 ? <SurveyPrevButton /> : null}
     </StyledValuationFormNav>

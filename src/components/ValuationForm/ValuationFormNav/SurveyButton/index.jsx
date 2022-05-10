@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { MdArrowBackIos } from 'react-icons/md';
 import { useContext } from 'react';
-import { ValuationSurveyContext } from '../../../../../pages/valuation';
-import valuationData from '../../../../data/valuationData';
+import valuationData from 'src/data/valuationData';
+import { ValuationSurveyContext } from 'pages/valuation';
 
 const SurveyButton = styled.button`
   display: flex;
@@ -38,6 +38,25 @@ const StyledSurveyPrevButton = styled(SurveyButton)`
   background-color: unset;
   color: ${({ theme }) => theme.color.darkGray};
 `;
+
+const StyledSurveySubmitButton = styled(SurveyButton)`
+  background-color: ${({ theme }) => theme.color.green};
+
+  color: ${({ theme }) => theme.color.white};
+`;
+
+export function SurveySubmitButton() {
+  const handleSubmit = () => {
+    console.log('on submit()');
+  };
+
+  return (
+    <StyledSurveySubmitButton onClick={handleSubmit} type="button">
+      <p>Wyślij</p>
+      <span>🚀</span>
+    </StyledSurveySubmitButton>
+  );
+}
 
 export function SurveyNextButton() {
   const { surveyStep, setSurveyStep } = useContext(ValuationSurveyContext);

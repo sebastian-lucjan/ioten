@@ -9,7 +9,7 @@ import { createContext, useState } from 'react';
 import ValuationFormNav from 'src/components/ValuationForm/ValuationFormNav';
 import ValuationFormSteps from 'src/components/ValuationForm/ValuationFormSteps';
 
-const initialSurveyContext = { surveyStep: 1, setSurveyStep: () => {} };
+const initialSurveyContext = { surveyStep: 0, setSurveyStep: () => {} };
 export const ValuationSurveyContext = createContext(initialSurveyContext);
 
 const Wrapper = styled.div`
