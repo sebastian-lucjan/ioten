@@ -1,21 +1,34 @@
 import styled from 'styled-components';
+import { useContext } from 'react';
+import { ValuationSurveyContext } from 'pages/valuation';
+import FormStep from './ValuationFormSteps/FormStep';
 
 const Wrapper = styled.div`
-  width: 100%;
-  height: 100vh;
+  position: absolute;
+  top: 22%;
+  //bottom: 75%;
+  width: calc(100% - 80px);
+  height: 55%;
+  //height: 100vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const FormWrapper = styled.div``;
+const FormWrapper = styled.form`
+  display: flex;
+  width: 100%;
+  height: 100%;
+`;
 
-export default function ValuationForm() {
+export default function ValuationForm({ watch, register }) {
+  const { surveyStep } = useContext(ValuationSurveyContext);
+
   return (
     <Wrapper>
       <FormWrapper>
-        <form>formularz</form>
+        <FormStep watch={watch} register={register} surveyStep={surveyStep} />
       </FormWrapper>
     </Wrapper>
   );

@@ -65,8 +65,6 @@ const Navigation = ({ whiteNavigationText, setRef }) => {
         </Link>
         <StyledMenu asPath={currentPath}>
           {navigationData.map(({ name, href, as: navButtonPath }) => {
-            // const isBold = currentPath === navButtonPath;
-
             return (
               <Link key={uuid()} href={href} as={navButtonPath}>
                 <StyledLink whiteNavigationText={isWhite} onClick={() => closeNavTheSamePath(currentPath, navButtonPath, setIsOpen)}>
@@ -77,7 +75,9 @@ const Navigation = ({ whiteNavigationText, setRef }) => {
           })}
         </StyledMenu>
         <Link href="/valuation" as="/wycena-projektu">
-          <StyledValuationButton type="button">Wyceń projekt</StyledValuationButton>
+          <StyledValuationButton onClick={() => closeNavTheSamePath(currentPath, '/wycena-projektu', setIsOpen)} type="button">
+            Wyceń projekt
+          </StyledValuationButton>
         </Link>
       </Wrapper>
     </MainSectionWrapper>

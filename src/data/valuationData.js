@@ -7,65 +7,72 @@ const valuationData = {
   surveyStarter: { heading: 'Wyceń projekt', paragraph: 'Wyceń projekt i zacznijmy' },
   surveySteps: [
     {
-      questions: [
-        {
-          heading: 'Jakie usługi Cię interesują?',
-          options: [
-            { text: 'Strona wizytówka (one page) / Landingpage', type: 'checkbox' },
-            { text: 'Strona firmowa o kilku zakładkach', type: 'checkbox' },
-            { text: 'Strona o rozbudowanej strukturze i funkcjonalnościach', type: 'checkbox' },
-            { text: 'Strona produktowa - zaawansowana strona wizualna', type: 'checkbox' },
-            { text: 'Inna usługa', type: 'textarea' },
-          ],
-          required: true,
-        },
+      heading: 'Jakie usługi Cię interesują?',
+      description: 'Wybierz co najmniej jedną opcję',
+      options: [
+        { text: 'Strona wizytówka (one page) / Landingpage', type: 'checkbox', name: 'landingpage' },
+        { text: 'Strona firmowa o kilku zakładkach', type: 'checkbox', name: 'www-with-tabs' },
+        { text: 'Strona o rozbudowanej strukturze i funkcjonalnościach', type: 'checkbox', name: 'www-with-functions' },
+        { text: 'Strona produktowa - zaawansowana strona wizualna', type: 'checkbox', name: 'www-product' },
+        { text: 'Inna usługa', type: 'checkbox', name: 'other-page' },
       ],
+      required: true,
     },
+
     {
-      questions: [
-        {
-          heading: 'Jaki zakres prac zakładasz?',
-          options: [
-            { text: 'Strategia, analiza projektu i konkurencji', type: 'checkbox' },
-            { text: 'Przygotowanie treści na stronę (teksty, zdjęcia)', type: 'checkbox' },
-            { text: 'Design, wizualny projekt strony', type: 'checkbox' },
-            { text: 'Strona www (kod i umieszczenie w sieci)', type: 'checkbox' },
-            { text: 'Implementacja CMS (system zarządzania treścią - wprowadzanie zmian na stronie)', type: 'checkbox' },
-            { text: 'Wsparcie po zakończeniu współpracy', type: 'checkbox' },
-            { text: 'Inne', type: 'textarea' },
-          ],
-          required: true,
-        },
+      heading: 'Jaki zakres prac zakładasz?',
+      description: 'Wybierz co najmniej jedną opcję',
+      options: [
+        { text: 'Strategia, analiza projektu i konkurencji', type: 'checkbox', name: 'strategy' },
+        { text: 'Przygotowanie treści na stronę (teksty, zdjęcia)', type: 'checkbox', name: 'content' },
+        { text: 'Design, wizualny projekt strony', type: 'checkbox', name: 'design' },
+        { text: 'Strona www (kod i umieszczenie w sieci)', type: 'checkbox', name: 'www' },
+        { text: 'Implementacja CMS (system zarządzania treścią - wprowadzanie zmian na stronie)', type: 'checkbox', name: 'cms' },
+        { text: 'Wsparcie po zakończeniu współpracy', type: 'checkbox', name: 'support' },
+        { text: 'Inne', type: 'checkbox', name: 'others' },
       ],
+      required: true,
     },
+
     {
-      questions: [
-        {
-          heading: 'Jakie usługi i produkty oferuje Twoja firma?',
-          options: [{ text: '', type: 'textarea' }],
-          required: true,
-        },
-        {
-          heading: 'Podaj adres aktualnej strony internetowej?',
-          options: [{ text: '', type: 'textarea' }],
-          required: false,
-        },
-      ],
+      heading: 'Jakie usługi i produkty oferuje Twoja firma?',
+      description: 'Napisz krótko o Twojej firmie',
+      options: [{ text: '', type: 'textarea', name: 'company-description' }],
+      required: true,
     },
+
     {
-      questions: [
-        {
-          heading: 'Czy posiadasz zakładany budżet, jeśli tak to jaki?',
-          options: [{ text: '', type: 'textarea' }],
-          required: false,
-        },
-        {
-          heading: 'Powiedz więcej o swoim projekcie?',
-          options: [{ text: '', type: 'textarea' }],
-          required: false,
-        },
-      ],
+      heading: 'Podaj adres aktualnej strony internetowej?',
+      description:
+        'Jeśli posiadasz aktualną stronę internetową, podaj adres. Możesz podać też adres do social mediów (np. facebook, instagram, twitter, linkedin)',
+      options: [{ text: '', type: 'text', name: 'company-website' }],
+      required: false,
     },
+
+    {
+      heading: 'Czy posiadasz zakładany budżet, jeśli tak to jaki?',
+      options: [{ text: '', type: 'textarea', name: 'budget' }],
+      required: false,
+    },
+
+    {
+      heading: 'Powiedz więcej o swoim projekcie?',
+      options: [{ text: '', type: 'textarea', name: 'more-info' }],
+      required: false,
+    },
+
+    {
+      heading: 'Imię',
+      options: [{ text: '', type: 'text', name: 'name' }],
+      required: true,
+    },
+
+    {
+      heading: 'Email',
+      options: [{ text: '', type: 'text', name: 'email' }],
+      required: true,
+    },
+
     // {
     //   questions: [
     //     {

@@ -23,14 +23,15 @@ const SurveyButton = styled.button`
 
 const StyledSurveyNextButton = styled(SurveyButton)`
   color: ${({ theme }) => theme.color.white};
-  background-color: ${({ theme }) => theme.color.green};
+  background-color: ${({ theme, disabled }) => (disabled ? theme.color.blueLight : theme.color.blue)};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 
   svg {
     transform: scaleX(-1);
   }
 
   &:hover {
-    background-color: ${({ theme }) => theme.color.greenDark};
+    background-color: ${({ theme }) => theme.color.blueDark};
   }
 `;
 
@@ -40,7 +41,7 @@ const StyledSurveyPrevButton = styled(SurveyButton)`
 `;
 
 const StyledSurveySubmitButton = styled(SurveyButton)`
-  background-color: ${({ theme }) => theme.color.green};
+  background-color: ${({ theme }) => theme.color.blue};
 
   color: ${({ theme }) => theme.color.white};
 `;
@@ -59,7 +60,7 @@ export function SurveySubmitButton() {
 }
 
 export function SurveyNextButton() {
-  const { surveyStep, setSurveyStep } = useContext(ValuationSurveyContext);
+  const { surveyStep, setSurveyStep, buttonDisabled } = useContext(ValuationSurveyContext);
 
   const maxStep = valuationData.surveySteps.length - 1;
 
@@ -70,7 +71,7 @@ export function SurveyNextButton() {
   };
 
   return (
-    <StyledSurveyNextButton onClick={handleNext} type="button">
+    <StyledSurveyNextButton onClick={handleNext} type="button" disabled={buttonDisabled} buttonDisabled={buttonDisabled}>
       <p>Dalej</p>
       <MdArrowBackIos />
     </StyledSurveyNextButton>

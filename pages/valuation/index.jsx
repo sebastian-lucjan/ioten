@@ -8,33 +8,43 @@ import styled from 'styled-components';
 import { createContext, useState } from 'react';
 import ValuationFormNav from 'src/components/ValuationForm/ValuationFormNav';
 import ValuationFormSteps from 'src/components/ValuationForm/ValuationFormSteps';
+import { useForm } from 'react-hook-form';
 
 const initialSurveyContext = { surveyStep: 0, setSurveyStep: () => {} };
 export const ValuationSurveyContext = createContext(initialSurveyContext);
 
 const Wrapper = styled.div`
   position: relative;
-  max-height: 100vh;
+  height: 100vh;
   width: 100%;
   padding: 40px;
 `;
 
 const Valuation = () => {
   const [surveyStep, setSurveyStep] = useState(initialSurveyContext.surveyStep);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+
+  const {
+    register,
+    // handleSubmit,
+    // reset,
+    watch,
+    // formState: { errors, isSubmitting },
+  } = useForm();
 
   const {
     headSection: { title, description },
   } = valuationData;
 
-  const gridColors = { lines: theme.color.green };
+  const gridColors = { lines: theme.color.blueLight };
 
   return (
-    <ValuationSurveyContext.Provider value={{ surveyStep, setSurveyStep }}>
+    <ValuationSurveyContext.Provider value={{ surveyStep, setSurveyStep, buttonDisabled, setButtonDisabled }}>
       <NextSeo title={title} description={description} />
       <BaseLayout>
         <Wrapper>
           <ValuationFormSteps />
-          <ValuationForm />
+          <ValuationForm register={register} watch={watch} />
           <ValuationFormNav />
         </Wrapper>
         <Grid colors={gridColors} />

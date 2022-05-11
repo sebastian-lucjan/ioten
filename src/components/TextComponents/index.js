@@ -83,7 +83,7 @@ export const TextHeading = styled.p`
       case 'light':
         return theme.font.family.myriadPro.light;
       case 'regular':
-        return theme.font.family.myriadPro.bold;
+        return theme.font.family.myriadPro.regular;
       case 'black':
         return theme.font.family.myriadPro.black;
       default:
