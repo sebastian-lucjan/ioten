@@ -42,17 +42,21 @@ const StyledSurveyPrevButton = styled(SurveyButton)`
 
 const StyledSurveySubmitButton = styled(SurveyButton)`
   background-color: ${({ theme }) => theme.color.blue};
+  background-color: ${({ theme, disabled }) => (disabled ? theme.color.blueLight : theme.color.blue)};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 
   color: ${({ theme }) => theme.color.white};
 `;
 
 export function SurveySubmitButton() {
+  const { buttonDisabled } = useContext(ValuationSurveyContext);
+
   const handleSubmit = () => {
     console.log('on submit()');
   };
 
   return (
-    <StyledSurveySubmitButton onClick={handleSubmit} type="button">
+    <StyledSurveySubmitButton disabled={buttonDisabled} onClick={handleSubmit} type="button">
       <p>Wyślij</p>
       <span>🚀</span>
     </StyledSurveySubmitButton>

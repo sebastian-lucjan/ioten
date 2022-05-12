@@ -4,7 +4,7 @@ const theme = {
   color: {
     black: 'hsl(0, 0%, 15%)',
     blue: '#015CC8',
-    blueLight: '#70a2de',
+    blueLight: '#94b1f5',
     darkestGray: 'hsl(0, 0%, 22%)',
     darkerGray: 'hsl(0, 0%, 42%)',
     darkGray: 'hsl(0, 0%, 53%)',
