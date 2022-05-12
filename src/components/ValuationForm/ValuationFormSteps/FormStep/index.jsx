@@ -111,21 +111,21 @@ export default function FormStep({ surveyStep, register }) {
         <OptionDescription>{question.description}</OptionDescription>
 
         <OptionsContainer>
-          {question.options.map(({ text, type, name }) => {
+          {question.options.map(({ text, type, name, inputCondition }) => {
             if (type === 'checkbox') {
-              return <ValuationCheckbox key={name} register={register} text={text} name={name} />;
+              return <ValuationCheckbox key={name} register={register} inputConditions={inputCondition} text={text} name={name} />;
             }
             if (type === 'textarea') {
-              return <ValuationTextarea key={name} register={register} text={text} name={name} />;
+              return <ValuationTextarea key={name} register={register} inputConditions={inputCondition} text={text} name={name} />;
             }
             if (type === 'text') {
-              return <ValuationTextInput key={name} register={register} text={text} name={name} />;
+              return <ValuationTextInput key={name} register={register} inputConditions={inputCondition} text={text} name={name} />;
             }
             return null;
           })}
         </OptionsContainer>
         {question.required ? (
-          <InfoIsRequired>Odpowiedź na to pytanie jest wymagana do zakończenia formularza</InfoIsRequired>
+          <InfoIsRequired>Odpowiedź jest wymagana do zakończenia formularza</InfoIsRequired>
         ) : (
           <InfoIsRequired>Odpowiedź nie jest wymagana</InfoIsRequired>
         )}

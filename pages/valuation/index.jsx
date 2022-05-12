@@ -9,6 +9,7 @@ import { createContext, useEffect, useState } from 'react';
 import ValuationFormNav from 'src/components/ValuationForm/ValuationFormNav';
 import ValuationFormSteps from 'src/components/ValuationForm/ValuationFormSteps';
 import { useForm } from 'react-hook-form';
+import ValuationFormSuccess from 'src/components/ValuationFormSuccess';
 
 const initialSurveyContext = { surveyStep: 0, setSurveyStep: () => {} };
 export const ValuationSurveyContext = createContext(initialSurveyContext);
@@ -29,8 +30,10 @@ const Valuation = () => {
     handleSubmit,
     reset,
     watch,
-    // formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm();
+
+  const isError = () => Object.keys(errors).length > 0;
 
   const {
     headSection: { title, description },
@@ -46,18 +49,37 @@ const Valuation = () => {
     if (!surveySteps[surveyStep].required) {
       setButtonDisabled(false);
     }
-  }, [watch, surveyStep, optionsArray]);
+  }, [watch, surveyStep, optionsArray, errors]); // todo: check if this is necessary
 
   const gridColors = { lines: theme.color.blueLight };
 
   return (
-    <ValuationSurveyContext.Provider value={{ surveyStep, setSurveyStep, buttonDisabled, setButtonDisabled, handleSubmit, reset, watch }}>
+    <ValuationSurveyContext.Provider
+      value={{
+        surveyStep,
+        setSurveyStep,
+        buttonDisabled,
+        setButtonDisabled,
+        handleSubmit,
+        register,
+        reset,
+        watch,
+        isSubmitting,
+      }}
+    >
       <NextSeo title={title} description={description} />
       <BaseLayout>
         <Wrapper>
-          <ValuationFormSteps />
-          <ValuationForm register={register} watch={watch} />
-          <ValuationFormNav />
+          {isSubmitSuccessful ? (
+            <ValuationFormSuccess />
+          ) : (
+            <>
+              <ValuationFormSteps />
+              <ValuationForm />
+              <ValuationFormNav />
+            </>
+          )}
+          {isError() ? 'Uzupełnij odpowiednie pola' : null}
         </Wrapper>
         <Grid colors={gridColors} />
       </BaseLayout>

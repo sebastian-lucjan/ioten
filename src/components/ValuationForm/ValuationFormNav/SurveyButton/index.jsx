@@ -3,7 +3,7 @@ import { MdArrowBackIos } from 'react-icons/md';
 import { useContext } from 'react';
 import valuationData from 'src/data/valuationData';
 import { ValuationSurveyContext } from 'pages/valuation';
-import { onSubmit } from '../../../../helpers/valuationServices';
+import useOnSubmit from 'src/helpers/onSumbit';
 
 const SurveyButton = styled.button`
   display: flex;
@@ -30,10 +30,6 @@ const StyledSurveyNextButton = styled(SurveyButton)`
   svg {
     transform: scaleX(-1);
   }
-
-  // &:hover {
-  //   background-color: ${({ theme }) => theme.color.blue}; //todo: change to darker blue, set in theme
-  // }
 `;
 
 const StyledSurveyPrevButton = styled(SurveyButton)`
@@ -42,22 +38,48 @@ const StyledSurveyPrevButton = styled(SurveyButton)`
 `;
 
 const StyledSurveySubmitButton = styled(SurveyButton)`
-  background-color: ${({ theme }) => theme.color.blue};
   background-color: ${({ theme, disabled }) => (disabled ? theme.color.blueLight : theme.color.blue)};
+
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 
   color: ${({ theme }) => theme.color.white};
+
+  span {
+    //icon
+    transition: 6s;
+    font-size: 2.4rem;
+    margin-left: 1rem;
+  }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    &:hover {
+      .rocket {
+        transform: ${({ disabled }) => (disabled ? 'translate(0, 0)' : 'translate(120vw, -120vh) scale(8)')};
+      }
+    }
+  }
 `;
 
 export function SurveySubmitButton() {
-  const { buttonDisabled, handleSubmit, watch, reset } = useContext(ValuationSurveyContext);
+  const { buttonDisabled, handleSubmit, watch, reset, isSubmitting } = useContext(ValuationSurveyContext);
 
   console.log('watch', watch());
 
   return (
-    <StyledSurveySubmitButton disabled={buttonDisabled} onClick={handleSubmit(() => onSubmit(reset, watch))} type="submit">
-      <p>Wyślij</p>
-      <span>🚀</span>
+    <StyledSurveySubmitButton
+      isSubmitting={isSubmitting}
+      disabled={buttonDisabled}
+      onClick={handleSubmit(() => useOnSubmit(reset, watch))}
+      type="submit"
+    >
+      {isSubmitting ? (
+        <p>Wysyłanie...</p>
+      ) : (
+        <>
+          <p>Wyślij </p>
+          <span className="rocket">🚀</span>
+        </>
+      )}
     </StyledSurveySubmitButton>
   );
 }

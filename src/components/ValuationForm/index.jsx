@@ -20,8 +20,8 @@ const FormWrapper = styled.form`
   height: 100%;
 `;
 
-export default function ValuationForm({ watch, register }) {
-  const { surveyStep } = useContext(ValuationSurveyContext);
+export default function ValuationForm() {
+  const { surveyStep, watch, register } = useContext(ValuationSurveyContext);
 
   return (
     <Wrapper>
