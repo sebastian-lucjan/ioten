@@ -3,6 +3,7 @@ import { MdArrowBackIos } from 'react-icons/md';
 import { useContext } from 'react';
 import valuationData from 'src/data/valuationData';
 import { ValuationSurveyContext } from 'pages/valuation';
+import { onSubmit } from '../../../../helpers/valuationServices';
 
 const SurveyButton = styled.button`
   display: flex;
@@ -49,14 +50,12 @@ const StyledSurveySubmitButton = styled(SurveyButton)`
 `;
 
 export function SurveySubmitButton() {
-  const { buttonDisabled } = useContext(ValuationSurveyContext);
+  const { buttonDisabled, handleSubmit, watch, reset } = useContext(ValuationSurveyContext);
 
-  const handleSubmit = () => {
-    console.log('on submit()');
-  };
+  console.log('watch', watch());
 
   return (
-    <StyledSurveySubmitButton disabled={buttonDisabled} onClick={handleSubmit} type="button">
+    <StyledSurveySubmitButton disabled={buttonDisabled} onClick={handleSubmit(() => onSubmit(reset, watch))} type="submit">
       <p>Wyślij</p>
       <span>🚀</span>
     </StyledSurveySubmitButton>

@@ -11,10 +11,10 @@ const valuationData = {
       description: 'Wybierz co najmniej jedną opcję',
       options: [
         { text: 'Strona wizytówka (one page) / Landingpage', type: 'checkbox', name: 'landingpage' },
-        { text: 'Strona firmowa o kilku zakładkach', type: 'checkbox', name: 'www-with-tabs' },
-        { text: 'Strona o rozbudowanej strukturze i funkcjonalnościach', type: 'checkbox', name: 'www-with-functions' },
-        { text: 'Strona produktowa - zaawansowana strona wizualna', type: 'checkbox', name: 'www-product' },
-        { text: 'Inna usługa', type: 'checkbox', name: 'other-page' },
+        { text: 'Strona firmowa o kilku zakładkach', type: 'checkbox', name: 'wwwWithTabs' },
+        { text: 'Strona o rozbudowanej strukturze i funkcjonalnościach', type: 'checkbox', name: 'wwwWithFunctions' },
+        { text: 'Strona produktowa - zaawansowana strona wizualna', type: 'checkbox', name: 'wwwProduct' },
+        { text: 'Inna usługa', type: 'checkbox', name: 'otherPage' },
       ],
       required: true,
     },
@@ -33,11 +33,10 @@ const valuationData = {
       ],
       required: true,
     },
-
     {
       heading: 'Jakie usługi i produkty oferuje Twoja firma?',
       description: 'Napisz krótko o Twojej firmie',
-      options: [{ text: '', type: 'textarea', name: 'company-description' }],
+      options: [{ text: '', type: 'textarea', name: 'companyDescription' }],
       required: true,
     },
 
@@ -45,7 +44,7 @@ const valuationData = {
       heading: 'Podaj adres aktualnej strony internetowej?',
       description:
         'Jeśli posiadasz aktualną stronę internetową, podaj adres. Możesz podać też adres do social mediów (np. facebook, instagram, twitter, linkedin)',
-      options: [{ text: '', type: 'text', name: 'company-website' }],
+      options: [{ text: '', type: 'text', name: 'companyWebsite' }],
       required: false,
     },
 
@@ -57,7 +56,7 @@ const valuationData = {
 
     {
       heading: 'Powiedz więcej o swoim projekcie?',
-      options: [{ text: '', type: 'textarea', name: 'more-info' }],
+      options: [{ text: '', type: 'textarea', name: 'moreInfo' }],
       required: false,
     },
 
@@ -72,21 +71,6 @@ const valuationData = {
       options: [{ text: '', type: 'text', name: 'email' }],
       required: true,
     },
-
-    // {
-    //   questions: [
-    //     {
-    //       heading: 'Imię',
-    //       options: [{ text: '', type: 'text' }],
-    //       required: false,
-    //     },
-    //     {
-    //       heading: 'Email',
-    //       options: [{ text: '', type: 'text' }],
-    //       required: false,
-    //     },
-    //   ],
-    // },
   ],
 };
 

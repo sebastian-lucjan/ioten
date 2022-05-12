@@ -26,8 +26,8 @@ const Valuation = () => {
 
   const {
     register,
-    // handleSubmit,
-    // reset,
+    handleSubmit,
+    reset,
     watch,
     // formState: { errors, isSubmitting },
   } = useForm();
@@ -51,7 +51,7 @@ const Valuation = () => {
   const gridColors = { lines: theme.color.blueLight };
 
   return (
-    <ValuationSurveyContext.Provider value={{ surveyStep, setSurveyStep, buttonDisabled, setButtonDisabled }}>
+    <ValuationSurveyContext.Provider value={{ surveyStep, setSurveyStep, buttonDisabled, setButtonDisabled, handleSubmit, reset, watch }}>
       <NextSeo title={title} description={description} />
       <BaseLayout>
         <Wrapper>
@@ -72,10 +72,10 @@ export default Valuation;
 //     description: 'Wybierz co najmniej jedną opcję',
 //   options: [
 //   { text: 'Strona wizytówka (one page) / Landingpage', type: 'checkbox', name: 'landingpage' },
-//   { text: 'Strona firmowa o kilku zakładkach', type: 'checkbox', name: 'www-with-tabs' },
-//   { text: 'Strona o rozbudowanej strukturze i funkcjonalnościach', type: 'checkbox', name: 'www-with-functions' },
-//   { text: 'Strona produktowa - zaawansowana strona wizualna', type: 'checkbox', name: 'www-product' },
-//   { text: 'Inna usługa', type: 'checkbox', name: 'other-page' },
+//   { text: 'Strona firmowa o kilku zakładkach', type: 'checkbox', name: 'wwwWithTabs' },
+//   { text: 'Strona o rozbudowanej strukturze i funkcjonalnościach', type: 'checkbox', name: 'wwwWithFunctions' },
+//   { text: 'Strona produktowa - zaawansowana strona wizualna', type: 'checkbox', name: 'wwwProduct' },
+//   { text: 'Inna usługa', type: 'checkbox', name: 'otherPage' },
 // ],
 //   required: true,
 // },
