@@ -1,7 +1,5 @@
 import valuationData from 'src/data/valuationData';
-import { v4 as uuid } from 'uuid';
 import styled from 'styled-components';
-// import { useState } from 'react';
 
 const StyledFormStep = styled.div``;
 
@@ -102,24 +100,12 @@ const OptionContainer = styled.div`
   margin-bottom: 4rem;
 `;
 
-export default function FormStep({ watch, surveyStep, register }) {
+export default function FormStep({ surveyStep, register }) {
   const question = valuationData.surveySteps[surveyStep];
-  // const [questionAnswered, setQuestionAnswered] = useState(false);
-
-  console.log('FormStep: ', question.options);
-  console.log('watch', watch());
-
-  // if (question.required) {
-  //   setArray((prevState) => [...prevState, question]);
-  //   console.log(array);
-  // }
-  const handleChange = (e) => {
-    console.log('handleChange: ', e.target.value);
-  };
 
   return (
     <StyledFormStep>
-      <OptionContainer key={uuid()}>
+      <OptionContainer>
         <OptionHeading>{question.heading}</OptionHeading>
 
         <OptionDescription>{question.description}</OptionDescription>
@@ -127,13 +113,13 @@ export default function FormStep({ watch, surveyStep, register }) {
         <OptionsContainer>
           {question.options.map(({ text, type, name }) => {
             if (type === 'checkbox') {
-              return <ValuationCheckbox key={uuid()} register={register} text={text} name={name} onChange={handleChange} />;
+              return <ValuationCheckbox key={name} register={register} text={text} name={name} />;
             }
             if (type === 'textarea') {
-              return <ValuationTextarea key={uuid()} register={register} text={text} name={name} />;
+              return <ValuationTextarea key={name} register={register} text={text} name={name} />;
             }
             if (type === 'text') {
-              return <ValuationTextInput key={uuid()} register={register} text={text} name={name} />;
+              return <ValuationTextInput key={name} register={register} text={text} name={name} />;
             }
             return null;
           })}

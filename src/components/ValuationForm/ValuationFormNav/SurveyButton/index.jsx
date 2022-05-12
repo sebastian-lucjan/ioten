@@ -30,9 +30,9 @@ const StyledSurveyNextButton = styled(SurveyButton)`
     transform: scaleX(-1);
   }
 
-  &:hover {
-    background-color: ${({ theme }) => theme.color.blueDark};
-  }
+  // &:hover {
+  //   background-color: ${({ theme }) => theme.color.blue}; //todo: change to darker blue, set in theme
+  // }
 `;
 
 const StyledSurveyPrevButton = styled(SurveyButton)`
