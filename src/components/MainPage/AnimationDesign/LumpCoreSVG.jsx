@@ -33,7 +33,8 @@ export default function LumpCoreSVG() {
           cy="0"
           r="1"
           gradientUnits="userSpaceOnUse"
-          gradientTransform={`translate(${x} ${y}) scale(210)`}>
+          gradientTransform={`translate(${x} ${y}) scale(210)`}
+        >
           <stop stopColor="#EAFC15" />
           <stop offset="0.161458" stopColor="#E6F011" />
           <stop offset="0.598958" stopColor="#383D54" />

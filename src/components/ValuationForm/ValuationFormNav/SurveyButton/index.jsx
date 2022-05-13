@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { MdArrowBackIos } from 'react-icons/md';
 import { useContext } from 'react';
-import { ValuationSurveyContext } from '../../../../../pages/valuation';
-import valuationData from '../../../../data/valuationData';
+import valuationData from 'src/data/valuationData';
+import { ValuationSurveyContext } from 'pages/valuation';
+import onSubmit from 'src/helpers/onSumbit';
 
 const SurveyButton = styled.button`
   display: flex;
@@ -23,14 +24,11 @@ const SurveyButton = styled.button`
 
 const StyledSurveyNextButton = styled(SurveyButton)`
   color: ${({ theme }) => theme.color.white};
-  background-color: ${({ theme }) => theme.color.green};
+  background: ${({ theme, disabled }) => (disabled ? theme.color.blueLight : theme.gradient.blue)};
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 
   svg {
     transform: scaleX(-1);
-  }
-
-  &:hover {
-    background-color: ${({ theme }) => theme.color.greenDark};
   }
 `;
 
@@ -39,19 +37,68 @@ const StyledSurveyPrevButton = styled(SurveyButton)`
   color: ${({ theme }) => theme.color.darkGray};
 `;
 
+const StyledSurveySubmitButton = styled(SurveyButton)`
+  background: ${({ theme, disabled }) => (disabled ? theme.color.blueLight : theme.gradient.blue)};
+
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+
+  color: ${({ theme }) => theme.color.white};
+
+  span {
+    //icon
+    transition: 3s;
+    font-size: 2.4rem;
+    margin-left: 1rem;
+  }
+
+  .rocket-start {
+    transform: ${({ disabled }) => (disabled ? 'translate(0, 0)' : 'translate(120vw, -120vh) scale(8)')};
+  }
+`;
+
+export function SurveySubmitButton() {
+  const { buttonDisabled, handleSubmit, watch, reset, isSubmitting } = useContext(ValuationSurveyContext);
+
+  // console.log('watch', watch());
+
+  return (
+    <StyledSurveySubmitButton
+      isSubmitting={isSubmitting}
+      disabled={buttonDisabled}
+      onClick={handleSubmit(() => onSubmit(reset, watch))}
+      type="submit"
+    >
+      {isSubmitting ? (
+        <>
+          <p>Wysyłanie...</p>
+          <span className="rocket-start">🚀</span>
+        </>
+      ) : (
+        <>
+          <p>Wyślij </p>
+          <span>🚀</span>
+        </>
+      )}
+    </StyledSurveySubmitButton>
+  );
+}
+
 export function SurveyNextButton() {
-  const { surveyStep, setSurveyStep } = useContext(ValuationSurveyContext);
+  const { surveyStep, setSurveyStep, buttonDisabled, trigger, errors } = useContext(ValuationSurveyContext);
 
   const maxStep = valuationData.surveySteps.length - 1;
 
-  const handleNext = () => {
-    if (surveyStep < maxStep) {
+  const handleNext = async () => {
+    await trigger(valuationData.surveySteps[surveyStep].options[0].name);
+
+    // go to next step if there are no errors and this is not last step
+    if (surveyStep < maxStep && Object.keys(errors).length === 0) {
       setSurveyStep(surveyStep + 1);
     }
   };
 
   return (
-    <StyledSurveyNextButton onClick={handleNext} type="button">
+    <StyledSurveyNextButton onClick={handleNext} type="button" disabled={buttonDisabled}>
       <p>Dalej</p>
       <MdArrowBackIos />
     </StyledSurveyNextButton>
@@ -59,10 +106,10 @@ export function SurveyNextButton() {
 }
 
 export function SurveyPrevButton() {
-  const { surveyStep, setSurveyStep } = useContext(ValuationSurveyContext);
+  const { surveyStep, setSurveyStep, errors } = useContext(ValuationSurveyContext);
 
   const handlePrev = () => {
-    if (surveyStep > 0) {
+    if (surveyStep > 0 && Object.keys(errors).length === 0) {
       setSurveyStep(surveyStep - 1);
     }
   };
