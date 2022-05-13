@@ -59,8 +59,6 @@ const StyledSurveySubmitButton = styled(SurveyButton)`
 export function SurveySubmitButton() {
   const { buttonDisabled, handleSubmit, watch, reset, isSubmitting } = useContext(ValuationSurveyContext);
 
-  // console.log('watch', watch());
-
   return (
     <StyledSurveySubmitButton
       isSubmitting={isSubmitting}

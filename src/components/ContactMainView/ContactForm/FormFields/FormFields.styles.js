@@ -31,7 +31,7 @@ export const StyledTextInput = styled.div`
 
   label {
     p {
-      font-family: ${({ theme }) => theme.font.family.myriadPro.regular};
+      font-family: ${({ theme, required }) => (required ? theme.font.family.myriadPro.bold : theme.font.family.myriadPro.regular)};
       position: absolute;
       top: 0;
       left: 0;

@@ -4,10 +4,10 @@ import { onSubmit } from 'src/helpers/form';
 import { TextParagraph } from 'src/components/TextComponents';
 import { useRef, useState } from 'react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
-import { Wrapper } from './ContactForm.styles';
+import FormErrors from 'src/components/FormErrors';
+import { StyledCaptcha, Wrapper } from './ContactForm.styles';
 import SubmitButton from './SubmitButton';
 import { CheckboxInput, TextArea, TextInput } from './FormFields';
-import FormErrors from '../../FormErrors';
 
 export default function ContactForm() {
   const {
@@ -15,7 +15,7 @@ export default function ContactForm() {
     handleSubmit,
     reset,
     watch,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm();
 
   const [token, setToken] = useState(null);
@@ -55,9 +55,7 @@ export default function ContactForm() {
           <TextInput watch={watch} name="company" register={register} text="Nazwa firmy" inputConditions={companyStringConditions} />
           <TextInput watch={watch} name="mobile" register={register} text="Numer telefonu" inputConditions={phoneNumberStringConditions} />
         </div>
-
         <TextArea watch={watch} name="message" register={register} text="Twoja wiadomość" required inputConditions={textareaStringConditions} />
-
         <CheckboxInput
           text="Akceptuję politykę prywatności"
           name="policy"
@@ -73,20 +71,20 @@ export default function ContactForm() {
           placeholderText="nda"
           inputConditions={ndaCheckboxConditions}
         />
-
         <TextParagraph size="xs" lh="xs">
           * Pola tekstowe: telefon, nazwa firmy nie są polami obowiązkowymi.
         </TextParagraph>
 
-        <HCaptcha sitekey={process.env.HCAPTCHA_SITE_KEY} onVerify={(tokenPassed) => onVerify(tokenPassed)} onExpire={onExpire} ref={captchaRef} />
+        <StyledCaptcha>
+          <HCaptcha sitekey={process.env.HCAPTCHA_SITE_KEY} onVerify={(tokenPassed) => onVerify(tokenPassed)} onExpire={onExpire} ref={captchaRef} />
+        </StyledCaptcha>
 
         {error ? (
           <TextParagraph size="xs" lh="xs" color="red">
             {error}
           </TextParagraph>
         ) : null}
-
-        <SubmitButton loading={isSubmitting} hasError={isError()} />
+        <SubmitButton loading={isSubmitting} hasError={isError()} isSubmitSuccessful={isSubmitSuccessful} />
       </div>
       {isError() ? <FormErrors hasError errors={errors} /> : null}
     </Wrapper>

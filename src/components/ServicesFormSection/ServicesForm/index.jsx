@@ -13,8 +13,7 @@ export default function ServicesForm() {
     handleSubmit,
     reset,
     watch,
-
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm();
 
   const captchaRef = useRef(null);
@@ -66,7 +65,7 @@ export default function ServicesForm() {
       {/*  </TextParagraph> */}
       {/* ) : null} */}
 
-      <SubmitButton loading={isSubmitting} hasError={isError()} />
+      <SubmitButton loading={isSubmitting} hasError={isError()} isSubmitSuccessful={isSubmitSuccessful} />
       {isError() ? <ServicesFormErrors hasError errors={errors} /> : null}
     </StyledServicesForm>
   );

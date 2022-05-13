@@ -2,24 +2,21 @@ import styled from 'styled-components';
 
 export const StyledSubmitButton = styled.button`
   position: relative;
-  display: block;
+  display: flex;
+  justify-content: center;
   height: 60px;
   width: calc(100vw - 80px);
   margin: 2rem auto 0 auto;
-  background: ${({ theme, backgroundColor, hasError, isLoading }) => {
+  background: ${({ theme, backgroundColor, hasError }) => {
     if (hasError) {
       return theme.color.red;
     }
-    if (isLoading) {
-      return theme.color.yellow;
-    }
-
     return backgroundColor || theme.color.darkestGray;
   }};
 
   word-spacing: 5px;
-
-  line-height: 100%;
+  //line-height: 100%;
+  line-height: 32px;
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   font-size: ${({ theme }) => theme.font.size.headingSmall};
   color: ${({ theme, textColor }) => textColor || theme.color.white};
@@ -27,6 +24,12 @@ export const StyledSubmitButton = styled.button`
   box-shadow: 4px 4px 0 ${({ hasError }) => (hasError ? 'hsla(0, 84%, 52%, 60%)' : `#0008`)};
   cursor: ${({ hasError }) => (hasError ? 'not-allowed' : 'pointer')};
   transition: 0.2s;
+
+  svg {
+    transition: transform 3s;
+    width: 60px;
+    transform: ${({ isLoading }) => (isLoading ? 'scale(3) translate(50vw, -50vh)' : 'scale(1.2)')};
+  }
 
   &:active {
     box-shadow: 0 0 0 #0008;

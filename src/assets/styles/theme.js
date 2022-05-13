@@ -79,6 +79,7 @@ const theme = {
   },
   mq: {
     landscape: '@media(orientation: landscape)',
+    mediumMobile: '@media(min-width: 360px)',
     bigMobile: '@media(min-width: 460px)',
     tablet: '@media(min-width: 768px)',
     smallDesktop: '@media(min-width: 1024px)',

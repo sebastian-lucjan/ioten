@@ -62,3 +62,17 @@ export const Wrapper = styled.div`
     }
   }
 `;
+
+export const StyledCaptcha = styled.div`
+  //float: left;
+  padding: 2rem 0 0 0;
+  transform-origin: top left;
+  transform: scale(0.85);
+
+  ${({ theme }) => theme.mq.mediumMobile} {
+    transform: scale(0.92);
+  }
+  ${({ theme }) => theme.mq.bigMobile} {
+    transform: scale(1);
+  }
+`;
