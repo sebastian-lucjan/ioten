@@ -116,6 +116,7 @@ const servicesData = {
         { text: 'Analiza konkurencji i inspiracji', icon: 'carbon:text-link-analysis' },
         { text: 'Raport / przedstawienie wniosków', icon: 'carbon:report' },
       ],
+      serviceID: 'strategy-idea',
       endParagraph: 'Efektem finalnym tego etapu jest raport / przedstawienie wniosków i opracowanie szczegółowego modelu dalszej współpracy.',
     },
     {
@@ -128,6 +129,7 @@ const servicesData = {
         { text: 'Roadmapa projektu czyli określenie celów i kamieni milowych współpracy,', icon: 'akar-icons:map' },
         { text: 'Wireflow i wireframing strony', icon: 'charm:square-cross' },
       ],
+      serviceID: 'concept-wireframing',
       endParagraph:
         'Efektem finalnym jest wireframe aplikacji oraz persona użytkownika. Na tym etapie budowany jest fundament pod przyszły design strony.',
     },
@@ -141,6 +143,7 @@ const servicesData = {
         { text: 'Przygotowanie wizualnej makiety strony.', icon: 'iconoir:3d-select-solid' },
         { text: 'Akceptacja finalnego wyglądu.', icon: 'eos-icons:system-ok-outlined' },
       ],
+      serviceID: 'design',
       endParagraph:
         'Efektem tego etapu jest materializacja większości założeń wypracowanych w poprzednich etapach. Optymalnie przeprowadzony etap designu pozwala płynnie, bez blokad decyzyjnych przeprowadzić etap wdrażania produktu',
     },
@@ -152,9 +155,10 @@ const servicesData = {
       prosList: [
         { text: 'Dobór optymalnej technologi dla Twojej strony.', icon: 'carbon:task-approved' },
         { text: 'Przełożenie finalnego designu na kod.', icon: 'ant-design:code-outlined' },
-        { text: 'Połączenie strony z sytemem zarządzania treścią CMS', icon: 'fa6-regular:pen-to-square' },
+        { text: 'Połączenie strony z systemem zarządzania treścią CMS', icon: 'fa6-regular:pen-to-square' },
         { text: 'Weryfikacja założeń, ostatnie szlify.', icon: 'bx:diamond' },
       ],
+      serviceID: 'development',
       endParagraph: 'Przed finalnym umieszczeniem na serwerze klient może zobaczyć swoją stronę w środowisku tesotowym na testowym hostingu.',
     },
     {
@@ -166,6 +170,7 @@ const servicesData = {
         { text: 'Przekazanie niezbędnej wiedzy w celu obsługi strony.', icon: 'bx:book-bookmark' },
         { text: 'Ewentualne wsparcie w trakcie funkcjonowania strony.', icon: 'mdi:help-network-outline' },
       ],
+      serviceID: 'optimization-support',
       endParagraph:
         'Zakończenie współpracy albo wręcz przeciwnie... Jesteśmy otwarci na dalszą kooperację w celu doskonalenia strony bądź jej rozbudowywania.',
     },

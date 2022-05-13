@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import SocialMedia from 'src/components/SocialMedia';
 import contactData from 'src/data/contactData';
 import Link from 'next/link';
 
@@ -34,13 +33,15 @@ export default function ContactDetails() {
         </Link>
       </div>
 
-      <div className="contact-details__info-item">
-        <h3 className="contact-details__info-item-label">social media</h3>
-        <SocialMedia black />
-      </div>
+      {/* <div className="contact-details__info-item"> */}
+      {/*  <h3 className="contact-details__info-item-label">social media</h3> */}
+      {/* <SocialMedia black /> */}
+      {/* </div> */}
     </StyledContactDetails>
   );
 }
+
+// todo: add social media when it's ready
 
 const StyledContactDetails = styled.div`
   margin-top: 8rem;

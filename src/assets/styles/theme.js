@@ -3,6 +3,8 @@ export const rainbowColors = ['#ff0400', '#e2dc22', '#00ff08', '#3300ff', '#8611
 const theme = {
   color: {
     black: 'hsl(0, 0%, 15%)',
+    blue: '#015CC8',
+    blueLight: '#94b1f5',
     darkestGray: 'hsl(0, 0%, 22%)',
     darkerGray: 'hsl(0, 0%, 42%)',
     darkGray: 'hsl(0, 0%, 53%)',
@@ -11,6 +13,7 @@ const theme = {
     darkerNavy: 'hsla(197, 58%, 0%, 1)',
     gray: 'hsl(0, 0%, 67%)',
     green: 'hsl(119, 55%, 63%)',
+    greenDark: 'hsl(119,35%,50%)', // todo: for now is unused, check later
     lightGray: 'hsl(0, 0%, 80%)',
     lighterGray: 'hsl(0, 0%, 87%)',
     lightestGray: 'hsl(0, 0%, 95%)',
@@ -25,6 +28,7 @@ const theme = {
     blackBrief: 'linear-gradient(135deg, rgba(67,67,67,1) 0%, rgba(47,47,47,1) 100%);',
     blackToGray: 'linear-gradient(180deg, hsl(0, 0%, 80%) 0%, hsl(0, 0%, 80%) 75%, hsl(0, 0%, 30%) 100%)',
     blackToTransparent: 'linear-gradient(180deg, hsl(0, 0%, 80%, 0) 0%, hsl(0, 0%, 80%, 0) 85%, hsl(0, 0%, 80%) 92.5%, hsl(0, 0%, 30%) 100%)',
+    blue: 'linear-gradient(135deg, rgba(1,92,200,1) 0%, rgba(42,125,223,1) 100%);',
     lightGray: 'linear-gradient(40deg, rgba(235,235,235,1) 0%, rgba(250,250,250,1) 100%)',
     lightGrayAxisSection: 'linear-gradient(135deg, hsl(0, 0%, 93%) 0%, hsl(0, 0%, 97%) 100%)',
     navyBlue: 'linear-gradient(80deg, rgba(66,59,76,1) 0%, rgba(72,59,76,1) 100%)',

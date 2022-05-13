@@ -36,7 +36,7 @@ module.exports = {
         printWidth: 150,
         singleQuote: true,
         trailingComma: 'all',
-        jsxBracketSameLine: true,
+        jsxBracketSameLine: false,
       },
       { usePrettierrc: true },
     ], // Use our .prettierrc file as source
@@ -54,11 +54,12 @@ module.exports = {
     'no-console': 'off',
     'react/function-component-definition': 'off',
     'react/jsx-no-constructed-context-values': 'off',
-    'react/jsx-max-props-per-line': [1, { maximum: 6 }],
+    'react/jsx-max-props-per-line': [1, { maximum: 8 }],
     'react/self-closing-comp': 'off',
     'react/jsx-filename-extension': 'off',
     'import/prefer-default-export': 'off',
     'jsx-closing-bracket-location': 'off',
+    'react/jsx-closing-bracket-location': 1,
     // 'object-curly-newline': 'off',
   },
 };

@@ -6,7 +6,7 @@ import services from 'src/data/servicesData';
 import { v4 as uuid } from 'uuid';
 import Grid from 'src/components/Grid';
 import { FooterHeading, FooterItem, FooterSoonItem, StyledFooterSection, Wrapper } from './Footer.styles';
-import SocialMedia from '../SocialMedia';
+// import SocialMedia from '../SocialMedia';
 import FooterContact from './FooterContact';
 import FooterRights from './FooterRights';
 
@@ -18,7 +18,7 @@ const Footer = ({ footerGridColor }) => {
   const {
     ioten,
     intro: { heading, text },
-    socialMedia: { heading: socialMediaHeading },
+    // socialMedia: { heading: socialMediaHeading },
   } = footerData;
 
   return (
@@ -41,7 +41,7 @@ const Footer = ({ footerGridColor }) => {
               return <FooterSoonItem key={uuid()}>{serviceHeading}</FooterSoonItem>;
             }
             return (
-              <Link key={uuid()} href="/services" as="/uslugi">
+              <Link key={uuid()} href="/src/services" as="/uslugi">
                 <FooterItem key={uuid()}>{serviceHeading}</FooterItem>
               </Link>
             );
@@ -51,7 +51,7 @@ const Footer = ({ footerGridColor }) => {
         <StyledFooterSection>
           <FooterHeading>{services.serviceStagesIntro}</FooterHeading>
           {services.stages.map(({ heading: serviceHeading }) => (
-            <Link key={uuid()} href="/services" as="/uslugi">
+            <Link key={uuid()} href="/src/services" as="/uslugi">
               <FooterItem key={uuid()}>{serviceHeading}</FooterItem>
             </Link>
           ))}
@@ -66,10 +66,10 @@ const Footer = ({ footerGridColor }) => {
           ))}
         </StyledFooterSection>
 
-        <StyledFooterSection className="footer__social-media">
-          <FooterHeading>{socialMediaHeading}</FooterHeading>
-          <SocialMedia />
-        </StyledFooterSection>
+        {/* <StyledFooterSection className="footer__social-media"> */}
+        {/*  <FooterHeading>{socialMediaHeading}</FooterHeading> */}
+        {/* <SocialMedia /> */}
+        {/* </StyledFooterSection> */}
       </Wrapper>
       <FooterRights />
       <Grid colors={{ lines: footerGridColor }} />
@@ -78,3 +78,5 @@ const Footer = ({ footerGridColor }) => {
 };
 
 export default Footer;
+
+// todo: add social media when it will be ready

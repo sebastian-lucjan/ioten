@@ -60,13 +60,27 @@ export const StyledMenu = styled.nav`
   }
 `;
 
+// font-family: ${({ theme, isBold }) => (isBold  ? theme.font.family.myriadPro.bold : theme.font.family.myriadPro.regular)};
 export const StyledLink = styled.li`
   font-size: ${({ theme }) => theme.font.size.paragraph};
+
   list-style: none;
   align-self: center;
   margin: 20px auto;
   cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-3px);
+    font-weight: 800;
+  }
+
+  ${({ theme }) => theme.mq.tablet} {
+    color: ${({ theme, whiteNavigationText }) => (whiteNavigationText ? theme.color.white : theme.color.darkestGray)};
+  }
 `;
+
 export const StyledLogo = styled.a`
   display: block;
   margin: 16px;

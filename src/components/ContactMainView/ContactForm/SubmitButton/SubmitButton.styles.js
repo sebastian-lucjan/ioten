@@ -6,7 +6,16 @@ export const StyledSubmitButton = styled.button`
   height: 60px;
   width: calc(100vw - 80px);
   margin: 2rem auto 0 auto;
-  background: ${({ theme, backgroundColor }) => backgroundColor || theme.color.darkestGray};
+  background: ${({ theme, backgroundColor, hasError, isLoading }) => {
+    if (hasError) {
+      return theme.color.red;
+    }
+    if (isLoading) {
+      return theme.color.yellow;
+    }
+
+    return backgroundColor || theme.color.darkestGray;
+  }};
 
   word-spacing: 5px;
 
@@ -15,27 +24,29 @@ export const StyledSubmitButton = styled.button`
   font-size: ${({ theme }) => theme.font.size.headingSmall};
   color: ${({ theme, textColor }) => textColor || theme.color.white};
   border: none;
-  box-shadow: 4px 4px 0 #0008;
-  cursor: pointer;
+  box-shadow: 4px 4px 0 ${({ hasError }) => (hasError ? 'hsla(0, 84%, 52%, 60%)' : `#0008`)};
+  cursor: ${({ hasError }) => (hasError ? 'not-allowed' : 'pointer')};
   transition: 0.2s;
 
   &:active {
     box-shadow: 0 0 0 #0008;
 
     transform: translate(4px, 4px);
+
+    ${({ hasError }) => (hasError ? 'translate(4px, 4px)' : 'translate(px, 4px)')};
   }
 
   ${({ theme }) => theme.mq.tablet} {
     font-size: ${({ theme }) => theme.font.size.paragraph};
-    width: unset;
+    width: calc(50% - 20px);
     margin: 1rem 0;
     padding: 1.4rem 4rem;
   }
 
   ${({ theme }) => theme.mq.smallDesktop} {
+    padding: 1.4rem;
     font-size: ${({ theme }) => theme.font.size.paragraphSmall};
     width: 100%;
-    height: 48px;
   }
 
   ${({ theme }) => theme.mq.mediumDesktop} {

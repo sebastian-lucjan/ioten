@@ -62,9 +62,10 @@ export const StyledTextAreaInput = styled(StyledTextInput)`
 
   textarea {
     border: none;
-    padding-top: 24px;
+    padding: 1rem;
     width: 100%;
     border-bottom: 1px ${({ theme }) => theme.color.black} solid;
+    resize: vertical;
   }
 
   textarea:focus ~ p {
@@ -92,6 +93,7 @@ export const StyledTextAreaInput = styled(StyledTextInput)`
 export const StyledCheckbox = styled.div`
   height: 32px;
   width: 100%;
+  margin-bottom: 1rem;
 
   label {
     display: flex;

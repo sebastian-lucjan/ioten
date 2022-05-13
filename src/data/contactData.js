@@ -26,12 +26,13 @@ const contactData = {
       button: 'Wyślij  wiadomość',
       conditions: {
         nameStringConditions: {
-          required: 'To pole jest wymagane.',
+          required: 'Pole "Imię" jest wymagane.',
           minLength: { value: 3, message: 'Minimalna długość imienia to 3 znaki.' },
           maxLength: { value: 80, message: 'Maksymalna długość imienia to 80 znaków.' },
         },
-        emailStringConditions: { required: 'To pole jest wymagane.', pattern: { value: /^\S+@\S+$/i, message: 'Wpisz poprawny adres email.' } },
+        emailStringConditions: { required: 'Pole "Email" jest wymagane.', pattern: { value: /^\S+@\S+$/i, message: 'Wpisz poprawny adres email.' } },
         companyStringConditions: {
+          required: false,
           minLength: { value: 3, message: 'Minimalna długość nazwy firmy to 3 znaki.' },
           maxLength: { value: 80, message: 'Maksymalna długość nazwy firmy to 80 znaków.' },
         },
@@ -41,12 +42,12 @@ const contactData = {
           maxLength: { value: 18, message: 'Maksymalna długość numeru telefonu to 18 znaków.' },
         },
         textareaStringConditions: {
-          required: 'To pole jest wymagane.',
+          required: 'Pole "Twoja wiadomość" jest wymagane.',
           minLength: { value: 5, message: 'Wiadomość jest zbyt krótka, postaraj się bardziej!' },
           maxLength: { value: 1000, message: 'Wiadomość jest zbyt długa, przekroczyła 1000 znaków.' },
         },
-        policyCheckboxConditions: { required: 'To pole jest wymagane.' },
-        ndaCheckboxConditions: {},
+        policyCheckboxConditions: { required: 'Potwierdzenie akceptacji polityki prywatności jest wymagane.' },
+        ndaCheckboxConditions: { required: false },
       },
     },
   },

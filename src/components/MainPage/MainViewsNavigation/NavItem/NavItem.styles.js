@@ -5,7 +5,6 @@ export const StyledLink = styled.a`
   font-size: 22px;
   transform: ${({ type }) => (type === 'next' ? 'scaleX(-1)' : null)};
   line-height: 22px;
-  color: ${({ theme, setColor }) => setColor || theme.color.darkestGray};
 `;
 
 export const StyledNavItem = styled.div`
@@ -13,6 +12,41 @@ export const StyledNavItem = styled.div`
   flex-direction: ${({ type }) => (type === 'prev' ? 'row' : 'row-reverse')};
   width: 50%;
   cursor: pointer;
+  transition: all 0.3s ease;
+
+  color: ${({ theme, pageIndex }) => {
+    if (typeof window !== 'undefined' && 'ontouchstart' in document.documentElement) {
+      console.log('touch');
+    }
+    if (pageIndex === 1) {
+      return theme.color.lightestGray;
+    }
+
+    return theme.color.darkestGray;
+  }};
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    color: ${({ theme, pageIndex }) => {
+      if (pageIndex === 1) {
+        return theme.color.lighterGray;
+      }
+
+      return theme.color.darkerGray;
+    }};
+
+    &:hover {
+      transform: scale(1.02);
+      transform-origin: ${({ type }) => (type === 'prev' ? 'left' : 'right')};
+
+      color: ${({ theme, pageIndex }) => {
+        if (pageIndex === 1) {
+          return theme.color.lightestGray;
+        }
+
+        return theme.color.darkestGray;
+      }};
+    }
+  }
 
   .styled-nav-item__paragraph {
     display: none;
@@ -54,7 +88,6 @@ export const StyledHeading = styled.h3`
   font-size: ${({ theme }) => theme.font.size.smallText};
   text-align: ${({ type }) => (type === 'next' ? 'right' : 'left')};
   line-height: 24px;
-  color: ${({ theme, color }) => color || theme.color.darkestGray};
 
   ${({ theme }) => theme.mq.tablet} {
     line-height: 24px;
@@ -80,7 +113,7 @@ export const StyledParagraph = styled.p`
   font-weight: normal;
   font-size: ${({ theme }) => theme.font.size.smallText};
   text-align: ${({ type }) => (type === 'next' ? 'right' : 'left')};
-  color: ${({ theme, color }) => color || theme.color.darkestGray};
+  //color: ${({ theme, color }) => color || theme.color.darkestGray};
 
   line-height: 20px;
 

@@ -24,10 +24,10 @@ export default function ServicesStages() {
 
   return (
     <MainSectionWrapper background={white}>
-      <Wrapper>
+      <Wrapper id="services-stages">
         <Grid colors={{ lines: yellowGrayYellow }} />
 
-        <StagesIntro heading={heading} paragraph={paragraph} stagesCaption={stagesCaption} />
+        <StagesIntro id="services-stages" heading={heading} paragraph={paragraph} stagesCaption={stagesCaption} />
         <StagesList stages={stagesArray} />
       </Wrapper>
     </MainSectionWrapper>

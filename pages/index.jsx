@@ -1,3 +1,4 @@
+import MainPageContext from 'src/context/mainPageContext';
 import BaseLayout from 'src/components/BaseLayout';
 import MainPage from 'src/components/MainPage';
 import MottoInterlude from 'src/components/MottoInterlude';
@@ -8,24 +9,39 @@ import Testimonials from 'src/components/Testimonials';
 import { pageData } from 'src/data/pageData';
 import theme from 'src/assets/styles/theme';
 import { NextSeo } from 'next-seo';
+import { useEffect, useRef, useState } from 'react';
+import useOnDarkScreen from 'src/hooks/useOnDarkScreen';
 
 export default function Home() {
+  const [currentPage, setCurrentPage] = useState(0);
+  const [dataBooster, setDataBooster] = useState('initial-state');
+
+  const ref = useRef(null);
+  const onDarkScreen = useOnDarkScreen(ref, '-36px');
+
+  useEffect(() => {
+    return () => {
+      setCurrentPage(0); // reset to initial state
+      setDataBooster('initial-state');
+    };
+  }, []);
+
   const {
     headSection: { title, description, canonical },
   } = pageData;
 
   return (
-    <>
+    <MainPageContext.Provider value={{ pageIndex: currentPage, setCurrentPage, dataBooster, setDataBooster }}>
       <NextSeo title={title} description={description} canonical={canonical} />
-      <BaseLayout footerGridColor={theme.gradient.yellowToGray}>
-        <MainPage />
+      <BaseLayout whiteNavigationText={onDarkScreen} footerGridColor={theme.gradient.yellowToGray}>
+        <MainPage setRef={ref} />
         <MottoInterlude />
         <ServicesAxis />
         <Testimonials />
         <BlogShort />
         <IdeaInterlude />
       </BaseLayout>
-    </>
+    </MainPageContext.Provider>
   );
 }
 
