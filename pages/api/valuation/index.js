@@ -26,8 +26,23 @@ export default async (req, res) => {
         res.status(200).json({
           status: 'payload_sent',
         });
-      } catch (e) {
-        console.log(e.message);
+      } catch (error) {
+        console.log('error:', error);
+        console.log(error.message);
+
+        if (error?.details[0]?.message) {
+          const payloadError = {
+            label: error.details[0].context.label,
+            message: error.details[0].message,
+            type: error.details[0].type,
+          };
+
+          console.log('payloadError:', payloadError);
+
+          res.status(422).json({ status: 'not_created', payloadError });
+        } else {
+          res.status(422).json({ status: 'not_created', error });
+        }
       }
       break;
     }

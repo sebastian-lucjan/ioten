@@ -30,6 +30,7 @@ const Valuation = () => {
     handleSubmit,
     reset,
     watch,
+    trigger,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm();
 
@@ -42,10 +43,15 @@ const Valuation = () => {
 
   const optionsArray = surveySteps[surveyStep].options.map((option) => option.name);
 
-  // check if questions options are selected by checking if
+  console.log('errors', errors);
+
+  // check if questions options are selected by checking if the watch function is returning a value
   useEffect(() => {
-    const result = !optionsArray.some((option) => watch()[option]);
+    const result = !optionsArray.some((option) => {
+      return watch()[option];
+    });
     setButtonDisabled(result);
+
     if (!surveySteps[surveyStep].required) {
       setButtonDisabled(false);
     }
@@ -64,6 +70,7 @@ const Valuation = () => {
         register,
         reset,
         watch,
+        trigger,
         isSubmitting,
       }}
     >

@@ -104,3 +104,22 @@ const valuationData = {
 };
 
 export default valuationData;
+
+// surveyContactDetails: [
+//   {
+//     heading: 'Imię',
+//     options: [{ text: '', type: 'text', name: 'name' }],
+//     required: true,
+//   },
+//
+//   {
+//     heading: 'Email',
+//     options: [{ text: '', type: 'text', name: 'email' }],
+//     required: true,
+//   },
+//   {
+//     heading: 'Informacje marketingowe związane z działalnością ioten',
+//     options: [{ text: '', type: 'checkbox', name: 'marketing' }],
+//     required: true,
+//   },
+// ],

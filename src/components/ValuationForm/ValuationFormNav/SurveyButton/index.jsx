@@ -85,18 +85,24 @@ export function SurveySubmitButton() {
 }
 
 export function SurveyNextButton() {
-  const { surveyStep, setSurveyStep, buttonDisabled } = useContext(ValuationSurveyContext);
+  const { surveyStep, setSurveyStep, buttonDisabled, trigger } = useContext(ValuationSurveyContext);
 
   const maxStep = valuationData.surveySteps.length - 1;
 
   const handleNext = () => {
+    console.log(surveyStep);
+    if (surveyStep > 1) {
+      console.log('valuationData.surveySteps[surveyStep].options[0].name', valuationData.surveySteps[surveyStep].options[0].name);
+      trigger(valuationData.surveySteps[surveyStep].options[0].name);
+    }
+
     if (surveyStep < maxStep) {
       setSurveyStep(surveyStep + 1);
     }
   };
 
   return (
-    <StyledSurveyNextButton onClick={handleNext} type="button" disabled={buttonDisabled} buttonDisabled={buttonDisabled}>
+    <StyledSurveyNextButton onClick={handleNext} type="button" disabled={buttonDisabled}>
       <p>Dalej</p>
       <MdArrowBackIos />
     </StyledSurveyNextButton>

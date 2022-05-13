@@ -13,12 +13,12 @@ const schema = Joi.object({
   cms: Joi.bool(),
   support: Joi.bool(),
   others: Joi.bool(),
-  companyDescription: Joi.string().min(1).max(300).required(),
-  companyWebsite: Joi.string().min(3).max(200).allow(''),
-  budget: Joi.string().min(3).max(60).allow(''),
-  moreInfo: Joi.string().min(3).max(400).allow(''),
-  name: Joi.string().min(1).max(40).required(),
-  email: Joi.string().email().min(6).max(80).required(),
+  companyDescription: Joi.string().min(1).required(),
+  companyWebsite: Joi.string().min(1).allow(''),
+  budget: Joi.string().min(1).allow(''),
+  moreInfo: Joi.string().min(1).allow(''),
+  name: Joi.string().min(1).required(),
+  email: Joi.string().min(1).required(),
 });
 // todo: check if email is valid or delete .email()
 
