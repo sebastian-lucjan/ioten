@@ -3,7 +3,7 @@ import { MdArrowBackIos } from 'react-icons/md';
 import { useContext } from 'react';
 import valuationData from 'src/data/valuationData';
 import { ValuationSurveyContext } from 'pages/valuation';
-import useOnSubmit from 'src/helpers/onSumbit';
+import onSubmit from 'src/helpers/onSumbit';
 
 const SurveyButton = styled.button`
   display: flex;
@@ -24,7 +24,7 @@ const SurveyButton = styled.button`
 
 const StyledSurveyNextButton = styled(SurveyButton)`
   color: ${({ theme }) => theme.color.white};
-  background-color: ${({ theme, disabled }) => (disabled ? theme.color.blueLight : theme.color.blue)};
+  background: ${({ theme, disabled }) => (disabled ? theme.color.blueLight : theme.gradient.blue)};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 
   svg {
@@ -38,7 +38,7 @@ const StyledSurveyPrevButton = styled(SurveyButton)`
 `;
 
 const StyledSurveySubmitButton = styled(SurveyButton)`
-  background-color: ${({ theme, disabled }) => (disabled ? theme.color.blueLight : theme.color.blue)};
+  background: ${({ theme, disabled }) => (disabled ? theme.color.blueLight : theme.gradient.blue)};
 
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 
@@ -46,38 +46,37 @@ const StyledSurveySubmitButton = styled(SurveyButton)`
 
   span {
     //icon
-    transition: 6s;
+    transition: 3s;
     font-size: 2.4rem;
     margin-left: 1rem;
   }
 
-  ${({ theme }) => theme.mq.smallDesktop} {
-    &:hover {
-      .rocket {
-        transform: ${({ disabled }) => (disabled ? 'translate(0, 0)' : 'translate(120vw, -120vh) scale(8)')};
-      }
-    }
+  .rocket-start {
+    transform: ${({ disabled }) => (disabled ? 'translate(0, 0)' : 'translate(120vw, -120vh) scale(8)')};
   }
 `;
 
 export function SurveySubmitButton() {
   const { buttonDisabled, handleSubmit, watch, reset, isSubmitting } = useContext(ValuationSurveyContext);
 
-  console.log('watch', watch());
+  // console.log('watch', watch());
 
   return (
     <StyledSurveySubmitButton
       isSubmitting={isSubmitting}
       disabled={buttonDisabled}
-      onClick={handleSubmit(() => useOnSubmit(reset, watch))}
+      onClick={handleSubmit(() => onSubmit(reset, watch))}
       type="submit"
     >
       {isSubmitting ? (
-        <p>Wysyłanie...</p>
+        <>
+          <p>Wysyłanie...</p>
+          <span className="rocket-start">🚀</span>
+        </>
       ) : (
         <>
           <p>Wyślij </p>
-          <span className="rocket">🚀</span>
+          <span>🚀</span>
         </>
       )}
     </StyledSurveySubmitButton>
@@ -85,18 +84,15 @@ export function SurveySubmitButton() {
 }
 
 export function SurveyNextButton() {
-  const { surveyStep, setSurveyStep, buttonDisabled, trigger } = useContext(ValuationSurveyContext);
+  const { surveyStep, setSurveyStep, buttonDisabled, trigger, errors } = useContext(ValuationSurveyContext);
 
   const maxStep = valuationData.surveySteps.length - 1;
 
-  const handleNext = () => {
-    console.log(surveyStep);
-    if (surveyStep > 1) {
-      console.log('valuationData.surveySteps[surveyStep].options[0].name', valuationData.surveySteps[surveyStep].options[0].name);
-      trigger(valuationData.surveySteps[surveyStep].options[0].name);
-    }
+  const handleNext = async () => {
+    await trigger(valuationData.surveySteps[surveyStep].options[0].name);
 
-    if (surveyStep < maxStep) {
+    // go to next step if there are no errors and this is not last step
+    if (surveyStep < maxStep && Object.keys(errors).length === 0) {
       setSurveyStep(surveyStep + 1);
     }
   };
@@ -110,10 +106,10 @@ export function SurveyNextButton() {
 }
 
 export function SurveyPrevButton() {
-  const { surveyStep, setSurveyStep } = useContext(ValuationSurveyContext);
+  const { surveyStep, setSurveyStep, errors } = useContext(ValuationSurveyContext);
 
   const handlePrev = () => {
-    if (surveyStep > 0) {
+    if (surveyStep > 0 && Object.keys(errors).length === 0) {
       setSurveyStep(surveyStep - 1);
     }
   };

@@ -9,7 +9,7 @@ export const StyledGoHomeButton = styled.button`
   height: 4rem;
   line-height: 4rem;
 
-  background-color: ${({ theme }) => theme.color.blue};
+  background: ${({ theme }) => theme.gradient.blue};
   border: none;
   border-radius: 0.4rem;
 

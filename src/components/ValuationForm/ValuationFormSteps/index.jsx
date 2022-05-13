@@ -23,7 +23,7 @@ const StageBar = styled.div`
   left: 0;
 
   border-radius: 1rem;
-  background-color: ${({ theme }) => theme.color.blue};
+  background: ${({ theme }) => theme.gradient.blue};
   width: ${({ surveyStep }) => `${((surveyStep + 1) * 100) / valuationData.surveySteps.length}%`};
   height: 1rem;
 `;

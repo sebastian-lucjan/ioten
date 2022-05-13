@@ -15,20 +15,18 @@ export default async (req, res) => {
     case 'POST': {
       try {
         const payload = req.body;
-        console.log('payload req.body', payload);
 
         const payloadValidated = await validate({ ...payload });
         console.log('payloadValidated:', payloadValidated);
 
         await sendValuationFormToIoten(payloadValidated);
-        console.log('after sendValuationFormToIoten');
 
         res.status(200).json({
           status: 'payload_sent',
         });
       } catch (error) {
-        console.log('error:', error);
-        console.log(error.message);
+        console.log('error POST:', error);
+        console.log('error.message POST:', error.message);
 
         if (error?.details[0]?.message) {
           const payloadError = {

@@ -17,8 +17,8 @@ const schema = Joi.object({
   companyWebsite: Joi.string().min(1).allow(''),
   budget: Joi.string().min(1).allow(''),
   moreInfo: Joi.string().min(1).allow(''),
-  name: Joi.string().min(1).required(),
-  email: Joi.string().min(1).required(),
+  name: Joi.string().min(3).required(),
+  email: Joi.string().min(3).required(),
 });
 // todo: check if email is valid or delete .email()
 

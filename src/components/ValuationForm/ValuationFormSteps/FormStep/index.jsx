@@ -41,7 +41,7 @@ const StyledTextarea = styled.div`
     width: 100%;
     border: 1px solid ${({ theme }) => theme.color.lightGray};
     border-radius: 4px;
-    //height: 32px;
+    height: 120px;
     padding: 8px;
     font-size: ${({ theme }) => theme.font.size.smallText};
   }
@@ -111,17 +111,17 @@ export default function FormStep({ surveyStep, register }) {
         <OptionDescription>{question.description}</OptionDescription>
 
         <OptionsContainer>
-          {question.options.map(({ text, type, name, inputCondition }) => {
-            if (type === 'checkbox') {
-              return <ValuationCheckbox key={name} register={register} inputConditions={inputCondition} text={text} name={name} />;
+          {question.options.map(({ text, type, name, inputConditions }) => {
+            switch (type) {
+              case 'text':
+                return <ValuationTextInput key={name} text={text} name={name} register={register} inputConditions={inputConditions} />;
+              case 'textarea':
+                return <ValuationTextarea key={name} text={text} name={name} register={register} inputConditions={inputConditions} />;
+              case 'checkbox':
+                return <ValuationCheckbox key={name} text={text} name={name} register={register} inputConditions={inputConditions} />;
+              default:
+                return null;
             }
-            if (type === 'textarea') {
-              return <ValuationTextarea key={name} register={register} inputConditions={inputCondition} text={text} name={name} />;
-            }
-            if (type === 'text') {
-              return <ValuationTextInput key={name} register={register} inputConditions={inputCondition} text={text} name={name} />;
-            }
-            return null;
           })}
         </OptionsContainer>
         {question.required ? (
@@ -133,32 +133,3 @@ export default function FormStep({ surveyStep, register }) {
     </StyledFormStep>
   );
 }
-
-// font-family: ${({ theme, weight }) => {
-//   switch (weight) {
-//     case 'light':
-//       return theme.font.family.myriadPro.light;
-//     case 'regular':
-//       return theme.font.family.myriadPro.bold;
-//     case 'black':
-//       return theme.font.family.myriadPro.black;
-//     default:
-//       return theme.font.family.myriadPro.bold;
-//   }
-// }};
-// font-weight: normal;
-// font-size: ${({ theme, size }) => {
-//   switch (size) {
-//     case 'xs': // 1.4rem
-//       return theme.font.size.smallText;
-//     case 'sm': // 2rem
-//       return theme.font.size.headingSmall;
-//     case 'md': // 2.8rem
-//       return theme.font.size.headingMedium;
-//     case 'lg': // 3.6rem
-//       return theme.font.size.headingSection;
-//     default:
-//       return theme.font.size.headingSmall; // 2rem
-//   }
-// }};
-// ${({ color }) => (color ? `color: ${color}` : '')}//passed color

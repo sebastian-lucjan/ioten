@@ -51,53 +51,97 @@ const valuationData = {
           text: '',
           type: 'textarea',
           name: 'companyDescription',
+          inputConditions: {
+            required: 'Krótki opis świadczonych przez Ciebie usług jest wymagany do zakończenia formularza.',
+            maxLength: { value: 300, message: 'Maksymalnie 300 znaków.' },
+          },
         },
       ],
       required: true,
-      inputConditions: {
-        required: 'Krótki opis świadczonych przez Ciebie usług jest wymagany do zakończenia formularza.',
-        minLength: { value: 3, message: 'Zbyt mała liczba znaków, dodaj dłuższy opis.' },
-        maxLength: { value: 300, message: 'Maksymalnie 300 znaków.' },
-      },
     },
 
     {
       heading: 'Podaj adres aktualnej strony internetowej?',
       description:
         'Jeśli posiadasz aktualną stronę internetową, podaj adres. Możesz podać też adres do social mediów (np. facebook, instagram, twitter, linkedin)',
-      options: [{ text: '', type: 'text', name: 'companyWebsite' }],
+      options: [
+        {
+          text: '',
+          type: 'text',
+          name: 'companyWebsite',
+          inputConditions: {
+            required: false,
+            maxLength: { value: 200, message: 'Maksymalna długość maila to 200 znaków.' },
+          },
+        },
+      ],
       required: false,
-      inputConditions: {
-        required: false,
-        maxLength: { value: 200, message: 'Maksymalna długość maila to 200 znaków.' },
-      },
     },
 
     {
       heading: 'Czy posiadasz zakładany budżet, jeśli tak to jaki?',
-      options: [{ text: '', type: 'textarea', name: 'budget' }],
+      options: [
+        {
+          text: '',
+          type: 'textarea',
+          name: 'budget',
+          inputConditions: {
+            required: false,
+            maxLength: { value: 200, message: 'Maksymalna długość pola "budżet" to 200 znaków.' },
+          },
+        },
+      ],
       required: false,
-      inputConditions: {
-        required: false,
-        maxLength: { value: 200, message: 'Maksymalna długość pola "budżet" to 60 znaków.' },
-      },
     },
 
     {
       heading: 'Powiedz więcej o swoim projekcie?',
-      options: [{ text: '', type: 'textarea', name: 'moreInfo' }],
+      options: [
+        {
+          text: '',
+          type: 'textarea',
+          name: 'moreInfo',
+          inputConditions: {
+            required: false,
+            maxLength: { value: 1000, message: 'Maksymalna długość pola "budżet" to 1000 znaków.' },
+          },
+        },
+      ],
       required: false,
     },
 
     {
       heading: 'Imię',
-      options: [{ text: '', type: 'text', name: 'name' }],
+      options: [
+        {
+          text: '',
+          type: 'text',
+          name: 'name',
+          inputConditions: {
+            required: 'Imię jest wymagane do zakończenia formularza.',
+            minLength: { value: 3, message: 'Minimalna długość pola imienia to 3 znaki.' },
+          },
+        },
+      ],
       required: true,
     },
 
     {
       heading: 'Email',
-      options: [{ text: '', type: 'text', name: 'email' }],
+      options: [
+        {
+          text: '',
+          type: 'text',
+          name: 'email',
+          inputConditions: {
+            required: 'Email jest wymagany do zakończenia formularza.',
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: 'Niepoprawny adres email.',
+            },
+          },
+        },
+      ],
       required: true,
     },
   ],

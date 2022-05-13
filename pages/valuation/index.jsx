@@ -25,6 +25,8 @@ const Valuation = () => {
   const [surveyStep, setSurveyStep] = useState(initialSurveyContext.surveyStep);
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
+  // const [submitSuccess, setSubmitSuccess] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -34,16 +36,12 @@ const Valuation = () => {
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm();
 
-  const isError = () => Object.keys(errors).length > 0;
-
   const {
     headSection: { title, description },
     surveySteps,
   } = valuationData;
 
   const optionsArray = surveySteps[surveyStep].options.map((option) => option.name);
-
-  console.log('errors', errors);
 
   // check if questions options are selected by checking if the watch function is returning a value
   useEffect(() => {
@@ -69,6 +67,7 @@ const Valuation = () => {
         handleSubmit,
         register,
         reset,
+        errors,
         watch,
         trigger,
         isSubmitting,
@@ -86,7 +85,6 @@ const Valuation = () => {
               <ValuationFormNav />
             </>
           )}
-          {isError() ? 'Uzupełnij odpowiednie pola' : null}
         </Wrapper>
         <Grid colors={gridColors} />
       </BaseLayout>

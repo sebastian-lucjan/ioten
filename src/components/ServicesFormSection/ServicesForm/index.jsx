@@ -19,14 +19,14 @@ export default function ServicesForm() {
 
   const captchaRef = useRef(null);
 
-  console.log('errors -> ', errors);
+  // console.log('errors -> ', errors);
 
   const { nameStringConditions, emailStringConditions, textareaStringConditions, policyCheckboxConditions, ndaCheckboxConditions } =
     contactData.contactContent.form.conditions;
 
   const isError = () => Object.keys(errors).length > 0;
 
-  console.log('isSubmitting ServicesForm -> ', isSubmitting);
+  // console.log('isSubmitting ServicesForm -> ', isSubmitting);
 
   return (
     <StyledServicesForm as="form" onSubmit={handleSubmit(() => onSubmit(reset, watch, captchaRef))}>
