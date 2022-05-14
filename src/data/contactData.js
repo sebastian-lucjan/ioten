@@ -27,8 +27,8 @@ const contactData = {
       conditions: {
         nameStringConditions: {
           required: 'Pole "Imię" jest wymagane.',
-          minLength: { value: 3, message: 'Minimalna długość imienia to 3 znaki.' },
-          maxLength: { value: 80, message: 'Maksymalna długość imienia to 80 znaków.' },
+          minLength: { value: 3, message: 'Minimalna długość "Imię" to 3 znaki.' },
+          maxLength: { value: 80, message: 'Maksymalna długość "Imię" to 80 znaków.' },
         },
         emailStringConditions: { required: 'Pole "Email" jest wymagane.', pattern: { value: /^\S+@\S+$/i, message: 'Wpisz poprawny adres email.' } },
         companyStringConditions: {

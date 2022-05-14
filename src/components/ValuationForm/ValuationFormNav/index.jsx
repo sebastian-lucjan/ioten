@@ -10,11 +10,16 @@ const StyledValuationFormNav = styled.div`
   flex-direction: column;
   justify-content: ${({ surveyStep }) => (surveyStep === valuationData.surveySteps.length - 1 ? 'space-between' : 'space-between')};
   align-items: center;
-  width: calc(100% - 80px);
+  width: 100%;
   height: calc(20% - 40px);
   top: 80%;
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   font-size: ${({ theme }) => theme.font.size.paragraphSmall};
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    position: relative;
+    top: unset;
+  } ;
 `;
 
 export default function ValuationFormNav() {

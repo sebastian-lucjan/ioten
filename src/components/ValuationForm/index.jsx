@@ -6,12 +6,19 @@ import FormStep from './ValuationFormSteps/FormStep';
 const Wrapper = styled.div`
   position: absolute;
   top: 22%;
-  width: calc(100% - 80px);
+  width: 100%;
   height: 55%;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    position: relative;
+    top: 0;
+
+    margin: 4rem 0;
+  } ;
 `;
 
 const FormWrapper = styled.form`
