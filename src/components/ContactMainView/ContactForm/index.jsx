@@ -2,9 +2,10 @@ import { useForm } from 'react-hook-form';
 import contactData from 'src/data/contactData';
 import { onSubmit } from 'src/helpers/form';
 import { TextParagraph } from 'src/components/TextComponents';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import FormErrors from 'src/components/FormErrors';
+import SuccessMessage from 'src/components/SuccessMessage';
 import { StyledCaptcha, Wrapper } from './ContactForm.styles';
 import SubmitButton from './SubmitButton';
 import { CheckboxInput, TextArea, TextInput } from './FormFields';
@@ -21,6 +22,7 @@ export default function ContactForm() {
   const [token, setToken] = useState(null);
   const captchaRef = useRef(null);
   const [error, setError] = useState('');
+  const [sendSuccess, setSendSuccess] = useState(false);
 
   console.log('errors -> ', errors.length);
 
@@ -43,6 +45,12 @@ export default function ContactForm() {
   const onExpire = () => {
     setToken('');
   };
+
+  useEffect(() => {
+    if (!sendSuccess && isSubmitSuccessful) {
+      setSendSuccess(true);
+    }
+  }, [isSubmitSuccessful]);
 
   return (
     <Wrapper hasError={isError()} as="form" onSubmit={handleSubmit(() => onSubmit(reset, watch, setError, token, captchaRef))}>
@@ -84,8 +92,11 @@ export default function ContactForm() {
             {error}
           </TextParagraph>
         ) : null}
-        <SubmitButton loading={isSubmitting} hasError={isError()} isSubmitSuccessful={isSubmitSuccessful} />
+        <SubmitButton reset={reset} loading={isSubmitting} hasError={isError()} isSubmitSuccessful={isSubmitSuccessful} />
       </div>
+
+      {sendSuccess ? <SuccessMessage setSendSuccess={setSendSuccess} /> : null}
+
       {isError() ? <FormErrors hasError errors={errors} /> : null}
     </Wrapper>
   );

@@ -4,6 +4,7 @@ export const StyledSubmitButton = styled.button`
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 60px;
   width: calc(100vw - 80px);
   margin: 2rem auto 0 auto;
@@ -15,7 +16,6 @@ export const StyledSubmitButton = styled.button`
   }};
 
   word-spacing: 5px;
-  //line-height: 100%;
   line-height: 32px;
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   font-size: ${({ theme }) => theme.font.size.headingSmall};
@@ -54,11 +54,10 @@ export const StyledSubmitButton = styled.button`
 
   ${({ theme }) => theme.mq.mediumDesktop} {
     width: 100%;
-    font-size: ${({ theme }) => theme.font.size.headingSmall};
+    font-size: ${({ theme }) => theme.font.size.paragraph};
   }
 
   ${({ theme }) => theme.mq.hugeDesktop} {
-    //width: unset;
     font-size: ${({ theme }) => theme.font.size.headingSmall};
     height: 60px;
   }

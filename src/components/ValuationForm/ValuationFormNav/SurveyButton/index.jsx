@@ -45,7 +45,6 @@ const StyledSurveySubmitButton = styled(SurveyButton)`
   color: ${({ theme }) => theme.color.white};
 
   span {
-    //icon
     transition: 3s;
     font-size: 2.4rem;
     margin-left: 1rem;
@@ -53,7 +52,30 @@ const StyledSurveySubmitButton = styled(SurveyButton)`
 
   .rocket-start {
     transform: ${({ disabled }) => (disabled ? 'translate(0, 0)' : 'translate(120vw, -120vh) scale(8)')};
+    //animation: none;
   }
+
+  //.rocket-before-start {
+  //  animation: rocket-shake 1s infinite backwards;
+  //}
+  //
+  //@keyframes rocket-shake {
+  //  0% {
+  //    transform: translateY(1px);
+  //  }
+  //  25% {
+  //    transform: translateY(-1px) scale(1.03);
+  //  }
+  //  50% {
+  //    transform: translateY(1px);
+  //  }
+  //  75% {
+  //    transform: translateY(-1px) scale(1.03);
+  //  }
+  //  100% {
+  //    transform: translateY(1px);
+  //  }
+  //}
 `;
 
 export function SurveySubmitButton() {
@@ -74,7 +96,7 @@ export function SurveySubmitButton() {
       ) : (
         <>
           <p>Wyślij </p>
-          <span>🚀</span>
+          <span className="rocket-before-start">🚀</span>
         </>
       )}
     </StyledSurveySubmitButton>

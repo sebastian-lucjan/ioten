@@ -22,7 +22,8 @@ export const ServiceStage = styled.div`
     height: 22px;
     background: ${({ theme, color, desaturate }) => (desaturate ? theme.color.lightGray : color)};
     border: 2px ${({ theme, color, desaturate }) => (desaturate ? theme.color.lightGray : color)} solid;
-    box-shadow: inset 0 0 0 6px ${({ theme }) => theme.color.lightestGray};
+    //box-shadow: inset 0 0 0 6px ${({ theme }) => theme.color.lightestGray};
+    box-shadow: inset 0 0 0 6px ${({ theme }) => theme.color.white};
     border-radius: 50%;
   }
 
