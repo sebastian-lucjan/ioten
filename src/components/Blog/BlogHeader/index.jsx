@@ -5,7 +5,7 @@ import { TextCaption } from 'src/components/TextComponents';
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import { StyledBlogHeader } from 'src/components/Blog/BlogHeader/BlogHeader.styles';
 
-export default function BlogHeader({ setRef }) {
+export default function BlogHeader() {
   const { category, heading } = blogData.intro;
   const {
     color: { lightGray },
@@ -15,9 +15,7 @@ export default function BlogHeader({ setRef }) {
   return (
     <MainSectionWrapper smaller colors={{ background: lightGrayGradient }}>
       <StyledBlogHeader>
-        <TextCaption ref={setRef} className="blog-header__category">
-          {category}
-        </TextCaption>
+        <TextCaption className="blog-header__category">{category}</TextCaption>
         <h1 className="blog-header__heading">{heading}</h1>
         <Grid colors={{ lines: lightGray, innerLines: grayToTransparent }} />
       </StyledBlogHeader>

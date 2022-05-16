@@ -4,10 +4,10 @@ import BlogHeader from './BlogHeader';
 
 const StyledBlog = styled.div``;
 
-export default function Blog({ setRef }) {
+export default function Blog() {
   return (
     <StyledBlog>
-      <BlogHeader setRef={setRef} />
+      <BlogHeader />
       <BlogPostsAll />
     </StyledBlog>
   );

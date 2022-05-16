@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import ContactText from './ContactText';
 import ContactDetails from './ContactDetails';
 
-export default function ContactInfo({ setRef }) {
+export default function ContactInfo() {
   return (
     <StyledContactInfo>
       <div className="contact-info__container">
-        <ContactText setRef={setRef} />
+        <ContactText />
         <ContactDetails />
       </div>
     </StyledContactInfo>

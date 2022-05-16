@@ -18,13 +18,13 @@ const StyledMediumRing = styled.div`
   }
 `;
 
-const MottoInterlude = ({ setRef }) => {
+const MottoInterlude = () => {
   const {
     color: { white },
   } = theme;
 
   return (
-    <MainSectionWrapper background={white} smaller ref={setRef}>
+    <MainSectionWrapper background={white} smaller>
       <MottoWrapper>
         <MottoParagraph weight="bold" className="motto__text">
           {motto.text}
