@@ -1,7 +1,7 @@
 import contactData from 'src/data/contactData';
 import styled from 'styled-components';
 
-export default function ContactText() {
+export default function ContactText({ setRef }) {
   const {
     heading,
     text: [firstParagraph, secondParagraph],
@@ -9,7 +9,9 @@ export default function ContactText() {
 
   return (
     <StyledContactText>
-      <h1 className="contact-details__header">{heading}</h1>
+      <h1 ref={setRef} className="contact-details__header">
+        {heading}
+      </h1>
 
       <p className="contact-details__paragraph">{firstParagraph}</p>
       <p className="contact-details__paragraph">{secondParagraph}</p>

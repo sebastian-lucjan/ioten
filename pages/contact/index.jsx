@@ -7,8 +7,14 @@ import ContactInfo from 'src/components/ContactMainView/ContactInfo';
 import ContactForm from 'src/components/ContactMainView/ContactForm';
 import Grid from 'src/components/Grid';
 import Wrapper from 'src/components/ContactMainView/ContactMainView.styles';
+import { useRef } from 'react';
+import useScrollTop from 'src/hooks/useScrollTop';
 
 const Contact = () => {
+  const ref = useRef(null);
+
+  const hideScrollTop = useScrollTop(ref, '0px');
+
   const {
     headSection: { title, description },
   } = contactData;
@@ -16,9 +22,9 @@ const Contact = () => {
   return (
     <>
       <NextSeo title={title} description={description} />
-      <BaseLayout footerGridColor={theme.gradient.grayToBlack}>
+      <BaseLayout hideScrollTop={hideScrollTop} footerGridColor={theme.gradient.grayToBlack}>
         <Wrapper>
-          <ContactInfo />
+          <ContactInfo setRef={ref} />
           <ContactForm />
           <Grid colors={{ lines: theme.gradient.blackToGray, innerLines: theme.gradient.blackToTransparent }} />
         </Wrapper>

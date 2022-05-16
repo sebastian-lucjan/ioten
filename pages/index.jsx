@@ -11,6 +11,7 @@ import theme from 'src/assets/styles/theme';
 import { NextSeo } from 'next-seo';
 import { useEffect, useRef, useState } from 'react';
 import useOnDarkScreen from 'src/hooks/useOnDarkScreen';
+import useScrollTop from '../src/hooks/useScrollTop';
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -18,6 +19,7 @@ export default function Home() {
 
   const ref = useRef(null);
   const onDarkScreen = useOnDarkScreen(ref, '-36px');
+  const hideScrollTop = useScrollTop(ref, '0px');
 
   useEffect(() => {
     return () => {
@@ -33,7 +35,7 @@ export default function Home() {
   return (
     <MainPageContext.Provider value={{ pageIndex: currentPage, setCurrentPage, dataBooster, setDataBooster }}>
       <NextSeo title={title} description={description} canonical={canonical} />
-      <BaseLayout whiteNavigationText={onDarkScreen} footerGridColor={theme.gradient.yellowToGray}>
+      <BaseLayout hideScrollTop={hideScrollTop} whiteNavigationText={onDarkScreen} footerGridColor={theme.gradient.yellowToGray}>
         <MainPage setRef={ref} />
         <MottoInterlude />
         <ServicesAxis />

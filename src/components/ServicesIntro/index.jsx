@@ -10,7 +10,7 @@ import Image from 'next/image';
 import servicesImageIntro from 'src/assets/images/services-image-03.jpeg';
 import { Button, ImageContainer, ProsList, SectionHeading, SectionParagraphs, Wrapper } from './ServicesIntro.styles';
 
-export default function ServicesIntro() {
+export default function ServicesIntro({ setRef }) {
   const {
     gradient: { grayToNavyBlue, white },
   } = theme;
@@ -18,7 +18,7 @@ export default function ServicesIntro() {
 
   return (
     <MainSectionWrapper background={white}>
-      <Wrapper>
+      <Wrapper ref={setRef}>
         <div className="services__text-content">
           <div>
             <TextCaption>{servicesIntro.caption}</TextCaption>
