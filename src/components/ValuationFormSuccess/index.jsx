@@ -4,15 +4,45 @@ import { GoHomeButton, RestartValuationFormButton } from './ValuationFormButtons
 
 const Wrapper = styled.div`
   position: absolute;
-  top: 30vh;
-  width: calc(100% - 80px);
+
+  top: 22%;
+  width: 100%;
+  height: 55%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    position: relative;
+    top: 10vh;
+  }
+
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    top: 15vh;
+    padding: 0 180px 0 0;
+  }
 `;
+
 const FormSuccessHeading = styled.h2`
   margin-bottom: 2rem;
 
   font-size: ${({ theme }) => theme.font.size.paragraphBig};
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   color: ${({ theme }) => theme.color.darkestGray};
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    font-size: ${({ theme }) => theme.font.size.headingSection};
+  }
+
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    font-size: ${({ theme }) => theme.font.size.headingBigDesktop};
+  }
+
+  ${({ theme }) => theme.mq.hugeDesktop} {
+    font-size: ${({ theme }) => theme.font.size.headingPage};
+  }
 `;
 
 const FormSuccessDescription = styled.p`
@@ -22,6 +52,10 @@ const FormSuccessDescription = styled.p`
 
   span {
     font-family: ${({ theme }) => theme.font.family.myriadPro.black};
+  }
+
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    font-size: ${({ theme }) => theme.font.size.paragraph};
   }
 `;
 

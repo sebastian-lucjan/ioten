@@ -21,12 +21,7 @@ export const StyledContentWrapper = styled.div`
 
   ${({ theme }) => theme.mq.tablet} {
     width: 50%;
-    padding-left: 20px;
   }
-
-  ${({ theme }) => theme.mq.desktop} {
-    padding-left: 20px;
-  } ;
 `;
 
 export const Wrapper = styled.div`

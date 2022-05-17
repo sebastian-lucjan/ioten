@@ -67,7 +67,12 @@ const Navigation = ({ whiteNavigationText, setRef }) => {
           {navigationData.map(({ name, href, as: navButtonPath }) => {
             return (
               <Link key={uuid()} href={href} as={navButtonPath}>
-                <StyledLink whiteNavigationText={isWhite} onClick={() => closeNavTheSamePath(currentPath, navButtonPath, setIsOpen)}>
+                <StyledLink
+                  linkHref={navButtonPath}
+                  currentPath={currentPath}
+                  whiteNavigationText={isWhite}
+                  onClick={() => closeNavTheSamePath(currentPath, navButtonPath, setIsOpen)}
+                >
                   {name}
                 </StyledLink>
               </Link>

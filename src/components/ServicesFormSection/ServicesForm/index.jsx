@@ -2,31 +2,35 @@ import { useForm } from 'react-hook-form';
 import SubmitButton from 'src/components/ContactMainView/ContactForm/SubmitButton';
 import contactData from 'src/data/contactData';
 import { CheckboxInput } from 'src/components/ContactMainView/ContactForm/FormFields';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { onSubmit } from 'src/helpers/formServices';
+import SuccessMessage from 'src/components/SuccessMessage';
 import { FormDuel, StyledServicesForm, StyledTextAreaWrapper, StyledTextInputWrapper } from './ServicesForm.styles';
 import ServicesFormErrors from './ServicesFormErrors';
 
 export default function ServicesForm() {
+  const [sendSuccess, setSendSuccess] = useState(false);
+
   const {
     register,
     handleSubmit,
     reset,
     watch,
-
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm();
 
   const captchaRef = useRef(null);
 
-  // console.log('errors -> ', errors);
+  useEffect(() => {
+    if (!sendSuccess && isSubmitSuccessful) {
+      setSendSuccess(true);
+    }
+  }, [isSubmitSuccessful]);
 
   const { nameStringConditions, emailStringConditions, textareaStringConditions, policyCheckboxConditions, ndaCheckboxConditions } =
     contactData.contactContent.form.conditions;
 
   const isError = () => Object.keys(errors).length > 0;
-
-  // console.log('isSubmitting ServicesForm -> ', isSubmitting);
 
   return (
     <StyledServicesForm as="form" onSubmit={handleSubmit(() => onSubmit(reset, watch, captchaRef))}>
@@ -66,7 +70,10 @@ export default function ServicesForm() {
       {/*  </TextParagraph> */}
       {/* ) : null} */}
 
-      <SubmitButton loading={isSubmitting} hasError={isError()} />
+      <SubmitButton loading={isSubmitting} hasError={isError()} isSubmitSuccessful={isSubmitSuccessful} />
+
+      {sendSuccess ? <SuccessMessage setSendSuccess={setSendSuccess} /> : null}
+
       {isError() ? <ServicesFormErrors hasError errors={errors} /> : null}
     </StyledServicesForm>
   );

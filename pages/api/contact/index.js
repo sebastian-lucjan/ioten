@@ -27,10 +27,7 @@ export default async (req, res) => {
             // response: token,
             // }
           )
-          .then((response) => {
-            console.log('response.data.success', response.data.success);
-            return response;
-          })
+          // .then((response) => response)
           .catch((error) => console.log('error form.js ->', error));
 
         console.log('hCaptchaResponse ===>', hCaptchaResponse);

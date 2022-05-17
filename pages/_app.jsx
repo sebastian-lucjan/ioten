@@ -2,11 +2,28 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'src/assets/styles/theme';
 import GlobalStyle from 'src/assets/styles/GlobalStyles';
 import Head from 'next/head';
-import { StrictMode } from 'react';
+import { StrictMode, useEffect } from 'react';
 import 'src/assets/styles/normalize.css';
 import 'src/assets/fonts/style.css';
+import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      if (typeof window !== 'undefined' && window.gtag !== undefined) {
+        console.log('gtag', url);
+        window.gtag('config', process.env.GA_MEASUREMENT_ID, {
+          page_path: url,
+        });
+      }
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
   return (
     <>
       <Head>

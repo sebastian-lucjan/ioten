@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
 
   ${({ theme }) => theme.mq.tablet} {
     flex-direction: row;
-    height: 40vh;
+    height: 50vh;
 
     & > div {
       width: 50%;

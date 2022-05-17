@@ -1,15 +1,30 @@
 import contactData from 'src/data/contactData';
 import theme from 'src/assets/styles/theme';
+import PaperPlaneSVG from 'src/assets/images/paper-plane';
+import { useRef } from 'react';
 import { StyledSubmitButton } from './SubmitButton.styles';
 
-export default function SubmitButton({ hasError, loading }) {
-  const buttonText = contactData.contactContent.form.button;
+export default function SubmitButton({ hasError, loading, isSubmitSuccessful }) {
+  const buttonInitialText = contactData.contactContent.form.button;
+  const paperPlaneRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const { white, darkestGray } = theme.color;
 
   return (
-    <StyledSubmitButton hasError={hasError} isLoading={loading} type="submit" title={buttonText} textColor={white} backgroundColor={darkestGray}>
-      {loading ? 'Wysyłanie...' : buttonText}
+    <StyledSubmitButton
+      ref={buttonRef}
+      isSubmitSuccessful={isSubmitSuccessful}
+      hasError={hasError}
+      isLoading={loading}
+      type="submit"
+      title={buttonInitialText}
+      textColor={white}
+      backgroundColor={darkestGray}
+    >
+      <p>{loading ? 'Wysyłanie...' : buttonInitialText}</p>
+
+      {isSubmitSuccessful ? null : <PaperPlaneSVG setRef={paperPlaneRef} />}
     </StyledSubmitButton>
   );
 }

@@ -6,8 +6,14 @@ import valuationData from 'src/data/valuationData';
 const StyledValuationFormSteps = styled.div`
   position: absolute;
   top: 12%;
-  width: calc(100% - 80px);
+  width: 100%;
   transition: 0.2s;
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    position: relative;
+
+    top: 0;
+  } ;
 `;
 
 const StyledStageBar = styled.div`
