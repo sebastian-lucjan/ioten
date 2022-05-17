@@ -62,7 +62,7 @@ export const StyledMenu = styled.nav`
 
 // font-family: ${({ theme, isBold }) => (isBold  ? theme.font.family.myriadPro.bold : theme.font.family.myriadPro.regular)};
 export const StyledLink = styled.li`
-  font-size: ${({ theme }) => theme.font.size.paragraph};
+  font-size: ${({ theme }) => theme.font.size.paragraphSmall};
 
   list-style: none;
   align-self: center;
@@ -71,13 +71,16 @@ export const StyledLink = styled.li`
   letter-spacing: 1px;
   transition: all 0.3s ease-in-out;
 
+  font-family: ${({ theme, currentPath, linkHref }) =>
+    currentPath === linkHref ? theme.font.family.myriadPro.bold : theme.font.family.myriadPro.regular};
+
   &:hover {
     transform: translateY(-3px);
     font-weight: 800;
   }
 
   ${({ theme }) => theme.mq.tablet} {
-    color: ${({ theme, whiteNavigationText }) => (whiteNavigationText ? theme.color.white : theme.color.darkestGray)};
+    color: ${({ theme, whiteNavigationText }) => whiteNavigationText && theme.color.white}};
   }
 `;
 

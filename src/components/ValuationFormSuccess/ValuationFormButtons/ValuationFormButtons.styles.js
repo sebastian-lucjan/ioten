@@ -8,6 +8,7 @@ export const StyledGoHomeButton = styled.button`
   background: ${({ theme }) => theme.gradient.blue};
   border: none;
   border-radius: 0.4rem;
+  cursor: pointer;
 
   font-size: 14px;
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
@@ -29,6 +30,7 @@ export const StyledRestartValuationFormButton = styled.button`
   font-size: ${({ theme }) => theme.font.size.xsText};
   color: ${({ theme }) => theme.color.darkestGray};
   word-spacing: 0.1rem;
+  cursor: pointer;
 
   :after {
     content: '';
