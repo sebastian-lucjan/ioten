@@ -26,7 +26,6 @@ const HeadSection = ({ title, description, indexing = false }) => {
           `,
         }}
       />
-
       <title>{title}</title>
       {indexing ? <meta name="robots" content="all" /> : <meta name="robots" content="none" />}
     </Head>

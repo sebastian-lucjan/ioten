@@ -4,7 +4,7 @@ import { ServerStyleSheet } from 'styled-components';
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="pl-PL">
         <Head />
         <body>
           <Main />

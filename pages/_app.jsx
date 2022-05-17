@@ -12,9 +12,12 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     const handleRouteChange = (url) => {
-      window.gtag('config', process.env.GA_MEASUREMENT_ID, {
-        page_path: url,
-      });
+      if (typeof window !== 'undefined' && window.gtag !== undefined) {
+        console.log('gtag', url);
+        window.gtag('config', process.env.GA_MEASUREMENT_ID, {
+          page_path: url,
+        });
+      }
     };
     router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
