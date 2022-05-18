@@ -23,10 +23,7 @@ const Valuation = () => {
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm();
 
-  const {
-    headSection: { title, description },
-    surveySteps,
-  } = valuationData;
+  const { title, description, canonical, ogData, surveySteps } = valuationData;
 
   const optionsArray = surveySteps[surveyStep].options.map((option) => option.name);
 
@@ -61,7 +58,8 @@ const Valuation = () => {
         isSubmitSuccessful,
       }}
     >
-      <NextSeo title={title} description={description} />
+      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} noindex nofollow />
+
       <BaseLayout>
         <ValuationView />
         <Grid colors={gridColors} />

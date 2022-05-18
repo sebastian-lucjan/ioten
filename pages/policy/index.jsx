@@ -11,11 +11,16 @@ import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWra
 import { ContentContainer, Wrapper } from 'src/components/Policy/Policy.styles';
 
 export default function PolicyPage() {
-  const { heading, sectionsArray, metaData } = policyData;
+  const {
+    heading,
+    sectionsArray,
+    metaData: { title, description, canonical, ogData },
+  } = policyData;
 
   return (
     <MainSectionWrapper background={theme.color.white}>
-      <NextSeo title={metaData.title} description={metaData.description} />
+      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} noindex nofollow />
+
       <BaseLayout footerGridColor={theme.gradient.yellowToGray}>
         <Wrapper>
           <ContentContainer>

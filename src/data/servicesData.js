@@ -7,10 +7,15 @@ const servicesData = {
     { heading: 'Landing page' },
     { heading: 'Blog' },
   ],
-  headSection: {
-    title: 'ioten - usługi',
+  title: 'Ioten - usługi',
+  url: '/uslugi',
+  description: 'Ioten to coś więcej niż strony internetowe. Strona internetowa jest dla nas sposobem na budowanie i wzmacnianie Twojej marki.',
+  ogData: {
+    title: 'Ioten.io - kreatywne i szybkie strony internetowe',
     description: 'Ioten to coś więcej niż strony internetowe. Strona internetowa jest dla nas sposobem na budowanie i wzmacnianie Twojej marki.',
+    url: 'https://www.ioten.io/uslugi',
   },
+  canonical: 'https://www.ioten.io/uslugi',
 
   servicesIntro: {
     caption: 'Intro',

@@ -1,9 +1,16 @@
 const contactData = {
-  headSection: {
-    title: 'ioten - kontakt',
+  title: 'Ioten - kontakt',
+  url: '/kontakt',
+  description:
+    'Ioten to nie tylko szybkie, funkcjonalne strony internetowe dla firm oraz osób prywatnych, ale też sprawny kontakt i szybkie decyzje. Wyślij do nas zapytanie a my przygotujemy Ci ofertę.',
+  ogData: {
+    title: 'Ioten.io - kreatywne i szybkie strony internetowe',
     description:
       'Ioten to nie tylko szybkie, funkcjonalne strony internetowe dla firm oraz osób prywatnych, ale też sprawny kontakt i szybkie decyzje. Wyślij do nas zapytanie a my przygotujemy Ci ofertę.',
+    url: 'https://www.ioten.io/kontakt',
   },
+  canonical: 'https://www.ioten.io/kontakt',
+
   briefShortInterlude: {
     heading: 'Chcesz mieć czarno na białym... Ile będzie kosztować Twoja strona?',
     paragraph: 'Uzupełnij krótki brief w którym nakreślisz nam podstawowe założenia Twojego projektu. Ofertę prześlemy w ciągu 24h roboczych.',

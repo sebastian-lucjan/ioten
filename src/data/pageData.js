@@ -1,12 +1,3 @@
-export const pageData = {
-  headSection: {
-    title: 'Fast & Beautiful Websites | ioten',
-    description:
-      'Ioten rozumie potrzeby klienta oraz specyfikę projektu i pomaga osiągnąć cel zgodnie z przyjętną strategią. Celem ioten jest budowa stron które rozwiną Twój biznes.',
-    canonical: 'https://www.ioten.io/',
-  },
-};
-
 export const navigationData = [
   { name: 'Home', href: '/', as: '/' },
   { name: 'Usługi', href: '/services', as: '/uslugi' },

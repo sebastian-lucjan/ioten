@@ -13,13 +13,12 @@ import styled from 'styled-components';
 const Wrapper = styled.section``;
 
 const Services = () => {
-  const {
-    headSection: { title, description },
-  } = servicesData;
+  const { title, description, ogData, canonical } = servicesData;
 
   return (
     <Wrapper>
-      <NextSeo title={title} description={description} />
+      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} noindex nofollow />
+
       <BaseLayout footerGridColor={theme.gradient.yellowToGray}>
         <ServicesIntro />
         <ServicesBenefit />

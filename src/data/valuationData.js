@@ -1,9 +1,16 @@
 const valuationData = {
-  headSection: {
-    title: 'ioten - wyceń projekt',
+  title: 'Ioten - wyceń projekt',
+  url: '/wycena-projektu',
+  description:
+    'Ioten przeprowadzimy z Tobą szczegółowy wywiad na bazie którego powstanie szybka, funkcjonalna i estetyczna strona internetowa dla Twojej firmy.',
+  ogData: {
+    title: 'Ioten.io - kreatywne i szybkie strony internetowe',
     description:
       'Ioten przeprowadzimy z Tobą szczegółowy wywiad na bazie którego powstanie szybka, funkcjonalna i estetyczna strona internetowa dla Twojej firmy.',
+    url: 'https://www.ioten.io/wycena-projektu',
   },
+  canonical: 'https://www.ioten.io/wycena-projektu',
+
   surveyStarter: { heading: 'Wyceń projekt', paragraph: 'Wyceń projekt i zacznijmy' },
   surveySteps: [
     {

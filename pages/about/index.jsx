@@ -5,13 +5,12 @@ import IdeaInterlude from 'src/components/IdeaInterlude';
 import { NextSeo } from 'next-seo';
 
 const About = () => {
-  const {
-    headSection: { title, description },
-  } = aboutData;
+  const { title, description, canonical, ogData } = aboutData;
 
   return (
     <>
-      <NextSeo title={title} description={description} />
+      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} noindex nofollow />
+
       <BaseLayout footerGridColor={theme.gradient.yellowToGray}>
         <section>About</section>
         <IdeaInterlude />

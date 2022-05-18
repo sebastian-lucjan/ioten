@@ -15,9 +15,9 @@ export const StyledNavItem = styled.div`
   transition: all 0.3s ease;
 
   color: ${({ theme, pageIndex }) => {
-    if (typeof window !== 'undefined' && 'ontouchstart' in document.documentElement) {
-      console.log('touch');
-    }
+    // if (typeof window !== 'undefined' && 'ontouchstart' in document.documentElement) {
+    //   console.log('touch');
+    // }
     if (pageIndex === 1) {
       return theme.color.lightestGray;
     }

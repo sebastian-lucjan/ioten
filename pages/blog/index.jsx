@@ -6,13 +6,12 @@ import Blog from 'src/components/Blog';
 import { NextSeo } from 'next-seo';
 
 const BlogPage = () => {
-  const {
-    headSection: { title, description },
-  } = blogData;
+  const { title, description, ogData, canonical } = blogData;
 
   return (
     <>
-      <NextSeo title={title} description={description} />
+      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} noindex nofollow />
+
       <BaseLayout footerGridColor={theme.gradient.yellowToGray}>
         <Blog />
         <IdeaInterlude />
