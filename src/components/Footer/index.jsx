@@ -6,9 +6,9 @@ import services from 'src/data/servicesData';
 import { v4 as uuid } from 'uuid';
 import Grid from 'src/components/Grid';
 import { FooterHeading, FooterItem, FooterSoonItem, StyledFooterSection, Wrapper } from './Footer.styles';
-// import SocialMedia from '../SocialMedia';
 import FooterContact from './FooterContact';
 import FooterRights from './FooterRights';
+// import SocialMedia from '../SocialMedia';
 
 const Footer = ({ footerGridColor }) => {
   const {

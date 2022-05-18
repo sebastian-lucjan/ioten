@@ -2,6 +2,9 @@ const { PHASE_PRODUCTION_BUILD } = require('next/constants');
 
 module.exports = (phase) => {
   const reactStrictMod = true;
+  // const compiler = {
+  //   styledComponents: true,
+  // };
 
   // const isDev = phase === PHASE_DEVELOPMENT_SERVER;
   const isProd = phase === PHASE_PRODUCTION_BUILD;

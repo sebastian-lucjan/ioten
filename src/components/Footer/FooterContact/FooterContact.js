@@ -12,7 +12,7 @@ const StyledFooterContacts = styled.article`
   .footer__contact-email,
   .footer__contact-mobile {
     position: relative;
-
+    color: ${({ theme }) => theme.color.darkerGray};
     line-height: 3rem;
   }
 

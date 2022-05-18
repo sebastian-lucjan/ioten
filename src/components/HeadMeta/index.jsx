@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script';
 
 const HeadMeta = () => {
   return (
@@ -21,8 +22,8 @@ const HeadMeta = () => {
 
       <meta property="og:locale" content="pl_PL" />
 
-      <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
-      <script
+      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
+      <Script
         defer
         dangerouslySetInnerHTML={{
           __html: `

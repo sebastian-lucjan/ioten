@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <>
-      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} noindex nofollow />
+      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} />
 
       <MainPageContext.Provider value={{ pageIndex: currentPage, setCurrentPage, dataBooster, setDataBooster }}>
         <BaseLayout whiteNavigationText={onDarkScreen} footerGridColor={theme.gradient.yellowToGray}>
@@ -48,3 +48,4 @@ export default function Home() {
 
 // todo: customize scrollbar -> not supported by firefox and IE (usage from 76% to 90%)
 // todo: check if canonical is necessary for all pages or only for main page
+// todo: i allowed indexing of main page but it hasn't been finished yet.
