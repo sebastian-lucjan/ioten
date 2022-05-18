@@ -3,7 +3,7 @@ import { TextWrapper } from 'src/components/TextComponents';
 
 const StyledMainViewsNavigation = styled(TextWrapper)`
   position: absolute;
-  top: 85vh;
+  top: 78vh;
   width: 100%;
   height: 15vh;
   z-index: ${({ theme }) => theme.zIndex.peak};

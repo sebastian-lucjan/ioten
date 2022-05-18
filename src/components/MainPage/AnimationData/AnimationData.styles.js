@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   position: absolute;
-  top: 20vh;
+  top: 15vh;
   left: 0;
   width: 100%;
   height: 50vh;

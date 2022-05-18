@@ -5,7 +5,7 @@ import useCircleTranslateCords from 'src/hooks/useCircleTranslateCords';
 
 const Wrapper = styled.div`
   position: absolute;
-  top: 15vh;
+  top: 10vh;
   left: 0;
   width: 100%;
   height: 50vh;

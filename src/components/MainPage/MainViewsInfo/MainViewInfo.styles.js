@@ -49,7 +49,7 @@ export const Wrapper = styled(TextWrapper)`
 
 export const StyledMainViewsInfo = styled.div`
   position: absolute;
-  top: 65vh;
+  top: 57vh;
   width: 100%;
   height: 100%;
   z-index: ${({ theme }) => theme.zIndex.peak};
