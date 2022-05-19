@@ -2,6 +2,9 @@ const { PHASE_PRODUCTION_BUILD } = require('next/constants');
 
 module.exports = (phase) => {
   const reactStrictMod = true;
+  // const compiler = {
+  //   styledComponents: true,
+  // };
 
   // const isDev = phase === PHASE_DEVELOPMENT_SERVER;
   const isProd = phase === PHASE_PRODUCTION_BUILD;
@@ -17,8 +20,7 @@ module.exports = (phase) => {
     HCAPTCHA_SITE_KEY: process.env.HCAPTCHA_SITE_KEY,
     HCAPTCHA_SECRET_KEY: process.env.HCAPTCHA_SECRET_KEY,
     HCAPTCHA_SERVICES_SITE_KEY: process.env.HCAPTCHA_SERVICES_SITE_KEY,
-    GA_MEASUREMENT_ID: process.env.GA_MEASUREMENT_ID,
-    //     NEXT_PUBLIC_GA_MEASUREMENT_ID: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
+    NEXT_PUBLIC_GA_MEASUREMENT_ID: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
     //     NEXT_PUBLIC_GA_VERCEL_ID: process.env.NEXT_PUBLIC_GA_VERCEL_ID,
   };
   //

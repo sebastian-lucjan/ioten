@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import Burger from 'src/components/Burger';
 import { useRouter } from 'next/router';
-import { Wrapper, StyledValuationButton, StyledMenu, StyledLink, StyledLogo } from './Navigation.styles';
+import { Wrapper, StyledMenu, StyledLink, StyledLogo, StyledValuationButton } from './Navigation.styles';
 
 const LogoWrapper = styled.div`
   display: flex;

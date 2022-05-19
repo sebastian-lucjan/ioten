@@ -1,13 +1,20 @@
 export const blogData = {
+  title: 'Ioten - blog',
+  url: '/blog',
+  description:
+    'Ioten to szybkie, funkcjonalne strony internetowe dla firm oraz osób prywatnych. Jeśli chcesz nas poznać zapraszamy na naszego bloga w którym piszemy o ioten od środka, przybliżamy technologie w jakich pracujemy oraz opisujemy idee jakie nam towarzyszą.',
+  ogData: {
+    title: 'Ioten.io - kreatywne i szybkie strony internetowe',
+    description:
+      'Ioten to szybkie, funkcjonalne strony internetowe dla firm oraz osób prywatnych. Jeśli chcesz nas poznać zapraszamy na naszego bloga w którym piszemy o ioten od środka, przybliżamy technologie w jakich pracujemy oraz opisujemy idee jakie nam towarzyszą.',
+    url: 'https://www.ioten.io/blog',
+  },
+  canonical: 'https://www.ioten.io/blog',
+
   intro: {
     category: 'Blog',
     heading: 'Idee, historie, nasze postrzeganie świata designu i kodu.',
     blogLink: 'Visit or blog',
-  },
-  headSection: {
-    title: 'ioten - blog',
-    description:
-      'Ioten to szybkie, funkcjonalne strony internetowe dla firm oraz osób prywatnych. Jeśli chcesz nas poznać zapraszamy na naszego bloga w którym piszemy o ioten od środka, przybliżamy technologie w jakich pracujemy oraz opisujemy idee jakie nam towarzyszą.',
   },
 };
 

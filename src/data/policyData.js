@@ -55,9 +55,16 @@ const policyData = {
   additionalInformation:
     'Dodatkowe dane osobowe, jak adres e - mail, imię i naziwsko, zbierane są jedynie w miejscach, w których użytkownik wypełniając formularz wyraźnie wyraził na to zgodę.Powyższe dane zachowujemy i wykorzystujemy tylko do potrzeb niezbędnych do wykonania danej funkcji.',
   metaData: {
-    title: 'Fast & Beautiful Websites | ioten',
+    title: 'Ioten - Fast & Beautiful Websites',
     description:
       'Ioten rozumie potrzeby klienta oraz specyfikę projektu i pomaga osiągnąć cel zgodnie z przyjętną strategią. Celem ioten jest budowa stron które rozwiną Twój biznes.',
+    url: 'polityka-prywatnosci',
+    ogData: {
+      title: 'Ioten.io - polityka prywatności',
+      description:
+        'Ioten to szybkie, funkcjonalne strony internetowe dla firm oraz osób prywatnych. Jeśli chcesz nas poznać zapraszamy na naszego bloga w którym piszemy o ioten od środka, przybliżamy technologie w jakich pracujemy oraz opisujemy idee jakie nam towarzyszą.',
+      url: 'https://www.ioten.io/polityka-prywatnosci',
+    },
     canonical: 'https://www.ioten.io/polityka-prywatnosci',
   },
 };

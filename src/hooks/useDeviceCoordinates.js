@@ -1,40 +1,19 @@
 import { useEffect, useState } from 'react';
 
-const useLumpCoordinates = () => {
-  const [coordinates, setCoordinates] = useState({ x: 160, y: 160 });
+const useDeviceCoordinates = () => {
+  const [coordinates, setCoordinates] = useState({ x: 190, y: 200 });
+
+  // if (window) {
+  //   window.addEventListener('deviceorientation', (event) => {
+  //     // console.log('event.alpha ->', event.alpha);
+  //     console.log('event.beta ->', event.beta);
+  //     console.log('event.gamma ->', event.gamma);
+  //   });
+  // }
 
   useEffect(() => {
-    console.log('here');
-    if (window.innerWidth > 768) {
-      const handleMouseMove = (e) => {
-        console.log('here2');
-        const screenUsedWidth = window.innerWidth <= 768 ? window.innerWidth : window.innerWidth / 2;
-
-        const cursorX = e.clientX;
-        let xCord = 140 + (cursorX * 100) / screenUsedWidth;
-
-        if (xCord > 240) {
-          xCord = 240;
-        }
-
-        const cursorY = e.clientY;
-        let yCord = 150 + (cursorY * 100) / screenUsedWidth;
-
-        if (yCord > 250) {
-          yCord = 250;
-        }
-
-        setCoordinates({ x: xCord, y: yCord });
-      };
-
-      window.addEventListener('mousemove', handleMouseMove);
-
-      return () => {
-        window.removeEventListener('mousemove', handleMouseMove);
-      };
-    }
-
     const handleChangeDevicesOrientation = (e) => {
+      // const screenUsedWidth = window.innerWidth <= 768 ? window.innerWidth : window.innerWidth / 2;
       const { beta, gamma } = e;
 
       let xCord;
@@ -75,4 +54,4 @@ const useLumpCoordinates = () => {
   return { x: coordinates.x, y: coordinates.y };
 };
 
-export default useLumpCoordinates;
+export default useDeviceCoordinates;

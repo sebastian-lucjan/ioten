@@ -9,13 +9,12 @@ import Grid from 'src/components/Grid';
 import Wrapper from 'src/components/ContactMainView/ContactMainView.styles';
 
 const Contact = () => {
-  const {
-    headSection: { title, description },
-  } = contactData;
+  const { title, description, ogData, canonical } = contactData;
 
   return (
     <>
-      <NextSeo title={title} description={description} />
+      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} noindex nofollow />
+
       <BaseLayout footerGridColor={theme.gradient.grayToBlack}>
         <Wrapper>
           <ContactInfo />

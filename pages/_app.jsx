@@ -1,11 +1,13 @@
 import { ThemeProvider } from 'styled-components';
 import theme from 'src/assets/styles/theme';
 import GlobalStyle from 'src/assets/styles/GlobalStyles';
-import Head from 'next/head';
 import { StrictMode, useEffect } from 'react';
 import 'src/assets/styles/normalize.css';
 import 'src/assets/fonts/style.css';
 import { useRouter } from 'next/router';
+import HeadMeta from 'src/components/HeadMeta';
+import { DefaultSeo } from 'next-seo';
+import SEO from '../next-seo.config';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -26,16 +28,9 @@ export default function App({ Component, pageProps }) {
   }, [router.events]);
   return (
     <>
-      <Head>
-        <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
-        <link rel="manifest" href="icons/site.webmanifest" />
-        <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
-        <title>ioten</title>
-      </Head>
+      <HeadMeta />
+      <DefaultSeo {...SEO} />
+
       <StrictMode>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
