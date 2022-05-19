@@ -10,11 +10,13 @@ const Wrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  //justify-content: center;
   justify-content: flex-start;
   height: 100vh;
-  //margin: 0px 40px 0 40px;
-  margin: 80px 40px 0 40px;
+  padding: 60px 40px 0 40px;
+
+  ${({ theme }) => theme.mq.mediumMobile} {
+    padding: 80px 40px 0 40px;
+  }
 
   ${({ theme }) => theme.mq.tablet} {
     height: 70vh;

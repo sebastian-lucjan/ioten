@@ -4,18 +4,34 @@ export const Wrapper = styled.div`
   position: absolute;
   top: 15vh;
   left: 0;
-  width: 100%;
+  width: 56%;
+  margin: 0 22%;
   height: 50vh;
   transform: scale(1);
   z-index: ${({ theme }) => theme.zIndex.peak};
   display: flex;
   justify-content: center;
 
+  ${({ theme }) => theme.mq.mediumMobile} {
+    margin: 0 20%;
+    width: 60%;
+  }
+
+  ${({ theme }) => theme.mq.landscape} {
+    top: 20vh;
+    margin: 0 40%;
+    height: 55vh;
+    width: 20%;
+  }
+
   ${({ theme }) => theme.mq.smallDesktop} {
-    margin-left: 0;
+    display: flex;
+    justify-content: center;
     height: 60vh;
     top: unset;
     position: unset;
+    width: 100%;
+    margin: 0;
   }
 
   svg {

@@ -72,6 +72,7 @@ const MainPage = ({ setRef }) => {
         {pageIndex === 0 && <AnimationBusiness />}
         {pageIndex === 1 && <AnimationDesign />}
         {pageIndex === 2 && <AnimationData />}
+
         <MainViewsInfo currentPage={pageIndex} />
       </Wrapper>
 

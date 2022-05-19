@@ -8,6 +8,22 @@ import { TextWrapper } from 'src/components/TextComponents';
 
 export const Wrapper = styled(TextWrapper)`
   padding: 0 40px;
+  h2 {
+    font-size: ${({ theme }) => theme.font.size.paragraph};
+  }
+
+  p {
+    font-size: ${({ theme }) => theme.font.size.caption};
+  }
+  ${({ theme }) => theme.mq.mediumMobile} {
+    h2 {
+      font-size: ${({ theme }) => theme.font.size.headingSmall};
+    }
+
+    p {
+      font-size: ${({ theme }) => theme.font.size.smallText};
+    }
+  }
 
   ${({ theme }) => theme.mq.tablet} {
     padding: 40px 0;
@@ -25,6 +41,8 @@ export const Wrapper = styled(TextWrapper)`
   }
 
   ${({ theme }) => theme.mq.smallDesktop} {
+    width: 80%;
+
     h2 {
       font-size: ${({ theme }) => theme.font.size.headingSection};
       margin-bottom: 2rem;
@@ -36,6 +54,7 @@ export const Wrapper = styled(TextWrapper)`
   }
 
   ${({ theme }) => theme.mq.mediumDesktop} {
+    width: 70%;
     h2 {
       font-size: ${({ theme }) => theme.font.size.headingPage};
       margin-bottom: 2rem;
@@ -59,6 +78,14 @@ export const StyledMainViewsInfo = styled.div`
     top: 68vh;
   }
 
+  ${({ theme }) => theme.mq.landscape} {
+    top: 60vh;
+  }
+
+  @media (orientation: landscape) and (min-width: 768px) and (max-width: 1023px) {
+    top: 55vh;
+  }
+
   ${({ theme }) => theme.mq.smallDesktop} {
     position: unset;
     top: unset;
@@ -70,4 +97,8 @@ export const StyledMainViewsInfo = styled.div`
 
 export const HeadingWrapper = styled.div`
   display: flex;
+
+  ${({ theme }) => theme.mq.mediumMobile} {
+    margin-bottom: 1rem;
+  } ;
 `;

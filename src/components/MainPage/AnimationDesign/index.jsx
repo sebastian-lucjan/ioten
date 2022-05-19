@@ -10,13 +10,20 @@ const Wrapper = styled.div`
   top: 10vh;
   left: 0;
   width: 100%;
-  height: 50vh;
-  transform: scale(1);
+  height: 40vh;
+  transform: scale(0.8);
   z-index: ${({ theme }) => theme.zIndex.peak};
   display: flex;
   justify-content: center;
   align-items: center;
 
+  ${({ theme }) => theme.mq.mediumMobile} {
+    top: 10vh;
+    width: 100%;
+    height: 50vh;
+    transform: scale(1);
+  }
+  
   ${({ theme }) => theme.mq.tablet} {
     top: 18vh;
   }
@@ -40,15 +47,26 @@ const Wrapper = styled.div`
 }
 
   svg {
-    display: block;
+    //display: block;
     width: 240px;
-
+    
+    ${({ theme }) => theme.mq.landscape}{
+      width: 160px;
+      
+    };
+    
     ${({ theme }) => theme.mq.tablet} {
       width: 500px;
     }
+    
+    @media (orientation: landscape) and (min-width: 768px) and (max-width: 1023px) {
+        width: 260px;
+    }
+    
     ${({ theme }) => theme.mq.smallDesktop} {
       width: 320px;
     }
+    
     ${({ theme }) => theme.mq.desktop} {
       width: 360px;
     }    

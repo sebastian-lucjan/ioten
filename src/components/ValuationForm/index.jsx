@@ -5,7 +5,7 @@ import FormStep from './ValuationFormSteps/FormStep';
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 55%;
+  height: 65%;
 
   display: flex;
   justify-content: center;
@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   margin: 1rem 0;
 
   ${({ theme }) => theme.mq.mediumMobile} {
+    height: 55%;
     margin: 1rem 0 0 0;
   }
 

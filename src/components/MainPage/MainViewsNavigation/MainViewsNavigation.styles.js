@@ -3,15 +3,21 @@ import { TextWrapper } from 'src/components/TextComponents';
 
 const StyledMainViewsNavigation = styled(TextWrapper)`
   position: absolute;
-  top: 78vh;
+  top: 80vh;
   width: 100%;
   height: 15vh;
   z-index: ${({ theme }) => theme.zIndex.peak};
 
-  //flex inherit from TextWrapper
   flex-direction: row;
   align-items: center;
   padding: 0 5px;
+
+  ${({ theme }) => theme.mq.mediumMobile} {
+    top: 78vh;
+  }
+  ${({ theme }) => theme.mq.landscape} {
+    top: 86vh;
+  }
 
   ${({ theme }) => theme.mq.tablet} {
     top: 85vh;
