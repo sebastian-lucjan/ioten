@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import LumpCoreSVG from 'src/components/MainPage/AnimationDesign/LumpCoreSVG';
-import { useEffect } from 'react';
-import useCircleTranslateCords from 'src/hooks/useCircleTranslateCords';
+// import { useEffect } from 'react';
+// import useCircleTranslateCords from 'src/hooks/useCircleTranslateCords';
+// import { useDeviceOrientation } from 'src/hooks/useDeviceOrientation';
+// import useDeviceCoordinates from '../../../hooks/useDeviceCoordinates'; // todo: doesn't work
 
 const Wrapper = styled.div`
   position: absolute;
@@ -53,12 +55,8 @@ const Wrapper = styled.div`
 `;
 
 export default function AnimationDesign() {
-  const { translateX, translateY } = useCircleTranslateCords();
-
-  useEffect(() => {}, [translateY, translateY]);
-
   return (
-    <Wrapper translateX={translateX} translateY={translateY}>
+    <Wrapper>
       <LumpCoreSVG />
     </Wrapper>
   );

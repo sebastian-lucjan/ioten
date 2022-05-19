@@ -36,7 +36,7 @@ const useCircleTranslateCords = () => {
     };
   }, [coordinates]);
 
-  return { translateX: coordinates.x, translateY: coordinates.y };
+  return { x: coordinates.x, y: coordinates.y };
 };
 
 export default useCircleTranslateCords;

@@ -1,7 +1,14 @@
-import useLumpCoordinates from 'src/hooks/useLumpCoordinates';
+// import useLumpCoordinates from 'src/hooks/useLumpCoordinates';
+// import { useDeviceOrientation } from "src/hooks/useDeviceOrientation";
+// import useCircleTranslateCords from "src/hooks/useCircleTranslateCords";
+import useDeviceCoordinates from "src/hooks/useDeviceCoordinates";
 
 export default function LumpCoreSVG() {
-  const { x, y } = useLumpCoordinates();
+  // const { x, y } = useLumpCoordinates();
+  const { x, y } = useDeviceCoordinates();
+
+  // const { orientation, requestAccess, revokeAccess, error } = useDeviceOrientation();
+
 
   return (
     <svg viewBox="0 0 363 390" fill="none" xmlns="http://www.w3.org/2000/svg">
