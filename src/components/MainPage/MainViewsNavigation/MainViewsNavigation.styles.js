@@ -12,6 +12,10 @@ const StyledMainViewsNavigation = styled(TextWrapper)`
   flex-direction: row;
   align-items: center;
   padding: 0 5px;
+
+  ${({ theme }) => theme.mq.tablet} {
+    top: 85vh;
+  } ;
 `;
 
 export default StyledMainViewsNavigation;

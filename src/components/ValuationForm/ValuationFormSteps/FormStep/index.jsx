@@ -8,7 +8,6 @@ const OptionsContainer = styled.div`
 `;
 
 export const StyledCheckbox = styled.div`
-  height: 32px;
   width: 100%;
   margin-bottom: 1rem;
 

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  touch-action: none; //disable touch "scroll" when navigation open
+
   display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
   flex-direction: column;
   width: 100vw;
@@ -97,7 +99,7 @@ export const StyledLogo = styled.a`
 `;
 
 export const StyledValuationButton = styled.button`
-  margin-bottom: 80px;
+  margin-bottom: 120px;
   text-transform: uppercase;
   font-size: ${({ theme }) => theme.font.size.smallText};
   border: none;
