@@ -5,13 +5,12 @@ import valuationData from 'src/data/valuationData';
 import { SurveyNextButton, SurveyPrevButton, SurveySubmitButton } from './SurveyButton';
 
 const StyledValuationFormNav = styled.div`
-  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: ${({ surveyStep }) => (surveyStep === valuationData.surveySteps.length - 1 ? 'space-between' : 'space-between')};
   align-items: center;
   width: 100%;
-  height: calc(20% - 40px);
+  height: 12%;
   top: 80%;
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   font-size: ${({ theme }) => theme.font.size.paragraphSmall};

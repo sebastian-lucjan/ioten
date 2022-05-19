@@ -23,6 +23,7 @@ const SurveyButton = styled.button`
 `;
 
 const StyledSurveyNextButton = styled(SurveyButton)`
+  margin-bottom: 1rem;
   color: ${({ theme }) => theme.color.white};
   background: ${({ theme, disabled }) => (disabled ? theme.color.blueLight : theme.gradient.blue)};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
@@ -38,10 +39,9 @@ const StyledSurveyPrevButton = styled(SurveyButton)`
 `;
 
 const StyledSurveySubmitButton = styled(SurveyButton)`
+  margin-bottom: 1rem;
   background: ${({ theme, disabled }) => (disabled ? theme.color.blueLight : theme.gradient.blue)};
-
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
-
   color: ${({ theme }) => theme.color.white};
 
   span {

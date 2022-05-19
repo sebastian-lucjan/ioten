@@ -4,8 +4,6 @@ import { ValuationSurveyContext } from 'pages/valuation';
 import FormStep from './ValuationFormSteps/FormStep';
 
 const Wrapper = styled.div`
-  position: absolute;
-  top: 22%;
   width: 100%;
   height: 55%;
 
