@@ -4,13 +4,14 @@
 // import useDeviceCoordinates from "src/hooks/useDeviceCoordinates";
 
 import useLumpCoordinates from "src/hooks/useLumpCoordinates";
+// import { useDeviceOrientation } from "../../../hooks/useDeviceOrientation";
 
 export default function LumpCoreSVG() {
   const { x, y } = useLumpCoordinates();
   // const { x, y } = useDeviceCoordinates();
 
   // const { orientation, requestAccess, revokeAccess, error } = useDeviceOrientation();
-
+  // console.log(orientation);
 
   return (
     <svg viewBox="0 0 363 390" fill="none" xmlns="http://www.w3.org/2000/svg">

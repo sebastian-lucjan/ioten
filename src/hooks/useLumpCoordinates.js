@@ -4,10 +4,8 @@ const useLumpCoordinates = () => {
   const [coordinates, setCoordinates] = useState({ x: 160, y: 160 });
 
   useEffect(() => {
-    console.log('here');
     if (window.innerWidth > 768) {
       const handleMouseMove = (e) => {
-        console.log('here2');
         const screenUsedWidth = window.innerWidth <= 768 ? window.innerWidth : window.innerWidth / 2;
 
         const cursorX = e.clientX;
@@ -41,25 +39,28 @@ const useLumpCoordinates = () => {
       let yCord;
 
       if (beta >= -90 && beta <= 90) {
-        yCord = 200 - (3 * beta) / 4;
+        yCord = 200 - (5 * beta) / 4;
+        // yCord = 200 - (3 * beta) / 4;
       }
       if (beta < -90) {
-        yCord = 200 + (3 * (beta + 180)) / 4;
+        yCord = 200 + (5 * (beta + 180)) / 4;
+        // yCord = 200 + (3 * (beta + 180)) / 4;
       }
       if (beta > 90) {
-        yCord = 200 + (3 * (beta - 180)) / 4;
+        yCord = 200 + (5 * (beta - 180)) / 4;
+        // yCord = 200 + (3 * (beta - 180)) / 4;
       }
       if (gamma >= 0) {
-        xCord = 190 + (2 * -gamma) / 3;
+        xCord = 190 - gamma;
       }
       if (gamma < 0) {
-        xCord = 190 - (2 * gamma) / 3;
+        xCord = 190 - gamma;
       }
       if (gamma >= 0 && (beta >= 90 || beta <= -90)) {
-        xCord = 190 + (2 * gamma) / 3;
+        xCord = 190 + gamma;
       }
       if (gamma < 0 && (beta >= 90 || beta <= -90)) {
-        xCord = 190 + (2 * gamma) / 3;
+        xCord = 190 + gamma;
       }
 
       setCoordinates({ x: xCord, y: yCord });
