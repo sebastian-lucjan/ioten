@@ -11,6 +11,14 @@ export const StyledCheckbox = styled.div`
   width: 100%;
   margin-bottom: 1rem;
 
+  ${({ theme }) => theme.mq.mediumMobile} {
+    margin-bottom: 1.4rem;
+  }
+
+  ${({ theme }) => theme.mq.tablet} {
+    margin-bottom: 2rem;
+  }
+
   label {
     display: flex;
   }

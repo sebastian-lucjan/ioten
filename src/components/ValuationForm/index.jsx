@@ -10,6 +10,15 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 1rem 0;
+
+  ${({ theme }) => theme.mq.mediumMobile} {
+    margin: 1rem 0 0 0;
+  }
+
+  ${({ theme }) => theme.mq.tablet} {
+    margin: 3rem 0 0 0;
+  }
 
   ${({ theme }) => theme.mq.smallDesktop} {
     position: relative;
