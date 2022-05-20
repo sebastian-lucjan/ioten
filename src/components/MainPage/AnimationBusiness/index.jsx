@@ -52,9 +52,10 @@ const Animation = () => {
     const paperPlane = el.getElementById('paper-plane');
     const smallDevices = el.getElementById('devices');
     const smallDevicesLines = el.getElementById('devices-lines');
-    tl.current = gsap.timeline();
 
-    tl.current.set(
+    tl.current = gsap.timeline();
+    // "gsap.set" instead of "tl.current.set" because of blink of done animation in the very beginning of animation or during reloading
+    gsap.set(
       [
         woman,
         ground,
@@ -96,6 +97,7 @@ const Animation = () => {
         y: 20,
       },
     );
+
     tl.current.set([womanWithSurroundings], { scale: 2.2 });
     tl.current.to([woman, palette, shape, whirl, ground, plant], {
       autoAlpha: 1,

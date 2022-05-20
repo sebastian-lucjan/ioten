@@ -13,12 +13,14 @@ export default function LumpCoreSVG() {
 
     if (device === 'cursor') {
       gsap.to(circe, {
+        duration: 1,
         x: x - 200,
         y: 1.15 * y - 220,
       });
     }
     if (device === 'touch') {
       gsap.to(circe, {
+        duration: 1,
         x: x / 1.5 - 130,
         y: y / 1.5 - 120,
       });

@@ -4,6 +4,7 @@ const useLumpCoordinates = () => {
   const [coordinates, setCoordinates] = useState({ x: 160, y: 160, device: 'cursor' });
 
   useEffect(() => {
+    // touchable screen (mobile, tablet)
     if (window.matchMedia('(pointer: coarse)').matches) {
       const handleChangeDevicesOrientation = (e) => {
         const { beta, gamma } = e;
@@ -42,6 +43,8 @@ const useLumpCoordinates = () => {
         window.removeEventListener('deviceorientation', handleChangeDevicesOrientation);
       };
     }
+
+    // desktop screen
     const handleMouseMove = (e) => {
       const screenUsedWidth = window.innerWidth <= 768 ? window.innerWidth : window.innerWidth / 2;
 
