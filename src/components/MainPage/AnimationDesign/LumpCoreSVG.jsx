@@ -3,18 +3,40 @@
 // import useCircleTranslateCords from "src/hooks/useCircleTranslateCords";
 // import useDeviceCoordinates from "src/hooks/useDeviceCoordinates";
 
-import useLumpCoordinates from "src/hooks/useLumpCoordinates";
+import useLumpCoordinates from 'src/hooks/useLumpCoordinates';
 // import { useDeviceOrientation } from "../../../hooks/useDeviceOrientation";
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 export default function LumpCoreSVG() {
+  const imageRef = useRef(null);
   const { x, y } = useLumpCoordinates();
   // const { x, y } = useDeviceCoordinates();
+
+  useEffect(() => {
+    const { current: el } = imageRef;
+
+    const circe = el.getElementById('core');
+
+    console.log('circe', circe);
+    console.log('x', x);
+    console.log('y', y);
+
+    // tl.current = gsap.timeline();
+
+    // tl.current.to(circe,{x, y});
+    // tl.current.resume();
+    gsap.to(circe, {
+      x: x - 200,
+      y: y - 200,
+    });
+  }, [x, y]);
 
   // const { orientation, requestAccess, revokeAccess, error } = useDeviceOrientation();
   // console.log(orientation);
 
   return (
-    <svg viewBox="0 0 363 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg ref={imageRef} viewBox="0 0 363 390" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="lump-core">
         <path
           id="back-edges"
