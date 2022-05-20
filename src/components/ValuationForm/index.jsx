@@ -5,11 +5,21 @@ import FormStep from './ValuationFormSteps/FormStep';
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 55%;
+  height: 65%;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 1rem 0;
+
+  ${({ theme }) => theme.mq.mediumMobile} {
+    height: 55%;
+    margin: 1rem 0 0 0;
+  }
+
+  ${({ theme }) => theme.mq.tablet} {
+    margin: 3rem 0 0 0;
+  }
 
   ${({ theme }) => theme.mq.smallDesktop} {
     position: relative;

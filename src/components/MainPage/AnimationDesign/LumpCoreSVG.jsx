@@ -1,20 +1,32 @@
-// import useLumpCoordinates from 'src/hooks/useLumpCoordinates';
-// import { useDeviceOrientation } from "src/hooks/useDeviceOrientation";
-// import useCircleTranslateCords from "src/hooks/useCircleTranslateCords";
-// import useDeviceCoordinates from "src/hooks/useDeviceCoordinates";
-
-import useLumpCoordinates from "src/hooks/useLumpCoordinates";
-// import { useDeviceOrientation } from "../../../hooks/useDeviceOrientation";
+import useLumpCoordinates from 'src/hooks/useLumpCoordinates';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 export default function LumpCoreSVG() {
-  const { x, y } = useLumpCoordinates();
-  // const { x, y } = useDeviceCoordinates();
+  const imageRef = useRef(null);
+  const { x, y, device } = useLumpCoordinates();
 
-  // const { orientation, requestAccess, revokeAccess, error } = useDeviceOrientation();
-  // console.log(orientation);
+  useEffect(() => {
+    const { current: el } = imageRef;
+
+    const circe = el.getElementById('core');
+
+    if (device === 'cursor') {
+      gsap.to(circe, {
+        x: x - 200,
+        y: 1.15 * y - 220,
+      });
+    }
+    if (device === 'touch') {
+      gsap.to(circe, {
+        x: x / 1.5 - 130,
+        y: y / 1.5 - 120,
+      });
+    }
+  }, [x, y]);
 
   return (
-    <svg viewBox="0 0 363 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg ref={imageRef} viewBox="0 0 363 390" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="lump-core">
         <path
           id="back-edges"

@@ -10,17 +10,30 @@ const OptionsContainer = styled.div`
 export const StyledCheckbox = styled.div`
   width: 100%;
   margin-bottom: 1rem;
+  font-size: ${({ theme }) => theme.font.size.caption};
 
+  ${({ theme }) => theme.mq.mediumMobile} {
+    font-size: ${({ theme }) => theme.font.size.smallText};
+    margin-bottom: 1.4rem;
+  }
+
+  ${({ theme }) => theme.mq.tablet} {
+    margin-bottom: 2rem;
+  }
   label {
     display: flex;
   }
 
+  div {
+    width: 30px;
+  }
+
   p {
-    font-size: ${({ theme }) => theme.font.size.smallText};
     position: relative;
     display: block;
     margin-left: 1rem;
     line-height: 16px;
+    width: calc(100% - 30px);
   }
 `;
 
@@ -50,7 +63,9 @@ function ValuationTextInput({ text, name, register, inputConditions }) {
   return (
     <StyledTextInput>
       <label htmlFor={name}>
-        <input type="text" id={name} name={name} {...register(name, inputConditions)} />
+        <div>
+          <input type="text" id={name} name={name} {...register(name, inputConditions)} />
+        </div>
         <p>{text}</p>
       </label>
     </StyledTextInput>
@@ -79,9 +94,12 @@ function ValuationCheckbox({ text, name, register, inputConditions }) {
   );
 }
 const OptionHeading = styled.h2`
-  font-size: ${({ theme }) => theme.font.size.paragraphBig};
+  font-size: ${({ theme }) => theme.font.size.headingSmall};
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   color: ${({ theme }) => theme.color.darkestGray};
+  ${({ theme }) => theme.mq.mediumMobile} {
+    font-size: ${({ theme }) => theme.font.size.paragraphBig};
+  } ;
 `;
 
 const OptionDescription = styled.p`

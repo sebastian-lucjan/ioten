@@ -5,6 +5,7 @@ import Waves from 'src/assets/images/waves-net.svg';
 // import Image from 'next/image';
 // import crosses from 'src/assets/images/crossies.png';
 // import moon from 'src/assets/images/moon.png';
+import MainPageContext from 'src/context/mainPageContext';
 import MainViewsNavigation from './MainViewsNavigation';
 import MainViewsInfo from './MainViewsInfo';
 import Wrapper from './MainPage.styles';
@@ -12,7 +13,6 @@ import AnimationBusiness from './AnimationBusiness';
 import AnimationDesign from './AnimationDesign';
 import AnimationData from './AnimationData';
 import MainSectionWrapper from '../MainSectionWrapper/MainSectionWrapper.styles';
-import MainPageContext from '../../context/mainPageContext';
 
 const DecorsWrapper = styled.div`
   svg {
@@ -72,6 +72,7 @@ const MainPage = ({ setRef }) => {
         {pageIndex === 0 && <AnimationBusiness />}
         {pageIndex === 1 && <AnimationDesign />}
         {pageIndex === 2 && <AnimationData />}
+
         <MainViewsInfo currentPage={pageIndex} />
       </Wrapper>
 

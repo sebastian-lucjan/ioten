@@ -4,12 +4,10 @@ import { ValuationSurveyContext } from 'pages/valuation';
 import valuationData from 'src/data/valuationData';
 
 const StyledValuationFormSteps = styled.div`
-  //position: absolute;
-  //top: 12%;
   width: 100%;
   transition: 0.2s;
-
   position: relative;
+
   ${({ theme }) => theme.mq.smallDesktop} {
     top: 0;
   } ;

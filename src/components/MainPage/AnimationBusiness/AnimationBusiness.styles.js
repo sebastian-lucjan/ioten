@@ -10,8 +10,20 @@ export const Wrapper = styled.div`
 
   svg {
     display: block;
-    width: 360px;
+    width: 300px;
     margin: 0 auto;
+  }
+
+  ${({ theme }) => theme.mq.mediumMobile} {
+    svg {
+      width: 360px;
+    }
+  }
+
+  ${({ theme }) => theme.mq.landscape} {
+    svg {
+      width: 180px;
+    }
   }
 
   ${({ theme }) => theme.mq.tablet} {
@@ -20,13 +32,26 @@ export const Wrapper = styled.div`
     }
   }
 
+  @media (orientation: landscape) and (min-width: 768px) and (max-width: 1023px) {
+    svg {
+      width: 360px;
+    }
+  }
+
   ${({ theme }) => theme.mq.smallDesktop} {
     margin-left: 0;
     top: unset;
     position: unset;
+
+    svg {
+      width: 100%;
+    }
   }
 
   ${({ theme }) => theme.mq.mediumDesktop} {
+    svg {
+      width: 500px;
+    }
   }
 
   ${({ theme }) => theme.mq.bigDesktop} {

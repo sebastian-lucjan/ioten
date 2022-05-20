@@ -10,8 +10,9 @@ const StyledValuationFormNav = styled.div`
   justify-content: ${({ surveyStep }) => (surveyStep === valuationData.surveySteps.length - 1 ? 'space-between' : 'space-between')};
   align-items: center;
   width: 100%;
-  height: 12%;
-  top: 80%;
+  //height: 22%;
+  //top: 80%;
+  //background-color: yellowgreen;
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   font-size: ${({ theme }) => theme.font.size.paragraphSmall};
 

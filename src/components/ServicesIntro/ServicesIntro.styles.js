@@ -10,6 +10,7 @@ export const Button = styled.button`
   box-shadow: 1.3px 1px 4.1px rgba(0, 0, 0, 0.028), 4.2px 3.4px 13.6px rgba(0, 0, 0, 0.042), 19px 15px 61px rgba(0, 0, 0, 0.07);
   cursor: pointer;
   transition: 0.2s;
+  color: ${({ theme }) => theme.color.black};
 
   &:active {
     box-shadow: 0 0 4.1px rgba(0, 0, 0, 0.028), 4.2px 3.4px 13.6px rgba(0, 0, 0, 0.042), 19px 15px 61px rgba(0, 0, 0, 0.07);

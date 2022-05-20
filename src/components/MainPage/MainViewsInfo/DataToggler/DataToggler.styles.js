@@ -23,11 +23,12 @@ export const ToggleBody = styled.div`
   border-radius: 100px;
   background-color: ${({ theme }) => theme.color.darkestGray};
   cursor: pointer;
+  transform: translateY(-4px);
 
   ${({ theme }) => theme.mq.tablet} {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -4px);
     width: 70px;
     height: 32px;
   }
