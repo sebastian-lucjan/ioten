@@ -6,6 +6,7 @@ const StyledFooterContacts = styled.article`
 
   p {
     cursor: ${({ soon }) => (soon ? 'unset' : 'pointer')};
+    color: ${({ theme }) => theme.color.darkerGray}; //todo: check if telephone number has turned from blue to black on safari
   }
 
   .footer__contact-label,

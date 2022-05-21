@@ -37,9 +37,30 @@ const useLumpCoordinates = () => {
         setCoordinates({ x: xCord, y: yCord, device: 'touch' });
       };
 
-      window.addEventListener('deviceorientation', handleChangeDevicesOrientation);
+      if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceMotionEvent?.requestPermission === 'function') {
+        console.log('here ios');
+        // Handle iOS 13+ devices.
+        DeviceMotionEvent.requestPermission()
+          .then((state) => {
+            if (state === 'granted') {
+              window.addEventListener('devicemotion', handleChangeDevicesOrientation);
+            } else {
+              console.error('Request to access the orientation was rejected');
+            }
+          })
+          .catch(console.error);
+      } else {
+        // Handle regular non iOS 13+ devices.
+        console.log('here non-ios');
+        // window.addEventListener('devicemotion', handleChangeDevicesOrientation);
+        window.addEventListener('deviceorientation', handleChangeDevicesOrientation);
+      }
+
+      console.log('here');
+      // window.addEventListener('deviceorientation', handleChangeDevicesOrientation);
 
       return () => {
+        // window.removeEventListener('devicemotion', handleChangeDevicesOrientation);
         window.removeEventListener('deviceorientation', handleChangeDevicesOrientation);
       };
     }
