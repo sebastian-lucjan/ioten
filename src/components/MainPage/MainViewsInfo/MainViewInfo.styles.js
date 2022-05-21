@@ -17,7 +17,7 @@ export const Wrapper = styled(TextWrapper)`
   }
   ${({ theme }) => theme.mq.mediumMobile} {
     h2 {
-      font-size: ${({ theme }) => theme.font.size.headingSmall};
+      font-size: ${({ theme }) => theme.font.size.paragraphBig};
     }
 
     p {
@@ -31,6 +31,7 @@ export const Wrapper = styled(TextWrapper)`
     width: 70%;
 
     h2 {
+      font-size: ${({ theme }) => theme.font.size.headingSection};
       margin-bottom: 1rem;
     }
 
