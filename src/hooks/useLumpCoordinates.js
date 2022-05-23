@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const useLumpCoordinates = () => {
-  const [coordinates, setCoordinates] = useState({ x: 160, y: 160, device: 'cursor' });
+  const [coordinates, setCoordinates] = useState({ x: 200, y: 170, device: 'cursor' });
 
   useEffect(() => {
     // touchable screen (mobile, tablet)
@@ -35,37 +35,14 @@ const useLumpCoordinates = () => {
         }
 
         setCoordinates({ x: xCord, y: yCord, device: 'touch' });
+        // console.log('here');
       };
 
-      if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceMotionEvent?.requestPermission === 'function') {
-        console.log('here ios');
-        // Handle iOS 13+ devices.
-        DeviceMotionEvent.requestPermission()
-          .then((state) => {
-            if (state === 'granted') {
-              window.addEventListener('devicemotion', handleChangeDevicesOrientation);
-            } else {
-              console.error('Request to access the orientation was rejected');
-            }
-          })
-          .catch(console.error);
-      } else {
-        // Handle regular non iOS 13+ devices.
-        console.log('here non-ios');
-        // window.addEventListener('devicemotion', handleChangeDevicesOrientation);
-        window.addEventListener('deviceorientation', handleChangeDevicesOrientation);
-      }
+      window.addEventListener('deviceorientation', handleChangeDevicesOrientation);
 
-      console.log('here');
-      // window.addEventListener('deviceorientation', handleChangeDevicesOrientation);
-
-      return () => {
-        // window.removeEventListener('devicemotion', handleChangeDevicesOrientation);
-        window.removeEventListener('deviceorientation', handleChangeDevicesOrientation);
-      };
+      return () => window.removeEventListener('deviceorientation', handleChangeDevicesOrientation);
     }
 
-    // desktop screen
     const handleMouseMove = (e) => {
       const screenUsedWidth = window.innerWidth <= 768 ? window.innerWidth : window.innerWidth / 2;
 
@@ -83,15 +60,71 @@ const useLumpCoordinates = () => {
         yCord = 250;
       }
 
+      console.log('here test');
       setCoordinates({ x: xCord, y: yCord, device: 'cursor' });
     };
 
     window.addEventListener('mousemove', handleMouseMove);
 
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [coordinates]);
+
+  // const onDeviceOrientation = (event) => {
+  //   console.log('here', event);
+  //   setCoordinates({ x: DeviceMotionEvent.beta, y: DeviceMotionEvent.gamma, device: 'touch' });
+  //   // setCoordinates({ x: xCord, y: yCord, device: 'touch' });
+  // };
+  //
+  // console.log('x', coordinates.x);
+  // console.log('y', coordinates.y);
+  //
+  // const revokeAccessAsync = async () => {
+  //   window.removeEventListener('devicemotion', onDeviceOrientation);
+  //   setCoordinates(null);
+  // };
+  //
+  // const requestAccessAsync = async () => {
+  //   if (!DeviceOrientationEvent) {
+  //     return false;
+  //   }
+  //   console.log('1');
+  //   if (window.DeviceMotionEvent && typeof window.DeviceMotionEvent.requestPermission === 'function') {
+  //     // if (DeviceOrientationEvent.requestPermission && typeof DeviceMotionEvent.requestPermission === 'function') {
+  //     window.DeviceMotionEvent.requestPermission()
+  //       .then((response) => {
+  //         if (response === 'granted') {
+  //           window.addEventListener(
+  //             'devicemotion',
+  //             () => {
+  //               console.log('DeviceMotion permissions granted.');
+  //             },
+  //             (e) => {
+  //               console.log('e', e.message);
+  //               // throw e;
+  //             },
+  //           );
+  //         } else {
+  //           console.log('DeviceMotion permissions not granted.');
+  //         }
+  //       })
+  //       .catch((e) => {
+  //         console.error(e);
+  //       });
+  //   }
+  //
+  //   window.addEventListener('devicemotion', onDeviceOrientation);
+  //
+  //   return true;
+  // };
+  //
+  // const requestAccess = useCallback(requestAccessAsync, []);
+  // const revokeAccess = useCallback(revokeAccessAsync, []);
+  //
+  // useEffect(() => {
+  //   return () => {
+  //     revokeAccess();
+  //   };
+  // }, [revokeAccess]);
 
   return { x: coordinates.x, y: coordinates.y, device: coordinates.device };
 };

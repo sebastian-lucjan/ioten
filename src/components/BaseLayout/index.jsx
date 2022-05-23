@@ -6,6 +6,10 @@ import Footer from '../Footer';
 
 const StyledBaseLayout = styled.main`
   overflow: hidden;
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    overflow: unset; //property set because of sticky elements
+  } ;
 `;
 
 const BaseLayout = ({ children, footerGridColor, whiteNavigationText, setRef }) => {
