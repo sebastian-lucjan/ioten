@@ -1,6 +1,7 @@
 import { v4 as uuid } from 'uuid';
 import {
   ServiceStage,
+  ServiceStageAsideLink,
   ServiceStageHeading,
   ServiceStageParagraph,
   ServiceStageWrapper,
@@ -32,9 +33,12 @@ const ServicesAxisCore = () => {
               <ServiceStage id={serviceID} color={rainbowColors[index]}>
                 {/* <ServiceStage id={serviceID} desaturate={isOpen} key={uuid()} color={rainbowColors[index]} onClick={() => handleOpenServiceStage(index)}> */}
                 <ServiceStageHeading>{heading}</ServiceStageHeading>
-                <StyledArrow />
               </ServiceStage>
               <ServiceStageParagraph>{shortIntroParagraph}</ServiceStageParagraph>
+              <ServiceStageAsideLink>
+                więcej informacji
+                <StyledArrow />
+              </ServiceStageAsideLink>
             </ServiceStageWrapper>
           </Link>
         ))}

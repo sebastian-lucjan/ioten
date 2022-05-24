@@ -8,8 +8,13 @@ export const StyledArrow = styled(Arrow)`
 `;
 
 export const ServiceStageWrapper = styled.div`
-  //background-color: yellowgreen;
-  //margin-bottom: 1rem;
+  ${({ theme }) => theme.mq.desktop} {
+    height: 100vh;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  } ;
 `;
 
 export const ServiceStageHeading = styled.h3`
@@ -17,14 +22,18 @@ export const ServiceStageHeading = styled.h3`
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   font-weight: 400;
   color: ${({ theme, color, isActive }) => (isActive ? color : theme.color.darkestGray)};
+
+  ${({ theme }) => theme.mq.desktop} {
+    font-size: ${({ theme }) => theme.font.size.headingSection};
+    // font-size: ${({ theme }) => theme.font.size.paragraphBig};
+    //width: 80%;
+  } ;
 `;
 
 export const ServiceStageParagraph = styled.p`
   width: calc(100% - 20px);
   font-size: ${({ theme }) => theme.font.size.paragraphSmall};
   line-height: 32px;
-  //margin-left: 20px;
-  //width: 80%;
 
   ${({ theme }) => theme.mq.tablet} {
     width: calc(50% - 20px);
@@ -33,6 +42,13 @@ export const ServiceStageParagraph = styled.p`
   ${({ theme }) => theme.mq.desktop} {
     width: calc(25vw - 40px);
   } ;
+`;
+
+export const ServiceStageAsideLink = styled.p`
+  text-decoration: underline;
+  font-size: ${({ theme }) => theme.font.size.smallText};
+  color: ${({ theme }) => theme.color.darkGray};
+  margin-top: 2rem;
 `;
 
 export const ServiceStage = styled.div`
@@ -62,6 +78,8 @@ export const ServiceStage = styled.div`
 
   ${({ theme }) => theme.mq.desktop} {
     font-size: ${({ theme }) => theme.font.size.headingSmall};
+    max-width: calc(25vw - 40px);
+    //height: 100vh;
   }
 
   ${({ theme }) => theme.mq.mediumDesktop} {
@@ -92,17 +110,19 @@ export const StyledWrapper = styled.div`
   }
 
   ${({ theme }) => theme.mq.desktop} {
+    height: unset;
+
     article {
       width: 23%;
     }
   }
 
   ${({ theme }) => theme.mq.mediumDesktop} {
-    height: ${({ short }) => (short ? 'unset' : '170vh')};
+    // height: ${({ short }) => (short ? 'unset' : '170vh')};
   }
 
   ${({ theme }) => theme.mq.hugeDesktop} {
-    height: ${({ short }) => (short ? 'unset' : '150vh')};
+    // height: ${({ short }) => (short ? 'unset' : '150vh')};
   }
 
   article:nth-child(1) {
