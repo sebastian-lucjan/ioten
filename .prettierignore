@@ -3,5 +3,5 @@ node_modules
 .husky
 *.md
 
-home-animation-business-yellow.jsx
+src/assets/images/home-animation-business.jsx
 #src/components/MainPage/AnimationDesign/LumpCoreSVG.jsx

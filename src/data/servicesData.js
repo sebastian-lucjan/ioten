@@ -114,7 +114,9 @@ const servicesData = {
       caption: 'Etap I',
       heading: 'Strategia & Idea',
       introParagraph:
-        'Celem tego etapu jest wprowadzenie ioten w świat pomysłu / biznesu inwestora. Przeprowadzamy wnikliwą analizę wymagań i inspiracji a następnie wyciągamy wnioski, na których budujemy naszą współpracę',
+        'Celem tego etapu jest wprowadzenie ioten w świat pomysłu / biznesu inwestora. Przeprowadzamy wnikliwą analizę wymagań i inspiracji a następnie wyciągamy wnioski, na których budujemy naszą współpracę.',
+      shortIntroParagraph:
+        'Przeprowadzamy wnikliwą analizę wymagań i inspiracji a następnie wyciągamy wnioski, na których budujemy naszą współpracę.',
       prosList: [
         { text: 'Wstępny wywiad / ankieta w celu wstępnego zaadresowania potrzeb klienta', icon: 'clarity:talk-bubbles-line' },
         { text: 'Wywiad i analiza jako etap podbudowy merytorycznej', icon: 'ic:outline-phone-in-talk' },
@@ -129,6 +131,8 @@ const servicesData = {
       heading: 'Koncept & Wireframing',
       introParagraph:
         'W oparciu o analizy, wymagania i pomysły wyklarowane w strategii, tworzone są makiety strony oraz persony mające być odpowiednio szkieletem przyszłej strony i drogowskazem dla projektowania doświadczeń użytkownika.',
+      shortIntroParagraph:
+        'W oparciu o analizy, wymagania i pomysły wyklarowane w strategii, tworzone są makiety strony oraz persony mające być odpowiednio szkieletem przyszłej strony i drogowskazem dla projektowania doświadczeń użytkownika.',
       prosList: [
         { text: 'Stworzenie Persony czyli hipotetycznego użytkownika produktu,', icon: 'akar-icons:person' },
         { text: 'Roadmapa projektu czyli określenie celów i kamieni milowych współpracy,', icon: 'akar-icons:map' },
@@ -142,7 +146,10 @@ const servicesData = {
       caption: 'Etap III',
       heading: 'Design',
       introParagraph:
-        'Kolejnym etapem po przygotowaniu makiet jest UI Design, czyli opracowanie tego, jak wizualnie będzie wyglądał interfejs użytkownika lub oprogramowanie serwisu. W trakcie projektowania dobierany jest styl wizualny. Obejmuje takie aspekty jak typografia, ikony i kolory, ale także wykorzystanie przestrzeni między poszczególnymi elementami. Mockups Design charakteryzuje się również tym, że przygotowane ekrany wyglądają tak samo, jak będzie wyglądał finalny produkt.',
+        'Kolejnym etapem po przygotowaniu makiet jest UI Design, czyli opracowanie tego, jak wizualnie będzie wyglądał interfejs użytkownika lub oprogramowanie serwisu. W trakcie projektowania dobierany jest styl wizualny. Obejmuje takie aspekty jak typografia, ikony i kolory, ale także wykorzystanie przestrzeni między poszczególnymi elementami.',
+      // 'Mockups Design charakteryzuje się również tym, że przygotowane ekrany wyglądają tak samo, jak będzie wyglądał finalny produkt.', - todo: additional sentence / add or not?
+      shortIntroParagraph:
+        'Kolejnym etapem po przygotowaniu makiet jest UI Design, czyli opracowanie tego, jak wizualnie będzie wyglądał interfejs użytkownika lub oprogramowanie serwisu.',
       prosList: [
         { text: 'Dobranie kolorystyki, typografii, ikon', icon: 'ant-design:bg-colors-outlined' },
         { text: 'Przygotowanie wizualnej makiety strony.', icon: 'iconoir:3d-select-solid' },
@@ -157,6 +164,8 @@ const servicesData = {
       heading: 'Development',
       introParagraph:
         'Budujemy niesamowicie szybką stronę www dla Twojego biznesu w oparciu o wypracowany we wcześniejszym projekcie design. Używamy nowoczesnych technologii jak biblioteka React, czy framework Next.js.',
+      shortIntroParagraph:
+        'Budujemy niesamowicie szybką stronę www dla Twojego biznesu w oparciu o wypracowany we wcześniejszym projekcie design. Używamy nowoczesnych technologii jak biblioteka React, czy framework Next.js.',
       prosList: [
         { text: 'Dobór optymalnej technologi dla Twojej strony.', icon: 'carbon:task-approved' },
         { text: 'Przełożenie finalnego designu na kod.', icon: 'ant-design:code-outlined' },
@@ -170,6 +179,7 @@ const servicesData = {
       caption: 'Etap V',
       heading: 'Optymalizacja & Wsparcie',
       introParagraph: 'Umieszczenie strony na serwerze. Możliwe rozszerzenie współpracy o wsparcie w trakcie użytkowania strony.',
+      shortIntroParagraph: 'Umieszczenie strony na serwerze. Możliwe rozszerzenie współpracy o wsparcie w trakcie użytkowania strony.',
       prosList: [
         { text: 'Umieszczenie strony na serwerze,', icon: 'carbon:bare-metal-server' },
         { text: 'Przekazanie niezbędnej wiedzy w celu obsługi strony.', icon: 'bx:book-bookmark' },

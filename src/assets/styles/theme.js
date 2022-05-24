@@ -1,4 +1,4 @@
-export const rainbowColors = ['#ff0400', '#e2dc22', '#00ff08', '#3300ff', '#861197'];
+export const rainbowColors = ['#ff0400', '#FB411B', '#00ff08', '#3300ff', '#861197'];
 
 const theme = {
   color: {

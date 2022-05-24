@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 import { TextWrapper } from 'src/components/TextComponents';
-// import AnimationOnePlaceholder from 'src/assets/images/home-animation-business.svg';
-// import AnimationOnePlaceholder from 'src/assets/images/home-animation-business-green.svg';
-// import AnimationOnePlaceholder from 'src/assets/images/animation-1-placeholder.svg';
-// import AnimationOnePlaceholder from 'src/assets/images/text-io-block-3.svg';
-// import AnimationOnePlaceholder from 'src/assets/images/text-io-block.svg';
 
 export const Wrapper = styled(TextWrapper)`
   padding: 0 40px;

@@ -1,27 +1,60 @@
 import styled from 'styled-components';
 import { TextHeading } from 'src/components/TextComponents';
+import Arrow from 'src/assets/images/service-detail-arrow.svg';
 
-export const ServiceStage = styled.div`
-  position: relative;
+export const StyledArrow = styled(Arrow)`
+  margin-left: 1rem;
+  fill: ${({ theme }) => theme.color.gray}; ;
+`;
+
+export const ServiceStageWrapper = styled.div`
+  //background-color: yellowgreen;
+  //margin-bottom: 1rem;
+`;
+
+export const ServiceStageHeading = styled.h3`
   font-size: ${({ theme }) => theme.font.size.paragraph};
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   font-weight: 400;
-  margin-left: 20px;
   color: ${({ theme, color, isActive }) => (isActive ? color : theme.color.darkestGray)};
+`;
+
+export const ServiceStageParagraph = styled.p`
+  width: calc(100% - 20px);
+  font-size: ${({ theme }) => theme.font.size.paragraphSmall};
+  line-height: 32px;
+  //margin-left: 20px;
+  //width: 80%;
+
+  ${({ theme }) => theme.mq.tablet} {
+    width: calc(50% - 20px);
+  }
+
+  ${({ theme }) => theme.mq.desktop} {
+    width: calc(25vw - 40px);
+  } ;
+`;
+
+export const ServiceStage = styled.div`
+  position: relative;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
   cursor: pointer;
   z-index: ${({ theme }) => theme.zIndex.peak};
 
   &:after {
+    margin-left: 20px;
     display: block;
     content: '';
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     left: -50px;
     width: 22px;
     height: 22px;
-    background: ${({ theme, color, desaturate }) => (desaturate ? theme.color.lightGray : color)};
-    border: 2px ${({ theme, color, desaturate }) => (desaturate ? theme.color.lightGray : color)} solid;
+    background: ${({ color }) => color};
+    border: 2px ${({ color }) => color} solid;
     //box-shadow: inset 0 0 0 6px ${({ theme }) => theme.color.lightestGray};
     box-shadow: inset 0 0 0 6px ${({ theme }) => theme.color.white};
     border-radius: 50%;
@@ -44,10 +77,11 @@ export const StyledWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
   padding: ${({ short }) => (short ? '40px' : '100px 40px')};
   color: ${({ theme }) => theme.color.darkestGray};
-  height: ${({ short }) => (short ? 'unset' : '100vh')};
+  height: ${({ short }) => (short ? 'unset' : '200vh')};
 
   ${({ theme }) => theme.mq.tablet} {
     padding: 80px 40px;
@@ -61,6 +95,14 @@ export const StyledWrapper = styled.div`
     article {
       width: 23%;
     }
+  }
+
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    height: ${({ short }) => (short ? 'unset' : '170vh')};
+  }
+
+  ${({ theme }) => theme.mq.hugeDesktop} {
+    height: ${({ short }) => (short ? 'unset' : '150vh')};
   }
 
   article:nth-child(1) {
