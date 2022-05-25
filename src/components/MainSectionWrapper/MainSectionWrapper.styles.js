@@ -7,8 +7,10 @@ const MainSectionWrapper = styled.section`
   width: 100%;
   color: black;
   min-height: ${({ smaller }) => (smaller ? 'unset' : '100vh')};
-  background: ${({ background }) => background};
-  transition: background 0.5s ease;
+  background: ${({ background }) => {
+    console.log('background', background);
+    return background;
+  }};
 
   ${({ theme }) => theme.mq.tablet} {
     min-height: 0;

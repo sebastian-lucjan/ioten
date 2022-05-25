@@ -5,6 +5,7 @@ import {
   ServiceStageHeading,
   ServiceStageParagraph,
   ServiceStageWrapper,
+  StageContainer,
   StyledArrow,
   StyledServicesAxis,
   StyledWrapper,
@@ -13,6 +14,7 @@ import services from 'src/data/servicesData';
 import theme, { rainbowColors } from 'src/assets/styles/theme';
 import Grid from 'src/components/Grid';
 import Link from 'next/link';
+import StageGraphics from '../../StageGraphics';
 
 const ServicesAxisCore = () => {
   const {
@@ -28,19 +30,22 @@ const ServicesAxisCore = () => {
     <StyledServicesAxis as="article" colors={{ background: transparent, lines: servicesAxis }}>
       <StyledWrapper>
         {services.stages.map(({ heading, shortIntroParagraph, serviceID }, index) => (
-          <Link key={uuid()} href={`/uslugi#${serviceID}`}>
+          <StageContainer key={uuid()}>
             <ServiceStageWrapper>
               <ServiceStage id={serviceID} color={rainbowColors[index]}>
                 {/* <ServiceStage id={serviceID} desaturate={isOpen} key={uuid()} color={rainbowColors[index]} onClick={() => handleOpenServiceStage(index)}> */}
                 <ServiceStageHeading>{heading}</ServiceStageHeading>
               </ServiceStage>
               <ServiceStageParagraph>{shortIntroParagraph}</ServiceStageParagraph>
-              <ServiceStageAsideLink>
-                więcej informacji
-                <StyledArrow />
-              </ServiceStageAsideLink>
+              <Link href={`/uslugi#${serviceID}`}>
+                <ServiceStageAsideLink>
+                  więcej informacji
+                  <StyledArrow />
+                </ServiceStageAsideLink>
+              </Link>
             </ServiceStageWrapper>
-          </Link>
+            <StageGraphics index={index} />
+          </StageContainer>
         ))}
       </StyledWrapper>
       <Grid colors={colorsObj()} />

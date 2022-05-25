@@ -10,7 +10,6 @@ export const StyledArrow = styled(Arrow)`
 export const ServiceStageWrapper = styled.div`
   ${({ theme }) => theme.mq.desktop} {
     height: 100vh;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,6 +48,7 @@ export const ServiceStageAsideLink = styled.p`
   font-size: ${({ theme }) => theme.font.size.smallText};
   color: ${({ theme }) => theme.color.darkGray};
   margin-top: 2rem;
+  cursor: pointer;
 `;
 
 export const ServiceStage = styled.div`
@@ -56,7 +56,6 @@ export const ServiceStage = styled.div`
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  cursor: pointer;
   z-index: ${({ theme }) => theme.zIndex.peak};
 
   &:after {
@@ -164,6 +163,12 @@ export const StyledWrapper = styled.div`
     align-items: center;
     z-index: ${({ theme }) => theme.zIndex.peak};
   }
+`;
+
+export const StageContainer = styled.div`
+  display: flex;
+  width: calc(100vw - 80px);
+  //background-color: yellow;
 `;
 
 export const StyledServicesAxis = styled.section`

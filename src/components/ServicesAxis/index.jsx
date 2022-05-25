@@ -9,8 +9,11 @@ const ServicesAxis = () => {
     gradient: { lightGrayAxisSection },
   } = theme;
 
+  console.log('lightGrayAxisSection->', lightGrayAxisSection);
+
   return (
-    <MainSectionWrapper as="section" colors={{ background: lightGrayAxisSection }}>
+    // <MainSectionWrapper as="section" background={lightGrayAxisSection}>
+    <MainSectionWrapper as="section" background="white">
       <ServicesAxisIntro />
       <ServicesAxisCore />
       <ServicesAxisEnd />
