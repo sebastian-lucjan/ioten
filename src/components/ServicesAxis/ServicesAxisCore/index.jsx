@@ -44,6 +44,7 @@ const ServicesAxisCore = () => {
                 </ServiceStageAsideLink>
               </Link>
             </ServiceStageWrapper>
+
             <StageGraphics index={index} />
           </StageContainer>
         ))}

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import wireframeGraphic from 'src/assets/images/wireframing-graphic.png';
+import wireframeGraphic from 'src/assets/images/wireframe-graphics.png';
 
 const Container = styled.div`
   height: 100%;
@@ -29,6 +29,7 @@ export const ConceptWireframingWrapper = styled.div`
     }
   }
 `;
+
 export default function ConceptWireframing() {
   return (
     <Container>
