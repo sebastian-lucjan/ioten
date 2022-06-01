@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 import risingChart from 'src/assets/images/strategy-idea-01.png';
-import statsChart from 'src/assets/images/strategy-idea-02.png';
-import histogramChart from 'src/assets/images/strategy-idea-03.png';
-import heatmapChart from 'src/assets/images/strategy-idea-04.png';
+// import statsChart from 'src/assets/images/strategy-idea-02.png';
+// import histogramChart from 'src/assets/images/strategy-idea-03.png';
+// import heatmapChart from 'src/assets/images/strategy-idea-04.png';
 
 export const DevelopmentWrapper = styled.div`
   display: none;
@@ -64,15 +64,15 @@ export default function Development() {
       <div className="rising-chart">
         <Image src={risingChart} layout="fill" objectFit="contain" alt="" />
       </div>
-      <div className="stats-chart">
-        <Image src={statsChart} layout="fill" objectFit="contain" alt="" />
-      </div>
-      <div className="histogram-chart">
-        <Image src={histogramChart} layout="fill" objectFit="contain" alt="" />
-      </div>
-      <div className="heatmap-chart">
-        <Image src={heatmapChart} layout="fill" objectFit="contain" alt="" />
-      </div>
+      {/* <div className="stats-chart"> */}
+      {/*  <Image src={statsChart} layout="fill" objectFit="contain" alt="" /> */}
+      {/* </div> */}
+      {/* <div className="histogram-chart"> */}
+      {/*  <Image src={histogramChart} layout="fill" objectFit="contain" alt="" /> */}
+      {/* </div> */}
+      {/* <div className="heatmap-chart"> */}
+      {/*  <Image src={heatmapChart} layout="fill" objectFit="contain" alt="" /> */}
+      {/* </div> */}
     </DevelopmentWrapper>
   );
 }
