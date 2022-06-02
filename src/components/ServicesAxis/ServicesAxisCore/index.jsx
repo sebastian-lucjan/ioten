@@ -24,7 +24,7 @@ const ServicesAxisCore = () => {
     },
   } = theme;
 
-  const colorsObj = () => ({ lines: servicesAxis, innerLines: lightGray });
+  const colorsObj = { lines: servicesAxis, innerLines: lightGray };
 
   return (
     <StyledServicesAxis as="article" colors={{ background: transparent, lines: servicesAxis }}>
@@ -49,7 +49,8 @@ const ServicesAxisCore = () => {
           </StageContainer>
         ))}
       </StyledWrapper>
-      <Grid colors={colorsObj()} />
+
+      <Grid colors={colorsObj} />
     </StyledServicesAxis>
   );
 };

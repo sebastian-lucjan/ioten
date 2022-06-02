@@ -1,9 +1,8 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import developmentView from 'src/assets/images/development-graphics.png';
-// import statsChart from 'src/assets/images/strategy-idea-02.png';
-// import histogramChart from 'src/assets/images/strategy-idea-03.png';
-// import heatmapChart from 'src/assets/images/strategy-idea-04.png';
+import developmentMobile from 'src/assets/images/development-mobile.png';
+import developmentTablet from 'src/assets/images/development-tablet.png';
+import developmentMac from 'src/assets/images/development-mac.png';
 
 export const DevelopmentWrapper = styled.div`
   display: none;
@@ -17,22 +16,44 @@ export const DevelopmentWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 
-    .rising-chart {
+    div {
       display: flex;
       justify-content: center;
       position: relative;
-      grid-area: 1 / 2 / 2 / 3;
       height: 90vh;
       z-index: ${({ theme }) => theme.zIndex.peak};
+    }
+
+    .development-tablet {
+      grid-column: 1 / 2;
+      margin: 0 40px;
+    }
+
+    .development-mobile {
+      grid-column: 2 / 3;
+      z-index: ${({ theme }) => theme.zIndex.highest};
       margin: 20px;
+    }
+
+    .development-mac {
+      grid-column: 3 / 4;
+      width: 120%;
+      transform: translateX(-8%);
+      margin: 0;
     }
   } ;
 `;
 export default function Development() {
   return (
     <DevelopmentWrapper>
-      <div className="rising-chart">
-        <Image src={developmentView} layout="fill" objectFit="contain" alt="" />
+      <div className="development-tablet">
+        <Image src={developmentTablet} layout="fill" objectFit="contain" alt="" />
+      </div>
+      <div className="development-mobile">
+        <Image src={developmentMobile} layout="fill" objectFit="contain" alt="" />
+      </div>
+      <div className="development-mac">
+        <Image src={developmentMac} layout="fill" objectFit="contain" alt="" />
       </div>
     </DevelopmentWrapper>
   );

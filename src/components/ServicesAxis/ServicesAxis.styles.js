@@ -24,8 +24,6 @@ export const ServiceStageHeading = styled.h3`
 
   ${({ theme }) => theme.mq.desktop} {
     font-size: ${({ theme }) => theme.font.size.headingSection};
-    // font-size: ${({ theme }) => theme.font.size.paragraphBig};
-    //width: 80%;
   } ;
 `;
 
@@ -70,7 +68,6 @@ export const ServiceStage = styled.div`
     height: 22px;
     background: ${({ color }) => color};
     border: 2px ${({ color }) => color} solid;
-    //box-shadow: inset 0 0 0 6px ${({ theme }) => theme.color.lightestGray};
     box-shadow: inset 0 0 0 6px ${({ theme }) => theme.color.white};
     border-radius: 50%;
   }
@@ -78,7 +75,11 @@ export const ServiceStage = styled.div`
   ${({ theme }) => theme.mq.desktop} {
     font-size: ${({ theme }) => theme.font.size.headingSmall};
     max-width: calc(25vw - 40px);
-    //height: 100vh;
+
+    &:after {
+      //background: lightgray;
+      //border: 2px lightgray solid;
+    }
   }
 
   ${({ theme }) => theme.mq.mediumDesktop} {
@@ -95,10 +96,10 @@ export const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
-  padding: ${({ short }) => (short ? '40px' : '100px 40px')};
+  justify-content: space-evenly;
   color: ${({ theme }) => theme.color.darkestGray};
-  height: ${({ short }) => (short ? 'unset' : '200vh')};
+  height: ${({ short }) => (short ? 'unset' : '300vh')};
+  padding: ${({ short }) => (short ? '40px' : '100px 40px')};
 
   ${({ theme }) => theme.mq.tablet} {
     padding: 80px 40px;
@@ -110,19 +111,20 @@ export const StyledWrapper = styled.div`
 
   ${({ theme }) => theme.mq.desktop} {
     height: unset;
+    justify-content: space-between;
 
     article {
       width: 23%;
     }
   }
 
-  ${({ theme }) => theme.mq.mediumDesktop} {
-    // height: ${({ short }) => (short ? 'unset' : '170vh')};
-  }
+  // ${({ theme }) => theme.mq.mediumDesktop} {
+  // height: ${({ short }) => (short ? 'unset' : '170vh')};
+  //}
 
-  ${({ theme }) => theme.mq.hugeDesktop} {
-    // height: ${({ short }) => (short ? 'unset' : '150vh')};
-  }
+  // ${({ theme }) => theme.mq.hugeDesktop} {
+  // height: ${({ short }) => (short ? 'unset' : '150vh')};
+  //}
 
   article:nth-child(1) {
     padding: 0 0 60px 0;
@@ -168,7 +170,6 @@ export const StyledWrapper = styled.div`
 export const StageContainer = styled.div`
   display: flex;
   width: calc(100vw - 80px);
-  //background-color: yellow;
 `;
 
 export const StyledServicesAxis = styled.section`
