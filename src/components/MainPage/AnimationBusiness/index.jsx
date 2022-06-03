@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import HomeAnimationSVG from 'src/assets/images/home-animation-business-yellow';
+import HomeAnimationSVG from 'src/assets/images/home-animation-business';
 import { Wrapper } from './AnimationBusiness.styles';
 
 const Animation = () => {

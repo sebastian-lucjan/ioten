@@ -1,34 +1,85 @@
 import styled from 'styled-components';
 import { TextHeading } from 'src/components/TextComponents';
+import Arrow from 'src/assets/images/service-detail-arrow.svg';
 
-export const ServiceStage = styled.div`
-  position: relative;
+export const StyledArrow = styled(Arrow)`
+  margin-left: 1rem;
+  fill: ${({ theme }) => theme.color.gray}; ;
+`;
+
+export const ServiceStageWrapper = styled.div`
+  ${({ theme }) => theme.mq.desktop} {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  } ;
+`;
+
+export const ServiceStageHeading = styled.h3`
   font-size: ${({ theme }) => theme.font.size.paragraph};
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   font-weight: 400;
-  margin-left: 20px;
   color: ${({ theme, color, isActive }) => (isActive ? color : theme.color.darkestGray)};
+
+  ${({ theme }) => theme.mq.desktop} {
+    font-size: ${({ theme }) => theme.font.size.headingSection};
+  } ;
+`;
+
+export const ServiceStageParagraph = styled.p`
+  width: calc(100% - 20px);
+  font-size: ${({ theme }) => theme.font.size.paragraphSmall};
+  line-height: 32px;
+
+  ${({ theme }) => theme.mq.tablet} {
+    width: calc(50% - 20px);
+  }
+
+  ${({ theme }) => theme.mq.desktop} {
+    width: calc(25vw - 40px);
+  } ;
+`;
+
+export const ServiceStageAsideLink = styled.p`
+  text-decoration: underline;
+  font-size: ${({ theme }) => theme.font.size.smallText};
+  color: ${({ theme }) => theme.color.darkGray};
+  margin-top: 2rem;
   cursor: pointer;
+`;
+
+export const ServiceStage = styled.div`
+  position: relative;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
   z-index: ${({ theme }) => theme.zIndex.peak};
 
   &:after {
+    margin-left: 20px;
     display: block;
     content: '';
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     left: -50px;
     width: 22px;
     height: 22px;
-    background: ${({ theme, color, desaturate }) => (desaturate ? theme.color.lightGray : color)};
-    border: 2px ${({ theme, color, desaturate }) => (desaturate ? theme.color.lightGray : color)} solid;
-    //box-shadow: inset 0 0 0 6px ${({ theme }) => theme.color.lightestGray};
+    background: ${({ color }) => color};
+    border: 2px ${({ color }) => color} solid;
     box-shadow: inset 0 0 0 6px ${({ theme }) => theme.color.white};
     border-radius: 50%;
   }
 
   ${({ theme }) => theme.mq.desktop} {
     font-size: ${({ theme }) => theme.font.size.headingSmall};
+    max-width: calc(25vw - 40px);
+
+    &:after {
+      //background: lightgray;
+      //border: 2px lightgray solid;
+    }
   }
 
   ${({ theme }) => theme.mq.mediumDesktop} {
@@ -44,10 +95,11 @@ export const StyledWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: ${({ short }) => (short ? '40px' : '100px 40px')};
+  align-items: flex-start;
+  justify-content: space-evenly;
   color: ${({ theme }) => theme.color.darkestGray};
-  height: ${({ short }) => (short ? 'unset' : '100vh')};
+  height: ${({ short }) => (short ? 'unset' : '300vh')};
+  padding: ${({ short }) => (short ? '40px' : '100px 40px')};
 
   ${({ theme }) => theme.mq.tablet} {
     padding: 80px 40px;
@@ -58,10 +110,21 @@ export const StyledWrapper = styled.div`
   }
 
   ${({ theme }) => theme.mq.desktop} {
+    height: unset;
+    justify-content: space-between;
+
     article {
       width: 23%;
     }
   }
+
+  // ${({ theme }) => theme.mq.mediumDesktop} {
+  // height: ${({ short }) => (short ? 'unset' : '170vh')};
+  //}
+
+  // ${({ theme }) => theme.mq.hugeDesktop} {
+  // height: ${({ short }) => (short ? 'unset' : '150vh')};
+  //}
 
   article:nth-child(1) {
     padding: 0 0 60px 0;
@@ -102,6 +165,11 @@ export const StyledWrapper = styled.div`
     align-items: center;
     z-index: ${({ theme }) => theme.zIndex.peak};
   }
+`;
+
+export const StageContainer = styled.div`
+  display: flex;
+  width: calc(100vw - 80px);
 `;
 
 export const StyledServicesAxis = styled.section`

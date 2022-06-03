@@ -1,15 +1,22 @@
 import { v4 as uuid } from 'uuid';
-import { ServiceStage, StyledServicesAxis, StyledWrapper } from 'src/components/ServicesAxis/ServicesAxis.styles';
+import {
+  ServiceStage,
+  ServiceStageAsideLink,
+  ServiceStageHeading,
+  ServiceStageParagraph,
+  ServiceStageWrapper,
+  StageContainer,
+  StyledArrow,
+  StyledServicesAxis,
+  StyledWrapper,
+} from 'src/components/ServicesAxis/ServicesAxis.styles';
 import services from 'src/data/servicesData';
 import theme, { rainbowColors } from 'src/assets/styles/theme';
-import ServiceDetail from 'src/components/ServicesAxis/ServiceDetail';
 import Grid from 'src/components/Grid';
-import useServicePopup from 'src/hooks/useServicePopup';
 import Link from 'next/link';
+import StageGraphics from '../../StageGraphics';
 
 const ServicesAxisCore = () => {
-  const { isOpen, setIsOpen, serviceIndex } = useServicePopup();
-
   const {
     color: { lightGray, transparent },
     gradient: {
@@ -17,27 +24,33 @@ const ServicesAxisCore = () => {
     },
   } = theme;
 
-  const colorsObj = () => {
-    if (isOpen) {
-      return { lines: lightGray, innerLines: lightGray };
-    }
-    return { lines: servicesAxis, innerLines: lightGray };
-  };
+  const colorsObj = { lines: servicesAxis, innerLines: lightGray };
 
   return (
-    <StyledServicesAxis as="article" desaturate={isOpen} colors={{ background: transparent, lines: servicesAxis }}>
+    <StyledServicesAxis as="article" colors={{ background: transparent, lines: servicesAxis }}>
       <StyledWrapper>
-        {services.stages.map(({ heading, serviceID }, index) => (
-          <Link key={uuid()} href={`/uslugi#${serviceID}`}>
-            <ServiceStage id={serviceID} desaturate={isOpen} color={rainbowColors[index]}>
-              {/* <ServiceStage id={serviceID} desaturate={isOpen} key={uuid()} color={rainbowColors[index]} onClick={() => handleOpenServiceStage(index)}> */}
-              {heading}
-            </ServiceStage>
-          </Link>
+        {services.stages.map(({ heading, shortIntroParagraph, serviceID }, index) => (
+          <StageContainer key={uuid()}>
+            <ServiceStageWrapper>
+              <ServiceStage id={serviceID} color={rainbowColors[index]}>
+                {/* <ServiceStage id={serviceID} desaturate={isOpen} key={uuid()} color={rainbowColors[index]} onClick={() => handleOpenServiceStage(index)}> */}
+                <ServiceStageHeading>{heading}</ServiceStageHeading>
+              </ServiceStage>
+              <ServiceStageParagraph>{shortIntroParagraph}</ServiceStageParagraph>
+              <Link href={`/uslugi#${serviceID}`}>
+                <ServiceStageAsideLink>
+                  więcej informacji
+                  <StyledArrow />
+                </ServiceStageAsideLink>
+              </Link>
+            </ServiceStageWrapper>
+
+            <StageGraphics index={index} />
+          </StageContainer>
         ))}
       </StyledWrapper>
-      {isOpen ? <ServiceDetail index={serviceIndex} handleClose={() => setIsOpen(false)} /> : null}
-      <Grid colors={colorsObj()} />
+
+      <Grid colors={colorsObj} />
     </StyledServicesAxis>
   );
 };

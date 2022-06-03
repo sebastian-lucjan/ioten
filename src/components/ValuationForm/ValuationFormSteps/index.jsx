@@ -24,6 +24,7 @@ const StageBar = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  transition: 0.3s;
 
   border-radius: 1rem;
   background: ${({ theme }) => theme.gradient.blue};

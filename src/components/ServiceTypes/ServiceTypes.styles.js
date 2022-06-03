@@ -29,6 +29,8 @@ export const Wrapper = styled.div`
   padding: 80px 40px;
   display: flex;
   flex-direction: column;
+  //height: 100%;
+  //background-color: yellowgreen;
 
   ${({ theme }) => theme.mq.tablet} {
     flex-direction: row;
@@ -44,7 +46,9 @@ export const Wrapper = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  position: relative;
+  //position: -webkit-sticky;
+  position: sticky;
+  top: 80px;
   margin: 20px 40px 0 0;
   width: 100%;
   height: 80vh;

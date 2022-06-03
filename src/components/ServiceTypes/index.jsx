@@ -24,6 +24,7 @@ export default function ServicesTypes() {
     <Wrapper>
       <ImageContainer>
         <Image src={servicesImageStages} layout="fill" objectFit="cover" alt="czarna szczotka, narzędzie do sprzątania" />
+        {/*  todo: image alt */}
       </ImageContainer>
       <StyledContentWrapper>
         <StyledHeadingWrapper>

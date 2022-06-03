@@ -1,4 +1,4 @@
-export const rainbowColors = ['#ff0400', '#e2dc22', '#00ff08', '#3300ff', '#861197'];
+export const rainbowColors = ['#ff0400', '#fb781b', '#ffd500', '#3300ff', '#861197'];
 
 const theme = {
   color: {
@@ -45,12 +45,15 @@ const theme = {
     yellowSlider: 'linear-gradient(150deg, rgba(221,253,90,1) 0%, rgba(226,251,116,1) 100%)',
     yellowHaveIdea: 'linear-gradient(125deg, rgba(221,253,90,1) 0%, rgba(226,251,116,1) 100%)',
     transparentWhiteTransparent: 'linear-gradient(180deg, hsl(0, 0%, 80%, 0) 0%, hsl(0, 0%, 100%) 30%, hsl(0, 0%, 100%) 70% ,hsl(0, 0%, 0%, 0) 100%)',
+    transparentWhiteTransparentSecond:
+      'linear-gradient(180deg, hsl(0, 0%, 80%, 0) 0%, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 100%) 90% ,hsl(0, 0%, 0%, 0) 100%)',
     navyToYellow: 'linear-gradient(180deg, hsla(197, 58%, 8%, 1) 0%, hsl(0, 0%, 80%, 1) 10%, hsl(0, 0%, 80%, 1) 90% ,hsl(65, 88%, 48%) 100%)',
     red: 'linear-gradient(116.54deg, #EC1D1D -12.64%, #FC5858 94.69%)',
     rainbow: {
       highlight:
         'linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(254,255,0,1) 25%, rgba(1,255,0,1) 50%, rgba(0,39,255,1) 75%, rgba(226,0,255,1) 100%)',
-      servicesAxis: `linear-gradient(180deg, hsl(0, 0%, 80%) 0%, ${rainbowColors[0]} 16.66%, ${rainbowColors[1]} 33.33%, ${rainbowColors[2]} 50%, ${rainbowColors[3]} 66.66%, ${rainbowColors[4]} 83.33%, hsl(0, 0%, 80%) 100%)`,
+      servicesAxis: `linear-gradient(180deg, hsl(0, 0%, 80%) 0%, ${rainbowColors[0]} 16.66%, ${rainbowColors[1]} 33.33%, ${rainbowColors[2]} 47%, ${rainbowColors[3]} 66.66%, ${rainbowColors[4]} 83.33%, hsl(0, 0%, 80%) 100%)`,
+      // servicesAxis: `linear-gradient(180deg, hsl(0, 0%, 80%) 0%, ${rainbowColors[0]} 16.66%, ${rainbowColors[1]} 33.33%, ${rainbowColors[2]} 50%, ${rainbowColors[3]} 66.66%, ${rainbowColors[4]} 83.33%, hsl(0, 0%, 80%) 100%)`,
     },
     transparentToYellow: 'linear-gradient(180deg, hsl(0, 0%, 80%, 0) 0%, hsl(0, 0%, 96%, 0) 10%, hsl(0, 0%, 96%, 0) 90% ,hsl(65, 88%, 48%) 100%)',
   },
