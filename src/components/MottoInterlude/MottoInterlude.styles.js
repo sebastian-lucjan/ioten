@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { TextParagraph, TextWrapper } from '../TextComponents';
 
 export const MottoWrapper = styled(({ ...props }) => <TextWrapper {...props} />)`
-  //margin: 0 20vw;
+  z-index: ${({ theme }) => theme.zIndex.peak};
+
   ${({ theme }) => theme.mq.tablet} {
-    //position: relative;
     display: flex;
     justify-content: center;
     width: 100%;

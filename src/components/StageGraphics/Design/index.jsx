@@ -1,14 +1,9 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-// import pulireWebsite from 'src/assets/images/macbook-air-13.png';
-// import pulireWebsite from 'src/assets/images/macbook-air-13-blank.png';
-// import pulireWebsite from 'src/assets/images/macbook-air-13-pulire.png';
-// import handColor from 'src/assets/images/hand-color.png';
 import designGraphicsView from 'src/assets/images/design-graphic-1.png';
 import designSystemGraphics from 'src/assets/images/design-graphic-2.png';
-// import tabletView from 'src/assets/images/tablet-view.png';
-// import pulireWebsite from 'src/assets/images/hand-marble.png';
-// import pulireWebsite from 'src/assets/images/head.png';
+// import pencil from 'src/assets/images/design-item-3.png';
+
 export const DesignWrapper = styled.div`
   display: none;
 
@@ -38,6 +33,30 @@ export const DesignWrapper = styled.div`
       margin: 0 40px;
       z-index: ${({ theme }) => theme.zIndex.peak};
     }
+
+    // .pencil,
+    // .star {
+    //   display: none;
+    //   position: absolute;
+    //   width: 100px;
+    //   height: 100px;
+    //   z-index: ${({ theme }) => theme.zIndex.peak};
+    //   filter: drop-shadow(5px 5px 2px #2222);
+    //
+    //   ${({ theme }) => theme.mq.smallDesktop} {
+    //     display: block;
+    //   }
+    // }
+    //
+    // .pencil {
+    //   top: 5%;
+    //   left: 10%;
+    // }
+
+    //.star {
+    //  top: 80%;
+    //  left: 20%;
+    //}
   }
 `;
 
@@ -50,6 +69,13 @@ export default function Design() {
       <div className="designSystemGraphics">
         <Image src={designSystemGraphics} layout="fill" objectFit="contain" alt="" />
       </div>
+
+      {/* <div className="pencil"> */}
+      {/*  <Image src={pencil} layout="fill" objectFit="contain" alt="" /> */}
+      {/* </div> */}
+      {/* <div className="star"> */}
+      {/*  <Image src={star} layout="fill" objectFit="contain" alt="" /> */}
+      {/* </div> */}
     </DesignWrapper>
   );
 }

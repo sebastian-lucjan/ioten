@@ -3,6 +3,15 @@ import styled from 'styled-components';
 import developmentMobile from 'src/assets/images/development-mobile.png';
 import developmentTablet from 'src/assets/images/development-tablet.png';
 import developmentMac from 'src/assets/images/development-mac.png';
+// import JsLogo from 'src/assets/images/logo-javascript.svg';
+// import TsLogo from 'src/assets/images/logo-typescript.svg';
+// import ReactLogo from 'src/assets/images/logo-react.svg';
+// import NextJsLogo from 'src/assets/images/logo-nextjs.svg';
+// import CssLogo from 'src/assets/images/logo-css.svg';
+// import TailwindLogo from 'src/assets/images/logo-tailwindcss.svg';
+// import HtmlLogo from 'src/assets/images/logo-html5.svg';
+// import StrapiLogo from 'src/assets/images/logo-strapi.svg';
+// import GaLogo from 'src/assets/images/logo-google-ads.svg';
 
 export const DevelopmentWrapper = styled.div`
   display: none;
@@ -41,6 +50,56 @@ export const DevelopmentWrapper = styled.div`
       transform: translateX(-8%);
       margin: 0;
     }
+
+    .logo {
+      display: none;
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      z-index: ${({ theme }) => theme.zIndex.peak};
+      filter: drop-shadow(5px 5px 2px #2222);
+
+      ${({ theme }) => theme.mq.smallDesktop} {
+        display: block;
+      }
+    }
+
+    .react-logo {
+      top: 80%;
+      left: 80%;
+    }
+    .next-logo {
+      top: 90%;
+      left: 70%;
+    }
+    .css-logo {
+      top: 80%;
+      left: 20%;
+    }
+    .tailwind-logo {
+      top: 20%;
+      left: 80%;
+    }
+    .html-logo {
+      top: 0%;
+      left: 55%;
+    }
+    .strapi-logo {
+      top: 100%;
+      left: 45%;
+    }
+    .ga-logo {
+      top: 10%;
+      left: 90%;
+    }
+    .js-logo {
+      top: 5%;
+      left: 10%;
+    }
+    .ts-logo {
+      top: 20%;
+      left: 20%;
+    }
   } ;
 `;
 export default function Development() {
@@ -55,6 +114,34 @@ export default function Development() {
       <div className="development-mac">
         <Image src={developmentMac} layout="fill" objectFit="contain" alt="" />
       </div>
+
+      {/* <div className="react-logo logo"> */}
+      {/*  <ReactLogo /> */}
+      {/* </div> */}
+      {/* <div className="next-logo logo"> */}
+      {/*  <NextJsLogo /> */}
+      {/* </div> */}
+      {/* <div className="css-logo logo"> */}
+      {/*  <CssLogo /> */}
+      {/* </div> */}
+      {/* <div className="tailwind-logo logo"> */}
+      {/*  <TailwindLogo /> */}
+      {/* </div> */}
+      {/* <div className="html-logo logo"> */}
+      {/*  <HtmlLogo /> */}
+      {/* </div> */}
+      {/* <div className="strapi-logo logo"> */}
+      {/*  <StrapiLogo /> */}
+      {/* </div> */}
+      {/* <div className="ga-logo logo"> */}
+      {/*  <GaLogo /> */}
+      {/* </div> */}
+      {/* <div className="js-logo logo"> */}
+      {/*  <JsLogo /> */}
+      {/* </div> */}
+      {/* <div className="ts-logo logo"> */}
+      {/*  <TsLogo /> */}
+      {/* </div> */}
     </DevelopmentWrapper>
   );
 }

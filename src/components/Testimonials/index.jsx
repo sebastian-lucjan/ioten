@@ -54,7 +54,7 @@ const TestimonialsInterlude = () => {
       <TestimonialsWrapper noAlign className="motto">
         <Slider {...settings}>
           {testimonials.map((testimonial) => (
-            <div key={uuid()}>
+            <div key={uuid()} data-aos="fade-up">
               <TestimonialsParagraph weight="bold" className="motto__text">
                 {testimonial.text}
               </TestimonialsParagraph>

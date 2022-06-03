@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 import wireframeGraphic from 'src/assets/images/wireframe-graphics.png';
+// import octahedron from 'src/assets/images/wireframe-item-1.png';
+// import cube from 'src/assets/images/wireframe-item-2.png';
 
 const Container = styled.div`
   height: 100%;
@@ -27,6 +29,30 @@ export const ConceptWireframingWrapper = styled.div`
       margin: 0 2px;
       z-index: ${({ theme }) => theme.zIndex.peak};
     }
+
+    .cube,
+    .octahedron {
+      display: none;
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      z-index: ${({ theme }) => theme.zIndex.peak};
+      filter: drop-shadow(5px 5px 2px #2222);
+
+      ${({ theme }) => theme.mq.smallDesktop} {
+        display: block;
+      }
+    }
+
+    //.cube {
+    //  top: 5%;
+    //  left: 10%;
+    //}
+    //
+    //.octahedron {
+    //  top: 80%;
+    //  left: 80%;
+    //}
   }
 `;
 
@@ -37,6 +63,12 @@ export default function ConceptWireframing() {
         <div className="sign-in-wireframe wireframe">
           <Image src={wireframeGraphic} layout="fill" objectFit="contain" alt="" />
         </div>
+        {/* <div className="cube"> */}
+        {/*  <Image src={cube} layout="fill" objectFit="contain" alt="" /> */}
+        {/* </div> */}
+        {/* <div className="octahedron"> */}
+        {/*  <Image src={octahedron} layout="fill" objectFit="contain" alt="" /> */}
+        {/* </div> */}
       </ConceptWireframingWrapper>
     </Container>
   );
