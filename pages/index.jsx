@@ -3,7 +3,7 @@ import BaseLayout from 'src/components/BaseLayout';
 import MainPage from 'src/components/MainPage';
 import MottoInterlude from 'src/components/MottoInterlude';
 import ServicesAxis from 'src/components/ServicesAxis';
-import BlogShort from 'src/components/BlogShort';
+// import BlogShort from 'src/components/BlogShort';
 import IdeaInterlude from 'src/components/IdeaInterlude';
 import Testimonials from 'src/components/Testimonials';
 import theme from 'src/assets/styles/theme';
@@ -38,7 +38,7 @@ export default function Home() {
           <MottoInterlude />
           <ServicesAxis />
           <Testimonials />
-          <BlogShort />
+          {/* <BlogShort /> */}
           <IdeaInterlude />
         </BaseLayout>
       </MainPageContext.Provider>
@@ -47,5 +47,4 @@ export default function Home() {
 }
 
 // todo: customize scrollbar -> not supported by firefox and IE (usage from 76% to 90%)
-// todo: check if canonical is necessary for all pages or only for main page
 // todo: i allowed indexing of main page but it hasn't been finished yet.

@@ -1,6 +1,6 @@
 export default {
-  noindex: true,
-  nofollow: true,
+  noindex: false,
+  nofollow: false,
   // openGraph: {
   //   type: 'website',
   //   locale: 'en_IE',
