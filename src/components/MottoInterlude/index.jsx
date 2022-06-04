@@ -13,6 +13,7 @@ const StyledMediumRing = styled.div`
     top: 20%;
     right: 0.4rem;
   }
+
   *:nth-child(1) {
     z-index: ${({ theme: { zIndex } }) => zIndex.peak};
   }
@@ -25,7 +26,7 @@ const MottoInterlude = () => {
 
   return (
     <MainSectionWrapper background={white} smaller>
-      <MottoWrapper>
+      <MottoWrapper data-aos="fade-up">
         <MottoParagraph weight="bold" className="motto__text">
           {motto.text}
         </MottoParagraph>

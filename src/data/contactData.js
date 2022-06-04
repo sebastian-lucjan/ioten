@@ -25,7 +25,7 @@ const contactData = {
       ],
     },
     contact: {
-      cooperation: { heading: 'Współpraca / oferta:', email: 'info@ioten.io', mobile: '863 456 331' }, // mobile placeholder
+      cooperation: { heading: 'Współpraca / oferta:', email: 'info@ioten.io', mobile: '602 446 335' }, // mobile placeholder
       other: { heading: 'Inne:', email: 'hello@ioten.io', mobile: '602 446 335' },
       job: { heading: 'Praca:', email: 'career@ioten.io' },
     },
