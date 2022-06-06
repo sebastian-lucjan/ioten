@@ -14,7 +14,7 @@ export const blogData = {
   intro: {
     category: 'Blog',
     heading: 'Idee, historie, nasze postrzeganie świata designu i kodu.',
-    blogLink: 'Visit or blog',
+    blogLink: 'Odwiedź naszego bloga',
   },
 };
 

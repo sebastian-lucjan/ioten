@@ -20,6 +20,10 @@ export const testimonials = [
     caption: 'Elsystem',
     text: '"Współpraca z ioten przebiegała w sposób nad wyraz optymalny. Czuliśmy się partnerami w cyklu projektowym dlatego decyzje które wcześniej wydawałyby się odważne były dla nas naturalne, a efekt końcowy znakomity."',
   },
+  {
+    caption: 'bask',
+    text: '"Polecam współpracę z firmą Ioten. Oprócz profesjonalnego wykonania strony wychodzili z inicjatywą w kwestii usprawnień i zmian."',
+  },
 ];
 
 export const footerData = {
