@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import mixines from 'src/assets/styles/mixines';
+import { soonLabel } from 'src/assets/styles/mixines';
 
 export const Wrapper = styled.div`
   padding: 60px 20px 0 40px;
@@ -76,13 +76,8 @@ export const FooterItem = styled.p`
 `;
 
 export const FooterSoonItem = styled.p`
-  position: relative;
   color: ${({ theme }) => theme.color.gray};
   line-height: 32px;
 
-  &::after {
-    ${mixines.soonLabel};
-
-    right: -40px;
-  }
+  ${soonLabel};
 `;
