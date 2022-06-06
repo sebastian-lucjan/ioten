@@ -2,7 +2,7 @@ export const navigationData = [
   { name: 'Home', href: '/', as: '/' },
   { name: 'Usługi', href: '/services', as: '/uslugi' },
   // { name: 'O nas', href: '/about', as: '/o-nas' },
-  // { name: 'Blog', href: '/blog', as: '/blog' },
+  { name: 'Blog', href: '/blog', as: '/blog' },
   { name: 'Kontakt', href: '/contact', as: '/kontakt' },
 ];
 
@@ -34,7 +34,7 @@ export const footerData = {
     ],
   },
   contact: {
-    cooperation: { heading: 'Współpraca / oferta:', email: 'info@ioten.io', mobile: '602 446 335' }, // change mobile number
+    cooperation: { heading: 'Współpraca:', email: 'info@ioten.io', mobile: '602 446 335' }, // change mobile number
     other: { heading: 'Inne:', email: 'hello@ioten.io', mobile: '602 446 335' },
     job: { heading: 'Praca:', email: 'career@ioten.io' },
   },

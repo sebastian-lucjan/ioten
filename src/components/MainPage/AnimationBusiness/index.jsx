@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import HomeAnimationSVG from 'src/assets/images/home-animation-business';
 import { Wrapper } from './AnimationBusiness.styles';
@@ -6,6 +6,9 @@ import { Wrapper } from './AnimationBusiness.styles';
 const Animation = () => {
   const image = useRef(null);
   const tl = useRef(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     const { current: el } = image;
@@ -31,7 +34,7 @@ const Animation = () => {
     const roof = el.getElementById('roof');
     const roofShadow = el.getElementById('roof-shadow');
 
-    // temporrary
+    // temporary
     const msgOneInfoPersonBgc = el.getElementById('info-person__background');
     const msgOneInfoPersonAvatar = el.getElementById('avatar');
     const msgOneInfoPersonLines = el.querySelectorAll('#texts > g');
@@ -179,7 +182,7 @@ const Animation = () => {
 
   return (
     <Wrapper>
-      <HomeAnimationSVG setRef={image} />
+      <HomeAnimationSVG style={{ visibility: !mounted ? 'hidden' : '' }} setRef={image} />
     </Wrapper>
   );
 };
