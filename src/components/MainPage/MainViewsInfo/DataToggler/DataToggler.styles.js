@@ -10,8 +10,10 @@ export const Wrapper = styled.div`
     margin-left: 30px;
   }
 
-  ${({ theme }) => `${theme.mq.smallDesktop} and (orientation: landscape)`} {
+  ${({ theme }) => theme.mq.smallDesktop} {
     position: relative;
+  }
+  ${({ theme }) => `${theme.mq.smallDesktop} and (orientation: landscape)`} {
     margin-left: 30px;
   } ;
 `;
