@@ -8,7 +8,13 @@ const Animation = () => {
   const tl = useRef(null);
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(true), []);
+  useEffect(
+    () =>
+      setTimeout(() => {
+        setMounted(true);
+      }, 0),
+    [],
+  ); // walkaround for blinking of whole business animation image (FOUC)
 
   useEffect(() => {
     const { current: el } = image;
@@ -57,8 +63,8 @@ const Animation = () => {
     const smallDevicesLines = el.getElementById('devices-lines');
 
     tl.current = gsap.timeline();
-    // "gsap.set" instead of "tl.current.set" because of blink of done animation in the very beginning of animation or during reloading
-    gsap.set(
+    // tl.current.set([el], { autoAlpha: 0 });
+    tl.current.set(
       [
         woman,
         ground,
@@ -178,11 +184,11 @@ const Animation = () => {
     return () => {
       tl.current.kill();
     };
-  }, []);
+  }, [mounted]);
 
   return (
-    <Wrapper>
-      <HomeAnimationSVG style={{ visibility: !mounted ? 'hidden' : '' }} setRef={image} />
+    <Wrapper style={{ visibility: !mounted ? 'hidden' : '' }}>
+      <HomeAnimationSVG setRef={image} />
     </Wrapper>
   );
 };
