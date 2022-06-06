@@ -12,6 +12,10 @@ export const Wrapper = styled.div`
     display: block;
     width: 300px;
     margin: 0 auto;
+    //
+    //#home-animation-business {
+    //  visibility: hidden;
+    //}
   }
 
   ${({ theme }) => theme.mq.mediumMobile} {
