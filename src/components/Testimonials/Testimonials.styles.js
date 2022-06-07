@@ -13,6 +13,7 @@ export const TestimonialsWrapper = styled(({ ...props }) => <TextWrapper {...pro
     width: 45%;
     margin: 0 auto;
     padding: 10vh 0;
+    z-index: ${({ theme }) => theme.zIndex.peak};
   }
 
   ${({ theme }) => theme.mq.smallDesktop} {
@@ -25,6 +26,7 @@ export const TestimonialsParagraph = styled(({ ...props }) => <TextParagraph {..
     font-size: ${({ theme }) => theme.font.size.headingMedium};
     line-height: 42px;
   }
+
   ${({ theme }) => theme.mq.smallDesktop} {
   } ;
 `;
