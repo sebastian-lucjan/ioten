@@ -55,7 +55,7 @@ const policyData = {
   additionalInformation:
     'Dodatkowe dane osobowe, jak adres e - mail, imię i naziwsko, zbierane są jedynie w miejscach, w których użytkownik wypełniając formularz wyraźnie wyraził na to zgodę.Powyższe dane zachowujemy i wykorzystujemy tylko do potrzeb niezbędnych do wykonania danej funkcji.',
   metaData: {
-    title: 'Ioten - Fast & Beautiful Websites',
+    title: 'ioten - szybkie i skuteczne strony internetowe',
     description:
       'Ioten rozumie potrzeby klienta oraz specyfikę projektu i pomaga osiągnąć cel zgodnie z przyjętną strategią. Celem ioten jest budowa stron które rozwiną Twój biznes.',
     url: 'polityka-prywatnosci',

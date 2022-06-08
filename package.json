@@ -1,6 +1,6 @@
 {
   "name": "ioten",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "ioten - usługi z branży www i it",
   "main": "index.jsx",
   "private": true,

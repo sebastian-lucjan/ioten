@@ -11,23 +11,33 @@ const plainVersionText = (name, companyName, phoneNumber, email, description, fr
   Wiadomość przesłana z: ${from}`;
 };
 
+// const transporterDev = nodemailer.createTransport({
+//   host: 'smtp.ethereal.email',
+//   port: 587,
+//   secure: false,
+//   auth: {
+//     user: process.env.NEXT_PUBLIC_EMAIL_USER_DEV,
+//     pass: process.env.NEXT_PUBLIC_EMAIL_PASS_DEV,
+//   },
+// });
+
+const transporterProd = nodemailer.createTransport({
+  host: 'ssl0.ovh.net',
+  port: 465,
+  auth: {
+    user: process.env.NEXT_PUBLIC_EMAIL_USER_PROD,
+    pass: process.env.NEXT_PUBLIC_EMAIL_PASS_PROD,
+  },
+});
+
 const sendMessageToIoten = async (name, company, mobile, email, message, policy, nda, from = 'contact-page') => {
   console.log('sendMessage -> ', name);
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
-    secure: false,
-    auth: {
-      user: process.env.NEXT_PUBLIC_EMAIL_USER,
-      pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
-    },
-  });
+  // const transporterSelected = process.env.IS_PROD ? transporterProd : transporterDev;
+  const transporterSelected = process.env.IS_PROD ? transporterProd : transporterProd;
 
-  await transporter.sendMail({
-    from: 'Ioten <contact.form@ioten.io>',
-    to: 'Ioten <hadley.friesen32@ethereal.email>',
-    // from: 'Ioten <contact.form@ioten.io>',
-    // to: 'Ioten <info@ioten.io>',
+  await transporterSelected.sendMail({
+    from: 'Ioten - form <form@ioten.io>',
+    to: 'Ioten <info@ioten.io>',
     replyTo: `${email}`,
     subject: `✔ ioten.io - wiadomość z formularza kontaktowego od "${name}"`,
     text: plainVersionText(name, email, message),

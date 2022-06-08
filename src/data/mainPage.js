@@ -29,7 +29,7 @@ export const ideaInterlude = {
 };
 
 export const mainPage = {
-  title: 'Fast & Beautiful Websites - ioten',
+  title: 'ioten - szybkie i skuteczne strony internetowe',
   url: '/',
   description:
     'Zaprojektujemy i zbudujemy niesamowicie szybką stronę internetową dla Twojego biznesu. Estetyka i funkcjonalność mają u nas kluczowe znaczenie.',
