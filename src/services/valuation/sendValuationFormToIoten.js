@@ -69,8 +69,8 @@ const sendValuationFormToIoten = async (payload) => {
     host: 'ssl0.ovh.net',
     port: 465,
     auth: {
-      user: process.env.NEXT_PUBLIC_EMAIL_USER_PROD,
-      pass: process.env.NEXT_PUBLIC_EMAIL_PASS_PROD,
+      user: process.env.EMAIL_USER_PROD,
+      pass: process.env.EMAIL_PASS_PROD,
     },
   });
 
