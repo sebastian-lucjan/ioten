@@ -10,13 +10,13 @@ const StyledBaseLayout = styled.main`
   overflow: hidden;
 
   ${({ theme }) => theme.mq.smallDesktop} {
-    overflow: unset; //property set because of sticky elements
+    /*property 'overflow' set because of sticky elements
+    noOverflow is passed as true only for services page*/
+    overflow: ${({ noOverflow }) => (noOverflow ? 'unset' : 'hidden')};
   } ;
 `;
 
-// todo: home page overflow hidden
-
-const BaseLayout = ({ children, footerGridColor, whiteNavigationText, setRef }) => {
+const BaseLayout = ({ children, footerGridColor, whiteNavigationText, setRef, noOverflow }) => {
   const [isFooterVisible, setIsFooterVisible] = useState(true);
   const { asPath } = useRouter();
 
@@ -31,7 +31,7 @@ const BaseLayout = ({ children, footerGridColor, whiteNavigationText, setRef }) 
   }, [asPath]);
 
   return (
-    <StyledBaseLayout>
+    <StyledBaseLayout noOverflow={noOverflow}>
       <Navigation setRef={setRef} whiteNavigationText={whiteNavigationText} />
       {children}
       {isFooterVisible ? <Footer footerGridColor={footerGridColor} /> : null}

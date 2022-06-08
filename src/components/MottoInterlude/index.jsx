@@ -3,29 +3,77 @@ import theme from 'src/assets/styles/theme';
 import { motto } from 'src/data/pageData';
 import IRingFront from 'src/assets/images/i-ring-front-lg.svg';
 import IRingBack from 'src/assets/images/i-ring-back-lg.svg';
+import ORingFront from 'src/assets/images/o-ring-front-md.svg';
+import ORingBack from 'src/assets/images/o-ring-back-md.svg';
 import styled from 'styled-components';
+import gsap from 'gsap';
 import Grid from 'src/components/Grid';
+import { useEffect, useRef } from 'react';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { MottoCaption, MottoParagraph, MottoWrapper } from './MottoInterlude.styles';
 
-const StyledMediumRing = styled.div`
+gsap.registerPlugin(ScrollTrigger);
+
+const StyledRingOne = styled.div`
   & * {
     position: absolute;
-    top: 20%;
+    top: 80%;
     right: 0.4rem;
   }
+`;
 
-  *:nth-child(1) {
-    z-index: ${({ theme: { zIndex } }) => zIndex.peak};
+const StyledRingTwo = styled.div`
+  & * {
+    position: absolute;
+    top: 40%;
+    left: 0.8rem;
   }
 `;
 
 const MottoInterlude = () => {
-  const {
-    color: { white },
-  } = theme;
+  const ringOne = useRef(null);
+  const ringTwo = useRef(null);
+
+  const tlRingOne = useRef(null);
+  const tlRingTwo = useRef(null);
+
+  useEffect(() => {
+    // ringOne IRIng - left site
+    const { current: el } = ringOne;
+    const [ringOneFront, ringOneBack] = el.querySelectorAll('svg');
+
+    tlRingOne.current = gsap.timeline({
+      scrollTrigger: {
+        trigger: ringOne.current,
+        start: 'top bottom',
+        scrub: 1,
+      },
+    });
+
+    tlRingOne.current.set([ringOneFront], { zIndex: 3 });
+    tlRingOne.current.to([ringOneFront, ringOneBack], { y: -250 });
+    // ringTwo ORIng - right site
+    const { current: elTwo } = ringTwo;
+    const [ringTwoFront, ringTwoBack] = elTwo.querySelectorAll('svg');
+
+    tlRingTwo.current = gsap.timeline({
+      scrollTrigger: {
+        trigger: ringOne.current,
+        start: 'top bottom',
+        scrub: 1,
+      },
+    });
+
+    tlRingTwo.current.set([ringTwoFront], { zIndex: 3 });
+    tlRingTwo.current.to([ringTwoFront, ringTwoBack], { y: 150 });
+    return () => {
+      tlRingOne.current.kill();
+      tlRingTwo.current.kill();
+    };
+  }, []);
 
   return (
-    <MainSectionWrapper background={white} smaller>
+    <MainSectionWrapper background={theme.color.white} smaller>
       <MottoWrapper data-aos="fade-up">
         <MottoParagraph weight="bold" className="motto__text">
           {motto.text}
@@ -35,10 +83,15 @@ const MottoInterlude = () => {
 
       <Grid />
 
-      <StyledMediumRing>
+      <StyledRingOne ref={ringOne}>
         <IRingFront />
         <IRingBack />
-      </StyledMediumRing>
+      </StyledRingOne>
+
+      <StyledRingTwo ref={ringTwo}>
+        <ORingFront />
+        <ORingBack />
+      </StyledRingTwo>
     </MainSectionWrapper>
   );
 };

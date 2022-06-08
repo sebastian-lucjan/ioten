@@ -6,15 +6,17 @@ import { Wrapper } from './AnimationBusiness.styles';
 const Animation = () => {
   const image = useRef(null);
   const tl = useRef(null);
-  const [mounted, setMounted] = useState(false);
 
+  // walkaround for blinking of whole business animation image (FOUC)
+  const [mounted, setMounted] = useState(false);
   useEffect(
     () =>
       setTimeout(() => {
         setMounted(true);
       }, 0),
     [],
-  ); // walkaround for blinking of whole business animation image (FOUC)
+  );
+  //
 
   useEffect(() => {
     const { current: el } = image;
@@ -64,6 +66,8 @@ const Animation = () => {
 
     tl.current = gsap.timeline();
     // tl.current.set([el], { autoAlpha: 0 });
+    console.log('tl.current', tl.current);
+    console.log('woman', woman);
     tl.current.set(
       [
         woman,

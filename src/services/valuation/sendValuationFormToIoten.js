@@ -66,18 +66,17 @@ const sendValuationFormToIoten = async (payload) => {
   console.log('sendMessage -> ', payload);
 
   const transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
-    secure: false,
+    host: 'ssl0.ovh.net',
+    port: 465,
     auth: {
-      user: process.env.NEXT_PUBLIC_EMAIL_USER,
-      pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
+      user: process.env.NEXT_PUBLIC_EMAIL_USER_PROD,
+      pass: process.env.NEXT_PUBLIC_EMAIL_PASS_PROD,
     },
   });
 
   await transporter.sendMail({
-    from: 'Ioten <contact.form@ioten.io>',
-    to: 'Ioten <hadley.friesen32@ethereal.email>',
+    from: 'Ioten - form <form@ioten.io>',
+    to: 'Ioten <info@ioten.io>',
     // from: 'Ioten <contact.form@ioten.io>',
     // to: 'Ioten <info@ioten.io>',
     replyTo: `${payload.email}`,

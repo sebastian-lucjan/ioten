@@ -35,7 +35,7 @@ export default function ContactDetails() {
 
       {/* <div className="contact-details__info-item"> */}
       {/*  <h3 className="contact-details__info-item-label">social media</h3> */}
-      {/* <SocialMedia black /> */}
+      {/*  <SocialMedia black /> */}
       {/* </div> */}
     </StyledContactDetails>
   );
