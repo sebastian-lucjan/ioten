@@ -11,8 +11,7 @@ export const getHighlightedPosts = async () => {
   const client = contentfulClient;
 
   const res = await client.getEntries({ content_type: 'blogPost' });
-  return res.items;
-  // console.log('allPost', allPosts);
-  // const highlightedPosts = ;
-  // return allPosts;
+  const highlightedPosts = res.items.filter((post) => post.fields.isMainPage);
+
+  return highlightedPosts.slice(0, 3);
 };
