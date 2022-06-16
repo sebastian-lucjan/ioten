@@ -23,7 +23,11 @@ module.exports = (phase) => {
     NEXT_PUBLIC_GA_MEASUREMENT_ID: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
     //     NEXT_PUBLIC_GA_VERCEL_ID: process.env.NEXT_PUBLIC_GA_VERCEL_ID,
   };
-  //
+
+  const images = {
+    domains: ['images.ctfassets.net'],
+  };
+
   const rewrites = () => {
     return [
       {
@@ -67,5 +71,6 @@ module.exports = (phase) => {
     env,
     rewrites,
     webpack,
+    images,
   };
 };

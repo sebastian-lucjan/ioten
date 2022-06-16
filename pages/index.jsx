@@ -11,8 +11,17 @@ import { NextSeo } from 'next-seo';
 import { useEffect, useRef, useState } from 'react';
 import useOnDarkScreen from 'src/hooks/useOnDarkScreen';
 import { mainPage } from 'src/data/mainPage';
+import { getHighlightedPosts } from 'src/services/blog/getPosts';
 
-export default function Home() {
+export async function getServerSideProps() {
+  const highlightedPosts = await getHighlightedPosts();
+
+  console.log('highlightedPosts', highlightedPosts);
+
+  return { props: { highlightedPosts } };
+}
+
+export default function Home({ highlightedPosts }) {
   const [currentPage, setCurrentPage] = useState(0);
   const [dataBooster, setDataBooster] = useState('initial-state');
 
@@ -32,7 +41,7 @@ export default function Home() {
     <>
       <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} />
 
-      <MainPageContext.Provider value={{ pageIndex: currentPage, setCurrentPage, dataBooster, setDataBooster }}>
+      <MainPageContext.Provider value={{ pageIndex: currentPage, setCurrentPage, dataBooster, setDataBooster, highlightedPosts }}>
         <BaseLayout whiteNavigationText={onDarkScreen} footerGridColor={theme.gradient.yellowToGray}>
           <MainPage setRef={ref} />
           <MottoInterlude />

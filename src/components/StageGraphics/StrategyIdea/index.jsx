@@ -15,6 +15,7 @@ export const StrategyIdeaWrapper = styled.div`
     width: calc(75vw - 30px);
     margin: 0 0 0 10px;
     height: 100vh;
+    //height: 300vh;
 
     .strategyIdea {
       background: ${({ theme }) => theme.gradient.transparentWhiteTransparentSecond};
