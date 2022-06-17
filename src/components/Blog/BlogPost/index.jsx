@@ -61,9 +61,8 @@ export default function BlogPost({ post }) {
           <Image src={`https:${file.url}`} layout="fill" objectFit="cover" alt={description} />
         </StyledImage>
       </BlogPostIntroWrapper>
-      <BlogPostBodyWrapper>
-        <div>{documentToReactComponents(blogPostBody, richTextOptions)}</div>
-      </BlogPostBodyWrapper>
+
+      <BlogPostBodyWrapper>{documentToReactComponents(blogPostBody, richTextOptions)}</BlogPostBodyWrapper>
 
       <Grid colors={{ lines: grayToYellow, innerLines: transparentToYellow }} />
     </StyledBlogPost>

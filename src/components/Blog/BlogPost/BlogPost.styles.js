@@ -3,6 +3,14 @@ import { TextHeading, TextParagraph } from 'src/components/TextComponents';
 
 export const StyledParagraph = styled(TextParagraph)`
   padding: 2rem 0;
+
+  ${({ theme }) => theme.mq.tablet} {
+    font-size: ${({ theme }) => theme.font.size.paragraph};
+  }
+
+  ${({ theme }) => theme.mq.bigDesktop} {
+    font-size: ${({ theme }) => theme.font.size.headingSmall};
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -30,18 +38,36 @@ export const BlogPostIntroWrapper = styled.div`
 
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: flex-start;
+
+  ${({ theme }) => theme.mq.tablet} {
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const BlogPostBodyWrapper = styled.div`
   padding: 0 40px 40px 40px;
+
+  ${({ theme }) => theme.mq.tablet} {
+    padding: 40px 120px 120px 120px;
+  }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    margin: 0 auto;
+    width: 50%;
+    max-width: 900px;
+    padding: 80px 40px 120px 40px;
+  }
 `;
 
 export const PostHeading = styled(TextHeading)`
   font-size: ${({ theme }) => theme.font.size.headingMedium};
   margin-bottom: 2rem;
-  color: ${({ theme }) => theme.color.white}; ;
+  color: ${({ theme }) => theme.color.white};
+
+  ${({ theme }) => theme.mq.tablet};
+  font-size: ${({ theme }) => theme.font.size.headingSection}; ;
 `;
 
 export const PostCategory = styled.p`
@@ -54,6 +80,13 @@ export const PostCategory = styled.p`
   height: 24px;
   line-height: 24px;
   margin-right: 2rem;
+
+  ${({ theme }) => theme.mq.tablet} {
+    padding: 0.2rem 1.2rem;
+    height: 32px;
+    line-height: 32px;
+    font-size: ${({ theme }) => theme.font.size.paragraphSmall};
+  }
 
   &:hover {
     filter: brightness(0.8);
