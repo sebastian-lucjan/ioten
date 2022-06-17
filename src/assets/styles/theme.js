@@ -25,10 +25,11 @@ const theme = {
     white: 'hsl(0, 0%, 100%)',
 
     categoryColor: {
-      IOTEN: 'hsl(119, 55%, 63%)',
-      TECHNOLOGY: '#94b1f5',
+      BUSINESS: 'hsla(197, 58%, 8%, 1)',
       DESIGN: '#015CC8',
+      IOTEN: 'hsl(119, 55%, 63%)',
       PRODUCTIVITY: 'hsl(119,35%,50%)',
+      TECHNOLOGY: '#94b1f5',
     },
   },
   gradient: {
