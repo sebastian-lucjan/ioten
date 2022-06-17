@@ -6,7 +6,9 @@ import Grid from 'src/components/Grid';
 import {
   BlogPostBodyWrapper,
   BlogPostIntroWrapper,
+  CategoryWrapper,
   ImageWrapper,
+  PostCategory,
   PostHeading,
   StyledBlogPost,
   StyledImage,
@@ -16,6 +18,7 @@ import {
 const richTextOptions = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: ({ data }) => {
+      console.log('data', data);
       return (
         <ImageWrapper>
           <Image src={`https:${data.target.fields.file.url}`} layout="fill" objectFit="cover" />
@@ -30,30 +33,39 @@ const richTextOptions = {
 
 export default function BlogPost({ post }) {
   const {
-    coverImage,
+    coverImage: {
+      fields: { file, description },
+    },
     title,
-    // category: [postCategory],
+    category: categoryArr,
     blogPostBody,
   } = post.fields;
 
   const {
-    gradient: { grayToYellow },
+    gradient: { grayToYellow, transparentToYellow },
   } = theme;
 
   return (
     <StyledBlogPost>
       <BlogPostIntroWrapper>
-        {/* <Image priority src={`https:${url}`} layout="fill" objectFit="cover" alt="czarna szczotka, narzędzie do sprzątania" /> */}
-        <StyledImage>
-          <Image src={`https:${coverImage.fields.file.url}`} layout="fill" objectFit="cover" />
-        </StyledImage>
         <PostHeading>{title}</PostHeading>
-        {/* <Grid colors={{ lines: lightGray, innerLines: grayTransparentGray }} /> */}
+        <CategoryWrapper>
+          {categoryArr.map((category) => (
+            <PostCategory key={category} category={category}>
+              {category}
+            </PostCategory>
+          ))}
+        </CategoryWrapper>
+
+        <StyledImage>
+          <Image src={`https:${file.url}`} layout="fill" objectFit="cover" alt={description} />
+        </StyledImage>
       </BlogPostIntroWrapper>
       <BlogPostBodyWrapper>
         <div>{documentToReactComponents(blogPostBody, richTextOptions)}</div>
       </BlogPostBodyWrapper>
-      <Grid colors={{ lines: grayToYellow }} />
+
+      <Grid colors={{ lines: grayToYellow, innerLines: transparentToYellow }} />
     </StyledBlogPost>
   );
 }
