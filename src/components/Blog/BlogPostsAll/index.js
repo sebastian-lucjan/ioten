@@ -1,12 +1,14 @@
 import Grid from 'src/components/Grid';
 import theme from 'src/assets/styles/theme';
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
-import { v4 as uuid } from 'uuid';
-import { blogPosts } from 'src/data/blogData';
-import BlogPost from '../BlogPostAll/BlogPost';
+import { useContext } from 'react';
+import { BlogContext } from 'pages/blog';
+import BlogPost from '../BlogPostAll/BlogPostLink';
 import { BlogPostContainer, StyledBlogPostAll } from './BlogPostAll.styles';
 
 export default function BlogPostsAll() {
+  const blogPosts = useContext(BlogContext);
+
   const {
     color: { white },
     gradient: { grayToYellow, transparentToYellow },
@@ -16,10 +18,10 @@ export default function BlogPostsAll() {
     <MainSectionWrapper background={white}>
       <StyledBlogPostAll>
         {/* <BlogNavigation/> */}
-        {/* <BlogPost /> */}
+        {/* <BlogPostLink /> */}
         <BlogPostContainer>
           {blogPosts.map((post, index) => (
-            <BlogPost key={uuid()} post={post} index={index} />
+            <BlogPost key={post.sys.id} post={post} index={index} />
           ))}
         </BlogPostContainer>
         <Grid colors={{ lines: grayToYellow, innerLines: transparentToYellow }} />

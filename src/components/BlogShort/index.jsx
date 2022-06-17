@@ -1,26 +1,24 @@
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import theme from 'src/assets/styles/theme';
-import { blogData, blogPosts } from 'src/data/blogData';
+import { blogData } from 'src/data/blogData';
 import { TextCaption } from 'src/components/TextComponents';
 import { v4 as uuid } from 'uuid';
 import Link from 'next/link';
 import Grid from 'src/components/Grid';
-import BlogPost from 'src/components/Blog/BlogPostAll/BlogPost';
+import BlogPost from 'src/components/Blog/BlogPostAll/BlogPostLink';
+import { useContext } from 'react';
+import MainPageContext from 'src/context/mainPageContext';
 import { BlogIntroHeading, BlogPostsContainer, StyledLink, WrapperBlogShort } from './BlogShort.styles';
 
 const BlogShort = () => {
+  const { highlightedPosts } = useContext(MainPageContext);
+
   const {
     color: { white },
     gradient: { grayToYellow, yellowTransparentGray },
   } = theme;
 
   const { category, heading, blogLink } = blogData.intro;
-
-  const selectPreferentialPosts = (() => {
-    const prefPosts = blogPosts.filter((post) => post.preference);
-
-    return prefPosts.splice(0, 3);
-  })();
 
   return (
     <MainSectionWrapper background={white}>
@@ -31,7 +29,7 @@ const BlogShort = () => {
           <StyledLink>{blogLink}</StyledLink>
         </Link>
         <BlogPostsContainer>
-          {selectPreferentialPosts.map((post) => (
+          {highlightedPosts.map((post) => (
             <BlogPost key={uuid()} post={post} />
           ))}
         </BlogPostsContainer>

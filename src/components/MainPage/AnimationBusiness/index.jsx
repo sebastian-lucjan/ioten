@@ -66,8 +66,7 @@ const Animation = () => {
 
     tl.current = gsap.timeline();
     // tl.current.set([el], { autoAlpha: 0 });
-    console.log('tl.current', tl.current);
-    console.log('woman', woman);
+
     tl.current.set(
       [
         woman,

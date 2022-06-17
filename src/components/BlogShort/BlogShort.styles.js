@@ -15,10 +15,10 @@ export const WrapperBlogShort = styled(({ short, ...props }) => <TextWrapper sho
   }
 `;
 
-export const ImagePlaceholder = styled.div`
-  height: 200px;
+export const StyledImage = styled.div`
+  height: 300px;
   width: 100%;
-  background-color: lightgrey;
+  position: relative;
   margin: 1rem 0;
 `;
 
@@ -47,7 +47,7 @@ export const BlogPostsContainer = styled.div`
 
 export const StyledPost = styled.div`
   width: 100%;
-
+  cursor: pointer;
   margin: 4rem 0;
 
   p {
