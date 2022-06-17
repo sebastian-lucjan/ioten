@@ -2,20 +2,28 @@
 
 const maxCharactersNumber = 120;
 
-export const getShortDescription = (bodyText) => {
-  const attachedBodyText = bodyText.content.reduce((acc, currentValue) => {
-    return `${acc} ${currentValue.content[0].value}`;
+export const getShortDescription = (blogPostBody) => {
+  const attachedBlogPostBody = blogPostBody.content.reduce((acc, currentValue) => {
+    const stringToAttach = currentValue.content.reduce((result, currValue) => {
+      // prevent if rich text is a img asset
+      if (currValue.nodeType === 'text') {
+        return `${result} ${currValue.value}`;
+      }
+
+      // if is different asset than "text" return result string without currValue
+      return result;
+    }, '');
+
+    return `${acc} ${stringToAttach}`;
   }, '');
 
-  const shortDescription = attachedBodyText.split(' ').reduce((acc, currentValue) => {
+  const shortDescription = attachedBlogPostBody.split(' ').reduce((acc, currentValue) => {
     if (acc.length < maxCharactersNumber) {
       return `${acc} ${currentValue}`;
     }
 
     return acc;
   });
-
-  console.log('shortDescription', shortDescription);
 
   return `${shortDescription}...`;
 };

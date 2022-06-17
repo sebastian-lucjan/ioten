@@ -15,9 +15,6 @@ import { getHighlightedPosts } from 'src/services/blog/getPosts';
 
 export async function getServerSideProps() {
   const highlightedPosts = await getHighlightedPosts();
-
-  console.log('highlightedPosts', highlightedPosts);
-
   return { props: { highlightedPosts } };
 }
 

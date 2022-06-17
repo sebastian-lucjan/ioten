@@ -5,8 +5,6 @@ export const dataFormatter = (rawData) => {
     day: 'numeric',
   });
 
-  console.log('formatter.format(new Date(rawData))', formatter.format(new Date(rawData)));
-
   return formatter.format(new Date(rawData));
 };
 

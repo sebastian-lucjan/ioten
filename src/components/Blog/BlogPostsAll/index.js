@@ -3,12 +3,11 @@ import theme from 'src/assets/styles/theme';
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import { useContext } from 'react';
 import { BlogContext } from 'pages/blog';
-import BlogPost from '../BlogPostAll/BlogPost';
+import BlogPost from '../BlogPostAll/BlogPostLink';
 import { BlogPostContainer, StyledBlogPostAll } from './BlogPostAll.styles';
 
 export default function BlogPostsAll() {
   const blogPosts = useContext(BlogContext);
-  console.log('items', blogPosts);
 
   const {
     color: { white },
@@ -19,7 +18,7 @@ export default function BlogPostsAll() {
     <MainSectionWrapper background={white}>
       <StyledBlogPostAll>
         {/* <BlogNavigation/> */}
-        {/* <BlogPost /> */}
+        {/* <BlogPostLink /> */}
         <BlogPostContainer>
           {blogPosts.map((post, index) => (
             <BlogPost key={post.sys.id} post={post} index={index} />

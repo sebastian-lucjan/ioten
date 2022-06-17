@@ -15,7 +15,7 @@ const BlogPost = ({ post }) => {
   const {
     fields: {
       title,
-      bodyText,
+      blogPostBody,
       category,
       coverImage: {
         fields: {
@@ -29,12 +29,10 @@ const BlogPost = ({ post }) => {
 
   const formattedData = dataFormatter(createdAt);
 
-  const shortDescription = getShortDescription(bodyText);
-
-  // console.log('articleSlug', `/${articleSlug}`);
+  const shortDescription = getShortDescription(blogPostBody);
 
   return (
-    <Link href={`/${articleSlug}`}>
+    <Link href={`/blog/${articleSlug}`}>
       <StyledPost>
         <StyledImage>
           <Image priority src={`https:${url}`} layout="fill" objectFit="cover" alt="czarna szczotka, narzędzie do sprzątania" />
