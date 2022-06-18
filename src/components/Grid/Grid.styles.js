@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Line = styled.span`
   position: absolute;
   top: 0;
-  min-height: 100%;
+  height: 100%;
   width: 1px;
   background: ${({ color }) => color};
   z-index: ${({ theme }) => theme.zIndex.top};
