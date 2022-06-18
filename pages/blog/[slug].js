@@ -41,15 +41,14 @@ function BlogArticle({ post }) {
       <NextSeo title={title} description={shortDescription} noindex nofollow />
       {/* <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} noindex nofollow /> */}
 
-      {/* <BlogContext.Provider value={posts}> */}
       <BaseLayout footerGridColor={theme.gradient.yellowToGray}>
-        {/* <Post /> */}
         <BlogPost post={post} />
         <IdeaInterlude />
       </BaseLayout>
-      {/* </BlogContext.Provider> */}
     </>
   );
 }
 
 export default BlogArticle;
+
+// todo: index ! ogData
