@@ -33,3 +33,5 @@ const BlogPage = ({ posts }) => {
 };
 
 export default BlogPage;
+
+// todo: indexing

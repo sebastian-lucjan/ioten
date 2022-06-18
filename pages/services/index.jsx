@@ -17,7 +17,7 @@ const Services = () => {
 
   return (
     <Wrapper>
-      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} noindex nofollow />
+      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} />
 
       <BaseLayout noOverflow footerGridColor={theme.gradient.yellowToGray}>
         <ServicesIntro />

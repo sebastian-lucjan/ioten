@@ -13,7 +13,7 @@ const Contact = () => {
 
   return (
     <>
-      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} noindex nofollow />
+      <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} />
 
       <BaseLayout footerGridColor={theme.gradient.grayToBlack}>
         <Wrapper>
