@@ -70,6 +70,7 @@ export const StyledLink = styled.a`
   margin: 2rem 0 4rem;
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   font-size: ${({ theme }) => theme.font.size.smallText};
+  cursor: pointer;
 
   &::before {
     content: '';

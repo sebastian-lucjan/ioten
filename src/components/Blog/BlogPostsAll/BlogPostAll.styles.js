@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const BlogPostContainer = styled.div`
   ${({ theme }) => theme.mq.tablet} {
     display: flex;
-    justify-content: space-between;
+    align-items: flex-start;
     flex-wrap: wrap;
     & > div {
       width: 28%;
@@ -12,25 +12,37 @@ export const BlogPostContainer = styled.div`
     & > div:nth-child(1),
     & > div:nth-child(2) {
       width: 45%;
-      .post__image-placeholder {
-        height: 300px;
-      }
+    }
+
+    & > div:nth-child(2) {
+      margin-left: 10%;
+    }
+
+    & > div:nth-child(n + 4) {
+      margin-left: 8%;
+    }
+
+    & > div:nth-child(3n) {
+      margin-left: 0;
     }
   } ;
 `;
 
 export const StyledBlogPostAll = styled.div`
-  padding: 100px 40px;
+  padding: 40px 40px 100px 40px;
 
   ${({ theme }) => theme.mq.tablet} {
-    padding: 10vw;
+    padding: 8vw 10vw 10vw 10vw;
   }
 
+  ${({ theme }) => theme.mq.smallDesktop} {
+    padding: 5vw 10vw 10vw 10vw;
+  }
   ${({ theme }) => theme.mq.mediumDesktop} {
-    padding: 10vw 15vw;
+    padding: 10vh 15vw 10vh 15vw;
   }
 
   ${({ theme }) => theme.mq.hugeDesktop} {
-    padding: 10vw 20vw;
+    padding: 10vh 20vw 10vh 20vw;
   }
 `;

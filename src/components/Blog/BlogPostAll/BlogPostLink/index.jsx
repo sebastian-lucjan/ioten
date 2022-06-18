@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { getShortDescription } from 'src/utils/blog/getShortDescription';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { StyledImage, StyledPost } from '../../../BlogShort/BlogShort.styles';
+import { StyledImage, StyledPost } from 'src/components/BlogShort/BlogShort.styles';
 import PostInfo from './PostInfo';
 
 export const BlogShortDescription = styled(TextParagraph)`
