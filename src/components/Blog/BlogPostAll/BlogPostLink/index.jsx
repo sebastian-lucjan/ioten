@@ -1,22 +1,19 @@
-import { TextCaption, TextHeading, TextParagraph } from 'src/components/TextComponents';
+import { TextHeading } from 'src/components/TextComponents';
 import { dataFormatter } from 'src/utils/dataFormatter';
 import Image from 'next/image';
 import { getShortDescription } from 'src/utils/blog/getShortDescription';
-import styled from 'styled-components';
 import Link from 'next/link';
 import { StyledImage, StyledPost } from 'src/components/BlogShort/BlogShort.styles';
+import { CategoryWrapper } from 'src/components/Blog/BlogPost/BlogPost.styles';
 import PostInfo from './PostInfo';
-
-export const BlogShortDescription = styled(TextParagraph)`
-  line-height: 24px;
-`;
+import { BlogShortDescription, PostCategory } from './BlogPostLink.styles';
 
 const BlogPost = ({ post }) => {
   const {
     fields: {
       title,
       blogPostBody,
-      category,
+      category: categoryArr,
       coverImage: {
         fields: {
           file: { url },
@@ -37,7 +34,13 @@ const BlogPost = ({ post }) => {
         <StyledImage>
           <Image priority src={`https:${url}`} layout="fill" objectFit="cover" alt="czarna szczotka, narzędzie do sprzątania" />
         </StyledImage>
-        <TextCaption>{category[0]}</TextCaption>
+        <CategoryWrapper>
+          {categoryArr.map((category) => (
+            <PostCategory key={category} category={category}>
+              {category}
+            </PostCategory>
+          ))}
+        </CategoryWrapper>
         <TextHeading>{title}</TextHeading>
         <BlogShortDescription>{shortDescription}</BlogShortDescription>
         <PostInfo date={formattedData} readTime="5" />

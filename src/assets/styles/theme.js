@@ -25,7 +25,7 @@ const theme = {
     white: 'hsl(0, 0%, 100%)',
 
     categoryColor: {
-      BUSINESS: 'hsla(197, 58%, 8%, 1)',
+      BUSINESS: 'hsl(65, 88%, 48%)',
       DESIGN: '#015CC8',
       IOTEN: 'hsl(119, 55%, 63%)',
       PRODUCTIVITY: 'hsl(119,35%,50%)',
