@@ -14,7 +14,7 @@ import services from 'src/data/servicesData';
 import theme, { rainbowColors } from 'src/assets/styles/theme';
 import Grid from 'src/components/Grid';
 import Link from 'next/link';
-import StageGraphics from '../../StageGraphics';
+import StageGraphics from 'src/components/StageGraphics';
 
 const ServicesAxisCore = () => {
   const {

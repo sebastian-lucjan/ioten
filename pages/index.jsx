@@ -51,6 +51,3 @@ export default function Home({ highlightedPosts }) {
     </>
   );
 }
-
-// todo: customize scrollbar -> not supported by firefox and IE (usage from 76% to 90%)
-// todo: i allowed indexing of main page but it hasn't been finished yet.

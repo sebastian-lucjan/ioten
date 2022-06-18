@@ -23,7 +23,7 @@ export const StyledBlogHeader = styled.div`
   }
 
   ${({ theme }) => theme.mq.mediumDesktop} {
-    padding: 10vw 15vw;
+    padding: 15vh 15vw 0 15vw;
   }
 
   ${({ theme }) => theme.mq.bigDesktop} {
@@ -33,6 +33,6 @@ export const StyledBlogHeader = styled.div`
   }
 
   ${({ theme }) => theme.mq.hugeDesktop} {
-    padding: 10vw 20vw;
+    padding: 15vh 20vw 0 20vw;
   }
 `;
