@@ -15,14 +15,17 @@ export const testimonials = [
   {
     caption: 'Pulire',
     text: '"ioten jest świetną agencją. W znakomity sposób przełożyli nasze wymagania na finalny design strony. Przez cały etap pracy czuliśmy realny wpływ na projekt przez co finalny efekt był dla nas bardziej niż satysfakcjonujący."',
+    url: 'https://www.pulire.co',
   },
   {
     caption: 'Elsystem',
     text: '"Współpraca z ioten przebiegała w sposób nad wyraz optymalny. Czuliśmy się partnerami w cyklu projektowym dlatego decyzje które wcześniej wydawałyby się odważne były dla nas naturalne, a efekt końcowy znakomity."',
+    url: 'https://www.elsystem.tech',
   },
   {
     caption: 'bask',
     text: '"Polecam współpracę z firmą Ioten. Oprócz profesjonalnego wykonania strony wychodzili z inicjatywą w kwestii usprawnień i zmian."',
+    url: '',
   },
 ];
 

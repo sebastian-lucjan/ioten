@@ -45,3 +45,30 @@ export const TestimonialsCaption = styled.div`
     background-color: ${({ theme }) => theme.color.black};
   }
 `;
+
+export const StyledMediumIRing = styled.div`
+  & * {
+    position: absolute;
+    top: 20%;
+    right: 0.4rem;
+  }
+  *:nth-child(1) {
+    z-index: ${({ theme: { zIndex } }) => zIndex.top};
+  }
+`;
+
+export const StyledMediumORing = styled.div`
+  & * {
+    position: absolute;
+    bottom: 20%;
+    left: 0.8rem;
+  }
+  *:nth-child(1) {
+    z-index: ${({ theme: { zIndex } }) => zIndex.top};
+  }
+`;
+
+export const Anchor = styled.a`
+  color: ${({ theme }) => theme.color.black};
+  cursor: pointer;
+`;

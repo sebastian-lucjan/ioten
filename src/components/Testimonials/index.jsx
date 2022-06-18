@@ -5,7 +5,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import { testimonials } from 'src/data/pageData';
 import { v4 as uuid } from 'uuid';
 import Slider from 'react-slick';
-import styled from 'styled-components';
 import IRingFront from 'src/assets/images/i-ring-front-lg.svg';
 import IRingBack from 'src/assets/images/i-ring-back-lg.svg';
 import ORingFront from 'src/assets/images/o-ring-front-md.svg';
@@ -13,7 +12,8 @@ import ORingBack from 'src/assets/images/o-ring-back-md.svg';
 import Grid from 'src/components/Grid';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { TestimonialsCaption, TestimonialsParagraph, TestimonialsWrapper } from './Testimonials.styles';
+import Link from 'next/link';
+import { Anchor, StyledMediumIRing, StyledMediumORing, TestimonialsCaption, TestimonialsParagraph, TestimonialsWrapper } from './Testimonials.styles';
 
 const settings = {
   dots: true,
@@ -23,28 +23,6 @@ const settings = {
   slidesToShow: 1,
   slidesToScroll: 1,
 };
-
-const StyledMediumIRing = styled.div`
-  & * {
-    position: absolute;
-    top: 20%;
-    right: 0.4rem;
-  }
-  *:nth-child(1) {
-    z-index: ${({ theme: { zIndex } }) => zIndex.top};
-  }
-`;
-
-const StyledMediumORing = styled.div`
-  & * {
-    position: absolute;
-    bottom: 20%;
-    left: 0.8rem;
-  }
-  *:nth-child(1) {
-    z-index: ${({ theme: { zIndex } }) => zIndex.top};
-  }
-`;
 
 const TestimonialsInterlude = () => {
   const ringOne = useRef(null);
@@ -100,7 +78,13 @@ const TestimonialsInterlude = () => {
               </TestimonialsParagraph>
               <TestimonialsCaption className="motto__caption">
                 <span className="motto__caption-line" />
-                <div>{testimonial.caption}</div>
+                {testimonial.url.length ? (
+                  <Link href={testimonial.url}>
+                    <Anchor target="_blank">{testimonial.caption}</Anchor>
+                  </Link>
+                ) : (
+                  <p>{testimonial.caption}</p>
+                )}
               </TestimonialsCaption>
             </div>
           ))}
