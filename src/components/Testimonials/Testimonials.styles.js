@@ -71,4 +71,9 @@ export const StyledMediumORing = styled.div`
 export const Anchor = styled.a`
   color: ${({ theme }) => theme.color.black};
   cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.green};
+  }
 `;
