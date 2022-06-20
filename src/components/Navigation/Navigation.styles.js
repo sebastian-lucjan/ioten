@@ -138,3 +138,20 @@ export const StyledValuationButton = styled.button`
     }
   }
 `;
+
+export const LogoWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  padding: 10px 30px;
+  z-index: ${({ theme: { zIndex } }) => zIndex.highest};
+
+  ${({ theme: { mq } }) => mq.tablet} {
+    display: none;
+  }
+`;

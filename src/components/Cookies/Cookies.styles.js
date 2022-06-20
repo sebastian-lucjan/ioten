@@ -44,11 +44,9 @@ export const Wrapper = styled.div`
 
   ${({ theme }) => theme.mq.landscape} {
     flex-direction: row;
-    //justify-content: center;
     align-items: center;
     p {
       font-size: ${({ theme }) => theme.font.size.paragraphSmall};
-      //width: 60%;
     }
   }
 `;

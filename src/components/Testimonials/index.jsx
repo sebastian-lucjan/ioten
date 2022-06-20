@@ -12,7 +12,6 @@ import ORingBack from 'src/assets/images/o-ring-back-md.svg';
 import Grid from 'src/components/Grid';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import Link from 'next/link';
 import { Anchor, StyledMediumIRing, StyledMediumORing, TestimonialsCaption, TestimonialsParagraph, TestimonialsWrapper } from './Testimonials.styles';
 
 const settings = {
@@ -79,9 +78,9 @@ const TestimonialsInterlude = () => {
               <TestimonialsCaption className="motto__caption">
                 <span className="motto__caption-line" />
                 {testimonial.url.length ? (
-                  <Link href={testimonial.url}>
-                    <Anchor target="_blank">{testimonial.caption}</Anchor>
-                  </Link>
+                  <Anchor href={testimonial.url} target="_blank">
+                    {testimonial.caption}
+                  </Anchor>
                 ) : (
                   <p>{testimonial.caption}</p>
                 )}
