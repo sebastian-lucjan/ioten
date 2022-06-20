@@ -12,8 +12,6 @@ export const BlogContext = createContext({});
 export const getServerSideProps = async () => {
   const allPosts = await getAllPosts();
 
-  console.log('allPosts ->', allPosts);
-
   return { props: { posts: allPosts } };
 };
 

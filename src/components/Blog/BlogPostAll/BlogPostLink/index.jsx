@@ -19,6 +19,7 @@ const BlogPost = ({ post }) => {
           file: { url },
         },
       },
+      readingStats: { text: readingTimeText },
       articleSlug,
     },
   } = post;
@@ -42,7 +43,7 @@ const BlogPost = ({ post }) => {
         </CategoryWrapper>
         <TextHeading>{title}</TextHeading>
         <BlogShortDescription>{shortDescription}</BlogShortDescription>
-        <PostInfo date={formattedData} readTime="5" />
+        <PostInfo date={formattedData} readingTimeText={readingTimeText} />
         {/* <PostInfo date={date} readTime={readTime} /> */}
       </StyledPost>
     </Link>

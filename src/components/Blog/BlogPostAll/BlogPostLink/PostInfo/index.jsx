@@ -7,13 +7,15 @@ const StyledPostInfo = styled.div`
   justify-content: space-between;
 `;
 
-const PostInfo = ({ date, readTime }) => {
+const PostInfo = ({ date, readingTimeText }) => {
   const { lightGray, lighterGray } = theme.color;
+
+  const readingTime = readingTimeText.replace(' read', '');
 
   return (
     <StyledPostInfo>
       <TextCaption color={lightGray}>{date}</TextCaption>
-      <TextCaption color={lighterGray}>{readTime} MIN</TextCaption>
+      <TextCaption color={lighterGray}>{readingTime}</TextCaption>
     </StyledPostInfo>
   );
 };
