@@ -31,7 +31,7 @@ const TestimonialsInterlude = () => {
   const tlRingTwo = useRef(null);
 
   useEffect(() => {
-    // ringOne IRIng - left site
+    // ringOne IRIng - right site
     const { current: el } = ringOne;
     const [ringOneFront, ringOneBack] = el.querySelectorAll('svg');
 
@@ -44,9 +44,9 @@ const TestimonialsInterlude = () => {
     });
 
     tlRingOne.current.set([ringOneFront], { zIndex: 3 });
-    tlRingOne.current.to([ringOneFront, ringOneBack], { y: 250 });
+    tlRingOne.current.to([ringOneFront, ringOneBack], { y: 240 });
 
-    // ringTwo ORIng - right site
+    // ringTwo ORIng - left site
     const { current: elTwo } = ringTwo;
     const [ringTwoFront, ringTwoBack] = elTwo.querySelectorAll('svg');
 
@@ -59,7 +59,7 @@ const TestimonialsInterlude = () => {
     });
 
     tlRingTwo.current.set([ringTwoFront], { zIndex: 3 });
-    tlRingTwo.current.to([ringTwoFront, ringTwoBack], { y: -150 });
+    tlRingTwo.current.to([ringTwoFront, ringTwoBack], { y: -300 });
     return () => {
       tlRingOne.current.kill();
       tlRingTwo.current.kill();

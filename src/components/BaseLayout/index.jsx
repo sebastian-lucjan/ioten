@@ -23,7 +23,6 @@ const BaseLayout = ({ children, footerGridColor, whiteNavigationText, setRef, no
   const [isFooterVisible, setIsFooterVisible] = useState(true);
   const { asPath } = useRouter();
   const { isActiveCookiePopUp, handleCookiesPolicyAgree, handleDismissCookiesPopUp } = useCookie();
-  console.log('isActiveCookiePopUp', isActiveCookiePopUp);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });

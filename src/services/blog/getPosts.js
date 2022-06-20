@@ -1,10 +1,12 @@
-import contentfulClient from '../contentfulClient';
+import contentfulClient from 'src/services/contentfulClient';
+import { sortArrayByTime } from 'src/utils/date';
 
 export const getAllPosts = async () => {
   const client = contentfulClient;
 
   const res = await client.getEntries({ content_type: 'blogPost' });
-  return res.items;
+
+  return sortArrayByTime(res.items);
 };
 
 export const getHighlightedPosts = async () => {
@@ -13,5 +15,9 @@ export const getHighlightedPosts = async () => {
   const res = await client.getEntries({ content_type: 'blogPost' });
   const highlightedPosts = res.items.filter((post) => post.fields.isMainPage);
 
-  return highlightedPosts.slice(0, 3);
+  // sort by create date
+  const dateSortedPosts = sortArrayByTime(highlightedPosts);
+
+  // display only 3 posts on mail page BlogShort area
+  return dateSortedPosts.slice(0, 3);
 };

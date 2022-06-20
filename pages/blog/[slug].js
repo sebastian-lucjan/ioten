@@ -2,7 +2,7 @@ import contentfulClient from 'src/services/contentfulClient';
 import { NextSeo } from 'next-seo';
 import BaseLayout from 'src/components/BaseLayout';
 import theme from 'src/assets/styles/theme';
-import { getShortDescription } from 'src/utils/blog/getShortDescription';
+import { getShortDescription } from 'src/utils/text';
 import IdeaInterlude from 'src/components/IdeaInterlude';
 import BlogPost from 'src/components/Blog/BlogPost';
 

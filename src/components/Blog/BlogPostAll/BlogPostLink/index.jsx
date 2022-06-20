@@ -1,10 +1,10 @@
 import { TextHeading } from 'src/components/TextComponents';
-import { dataFormatter } from 'src/utils/dataFormatter';
 import Image from 'next/image';
-import { getShortDescription } from 'src/utils/blog/getShortDescription';
+import { getShortDescription } from 'src/utils/text';
 import Link from 'next/link';
 import { StyledImage, StyledPost } from 'src/components/BlogShort/BlogShort.styles';
 import { CategoryWrapper } from 'src/components/Blog/BlogPost/BlogPost.styles';
+import { dataFormatter } from 'src/utils/date';
 import PostInfo from './PostInfo';
 import { BlogShortDescription, PostCategory } from './BlogPostLink.styles';
 
@@ -21,10 +21,9 @@ const BlogPost = ({ post }) => {
       },
       articleSlug,
     },
-    sys: { createdAt },
   } = post;
 
-  const formattedData = dataFormatter(createdAt);
+  const formattedData = dataFormatter(post);
 
   const shortDescription = getShortDescription(blogPostBody);
 
