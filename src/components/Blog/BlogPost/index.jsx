@@ -14,6 +14,7 @@ import {
   StyledImage,
   StyledParagraph,
 } from './BlogPost.styles';
+import { Heading, Quote } from './RichText';
 
 const richTextOptions = {
   renderNode: {
@@ -27,6 +28,15 @@ const richTextOptions = {
     },
     [BLOCKS.PARAGRAPH]: (node, children) => {
       return <StyledParagraph>{children}</StyledParagraph>;
+    },
+    [BLOCKS.HEADING_3]: (node, children) => {
+      return <Heading lvl={3}>{children}</Heading>;
+    },
+    [BLOCKS.HEADING_4]: (node, children) => {
+      return <Heading lvl={4}>{children}</Heading>;
+    },
+    [BLOCKS.QUOTE]: (node, children) => {
+      return <Quote>{children}</Quote>;
     },
   },
 };
