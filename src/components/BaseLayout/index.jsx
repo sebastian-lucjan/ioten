@@ -3,8 +3,11 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import AOS from 'aos';
-import Footer from '../Footer';
+import Footer from 'src/components/Footer';
 import 'aos/dist/aos.css';
+import Cookies from 'src/components/Cookies';
+import useCookie from 'src/hooks/useCookie';
+import { CookiesContext } from 'src/context/cookiesContext';
 
 const StyledBaseLayout = styled.main`
   overflow: hidden;
@@ -19,6 +22,7 @@ const StyledBaseLayout = styled.main`
 const BaseLayout = ({ children, footerGridColor, whiteNavigationText, setRef, noOverflow }) => {
   const [isFooterVisible, setIsFooterVisible] = useState(true);
   const { asPath } = useRouter();
+  const { isActiveCookiePopUp, handleCookiesPolicyAgree, handleDismissCookiesPopUp } = useCookie();
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -31,11 +35,14 @@ const BaseLayout = ({ children, footerGridColor, whiteNavigationText, setRef, no
   }, [asPath]);
 
   return (
-    <StyledBaseLayout noOverflow={noOverflow}>
-      <Navigation setRef={setRef} whiteNavigationText={whiteNavigationText} />
-      {children}
-      {isFooterVisible ? <Footer footerGridColor={footerGridColor} /> : null}
-    </StyledBaseLayout>
+    <CookiesContext.Provider value={{ isActiveCookiePopUp, handleCookiesPolicyAgree, handleDismissCookiesPopUp }}>
+      <StyledBaseLayout noOverflow={noOverflow}>
+        <Navigation setRef={setRef} whiteNavigationText={whiteNavigationText} />
+        {children}
+        {isFooterVisible ? <Footer footerGridColor={footerGridColor} /> : null}
+        {isActiveCookiePopUp ? <Cookies /> : null}
+      </StyledBaseLayout>
+    </CookiesContext.Provider>
   );
 };
 

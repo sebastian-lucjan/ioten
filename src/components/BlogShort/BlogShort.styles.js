@@ -45,10 +45,13 @@ export const BlogPostsContainer = styled.div`
   } ;
 `;
 
-export const StyledPost = styled.div`
+export const StyledPost = styled.button`
   width: 100%;
   cursor: pointer;
-  margin: 4rem 0;
+  margin: 14rem 0;
+  border: none;
+  background-color: ${({ theme }) => theme.color.white};
+  text-align: left;
 
   p {
     //control all inside paragraphs

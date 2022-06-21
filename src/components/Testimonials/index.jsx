@@ -5,7 +5,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import { testimonials } from 'src/data/pageData';
 import { v4 as uuid } from 'uuid';
 import Slider from 'react-slick';
-import styled from 'styled-components';
 import IRingFront from 'src/assets/images/i-ring-front-lg.svg';
 import IRingBack from 'src/assets/images/i-ring-back-lg.svg';
 import ORingFront from 'src/assets/images/o-ring-front-md.svg';
@@ -13,7 +12,7 @@ import ORingBack from 'src/assets/images/o-ring-back-md.svg';
 import Grid from 'src/components/Grid';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { TestimonialsCaption, TestimonialsParagraph, TestimonialsWrapper } from './Testimonials.styles';
+import { Anchor, StyledMediumIRing, StyledMediumORing, TestimonialsCaption, TestimonialsParagraph, TestimonialsWrapper } from './Testimonials.styles';
 
 const settings = {
   dots: true,
@@ -22,29 +21,18 @@ const settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
+  // appendDots: (dots) => <div>X</div>,
+  customPaging: () => (
+    <div
+      style={{
+        width: '20px',
+        height: '6px',
+        backgroundColor: 'gray',
+        borderRadius: '4px',
+      }}
+    />
+  ),
 };
-
-const StyledMediumIRing = styled.div`
-  & * {
-    position: absolute;
-    top: 20%;
-    right: 0.4rem;
-  }
-  *:nth-child(1) {
-    z-index: ${({ theme: { zIndex } }) => zIndex.top};
-  }
-`;
-
-const StyledMediumORing = styled.div`
-  & * {
-    position: absolute;
-    bottom: 20%;
-    left: 0.8rem;
-  }
-  *:nth-child(1) {
-    z-index: ${({ theme: { zIndex } }) => zIndex.top};
-  }
-`;
 
 const TestimonialsInterlude = () => {
   const ringOne = useRef(null);
@@ -54,7 +42,7 @@ const TestimonialsInterlude = () => {
   const tlRingTwo = useRef(null);
 
   useEffect(() => {
-    // ringOne IRIng - left site
+    // ringOne IRIng - right site
     const { current: el } = ringOne;
     const [ringOneFront, ringOneBack] = el.querySelectorAll('svg');
 
@@ -67,9 +55,9 @@ const TestimonialsInterlude = () => {
     });
 
     tlRingOne.current.set([ringOneFront], { zIndex: 3 });
-    tlRingOne.current.to([ringOneFront, ringOneBack], { y: 250 });
+    tlRingOne.current.to([ringOneFront, ringOneBack], { y: 240 });
 
-    // ringTwo ORIng - right site
+    // ringTwo ORIng - left site
     const { current: elTwo } = ringTwo;
     const [ringTwoFront, ringTwoBack] = elTwo.querySelectorAll('svg');
 
@@ -82,7 +70,7 @@ const TestimonialsInterlude = () => {
     });
 
     tlRingTwo.current.set([ringTwoFront], { zIndex: 3 });
-    tlRingTwo.current.to([ringTwoFront, ringTwoBack], { y: -150 });
+    tlRingTwo.current.to([ringTwoFront, ringTwoBack], { y: -300 });
     return () => {
       tlRingOne.current.kill();
       tlRingTwo.current.kill();
@@ -100,7 +88,13 @@ const TestimonialsInterlude = () => {
               </TestimonialsParagraph>
               <TestimonialsCaption className="motto__caption">
                 <span className="motto__caption-line" />
-                <div>{testimonial.caption}</div>
+                {testimonial.url.length ? (
+                  <Anchor tabIndex="-1" href={testimonial.url} target="_blank">
+                    {testimonial.caption}
+                  </Anchor>
+                ) : (
+                  <p>{testimonial.caption}</p>
+                )}
               </TestimonialsCaption>
             </div>
           ))}

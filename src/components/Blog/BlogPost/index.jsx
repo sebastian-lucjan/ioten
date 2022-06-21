@@ -32,6 +32,7 @@ const richTextOptions = {
 };
 
 export default function BlogPost({ post }) {
+  // export default function BlogPost({ post, postReadingTime }) {
   const {
     coverImage: {
       fields: { file, description },

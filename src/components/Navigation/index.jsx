@@ -6,28 +6,10 @@ import { v4 as uuid } from 'uuid';
 import MainSectionWrapper from 'src/components/MainSectionWrapper/MainSectionWrapper.styles';
 import { navigationData } from 'src/data/pageData';
 import theme from 'src/assets/styles/theme';
-import styled from 'styled-components';
 import { useState } from 'react';
 import Burger from 'src/components/Burger';
 import { useRouter } from 'next/router';
-import { Wrapper, StyledMenu, StyledLink, StyledLogo, StyledValuationButton } from './Navigation.styles';
-
-const LogoWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  padding: 10px 30px;
-  z-index: ${({ theme: { zIndex } }) => zIndex.highest};
-
-  ${({ theme: { mq } }) => mq.tablet} {
-    display: none;
-  }
-`;
+import { Wrapper, StyledMenu, StyledLink, StyledLogo, StyledValuationButton, LogoWrapper } from './Navigation.styles';
 
 const closeNavTheSamePath = (currentPath, navButtonPath, setIsOpen) => {
   if (currentPath === navButtonPath) setIsOpen(false);

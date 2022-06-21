@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import { TextParagraph, TextWrapper } from 'src/components/TextComponents';
 
 export const TestimonialsWrapper = styled(({ ...props }) => <TextWrapper {...props} />)`
+  li.slick-active > * {
+    background-color: ${({ theme }) => theme.color.black} !important;
+  }
+
   ${({ theme }) => theme.mq.tablet} {
     display: flex;
     justify-content: center;
@@ -43,5 +47,37 @@ export const TestimonialsCaption = styled.div`
     margin: auto 1rem;
     height: 2px;
     background-color: ${({ theme }) => theme.color.black};
+  }
+`;
+
+export const StyledMediumIRing = styled.div`
+  & * {
+    position: absolute;
+    top: 20%;
+    right: 0.4rem;
+  }
+  *:nth-child(1) {
+    z-index: ${({ theme: { zIndex } }) => zIndex.top};
+  }
+`;
+
+export const StyledMediumORing = styled.div`
+  & * {
+    position: absolute;
+    bottom: 20%;
+    left: 0.8rem;
+  }
+  *:nth-child(1) {
+    z-index: ${({ theme: { zIndex } }) => zIndex.top};
+  }
+`;
+
+export const Anchor = styled.a`
+  color: ${({ theme }) => theme.color.black};
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.green};
   }
 `;
