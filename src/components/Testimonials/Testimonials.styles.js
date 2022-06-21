@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import { TextParagraph, TextWrapper } from 'src/components/TextComponents';
 
 export const TestimonialsWrapper = styled(({ ...props }) => <TextWrapper {...props} />)`
+  li.slick-active > * {
+    background-color: ${({ theme }) => theme.color.black} !important;
+  }
+
   ${({ theme }) => theme.mq.tablet} {
     display: flex;
     justify-content: center;

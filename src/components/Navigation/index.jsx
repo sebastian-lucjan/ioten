@@ -53,7 +53,6 @@ const Navigation = ({ whiteNavigationText, setRef }) => {
                   linkHref={navButtonPath}
                   currentPath={currentPath}
                   whiteNavigationText={isWhite}
-                  tabIndex={0}
                   onClick={() => closeNavTheSamePath(currentPath, navButtonPath, setIsOpen)}
                 >
                   {name}

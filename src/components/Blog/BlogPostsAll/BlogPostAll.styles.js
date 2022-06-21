@@ -5,24 +5,24 @@ export const BlogPostContainer = styled.div`
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    & > div {
+    & > button {
       width: 28%;
     }
 
-    & > div:nth-child(1),
-    & > div:nth-child(2) {
+    & > button:nth-child(1),
+    & > button:nth-child(2) {
       width: 45%;
     }
 
-    & > div:nth-child(2) {
+    & > button:nth-child(2) {
       margin-left: 10%;
     }
 
-    & > div:nth-child(n + 4) {
+    & > button:nth-child(n + 4) {
       margin-left: 8%;
     }
 
-    & > div:nth-child(3n) {
+    & > button:nth-child(3n) {
       margin-left: 0;
     }
   } ;

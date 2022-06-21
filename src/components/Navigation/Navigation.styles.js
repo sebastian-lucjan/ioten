@@ -63,7 +63,7 @@ export const StyledMenu = styled.nav`
 `;
 
 // font-family: ${({ theme, isBold }) => (isBold  ? theme.font.family.myriadPro.bold : theme.font.family.myriadPro.regular)};
-export const StyledLink = styled.li`
+export const StyledLink = styled.button`
   font-size: ${({ theme }) => theme.font.size.paragraphSmall};
   list-style: none;
   align-self: center;
@@ -71,6 +71,8 @@ export const StyledLink = styled.li`
   cursor: pointer;
   letter-spacing: 1px;
   transition: all 0.3s ease-in-out;
+  border: none;
+  background-color: transparent;
 
   font-family: ${({ theme, currentPath, linkHref }) => {
     if (typeof window !== 'undefined') {

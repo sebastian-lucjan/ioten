@@ -21,6 +21,17 @@ const settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
+  // appendDots: (dots) => <div>X</div>,
+  customPaging: () => (
+    <div
+      style={{
+        width: '20px',
+        height: '6px',
+        backgroundColor: 'gray',
+        borderRadius: '4px',
+      }}
+    />
+  ),
 };
 
 const TestimonialsInterlude = () => {
@@ -78,7 +89,7 @@ const TestimonialsInterlude = () => {
               <TestimonialsCaption className="motto__caption">
                 <span className="motto__caption-line" />
                 {testimonial.url.length ? (
-                  <Anchor href={testimonial.url} target="_blank">
+                  <Anchor tabIndex="-1" href={testimonial.url} target="_blank">
                     {testimonial.caption}
                   </Anchor>
                 ) : (
