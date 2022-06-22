@@ -12,11 +12,13 @@ export const PostCategory = styled.p`
     font-size: ${({ theme }) => theme.font.size.paragraphSmall};
   }
 
-  &:hover {
-    filter: brightness(0.8);
-  }
+  //&:hover {
+  //  filter: brightness(0.8);
+  //}
 `;
 
 export const BlogShortDescription = styled(TextParagraph)`
   line-height: 24px;
 `;
+
+// todo: add hover when add filter category feature
