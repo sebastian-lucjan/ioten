@@ -21,7 +21,6 @@ const settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  // appendDots: (dots) => <div>X</div>,
   customPaging: () => (
     <div
       style={{

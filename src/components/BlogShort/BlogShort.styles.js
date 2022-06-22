@@ -38,6 +38,7 @@ export const BlogIntroHeading = styled.h2`
 export const BlogPostsContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   flex-wrap: wrap;
 
   ${({ theme }) => theme.mq.tablet} {

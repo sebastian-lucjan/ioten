@@ -23,6 +23,7 @@ const theme = {
     transparent: 'hsl(0, 0%, 0%, 0%)',
     red: 'hsl(0, 84%, 52%)',
     white: 'hsl(0, 0%, 100%)',
+    // #0080FF
 
     categoryColor: {
       BUSINESS: 'hsl(65, 88%, 48%)',

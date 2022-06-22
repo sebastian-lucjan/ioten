@@ -5,18 +5,20 @@ export const PostCategory = styled.p`
   color: ${({ theme, category }) => theme.color.categoryColor[category]};
   font-family: ${({ theme }) => theme.font.family.myriadPro.black};
   font-size: ${({ theme }) => theme.font.size.smallText};
-  margin-right: 2rem;
+  padding-right: 1.2rem;
 
   ${({ theme }) => theme.mq.tablet} {
-    padding: 0 1.2rem 0 0;
+    padding-right: 1.2rem;
     font-size: ${({ theme }) => theme.font.size.paragraphSmall};
   }
 
-  &:hover {
-    filter: brightness(0.8);
-  }
+  //&:hover {
+  //  filter: brightness(0.8);
+  //}
 `;
 
 export const BlogShortDescription = styled(TextParagraph)`
   line-height: 24px;
 `;
+
+// todo: add hover when add filter category feature
