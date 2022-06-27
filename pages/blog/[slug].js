@@ -36,13 +36,13 @@ export async function getStaticProps({ params: { slug } }) {
 }
 
 function BlogArticle({ post, postReadingTime }) {
-  const { title, blogPostBody } = post.fields;
+  const { title, blogPostBody, articleSlug } = post.fields;
 
   const shortDescription = getShortDescription(blogPostBody);
 
   return (
     <>
-      <NextSeo title={title} description={shortDescription} noindex nofollow />
+      <NextSeo title={title} description={shortDescription} canonical={`https://www.ioten.io/blog/${articleSlug}`} />
       {/* <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} noindex nofollow /> */}
 
       <BaseLayout footerGridColor={theme.gradient.yellowToGray}>
