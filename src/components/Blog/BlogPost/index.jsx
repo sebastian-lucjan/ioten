@@ -55,7 +55,6 @@ export default function BlogPost({ post }) {
   const {
     gradient: { grayToYellow, transparentToYellow },
   } = theme;
-
   return (
     <StyledBlogPost>
       <BlogPostIntroWrapper>
@@ -79,3 +78,4 @@ export default function BlogPost({ post }) {
     </StyledBlogPost>
   );
 }
+// todo: dodaj takie keywords - Serwisy wizerunkowe, strony produktowe - projektowanie i tworzenie
