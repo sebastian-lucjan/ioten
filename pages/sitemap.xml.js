@@ -5,7 +5,7 @@ const Sitemap = () => {};
 export const getServerSideProps = ({ res }) => {
   const baseUrl = {
     development: 'localhost:3000',
-    production: 'https://www.ioten.io',
+    production: 'https://ioten.io',
   }[process.env.NODE_ENV];
 
   const staticPages = fs
@@ -32,7 +32,7 @@ export const getServerSideProps = ({ res }) => {
               <loc>${url}</loc>
               <lastmod>${new Date().toISOString()}</lastmod>
               <changefreq>monthly</changefreq>
-              <priority>0.8</priority>
+              <priority>1.0</priority>
             </url>
           `;
         })
