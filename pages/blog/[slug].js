@@ -55,4 +55,5 @@ function BlogArticle({ post, postReadingTime }) {
 
 export default BlogArticle;
 
-// todo: index ! ogData
+// todo: ogData
+// todo: sitemap for [slug]
