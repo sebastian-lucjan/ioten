@@ -4,7 +4,32 @@ import { TextHeading } from 'src/components/TextComponents';
 export const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 200px;
+  min-height: 120px;
+  margin: 4rem 0 6rem 0;
+  overflow: hidden;
+  filter: drop-shadow(1.3px 1px 4.1px rgba(0, 0, 0, 0.028)) drop-shadow(4.2px 3.4px 13.6px rgba(0, 0, 0, 0.042))
+    drop-shadow(19px 15px 61px rgba(0, 0, 0, 0.07));
+
+  img {
+    border-radius: 10px;
+  }
+
+  ${({ theme }) => theme.mq.mediumMobile} {
+    min-height: 180px;
+  }
+
+  ${({ theme }) => theme.mq.tablet} {
+    min-height: 240px;
+  }
+
+  ${({ theme }) => theme.mq.mediumDesktop} {
+    min-height: 320px;
+  }
+
+  p {
+    margin-top: 1rem;
+    color: ${({ theme }) => theme.color.darkestGray};
+  }
 `;
 
 export const StyledImage = styled.div`

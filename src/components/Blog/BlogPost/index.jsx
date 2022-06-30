@@ -22,9 +22,22 @@ const richTextOptions = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: ({ data }) => {
       // console.log('data', data);
+      const {
+        fields: { file, description },
+      } = data.target;
+
       return (
         <ImageWrapper>
-          <Image src={`https:${data.target.fields.file.url}`} layout="fill" objectFit="cover" />
+          <Image
+            src={`https:${file.url}`}
+            layout="responsive"
+            width={file.details.image.width}
+            height={file.details.image.height}
+            objectFit="contain"
+            alt={description}
+          />
+
+          {/* {description ? <p>fot.: {description}</p> : null} */}
         </ImageWrapper>
       );
     },
