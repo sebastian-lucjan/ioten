@@ -1,5 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import Image from 'next/image';
 import theme from 'src/assets/styles/theme';
 import Grid from 'src/components/Grid';
@@ -12,14 +12,16 @@ import {
   PostHeading,
   StyledBlogPost,
   StyledImage,
-  StyledParagraph,
+  StyledLink,
 } from './BlogPost.styles';
 import { Heading, Quote } from './RichText';
+import RichParagraph from './RichParagraph';
+import ListItem from './ListItem';
 
 const richTextOptions = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: ({ data }) => {
-      console.log('data', data);
+      // console.log('data', data);
       return (
         <ImageWrapper>
           <Image src={`https:${data.target.fields.file.url}`} layout="fill" objectFit="cover" />
@@ -27,7 +29,7 @@ const richTextOptions = {
       );
     },
     [BLOCKS.PARAGRAPH]: (node, children) => {
-      return <StyledParagraph>{children}</StyledParagraph>;
+      return <RichParagraph>{children}</RichParagraph>;
     },
     [BLOCKS.HEADING_3]: (node, children) => {
       return <Heading lvl={3}>{children}</Heading>;
@@ -38,11 +40,27 @@ const richTextOptions = {
     [BLOCKS.QUOTE]: (node, children) => {
       return <Quote>{children}</Quote>;
     },
+    [BLOCKS.LIST_ITEM]: (node, children) => {
+      return <ListItem>{children}</ListItem>;
+    },
+    // [MARKS.CODE]: (node, children) => { doesn't work, don't know why
+    //   return <Code>{children}</Code>;
+    // },
+    [INLINES.HYPERLINK]: (node, children) => {
+      const [text] = children;
+      const {
+        data: { uri },
+      } = node;
+      return (
+        <StyledLink href={uri} target="_blank" rel="noopener">
+          {text}
+        </StyledLink>
+      );
+    },
   },
 };
 
 export default function BlogPost({ post }) {
-  // export default function BlogPost({ post, postReadingTime }) {
   const {
     coverImage: {
       fields: { file, description },
@@ -51,6 +69,8 @@ export default function BlogPost({ post }) {
     category: categoryArr,
     blogPostBody,
   } = post.fields;
+
+  console.log('blogPostBody:', blogPostBody);
 
   const {
     gradient: { grayToYellow, transparentToYellow },

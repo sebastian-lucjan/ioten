@@ -3,10 +3,14 @@ import styled from 'styled-components';
 export const StyledQuote = styled.p`
   position: relative;
   display: block;
-  padding-left: 1.6rem;
-  font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
-  color: ${({ theme }) => theme.color.darkerGray};
+  color: ${({ theme }) => theme.color.darkestGray};
   margin-top: 1rem;
+  padding: 1rem 0 1rem 1.6rem;
+
+  * {
+    font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
+    font-size: ${({ theme }) => theme.font.size.headingMedium};
+  }
 
   &::before {
     position: absolute;
@@ -24,9 +28,29 @@ export const Quote = ({ children }) => {
 };
 export const StyledHeading = styled.h5`
   margin-top: 2rem;
-  font-size: 24px;
+  letter-spacing: 1px;
+
+  font-size: ${({ lvl, theme }) => {
+    switch (lvl) {
+      case 3:
+        return theme.font.size.paragraphBig;
+      case 4:
+        return theme.font.size.headingSmall;
+      case 5:
+        return theme.font.size.paragraph;
+      default:
+        return theme.font.size.smallText;
+    }
+  }};
+
+  font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
+  color: ${({ theme }) => theme.color.darkestGray};
 `;
 
 export const Heading = ({ lvl, children }) => {
-  return <StyledHeading as={`h${lvl}`}>{children}</StyledHeading>;
+  return (
+    <StyledHeading as={`h${lvl}`} lvl={lvl}>
+      {children}
+    </StyledHeading>
+  );
 };

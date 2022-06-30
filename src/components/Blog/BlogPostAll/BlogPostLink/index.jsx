@@ -1,6 +1,5 @@
 import { TextHeading } from 'src/components/TextComponents';
 import Image from 'next/image';
-import { getShortDescription } from 'src/utils/text';
 import Link from 'next/link';
 import { StyledImage, StyledPost } from 'src/components/BlogShort/BlogShort.styles';
 import { CategoryWrapper } from 'src/components/Blog/BlogPost/BlogPost.styles';
@@ -12,7 +11,6 @@ const BlogPost = ({ post }) => {
   const {
     fields: {
       title,
-      blogPostBody,
       category: categoryArr,
       coverImage: {
         fields: {
@@ -21,12 +19,11 @@ const BlogPost = ({ post }) => {
       },
       readingStats: { text: readingTimeText },
       articleSlug,
+      description,
     },
   } = post;
 
   const formattedData = dataFormatter(post);
-
-  const shortDescription = getShortDescription(blogPostBody);
 
   return (
     <Link href={`/blog/${articleSlug}`}>
@@ -42,7 +39,7 @@ const BlogPost = ({ post }) => {
           ))}
         </CategoryWrapper>
         <TextHeading>{title}</TextHeading>
-        <BlogShortDescription>{shortDescription}</BlogShortDescription>
+        <BlogShortDescription>{description}</BlogShortDescription>
         <PostInfo date={formattedData} readingTimeText={readingTimeText} />
         {/* <PostInfo date={date} readTime={readTime} /> */}
       </StyledPost>

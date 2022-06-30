@@ -1,17 +1,5 @@
 import styled from 'styled-components';
-import { TextHeading, TextParagraph } from 'src/components/TextComponents';
-
-export const StyledParagraph = styled(TextParagraph)`
-  padding: 2rem 0;
-
-  ${({ theme }) => theme.mq.tablet} {
-    font-size: ${({ theme }) => theme.font.size.paragraph};
-  }
-
-  ${({ theme }) => theme.mq.bigDesktop} {
-    font-size: ${({ theme }) => theme.font.size.headingSmall};
-  }
-`;
+import { TextHeading } from 'src/components/TextComponents';
 
 export const ImageWrapper = styled.div`
   position: relative;
@@ -28,7 +16,7 @@ export const StyledImage = styled.div`
 
 export const StyledBlogPost = styled.div`
   position: relative;
-  padding-top: 64px;
+  padding-top: 70px;
 `;
 
 export const BlogPostIntroWrapper = styled.div`
@@ -65,6 +53,7 @@ export const PostHeading = styled(TextHeading)`
   font-size: ${({ theme }) => theme.font.size.headingMedium};
   margin-bottom: 2rem;
   color: ${({ theme }) => theme.color.white};
+  letter-spacing: 1px;
 
   ${({ theme }) => theme.mq.tablet};
   font-size: ${({ theme }) => theme.font.size.headingSection}; ;
@@ -95,4 +84,64 @@ export const PostCategory = styled.p`
 
 export const CategoryWrapper = styled.div`
   display: flex;
+`;
+
+export const ParagraphWrapper = styled.div`
+  padding: 1.6rem 0;
+  font-size: ${({ theme }) => theme.font.size.paragraphSmall};
+  line-height: 24px;
+
+  ${({ theme }) => theme.mq.tablet} {
+    font-size: ${({ theme }) => theme.font.size.paragraph};
+    line-height: 28px;
+  }
+
+  ${({ theme }) => theme.mq.bigDesktop} {
+    font-size: ${({ theme }) => theme.font.size.headingSmall};
+  }
+`;
+
+export const StyledLink = styled.a`
+  font-size: ${({ theme }) => theme.font.size.paragraphSmall};
+  margin: 1rem 0;
+  cursor: pointer;
+  position: relative;
+  display: inline;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: ${({ theme }) => theme.color.green};
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+  }
+
+  color: black;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.greenDark} !important;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+`;
+
+export const Code = styled.p`
+  margin: 1rem 0;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  background-color: ${({ theme }) => theme.color.lightestGray};
+  width: calc(100vw - 80px);
+  border-radius: 0.5rem;
+  font-size: ${({ theme }) => theme.font.size.smallText};
+
+  ${({ theme }) => theme.mq.tablet} {
+    min-width: 400px;
+    width: calc(100vw - 240px);
+  }
+
+  ${({ theme }) => theme.mq.smallDesktop} {
+    width: calc(44vw);
+  }
 `;

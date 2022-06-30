@@ -88,7 +88,7 @@ const TestimonialsInterlude = () => {
               <TestimonialsCaption className="motto__caption">
                 <span className="motto__caption-line" />
                 {testimonial.url.length ? (
-                  <Anchor tabIndex="-1" href={testimonial.url} target="_blank">
+                  <Anchor tabIndex="-1" href={testimonial.url} target="_blank" rel="noopener">
                     {testimonial.caption}
                   </Anchor>
                 ) : (
