@@ -2,7 +2,6 @@ import contentfulClient from 'src/services/contentfulClient';
 import { NextSeo } from 'next-seo';
 import BaseLayout from 'src/components/BaseLayout';
 import theme from 'src/assets/styles/theme';
-import { getShortDescription } from 'src/utils/text';
 import IdeaInterlude from 'src/components/IdeaInterlude';
 import BlogPost from 'src/components/Blog/BlogPost';
 import { readingTime } from 'src/services/blog/readingTime';
@@ -36,13 +35,11 @@ export async function getStaticProps({ params: { slug } }) {
 }
 
 function BlogArticle({ post, postReadingTime }) {
-  const { title, blogPostBody, articleSlug } = post.fields;
-
-  const shortDescription = getShortDescription(blogPostBody);
+  const { title, description, articleSlug } = post.fields;
 
   return (
     <>
-      <NextSeo title={title} description={shortDescription} canonical={`https://www.ioten.io/blog/${articleSlug}`} />
+      <NextSeo title={title} description={description} canonical={`https://www.ioten.io/blog/${articleSlug}`} />
       {/* <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} noindex nofollow /> */}
 
       <BaseLayout footerGridColor={theme.gradient.yellowToGray}>

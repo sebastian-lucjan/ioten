@@ -15,7 +15,7 @@ const Cookies = () => {
           smartfonie). W każdym momencie mogą Państwo dokonać zmiany ustawień Państwa przeglądarki internetowej i wyłączyć opcję zapisu plików
           cookies. Ze szczegółowymi informacjami dotyczącymi cookies na tej stronie można się zapoznać tutaj:
           <Link href="/polityka-prywatnosci">
-            <Anchor target="_blank" rel="noreferrer">
+            <Anchor target="_blank" rel="noopener">
               polityka prywatności
             </Anchor>
           </Link>
