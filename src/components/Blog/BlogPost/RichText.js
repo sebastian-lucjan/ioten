@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
-export const StyledQuote = styled.p`
+export const StyledQuote = styled.div`
   position: relative;
   display: block;
   color: ${({ theme }) => theme.color.darkestGray};
-  margin-top: 1rem;
+  margin-top: 1.6rem;
   padding: 1rem 0 1rem 1.6rem;
+  * {
+    line-height: 36px;
+  }
 
   * {
     font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
@@ -26,6 +29,7 @@ export const StyledQuote = styled.p`
 export const Quote = ({ children }) => {
   return <StyledQuote>{children}</StyledQuote>;
 };
+
 export const StyledHeading = styled.h5`
   margin-top: 2rem;
   letter-spacing: 1px;

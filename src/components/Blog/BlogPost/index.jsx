@@ -8,6 +8,7 @@ import {
   BlogPostIntroWrapper,
   CategoryWrapper,
   ImageWrapper,
+  PhotoCaption,
   PostCategory,
   PostHeading,
   StyledBlogPost,
@@ -21,7 +22,6 @@ import ListItem from './ListItem';
 const richTextOptions = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: ({ data }) => {
-      // console.log('data', data);
       const {
         fields: { file, description },
       } = data.target;
@@ -49,6 +49,9 @@ const richTextOptions = {
     },
     [BLOCKS.HEADING_4]: (node, children) => {
       return <Heading lvl={4}>{children}</Heading>;
+    },
+    [BLOCKS.HEADING_6]: (node, children) => {
+      return <PhotoCaption>{children}</PhotoCaption>;
     },
     [BLOCKS.QUOTE]: (node, children) => {
       return <Quote>{children}</Quote>;

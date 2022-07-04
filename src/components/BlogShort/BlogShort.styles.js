@@ -20,6 +20,8 @@ export const StyledImage = styled.div`
   width: 100%;
   position: relative;
   margin: 1rem 0;
+  border-radius: 10px;
+  overflow: hidden;
 `;
 
 export const BlogIntroHeading = styled.h2`
