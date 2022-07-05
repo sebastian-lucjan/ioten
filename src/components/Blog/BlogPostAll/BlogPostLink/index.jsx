@@ -15,6 +15,7 @@ const BlogPost = ({ post }) => {
       coverImage: {
         fields: {
           file: { url },
+          description: imgDescription,
         },
       },
       readingStats: { text: readingTimeText },
@@ -29,7 +30,7 @@ const BlogPost = ({ post }) => {
     <Link href={`/blog/${articleSlug}`}>
       <StyledPost>
         <StyledImage>
-          <Image priority src={`https:${url}`} layout="fill" objectFit="cover" alt="czarna szczotka, narzędzie do sprzątania" />
+          <Image priority src={`https:${url}`} layout="fill" objectFit="cover" alt={imgDescription} />
         </StyledImage>
         <CategoryWrapper>
           {categoryArr.map((category) => (

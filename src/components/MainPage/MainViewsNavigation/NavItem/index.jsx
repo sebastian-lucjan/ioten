@@ -15,7 +15,7 @@ const NavItem = ({ type, index }) => {
 
   return (
     <StyledNavItem pageIndex={pageIndex} type={type} onClick={() => handleChangeIndex(type)}>
-      <StyledLink type={type}>
+      <StyledLink as="div" type={type}>
         <MdArrowBackIos />
       </StyledLink>
 

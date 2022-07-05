@@ -35,6 +35,7 @@ const richTextOptions = {
             height={file.details.image.height}
             objectFit="contain"
             alt={description}
+            quality={65}
           />
 
           {/* {description ? <p>fot.: {description}</p> : null} */}
@@ -86,11 +87,10 @@ export default function BlogPost({ post }) {
     blogPostBody,
   } = post.fields;
 
-  console.log('blogPostBody:', blogPostBody);
-
   const {
     gradient: { grayToYellow, transparentToYellow },
   } = theme;
+
   return (
     <StyledBlogPost>
       <BlogPostIntroWrapper>
@@ -104,7 +104,7 @@ export default function BlogPost({ post }) {
         </CategoryWrapper>
 
         <StyledImage>
-          <Image src={`https:${file.url}`} layout="fill" objectFit="cover" alt={description} />
+          <Image priority src={`https:${file.url}`} layout="fill" objectFit="cover" alt={description} quality={50} />
         </StyledImage>
       </BlogPostIntroWrapper>
 
