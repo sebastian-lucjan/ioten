@@ -7,16 +7,14 @@ const FooterRights = () => {
       <div>
         <div className="terms-wrapper">
           <Link href="/policy" as="/polityka-prywatnosci">
-            <a>
-              <p>Polityka prywatności</p>
-            </a>
+            <a>Polityka prywatności</a>
           </Link>
-          <Link href="/policy" as="/polityka-prywatnosci">
-            {/* <Link href="/terms-of-use"> */}
-            <a>
-              <p>Regulamin użytkowania</p>
-            </a>
-          </Link>
+          {/* <Link href="/policy" as="/polityka-prywatnosci"> */}
+          {/*  /!* <Link href="/terms-of-use"> *!/ */}
+          {/*  <a> */}
+          {/*    <p>Regulamin użytkowania</p> */}
+          {/*  </a> */}
+          {/* </Link> */}
         </div>
         <p>
           Copyright © {new Date().getFullYear()} <span>ioten</span> All Rights Reserved

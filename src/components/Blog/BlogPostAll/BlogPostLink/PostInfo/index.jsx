@@ -8,14 +8,14 @@ const StyledPostInfo = styled.div`
 `;
 
 const PostInfo = ({ date, readingTimeText }) => {
-  const { lightGray, lighterGray } = theme.color;
+  const { gray } = theme.color;
 
   const readingTime = readingTimeText.replace(' read', '');
 
   return (
     <StyledPostInfo>
-      <TextCaption color={lightGray}>{date}</TextCaption>
-      <TextCaption color={lighterGray}>{readingTime}</TextCaption>
+      <TextCaption color={gray}>{date}</TextCaption>
+      <TextCaption color={gray}>{readingTime}</TextCaption>
     </StyledPostInfo>
   );
 };

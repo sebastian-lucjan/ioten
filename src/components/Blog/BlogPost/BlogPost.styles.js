@@ -7,8 +7,8 @@ export const ImageWrapper = styled.div`
   min-height: 120px;
   margin: 4rem 0 6rem 0;
   overflow: hidden;
-  filter: drop-shadow(1.3px 1px 4.1px rgba(0, 0, 0, 0.028)) drop-shadow(4.2px 3.4px 13.6px rgba(0, 0, 0, 0.042))
-    drop-shadow(19px 15px 61px rgba(0, 0, 0, 0.07));
+  //filter: drop-shadow(1.3px 1px 4.1px rgba(0, 0, 0, 0.028)) drop-shadow(4.2px 3.4px 13.6px rgba(0, 0, 0, 0.042))
+  //  drop-shadow(19px 15px 61px rgba(0, 0, 0, 0.07));
 
   img {
     border-radius: 10px;
@@ -41,7 +41,11 @@ export const StyledImage = styled.div`
 
 export const StyledBlogPost = styled.div`
   position: relative;
-  padding-top: 70px;
+  padding-top: 64px;
+
+  ${({ theme }) => theme.mq.tablet} {
+    padding-top: 70px;
+  } ;
 `;
 
 export const BlogPostIntroWrapper = styled.div`
@@ -57,6 +61,10 @@ export const BlogPostIntroWrapper = styled.div`
     align-items: center;
     justify-content: center;
   }
+`;
+
+export const PhotoCaption = styled.p`
+  margin-bottom: 4rem;
 `;
 
 export const BlogPostBodyWrapper = styled.div`

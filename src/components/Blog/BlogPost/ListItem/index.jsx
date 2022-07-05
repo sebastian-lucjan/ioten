@@ -1,7 +1,7 @@
 import { FaRegCheckCircle } from 'react-icons/fa';
 import styled from 'styled-components';
 
-const Icon = styled.li`
+const Icon = styled.div`
   margin-right: 1rem;
   margin-top: 1.6rem;
 `;
@@ -12,14 +12,12 @@ const Item = styled.li`
   list-style: none;
   display: flex;
 
-  & :nth-child(1) {
+  div :nth-child(1) {
     color: ${({ theme }) => theme.color.greenDark};
   }
 
-  p {
-    * {
-      color: ${({ theme }) => theme.color.black} !important;
-    }
+  div {
+    color: ${({ theme }) => theme.color.black} !important;
     font-size: 20px;
   }
 
@@ -34,7 +32,7 @@ export default function ListItem({ children }) {
       <Icon>
         <FaRegCheckCircle size={22} />
       </Icon>
-      <p>{children}</p>
+      <div>{children}</div>
     </Item>
   );
 }

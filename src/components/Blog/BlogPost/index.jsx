@@ -8,6 +8,7 @@ import {
   BlogPostIntroWrapper,
   CategoryWrapper,
   ImageWrapper,
+  PhotoCaption,
   PostCategory,
   PostHeading,
   StyledBlogPost,
@@ -21,7 +22,6 @@ import ListItem from './ListItem';
 const richTextOptions = {
   renderNode: {
     [BLOCKS.EMBEDDED_ASSET]: ({ data }) => {
-      // console.log('data', data);
       const {
         fields: { file, description },
       } = data.target;
@@ -35,6 +35,7 @@ const richTextOptions = {
             height={file.details.image.height}
             objectFit="contain"
             alt={description}
+            quality={65}
           />
 
           {/* {description ? <p>fot.: {description}</p> : null} */}
@@ -49,6 +50,9 @@ const richTextOptions = {
     },
     [BLOCKS.HEADING_4]: (node, children) => {
       return <Heading lvl={4}>{children}</Heading>;
+    },
+    [BLOCKS.HEADING_6]: (node, children) => {
+      return <PhotoCaption>{children}</PhotoCaption>;
     },
     [BLOCKS.QUOTE]: (node, children) => {
       return <Quote>{children}</Quote>;
@@ -83,11 +87,10 @@ export default function BlogPost({ post }) {
     blogPostBody,
   } = post.fields;
 
-  console.log('blogPostBody:', blogPostBody);
-
   const {
     gradient: { grayToYellow, transparentToYellow },
   } = theme;
+
   return (
     <StyledBlogPost>
       <BlogPostIntroWrapper>
@@ -101,7 +104,7 @@ export default function BlogPost({ post }) {
         </CategoryWrapper>
 
         <StyledImage>
-          <Image src={`https:${file.url}`} layout="fill" objectFit="cover" alt={description} />
+          <Image priority src={`https:${file.url}`} layout="fill" objectFit="cover" alt={description} quality={50} />
         </StyledImage>
       </BlogPostIntroWrapper>
 

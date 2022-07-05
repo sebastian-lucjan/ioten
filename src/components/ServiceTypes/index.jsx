@@ -6,7 +6,7 @@ import Grid from 'src/components/Grid';
 import Button from 'src/components/Button';
 import { TextCaption } from 'src/components/TextComponents';
 import Image from 'next/image';
-import servicesImageStages from 'src/assets/images/services-image-02.jpeg';
+import servicesImageStages from 'src/assets/images/komputer-strona-internetowa-restauracja.jpeg';
 import ServicesList from './ServicesList';
 import { ImageContainer, StyledContentWrapper, StyledHeadingWrapper, Wrapper } from './ServiceTypes.styles';
 
@@ -23,8 +23,7 @@ export default function ServicesTypes() {
   return (
     <Wrapper>
       <ImageContainer>
-        <Image src={servicesImageStages} layout="fill" objectFit="cover" alt="czarna szczotka, narzędzie do sprzątania" />
-        {/*  todo: image alt */}
+        <Image src={servicesImageStages} layout="responsive" sizes="40vw" objectFit="cover" alt={heading} />
       </ImageContainer>
       <StyledContentWrapper>
         <StyledHeadingWrapper>

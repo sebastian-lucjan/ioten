@@ -61,7 +61,7 @@ export const StyledFooterSection = styled.div`
   }
 `;
 
-export const FooterHeading = styled.h4`
+export const FooterHeading = styled.p`
   margin-bottom: 16px;
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
 `;

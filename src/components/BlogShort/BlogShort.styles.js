@@ -20,6 +20,8 @@ export const StyledImage = styled.div`
   width: 100%;
   position: relative;
   margin: 1rem 0;
+  border-radius: 10px;
+  overflow: hidden;
 `;
 
 export const BlogIntroHeading = styled.h2`
@@ -49,13 +51,12 @@ export const BlogPostsContainer = styled.div`
 export const StyledPost = styled.button`
   width: 100%;
   cursor: pointer;
-  margin: 14rem 0;
+  margin: 0 0 18rem 0;
   border: none;
   background-color: ${({ theme }) => theme.color.white};
   text-align: left;
 
   p {
-    //control all inside paragraphs
     margin: 2rem 0 0 0;
   }
 
