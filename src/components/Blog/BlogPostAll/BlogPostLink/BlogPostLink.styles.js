@@ -11,10 +11,6 @@ export const PostCategory = styled.p`
     padding-right: 1.2rem;
     font-size: ${({ theme }) => theme.font.size.paragraphSmall};
   }
-
-  //&:hover {
-  //  filter: brightness(0.8);
-  //}
 `;
 
 export const BlogShortDescription = styled(TextParagraph)`

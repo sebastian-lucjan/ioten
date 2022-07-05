@@ -30,7 +30,7 @@ const BlogPost = ({ post }) => {
     <Link href={`/blog/${articleSlug}`}>
       <StyledPost>
         <StyledImage>
-          <Image priority src={`https:${url}`} layout="fill" objectFit="cover" alt={imgDescription} />
+          <Image priority src={`https:${url}`} layout="fill" sizes="25vw" objectFit="cover" alt={imgDescription} />
         </StyledImage>
         <CategoryWrapper>
           {categoryArr.map((category) => (
@@ -39,7 +39,7 @@ const BlogPost = ({ post }) => {
             </PostCategory>
           ))}
         </CategoryWrapper>
-        <TextHeading>{title}</TextHeading>
+        <TextHeading as="h3">{title}</TextHeading>
         <BlogShortDescription>{description}</BlogShortDescription>
         <PostInfo date={formattedData} readingTimeText={readingTimeText} />
         {/* <PostInfo date={date} readTime={readTime} /> */}

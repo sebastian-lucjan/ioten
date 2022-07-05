@@ -41,10 +41,10 @@ export const ServiceStageParagraph = styled.p`
   } ;
 `;
 
-export const ServiceStageAsideLink = styled.p`
+export const ServiceStageAsideLink = styled.a`
   text-decoration: underline;
   font-size: ${({ theme }) => theme.font.size.smallText};
-  color: ${({ theme }) => theme.color.darkGray};
+  color: ${({ theme }) => theme.color.darkerGray};
   margin-top: 2rem;
   cursor: pointer;
 `;

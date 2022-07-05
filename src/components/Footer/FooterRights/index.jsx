@@ -7,9 +7,7 @@ const FooterRights = () => {
       <div>
         <div className="terms-wrapper">
           <Link href="/policy" as="/polityka-prywatnosci">
-            <a>
-              <p>Polityka prywatności</p>
-            </a>
+            <a>Polityka prywatności</a>
           </Link>
           {/* <Link href="/policy" as="/polityka-prywatnosci"> */}
           {/*  /!* <Link href="/terms-of-use"> *!/ */}

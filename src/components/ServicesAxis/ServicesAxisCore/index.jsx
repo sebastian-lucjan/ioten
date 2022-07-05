@@ -33,7 +33,6 @@ const ServicesAxisCore = () => {
           <StageContainer key={uuid()}>
             <ServiceStageWrapper>
               <ServiceStage id={serviceID} color={rainbowColors[index]}>
-                {/* <ServiceStage id={serviceID} desaturate={isOpen} key={uuid()} color={rainbowColors[index]} onClick={() => handleOpenServiceStage(index)}> */}
                 <ServiceStageHeading>{heading}</ServiceStageHeading>
               </ServiceStage>
               <ServiceStageParagraph>{shortIntroParagraph}</ServiceStageParagraph>

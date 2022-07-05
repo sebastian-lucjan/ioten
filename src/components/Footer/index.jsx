@@ -25,7 +25,7 @@ const Footer = ({ footerGridColor }) => {
     <MainSectionWrapper background={white}>
       <Wrapper>
         <StyledFooterSection className="footer__contact">
-          <FooterHeading>{heading}</FooterHeading>
+          <FooterHeading as="h3">{heading}</FooterHeading>
           {text.map((textLine) => (
             <FooterItem noLink key={uuid()}>
               {textLine}
@@ -35,7 +35,7 @@ const Footer = ({ footerGridColor }) => {
         </StyledFooterSection>
 
         <StyledFooterSection>
-          <FooterHeading>{services.intro}</FooterHeading>
+          <FooterHeading as="h3">{services.intro}</FooterHeading>
           {services.list.map(({ heading: serviceHeading, soon = false }) => {
             if (soon) {
               return <FooterSoonItem key={uuid()}>{serviceHeading}</FooterSoonItem>;
@@ -49,7 +49,7 @@ const Footer = ({ footerGridColor }) => {
         </StyledFooterSection>
 
         <StyledFooterSection>
-          <FooterHeading>{services.serviceStagesIntro}</FooterHeading>
+          <FooterHeading as="h3">{services.serviceStagesIntro}</FooterHeading>
           {services.stages.map(({ heading: serviceHeading }) => (
             <Link key={uuid()} href="/src/services" as="/uslugi">
               <FooterItem key={uuid()}>{serviceHeading}</FooterItem>
@@ -58,7 +58,7 @@ const Footer = ({ footerGridColor }) => {
         </StyledFooterSection>
 
         <StyledFooterSection>
-          <FooterHeading>{ioten}</FooterHeading>
+          <FooterHeading as="h3">{ioten}</FooterHeading>
           {navigationData.map(({ name, href, as }) => (
             <Link key={uuid()} href={href} as={as}>
               <FooterItem>{name}</FooterItem>
@@ -67,7 +67,7 @@ const Footer = ({ footerGridColor }) => {
         </StyledFooterSection>
 
         {/* <StyledFooterSection className="footer__social-media"> */}
-        {/*  <FooterHeading>{socialMediaHeading}</FooterHeading> */}
+        {/*  <FooterHeading as="h3>{socialMediaHeading}</FooterHeading> */}
         {/* <SocialMedia /> */}
         {/* </StyledFooterSection> */}
       </Wrapper>
