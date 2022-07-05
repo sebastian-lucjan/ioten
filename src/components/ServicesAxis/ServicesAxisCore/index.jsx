@@ -37,7 +37,7 @@ const ServicesAxisCore = () => {
               </ServiceStage>
               <ServiceStageParagraph>{shortIntroParagraph}</ServiceStageParagraph>
               <Link href={`/uslugi#${serviceID}`}>
-                <ServiceStageAsideLink>
+                <ServiceStageAsideLink as="div">
                   więcej informacji
                   <StyledArrow />
                 </ServiceStageAsideLink>

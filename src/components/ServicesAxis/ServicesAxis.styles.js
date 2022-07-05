@@ -4,7 +4,7 @@ import Arrow from 'src/assets/images/service-detail-arrow.svg';
 
 export const StyledArrow = styled(Arrow)`
   margin-left: 1rem;
-  fill: ${({ theme }) => theme.color.gray}; ;
+  fill: ${({ theme }) => theme.color.darkerGray}; ;
 `;
 
 export const ServiceStageWrapper = styled.div`
@@ -44,7 +44,7 @@ export const ServiceStageParagraph = styled.p`
 export const ServiceStageAsideLink = styled.a`
   text-decoration: underline;
   font-size: ${({ theme }) => theme.font.size.smallText};
-  color: ${({ theme }) => theme.color.darkerGray};
+  color: ${({ theme }) => theme.color.darkestGray};
   margin-top: 2rem;
   cursor: pointer;
 `;

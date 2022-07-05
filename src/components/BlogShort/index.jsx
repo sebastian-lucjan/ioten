@@ -26,7 +26,7 @@ const BlogShort = () => {
         <TextCaption>{category}</TextCaption>
         <BlogIntroHeading>{heading}</BlogIntroHeading>
         <Link href="/blog">
-          <StyledLink>{blogLink}</StyledLink>
+          <StyledLink as="div">{blogLink}</StyledLink>
         </Link>
         <BlogPostsContainer>
           {highlightedPosts.map((post) => (

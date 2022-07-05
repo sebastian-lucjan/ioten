@@ -21,7 +21,7 @@ export const StyledProsList = styled.ul`
   } ;
 `;
 
-export const Pros = styled.div`
+export const Pros = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
