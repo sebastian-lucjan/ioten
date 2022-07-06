@@ -4,8 +4,8 @@ export const mainView = [
   {
     heading: 'Zbuduj z nami swój biznes online',
     paragraph:
-      'Zaprojektujemy i zbudujemy niesamowicie szybką stronę internetową dla Twojego biznesu. Estetyka i funkcjonalność mają u nas kluczowe znaczenie.',
-    short: { heading: 'Biznes Online', paragraph: 'Zaprojektujemy i zbudujemy niesamowicie szybką stronę internetową dla Twojego biznesu.' },
+      'Zaprojektujemy i zbudujemy stronę internetową, wizerunkową dla Twojego biznesu i produktu. Estetyka i funkcjonalność mają u nas kluczowe znaczenie.',
+    short: { heading: 'Biznes Online', paragraph: 'Zaprojektujemy i zbudujemy stronę internetową, wizerunkową dla Twojego biznesu i produktu.' },
   },
   {
     heading: 'Design i Funkcjonalność',
@@ -29,7 +29,7 @@ export const ideaInterlude = {
 };
 
 export const mainPage = {
-  title: 'ioten - szybkie i skuteczne strony internetowe',
+  title: 'ioten - kreatywne i szybkie strony internetowe',
   url: '/',
   description:
     'Zaprojektujemy i zbudujemy niesamowicie szybką stronę internetową dla Twojego biznesu. Estetyka i funkcjonalność mają u nas kluczowe znaczenie.',

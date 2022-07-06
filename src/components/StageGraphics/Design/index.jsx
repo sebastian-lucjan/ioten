@@ -33,30 +33,6 @@ export const DesignWrapper = styled.div`
       margin: 0 40px;
       z-index: ${({ theme }) => theme.zIndex.peak};
     }
-
-    // .pencil,
-    // .star {
-    //   display: none;
-    //   position: absolute;
-    //   width: 100px;
-    //   height: 100px;
-    //   z-index: ${({ theme }) => theme.zIndex.peak};
-    //   filter: drop-shadow(5px 5px 2px #2222);
-    //
-    //   ${({ theme }) => theme.mq.smallDesktop} {
-    //     display: block;
-    //   }
-    // }
-    //
-    // .pencil {
-    //   top: 5%;
-    //   left: 10%;
-    // }
-
-    //.star {
-    //  top: 80%;
-    //  left: 20%;
-    //}
   }
 `;
 
@@ -64,18 +40,21 @@ export default function Design() {
   return (
     <DesignWrapper>
       <div className="designGraphicsView">
-        <Image src={designGraphicsView} layout="fill" objectFit="contain" alt="" />
+        <Image
+          src={designGraphicsView}
+          layout="fill"
+          objectFit="contain"
+          alt="projektowanie designu strony internetowej, pokazanie odległości między elementami i relacji przestrzennych"
+        />
       </div>
       <div className="designSystemGraphics">
-        <Image src={designSystemGraphics} layout="fill" objectFit="contain" alt="" />
+        <Image
+          src={designSystemGraphics}
+          layout="fill"
+          objectFit="contain"
+          alt="zaprojektowany design book, użyte czcionki, rodzaje przycisków i zmiany kolorów w zależności od stanu przycisku na stronie internetowej"
+        />
       </div>
-
-      {/* <div className="pencil"> */}
-      {/*  <Image src={pencil} layout="fill" objectFit="contain" alt="" /> */}
-      {/* </div> */}
-      {/* <div className="star"> */}
-      {/*  <Image src={star} layout="fill" objectFit="contain" alt="" /> */}
-      {/* </div> */}
     </DesignWrapper>
   );
 }

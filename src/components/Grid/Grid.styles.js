@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Line = styled.span`
+const Line = styled.div`
   position: absolute;
   top: 0;
   height: 100%;

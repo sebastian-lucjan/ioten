@@ -38,10 +38,20 @@ export default function OptimizationSupport() {
   return (
     <OptimizationSupportWrapper>
       <div className="support-view">
-        <Image src={supportView} layout="fill" objectFit="contain" alt="" />
+        <Image
+          src={supportView}
+          layout="fill"
+          objectFit="contain"
+          alt="wykonana strona internetowa po wprowadzeniu dodatkowych funkcjonalności i uwag klienta"
+        />
       </div>
       <div className="support-comments">
-        <Image src={supportComments} layout="fill" objectFit="contain" alt="" />
+        <Image
+          src={supportComments}
+          layout="fill"
+          objectFit="contain"
+          alt="lista wprowadzonych zmian na życzenie klienta oraz nowych funkcjonalności na stronie internetowej"
+        />
       </div>
     </OptimizationSupportWrapper>
   );

@@ -41,32 +41,29 @@ export const DevelopmentWrapper = styled.div`
       transform: translateX(-8%);
       margin: 0;
     }
-
-    .logo {
-      display: none;
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      z-index: ${({ theme }) => theme.zIndex.peak};
-      filter: drop-shadow(5px 5px 2px #2222);
-
-      ${({ theme }) => theme.mq.smallDesktop} {
-        display: block;
-      }
-    }
   } ;
 `;
 export default function Development() {
   return (
     <DevelopmentWrapper>
       <div className="development-tablet">
-        <Image src={developmentTablet} layout="fill" objectFit="contain" alt="" />
+        <Image
+          src={developmentTablet}
+          layout="fill"
+          objectFit="contain"
+          alt="zaprojektowana strona internetowa lub wizerunkowa produktu na tablecie"
+        />
       </div>
       <div className="development-mobile">
-        <Image src={developmentMobile} layout="fill" objectFit="contain" alt="" />
+        <Image
+          src={developmentMobile}
+          layout="fill"
+          objectFit="contain"
+          alt="zaprojektowana strona internetowa lub wizerunkowa produktu na telefonie komórkowym"
+        />
       </div>
       <div className="development-mac">
-        <Image src={developmentMac} layout="fill" objectFit="contain" alt="" />
+        <Image src={developmentMac} layout="fill" objectFit="contain" alt="zaprojektowana strona internetowa lub wizerunkowa produktu na laptopie" />
       </div>
     </DevelopmentWrapper>
   );

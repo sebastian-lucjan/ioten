@@ -78,14 +78,13 @@ const theme = {
       paragraphSmall: '1.6rem',
       smallText: '1.4rem',
       caption: '1.2rem',
-      xsText: '1rem',
     },
     family: {
       myriadPro: {
-        light: 'Myriad Pro Light, helvetica, arial black',
-        regular: 'Myriad Pro Regular, helvetica, arial black',
-        bold: 'Myriad Pro Bold, helvetica, arial black',
-        black: 'Myriad Pro Black, helvetica, arial black',
+        light: 'Myriad Pro Light',
+        regular: 'Myriad Pro Regular',
+        bold: 'Myriad Pro Bold',
+        black: 'Myriad Pro Black',
       },
     },
   },

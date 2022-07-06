@@ -51,6 +51,7 @@ export const StyledIconWrapper = styled.div`
   width: 36px;
   height: 36px;
   background-color: ${({ theme }) => theme.color.green};
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;

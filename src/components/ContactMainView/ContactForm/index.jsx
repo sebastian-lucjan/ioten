@@ -47,10 +47,10 @@ export default function ContactForm() {
   };
 
   useEffect(() => {
-    if (!sendSuccess && isSubmitSuccessful) {
+    if (!sendSuccess && isSubmitSuccessful && token) {
       setSendSuccess(true);
     }
-  }, [isSubmitSuccessful]);
+  }, [isSubmitSuccessful, token]);
 
   return (
     <Wrapper hasError={isError()} as="form" onSubmit={handleSubmit(() => onSubmit(reset, watch, setError, token, captchaRef))}>
@@ -92,7 +92,7 @@ export default function ContactForm() {
             {error}
           </TextParagraph>
         ) : null}
-        <SubmitButton reset={reset} loading={isSubmitting} hasError={isError()} isSubmitSuccessful={isSubmitSuccessful} />
+        <SubmitButton reset={reset} loading={isSubmitting && token} hasError={isError()} isSubmitSuccessful={isSubmitSuccessful} />
       </div>
 
       {sendSuccess ? <SuccessMessage setSendSuccess={setSendSuccess} /> : null}

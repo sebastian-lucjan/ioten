@@ -39,7 +39,7 @@ export const TextParagraph = styled.p`
   font-size: ${({ theme, size }) => {
     switch (size) {
       case 'xs': // 1rem
-        return theme.font.size.xsText;
+        return theme.font.size.caption;
       case 'sm': // 1.4rem
         return theme.font.size.smallText;
       case 'md': // 1.6rem

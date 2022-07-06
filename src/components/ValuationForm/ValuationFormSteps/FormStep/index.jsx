@@ -22,6 +22,7 @@ export const StyledCheckbox = styled.div`
   }
   label {
     display: flex;
+    align-items: center;
   }
 
   div {
@@ -32,7 +33,7 @@ export const StyledCheckbox = styled.div`
     position: relative;
     display: block;
     margin-left: 1rem;
-    line-height: 16px;
+    margin-top: 0.4rem;
     width: calc(100% - 30px);
   }
 `;

@@ -27,7 +27,7 @@ export const StyledRestartValuationFormButton = styled.button`
   border: none;
   background-color: ${({ theme }) => theme.color.white};
   margin-top: 2rem;
-  font-size: ${({ theme }) => theme.font.size.xsText};
+  font-size: ${({ theme }) => theme.font.size.caption};
   color: ${({ theme }) => theme.color.darkestGray};
   word-spacing: 0.1rem;
   cursor: pointer;
