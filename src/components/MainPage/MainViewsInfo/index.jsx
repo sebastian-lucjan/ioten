@@ -17,7 +17,7 @@ const MainViewsInfo = () => {
     <StyledMainViewsInfo>
       <Wrapper>
         <HeadingWrapper>
-          <TextHeading color={colorCondition} as="h2" size="md">
+          <TextHeading color={colorCondition} as="h1" size="md">
             {heading}
           </TextHeading>
           {pageIndex === 2 ? <DataToggler /> : null}

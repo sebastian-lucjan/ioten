@@ -3,7 +3,7 @@ import { TextWrapper } from 'src/components/TextComponents';
 
 export const Wrapper = styled(TextWrapper)`
   padding: 0 40px;
-  h2 {
+  h1 {
     font-size: ${({ theme }) => theme.font.size.paragraph};
   }
 
@@ -11,7 +11,7 @@ export const Wrapper = styled(TextWrapper)`
     font-size: ${({ theme }) => theme.font.size.caption};
   }
   ${({ theme }) => theme.mq.mediumMobile} {
-    h2 {
+    h1 {
       font-size: ${({ theme }) => theme.font.size.paragraphBig};
     }
 
@@ -25,7 +25,7 @@ export const Wrapper = styled(TextWrapper)`
     margin: 0 auto;
     width: 70%;
 
-    h2 {
+    h1 {
       font-size: ${({ theme }) => theme.font.size.headingSection};
       margin-bottom: 1rem;
     }
@@ -39,7 +39,7 @@ export const Wrapper = styled(TextWrapper)`
   ${({ theme }) => theme.mq.smallDesktop} {
     width: 80%;
 
-    h2 {
+    h1 {
       font-size: ${({ theme }) => theme.font.size.headingSection};
       margin-bottom: 2rem;
     }
@@ -51,7 +51,7 @@ export const Wrapper = styled(TextWrapper)`
 
   ${({ theme }) => theme.mq.mediumDesktop} {
     width: 70%;
-    h2 {
+    h1 {
       font-size: ${({ theme }) => theme.font.size.headingPage};
       margin-bottom: 2rem;
     }

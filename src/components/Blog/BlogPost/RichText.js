@@ -30,7 +30,7 @@ export const Quote = ({ children }) => {
   return <StyledQuote>{children}</StyledQuote>;
 };
 
-export const StyledHeading = styled.h5`
+export const StyledHeading = styled.h4`
   margin-top: 2rem;
   letter-spacing: 1px;
 

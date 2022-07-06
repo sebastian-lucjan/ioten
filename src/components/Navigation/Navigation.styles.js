@@ -91,7 +91,7 @@ export const StyledLink = styled.button`
   }
 `;
 
-export const StyledLogo = styled.a`
+export const StyledLogo = styled.div`
   display: block;
   margin: 16px;
 

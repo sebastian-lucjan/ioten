@@ -8,7 +8,7 @@ const FooterContact = () => {
   return (
     <div>
       <StyledFooterContacts>
-        <h5 className="footer__contact-label">{footerData.contact.cooperation.heading}</h5>
+        <h4 className="footer__contact-label">{footerData.contact.cooperation.heading}</h4>
 
         <Link href={`mailto:${cooperation.email}`}>
           <p className="footer__contact-email">{cooperation.email}</p>
@@ -19,7 +19,7 @@ const FooterContact = () => {
       </StyledFooterContacts>
 
       <StyledFooterContacts>
-        <h5 className="footer__contact-label">{footerData.contact.other.heading}</h5>
+        <h4 className="footer__contact-label">{footerData.contact.other.heading}</h4>
 
         <Link href={`mailto:${other.email}`}>
           <p className="footer__contact-email">{other.email}</p>
@@ -30,7 +30,7 @@ const FooterContact = () => {
       </StyledFooterContacts>
 
       <StyledFooterContacts soon>
-        <h5 className="footer__contact-label inactive">{footerData.contact.job.heading}</h5>
+        <h4 className="footer__contact-label inactive">{footerData.contact.job.heading}</h4>
         {/* <Link href={`mailto:${job.email}`}> */}
         <p className="footer__contact-email inactive">{job.email}</p>
         {/* </Link> */}

@@ -20,7 +20,7 @@ const Styled404Image = styled.div`
 const FourOneFourImage = () => {
   return (
     <Styled404Image>
-      <Image src={image404} alt="" />
+      <Image src={image404} alt="liczba 404 złożona z kubików" />
     </Styled404Image>
   );
 };

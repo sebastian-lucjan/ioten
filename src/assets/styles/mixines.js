@@ -11,14 +11,14 @@ export const soonLabel = css`
     content: 'SOON';
     top: 2px;
     left: 100%;
-    margin-left: 1rem;
-    width: 36px;
+    margin-left: 0.5rem;
+    width: 40px;
     height: 14px;
     text-align: center;
     background-color: ${theme.color.lightGray};
     border-radius: 3px;
     color: ${theme.color.white};
-    font-size: ${theme.font.size.xsText};
+    font-size: ${theme.font.size.caption};
     font-family: ${theme.font.family.myriadPro.black};
   }
 `;

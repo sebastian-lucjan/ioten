@@ -39,7 +39,7 @@ const BlogPost = ({ post }) => {
             </PostCategory>
           ))}
         </CategoryWrapper>
-        <TextHeading as="h3">{title}</TextHeading>
+        <TextHeading as="h2">{title}</TextHeading>
         <BlogShortDescription>{description}</BlogShortDescription>
         <PostInfo date={formattedData} readingTimeText={readingTimeText} />
         {/* <PostInfo date={date} readTime={readTime} /> */}

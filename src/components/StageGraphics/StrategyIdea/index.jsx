@@ -29,7 +29,12 @@ export default function StrategyIdea() {
   return (
     <StrategyIdeaWrapper>
       <div className="strategyIdea">
-        <Image src={strategyIdea} layout="fill" objectFit="contain" alt="" />
+        <Image
+          src={strategyIdea}
+          layout="fill"
+          objectFit="contain"
+          alt="materiały i informacje od klienta w celu przygotowania strategii przy projektowaniu strony internetowej"
+        />
       </div>
     </StrategyIdeaWrapper>
   );

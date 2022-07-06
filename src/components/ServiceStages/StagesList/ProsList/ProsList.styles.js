@@ -21,7 +21,7 @@ export const StyledProsList = styled.ul`
   } ;
 `;
 
-export const Pros = styled.div`
+export const Pros = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,6 +51,7 @@ export const StyledIconWrapper = styled.div`
   width: 36px;
   height: 36px;
   background-color: ${({ theme }) => theme.color.green};
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;

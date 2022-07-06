@@ -35,3 +35,6 @@ yarn-error.log*
 
 #ide
 .idea
+
+#svg-test
+home-animation-business.svg

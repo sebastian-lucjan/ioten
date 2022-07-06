@@ -74,7 +74,8 @@ const MottoInterlude = () => {
 
   return (
     <MainSectionWrapper background={theme.color.white} smaller>
-      <MottoWrapper data-aos="fade-up">
+      <MottoWrapper>
+        {/* <MottoWrapper data-aos="fade-up"> */}
         <MottoParagraph weight="bold" className="motto__text">
           {motto.text}
         </MottoParagraph>

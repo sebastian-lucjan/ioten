@@ -117,6 +117,7 @@ export const PostCategory = styled.p`
 
 export const CategoryWrapper = styled.div`
   display: flex;
+  margin-bottom: 2rem;
 `;
 
 export const ParagraphWrapper = styled.div`

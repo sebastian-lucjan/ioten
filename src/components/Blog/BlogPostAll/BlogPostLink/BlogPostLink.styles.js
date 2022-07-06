@@ -2,13 +2,16 @@ import styled from 'styled-components';
 import { TextParagraph } from 'src/components/TextComponents';
 
 export const PostCategory = styled.p`
-  color: ${({ theme, category }) => theme.color.categoryColor[category]};
-  font-family: ${({ theme }) => theme.font.family.myriadPro.black};
+  background-color: ${({ theme, category }) => theme.color.categoryColor[category]};
+  color: white;
+  font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
+  letter-spacing: 0.5px;
   font-size: ${({ theme }) => theme.font.size.smallText};
-  padding-right: 1.2rem;
+  padding: 0.4rem 1rem 0.1rem 1rem;
+  border-radius: 0.3rem;
+  margin-right: 1.2rem !important;
 
   ${({ theme }) => theme.mq.tablet} {
-    padding-right: 1.2rem;
     font-size: ${({ theme }) => theme.font.size.paragraphSmall};
   }
 `;

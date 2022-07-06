@@ -11,7 +11,7 @@ const theme = {
     lightNavy: 'hsla(197, 58%, 36%, 1)',
     darkNavy: 'hsla(197, 58%, 8%, 1)',
     darkerNavy: 'hsla(197, 58%, 0%, 1)',
-    gray: 'hsl(0, 0%, 67%)',
+    gray: 'hsl(0, 0%, 47%)',
     green: 'hsl(119, 55%, 63%)',
     greenDark: 'hsl(119,35%,50%)', // todo: for now is unused, check later
     lightGray: 'hsl(0, 0%, 80%)',
@@ -26,11 +26,11 @@ const theme = {
     // #0080FF
 
     categoryColor: {
-      BUSINESS: 'hsl(65, 88%, 48%)',
+      BUSINESS: 'hsl(36,100%,33%)',
       DESIGN: '#015CC8',
-      IOTEN: 'hsl(119, 55%, 63%)',
-      PRODUCTIVITY: 'hsl(119,35%,50%)',
-      TECHNOLOGY: '#94b1f5',
+      IOTEN: 'hsl(120,45%,35%)',
+      PRODUCTIVITY: 'hsl(119,40%,42%)',
+      TECHNOLOGY: '#5970a6',
     },
   },
   gradient: {
@@ -78,7 +78,6 @@ const theme = {
       paragraphSmall: '1.6rem',
       smallText: '1.4rem',
       caption: '1.2rem',
-      xsText: '1rem',
     },
     family: {
       myriadPro: {

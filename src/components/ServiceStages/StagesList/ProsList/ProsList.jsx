@@ -8,7 +8,7 @@ export default function ProsList({ prosList }) {
       {prosList.map((pros) => (
         <Pros key={uuid()}>
           <StyledIconWrapper>
-            <Icon icon={pros.icon} />
+            <Icon icon={pros.icon} width="22px" />
           </StyledIconWrapper>
           <p>{pros.text}</p>
         </Pros>

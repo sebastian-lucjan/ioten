@@ -43,16 +43,6 @@ export const ConceptWireframingWrapper = styled.div`
         display: block;
       }
     }
-
-    //.cube {
-    //  top: 5%;
-    //  left: 10%;
-    //}
-    //
-    //.octahedron {
-    //  top: 80%;
-    //  left: 80%;
-    //}
   }
 `;
 
@@ -61,14 +51,8 @@ export default function ConceptWireframing() {
     <Container>
       <ConceptWireframingWrapper>
         <div className="sign-in-wireframe wireframe">
-          <Image src={wireframeGraphic} layout="fill" objectFit="contain" alt="" />
+          <Image src={wireframeGraphic} layout="fill" objectFit="contain" alt="przykład wireframe przy tworzeniu strony internetowej" />
         </div>
-        {/* <div className="cube"> */}
-        {/*  <Image src={cube} layout="fill" objectFit="contain" alt="" /> */}
-        {/* </div> */}
-        {/* <div className="octahedron"> */}
-        {/*  <Image src={octahedron} layout="fill" objectFit="contain" alt="" /> */}
-        {/* </div> */}
       </ConceptWireframingWrapper>
     </Container>
   );

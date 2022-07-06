@@ -13,7 +13,7 @@ export default function ContactDetails() {
   return (
     <StyledContactDetails>
       <div className="contact-details__info-item">
-        <h3 className="contact-details__info-item-label">{headingOffer}</h3>
+        <h2 className="contact-details__info-item-label">{headingOffer}</h2>
         <Link href={`mailto:${emailOffer}`}>
           <p>{emailOffer}</p>
         </Link>
