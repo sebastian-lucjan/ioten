@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
     const handleRouteChange = (url) => {
       if (typeof window !== 'undefined' && window.gtag !== undefined) {
         console.log('gtag', url);
-        window.gtag('config', process.env.GA_MEASUREMENT_ID, {
+        window.gtag('config', process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID, {
           page_path: url,
         });
       }
