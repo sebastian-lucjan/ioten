@@ -103,6 +103,7 @@ export const StyledCheckbox = styled.div`
     position: relative;
     display: block;
     margin-left: 1rem;
+    margin-top: 0.3rem;
     line-height: 16px;
 
     &:after {

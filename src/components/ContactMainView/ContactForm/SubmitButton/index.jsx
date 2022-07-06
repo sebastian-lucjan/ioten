@@ -4,7 +4,7 @@ import PaperPlaneSVG from 'src/assets/images/paper-plane';
 import { useRef } from 'react';
 import { StyledSubmitButton } from './SubmitButton.styles';
 
-export default function SubmitButton({ hasError, loading, isSubmitSuccessful }) {
+export default function SubmitButton({ hasError, loading, isSubmitSuccessful, isToken }) {
   const buttonInitialText = contactData.contactContent.form.button;
   const paperPlaneRef = useRef(null);
   const buttonRef = useRef(null);
@@ -22,7 +22,7 @@ export default function SubmitButton({ hasError, loading, isSubmitSuccessful }) 
       textColor={white}
       backgroundColor={darkestGray}
     >
-      <p>{loading ? 'Wysyłanie...' : buttonInitialText}</p>
+      <p>{loading && isToken ? 'Wysyłanie...' : buttonInitialText}</p>
 
       {isSubmitSuccessful ? null : <PaperPlaneSVG setRef={paperPlaneRef} />}
     </StyledSubmitButton>

@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import SubmitButton from 'src/components/ContactMainView/ContactForm/SubmitButton';
 import contactData from 'src/data/contactData';
 import { CheckboxInput } from 'src/components/ContactMainView/ContactForm/FormFields';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { onSubmit } from 'src/helpers/formServices';
 import SuccessMessage from 'src/components/SuccessMessage';
 import { FormDuel, StyledServicesForm, StyledTextAreaWrapper, StyledTextInputWrapper } from './ServicesForm.styles';
@@ -21,19 +21,13 @@ export default function ServicesForm() {
 
   const captchaRef = useRef(null);
 
-  useEffect(() => {
-    if (!sendSuccess && isSubmitSuccessful) {
-      setSendSuccess(true);
-    }
-  }, [isSubmitSuccessful]);
-
   const { nameStringConditions, emailStringConditions, textareaStringConditions, policyCheckboxConditions, ndaCheckboxConditions } =
     contactData.contactContent.form.conditions;
 
   const isError = () => Object.keys(errors).length > 0;
 
   return (
-    <StyledServicesForm as="form" onSubmit={handleSubmit(() => onSubmit(reset, watch, captchaRef))}>
+    <StyledServicesForm as="form" onSubmit={handleSubmit(() => onSubmit(reset, watch, captchaRef, setSendSuccess))}>
       <FormDuel>
         <TextInput watch={watch} name="name" register={register} text="Imię" inputConditions={nameStringConditions} />
         <TextInput watch={watch} name="email" register={register} text="Email" inputConditions={emailStringConditions} />

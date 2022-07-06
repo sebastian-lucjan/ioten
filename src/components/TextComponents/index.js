@@ -75,6 +75,7 @@ export const TextHeading = styled.p`
   /* props */
   //bolder -> choose fontWeight between bold and black
   //size -> heading 3 sizes to choose
+  display: block; //todo: check if it is necessary
   position: relative;
   z-index: ${({ theme }) => theme.zIndex.top};
 

@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
   ${({ theme }) => theme.mq.smallDesktop} {
     position: relative;
   }
+
   ${({ theme }) => `${theme.mq.smallDesktop} and (orientation: landscape)`} {
     margin-left: 30px;
   } ;
