@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Script from 'next/script';
+// import Script from 'next/script';
 
 const HeadMeta = () => {
   return (
@@ -17,13 +17,13 @@ const HeadMeta = () => {
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
 
-      <meta name="title" content="ioten - szybkie i kreatywne strony internetowe" />
+      <meta name="title" content="ioten - tworzenie kreatywnych stron internetowych dla firm" />
       <meta name="keywords" content="ioten, szybkie i kreatywne strony internetowe, biznes online, design i funkcjonalność" />
 
       <meta property="og:locale" content="pl_PL" />
 
-      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
-      <Script
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
+      <script
         defer
         dangerouslySetInnerHTML={{
           __html: `
@@ -37,7 +37,7 @@ const HeadMeta = () => {
         }}
       />
 
-      <title>ioten - szybkie i kreatywne strony internetowe</title>
+      <title>ioten - tworzenie kreatywnych stron internetowych dla firm</title>
     </Head>
   );
 };
