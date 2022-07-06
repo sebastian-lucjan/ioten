@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import contactData from 'src/data/contactData';
 import { onSubmit } from 'src/helpers/form';
 import { TextParagraph } from 'src/components/TextComponents';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 import FormErrors from 'src/components/FormErrors';
 import SuccessMessage from 'src/components/SuccessMessage';
@@ -46,12 +46,6 @@ export default function ContactForm() {
     setToken('');
   };
 
-  useEffect(() => {
-    if (!sendSuccess && isSubmitSuccessful && token) {
-      setSendSuccess(true);
-    }
-  }, [isSubmitSuccessful, token]);
-
   return (
     <Wrapper hasError={isError()} as="form" onSubmit={handleSubmit(() => onSubmit(reset, watch, setError, token, captchaRef))}>
       <div className="form__container">
@@ -92,7 +86,7 @@ export default function ContactForm() {
             {error}
           </TextParagraph>
         ) : null}
-        <SubmitButton reset={reset} loading={isSubmitting && token} hasError={isError()} isSubmitSuccessful={isSubmitSuccessful} />
+        <SubmitButton reset={reset} loading={isSubmitting && token} hasError={isError()} isSubmitSuccessful={isSubmitSuccessful} isToken={!!token} />
       </div>
 
       {sendSuccess ? <SuccessMessage setSendSuccess={setSendSuccess} /> : null}

@@ -2,9 +2,6 @@ import { useContext } from 'react';
 import Grid from 'src/components/Grid';
 import styled from 'styled-components';
 import Waves from 'src/assets/images/waves-net.svg';
-// import Image from 'next/image';
-// import crosses from 'src/assets/images/crossies.png';
-// import moon from 'src/assets/images/moon.png';
 import MainPageContext from 'src/context/mainPageContext';
 import MainViewsNavigation from './MainViewsNavigation';
 import MainViewsInfo from './MainViewsInfo';
@@ -31,37 +28,6 @@ const DecorsWrapper = styled.div`
     }
   }
 `;
-//
-// const CrossesWrapper = styled.div``;
-//
-// const Shape = styled.div`
-//   display: none;
-//
-//   ${({ theme }) => theme.mq.tablet} {
-//     display: block;
-//     position: absolute;
-//   }
-// `;
-// const CrossesOne = styled(Shape)`
-//   ${({ theme }) => theme.mq.tablet} {
-//     top: 20%;
-//     left: 10%;
-//   }
-// `;
-//
-// const CrossesTwo = styled(Shape)`
-//   ${({ theme }) => theme.mq.tablet} {
-//     top: 50%;
-//     left: 85%;
-//   }
-// `;
-//
-// const Moon = styled(Shape)`
-//   ${({ theme }) => theme.mq.tablet} {
-//     top: 60%;
-//     left: 7%;
-//   }
-// `;
 
 const MainPage = ({ setRef }) => {
   const { pageIndex } = useContext(MainPageContext);
@@ -81,17 +47,6 @@ const MainPage = ({ setRef }) => {
       {pageIndex === 1 && (
         <DecorsWrapper>
           <Waves />
-          {/* <CrossesWrapper> */}
-          {/*  <CrossesOne> */}
-          {/*    <Image src={crosses} alt="kształty geometryczne, krzyżyki" width={60} height={60} /> */}
-          {/*  </CrossesOne> */}
-          {/*  <CrossesTwo> */}
-          {/*    <Image src={crosses} alt="kształty geometryczne, krzyżyki" width={50} height={50} /> */}
-          {/*  </CrossesTwo> */}
-          {/*  <Moon> */}
-          {/*    <Image src={moon} alt="kształt małego księżyca" width={70} height={70} /> */}
-          {/*  </Moon> */}
-          {/* </CrossesWrapper> */}
         </DecorsWrapper>
       )}
 

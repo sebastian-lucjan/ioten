@@ -87,6 +87,8 @@ const valuationData = {
 
     {
       heading: 'Czy posiadasz zakładany budżet, jeśli tak to jaki?',
+      description:
+        'Czy posiadasz maksymalny budżet którego nie jesteś w stanie przekroczyć, jeśli tak to jaki? Jeśli nie jesteś w stanie w tym momencie podać zakładanego budżetu to nie przejmuj się i pomiń to pole w formularzu i przejdź dalej. Dodatkowo chcemy zaznaczyć, że z racji na indywidualny i unikalny charakter wszystkich projektów w usługach świadczonych przez ioten nie znajdują się usługi których cena jest niższa niż 2500zł.',
       options: [
         {
           text: '',

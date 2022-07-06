@@ -93,8 +93,14 @@ export const StyledMainViewsInfo = styled.div`
 
 export const HeadingWrapper = styled.div`
   display: flex;
+  justify-content: flex-start;
+  width: 100%;
 
   ${({ theme }) => theme.mq.mediumMobile} {
     margin-bottom: 1rem;
-  } ;
+  }
+
+  h1 {
+    margin: 0;
+  }
 `;
