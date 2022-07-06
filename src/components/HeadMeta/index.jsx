@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Script from 'next/script';
+// import Script from 'next/script';
 
 const HeadMeta = () => {
   return (
@@ -18,13 +18,13 @@ const HeadMeta = () => {
       <meta name="theme-color" content="#ffffff" />
 
       <meta name="title" content="ioten - tworzenie kreatywnych stron internetowych dla firm" />
-      <meta name="keywords" content="ioten, szybkie i kreatywne strony internetowe, biznes online, design i funkcjonalność" />
+      <meta name="keywords" content="ioten, tworzenie kreatywnych stron internetowych, strony internetowe dla firm, budowanie stron internetowych" />
 
       <meta property="og:locale" content="pl_PL" />
 
-      <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
-      <Script
-        strategy="lazyOnload"
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
+      <script
+        defer
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
