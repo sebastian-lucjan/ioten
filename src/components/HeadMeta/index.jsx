@@ -1,5 +1,5 @@
 import Head from 'next/head';
-// import Script from 'next/script';
+import Script from 'next/script';
 
 const HeadMeta = () => {
   return (
@@ -22,9 +22,9 @@ const HeadMeta = () => {
 
       <meta property="og:locale" content="pl_PL" />
 
-      <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
-      <script
-        defer
+      <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
+      <Script
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
