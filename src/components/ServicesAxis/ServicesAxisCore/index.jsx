@@ -15,6 +15,7 @@ import theme, { rainbowColors } from 'src/assets/styles/theme';
 import Grid from 'src/components/Grid';
 import Link from 'next/link';
 import StageGraphics from 'src/components/StageGraphics';
+import StageFlyingGraphics from '../../StageFlyingGraphics';
 
 const ServicesAxisCore = () => {
   const {
@@ -43,6 +44,8 @@ const ServicesAxisCore = () => {
                 </ServiceStageAsideLink>
               </Link>
             </ServiceStageWrapper>
+
+            <StageFlyingGraphics index={index} />
 
             <StageGraphics index={index} />
           </StageContainer>
