@@ -29,7 +29,8 @@ export const BlogPostContainer = styled.div`
 `;
 
 export const StyledBlogPostAll = styled.div`
-  padding: 40px 40px 100px 40px;
+  padding: 40px;
+  //padding: 40px 40px 100px 40px;
 
   ${({ theme }) => theme.mq.tablet} {
     padding: 8vw 10vw 10vw 10vw;

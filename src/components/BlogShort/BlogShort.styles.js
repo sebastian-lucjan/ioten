@@ -51,13 +51,16 @@ export const BlogPostsContainer = styled.div`
 export const StyledPost = styled.button`
   width: 100%;
   cursor: pointer;
-  margin: 0 0 18rem 0;
+  margin: 0 0 12rem 0;
   border: none;
   background-color: ${({ theme }) => theme.color.white};
   text-align: left;
 
   p {
     margin: 2rem 0 0 0;
+  }
+  &:last-child {
+    margin: 0 0 8rem 0;
   }
 
   ${({ theme }) => theme.mq.tablet} {

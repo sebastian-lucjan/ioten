@@ -75,11 +75,6 @@ export const ServiceStage = styled.div`
   ${({ theme }) => theme.mq.desktop} {
     font-size: ${({ theme }) => theme.font.size.headingSmall};
     max-width: calc(25vw - 40px);
-
-    &:after {
-      //background: lightgray;
-      //border: 2px lightgray solid;
-    }
   }
 
   ${({ theme }) => theme.mq.mediumDesktop} {
@@ -96,13 +91,14 @@ export const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: space-around;
   color: ${({ theme }) => theme.color.darkestGray};
   height: ${({ short }) => (short ? 'unset' : '300vh')};
-  padding: ${({ short }) => (short ? '40px' : '100px 40px')};
+  //padding: ${({ short }) => (short ? '40px' : '100px 40px')};
+  padding: 0 40px;
 
   ${({ theme }) => theme.mq.tablet} {
-    padding: 80px 40px;
+    //padding: 80px 40px;
 
     article {
       width: 48%;

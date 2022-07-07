@@ -51,10 +51,11 @@ export const ImageContainer = styled.div`
   top: 80px;
   margin: 20px 40px 0 0;
   width: 100%;
-  height: 80vh;
+  height: 60vh;
   z-index: ${({ theme }) => theme.zIndex.peak};
 
   ${({ theme }) => theme.mq.tablet} {
+    height: 80vh;
     width: 50%;
     padding-right: 20px;
   }

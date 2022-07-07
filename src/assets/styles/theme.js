@@ -1,4 +1,5 @@
-export const rainbowColors = ['#ff0400', '#fb781b', '#ffd500', '#3300ff', '#861197'];
+export const rainbowColors = ['#E37270', '#F1753B', '#ffd500', '#3300ff', '#861197'];
+// export const rainbowColors = ['#ff0400', '#fb781b', '#ffd500', '#3300ff', '#861197'];
 
 const theme = {
   color: {
@@ -13,7 +14,7 @@ const theme = {
     darkerNavy: 'hsla(197, 58%, 0%, 1)',
     gray: 'hsl(0, 0%, 47%)',
     green: 'hsl(119, 55%, 63%)',
-    greenDark: 'hsl(119,35%,50%)', // todo: for now is unused, check later
+    greenDark: 'hsl(119,35%,50%)',
     lightGray: 'hsl(0, 0%, 80%)',
     lighterGray: 'hsl(0, 0%, 87%)',
     lightestGray: 'hsl(0, 0%, 95%)',
