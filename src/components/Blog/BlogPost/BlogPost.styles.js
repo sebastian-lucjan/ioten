@@ -51,15 +51,15 @@ export const StyledBlogPost = styled.div`
 export const BlogPostIntroWrapper = styled.div`
   position: relative;
   height: 40vh;
-  padding: 80px 40px 40px 40px;
+  padding: 0 40px;
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
 
   ${({ theme }) => theme.mq.tablet} {
     align-items: center;
-    justify-content: center;
   }
 `;
 
@@ -83,10 +83,14 @@ export const BlogPostBodyWrapper = styled.div`
 `;
 
 export const PostHeading = styled(TextHeading)`
-  font-size: ${({ theme }) => theme.font.size.headingMedium};
+  font-size: ${({ theme }) => theme.font.size.paragraphBig} !important;
   margin-bottom: 2rem;
   color: ${({ theme }) => theme.color.white};
   letter-spacing: 1px;
+
+  ${({ theme }) => theme.mq.bigMobile} {
+    font-size: ${({ theme }) => theme.font.size.headingMedium};
+  }
 
   ${({ theme }) => theme.mq.tablet};
   font-size: ${({ theme }) => theme.font.size.headingSection}; ;
@@ -118,7 +122,7 @@ export const PostCategory = styled.p`
 export const CategoryWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 2rem;
+  margin-bottom: ${({ bottomSpace }) => bottomSpace || '0px'};
 `;
 
 export const ParagraphWrapper = styled.div`

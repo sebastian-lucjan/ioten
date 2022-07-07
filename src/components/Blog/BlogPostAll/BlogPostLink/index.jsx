@@ -32,7 +32,7 @@ const BlogPost = ({ post }) => {
         <StyledImage>
           <Image priority src={`https:${url}`} layout="fill" sizes="25vw" objectFit="cover" alt={imgDescription} />
         </StyledImage>
-        <CategoryWrapper>
+        <CategoryWrapper bottomSpace="2rem">
           {categoryArr.map((category) => (
             <PostCategory key={category} category={category}>
               {category}

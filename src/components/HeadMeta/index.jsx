@@ -1,5 +1,4 @@
 import Head from 'next/head';
-// import Script from 'next/script';
 
 const HeadMeta = () => {
   return (
@@ -21,31 +20,6 @@ const HeadMeta = () => {
       <meta name="keywords" content="ioten, tworzenie kreatywnych stron internetowych, strony internetowe dla firm, budowanie stron internetowych" />
 
       <meta property="og:locale" content="pl_PL" />
-
-      {/* <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} /> */}
-      {/* <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} strategy="afterInteractive" /> */}
-      {/* <Script id="google-analytics" strategy="afterInteractive"> */}
-      {/*  {` */}
-      {/*    window.dataLayer = window.dataLayer || []; */}
-      {/*    function gtag(){window.dataLayer.push(arguments);} */}
-      {/*    gtag('js', new Date()); */}
-
-      {/*    gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}'); */}
-      {/*  `} */}
-      {/* </Script> */}
-      {/* <script */}
-      {/*  defer */}
-      {/*  dangerouslySetInnerHTML={{ */}
-      {/*    __html: ` */}
-      {/*      window.dataLayer = window.dataLayer || []; */}
-      {/*      function gtag(){dataLayer.push(arguments);} */}
-      {/*      gtag('js', new Date()); */}
-      {/*      gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', { */}
-      {/*        page_path: window.location.pathname, */}
-      {/*      }); */}
-      {/*    `, */}
-      {/*  }} */}
-      {/* /> */}
 
       <title>ioten - tworzenie kreatywnych stron internetowych dla firm</title>
     </Head>
