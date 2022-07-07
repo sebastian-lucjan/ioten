@@ -12,6 +12,7 @@ import { useEffect, useRef, useState } from 'react';
 import useOnDarkScreen from 'src/hooks/useOnDarkScreen';
 import { mainPage } from 'src/data/mainPage';
 import { getHighlightedPosts } from 'src/services/blog/getPosts';
+import Script from 'next/script';
 
 export async function getServerSideProps() {
   const highlightedPosts = await getHighlightedPosts();
@@ -37,6 +38,17 @@ export default function Home({ highlightedPosts }) {
   return (
     <>
       <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} />
+
+      <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {` 
+          window.dataLayer = window.dataLayer || []; 
+          function gtag(){window.dataLayer.push(arguments);} 
+          gtag('js', new Date()); 
+
+          gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}'); 
+        `}
+      </Script>
 
       <MainPageContext.Provider value={{ pageIndex: currentPage, setCurrentPage, dataBooster, setDataBooster, highlightedPosts }}>
         <BaseLayout whiteNavigationText={onDarkScreen} footerGridColor={theme.gradient.yellowToGray}>

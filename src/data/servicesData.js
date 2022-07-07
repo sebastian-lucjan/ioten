@@ -98,11 +98,13 @@ const servicesData = {
   axisStages: {
     intro: {
       heading: 'Zbuduj usługę uszytą na swoją miarę',
-      paragraph: `Współpraca z nami przebiega w kilku etapach, to od Ciebie zależy w którym momencie Twojego pomysłu się spotkamy. Z ioten możesz przedyskutować swoją strategię działania, obudować merytorycznie swój koncept a następnie uczestniczyć w procesie tworzenia strony od designu aż po wdrożenie.`,
+      paragraph:
+        'Współpraca z nami przebiega w kilku etapach, to od Ciebie zależy w którym momencie Twojego pomysłu się spotkamy. Z ioten możesz przedyskutować swoją strategię działania, obudować merytorycznie swój koncept a następnie uczestniczyć w procesie tworzenia strony internetowej od designu aż po wdrożenie.',
     },
     axisStart: {
       heading: 'Oś czasu Twojego projektu',
-      paragraph: 'Zakres projektu jest dostosowywany do wymagań klienta ale przykładową kolejność działań możesz zobaczyć pod spodem.',
+      paragraph:
+        'Zakres projektu strony internetowej jest dostosowywany do wymagań klienta ale przykładową kolejność działań możesz zobaczyć poniżej.',
     },
     axisEnd: {
       heading: 'Zakończenie współpracy',

@@ -5,6 +5,7 @@ export const TestimonialsWrapper = styled(({ ...props }) => <TextWrapper {...pro
   li.slick-active > * {
     background-color: ${({ theme }) => theme.color.black} !important;
   }
+  padding: 20vh 40px;
 
   ${({ theme }) => theme.mq.tablet} {
     display: flex;

@@ -37,7 +37,7 @@ export const footerData = {
       'Chcesz otworzyć swój biznes online?',
       'Może chcesz się nas o coś zapytać?',
       'A może po prostu podoba Ci się nasza strona, śmiało!',
-      ' Napisz do nas na pewno Ci odpowiemy.',
+      'Napisz do nas na pewno Ci odpowiemy.',
     ],
   },
   contact: {

@@ -68,7 +68,7 @@ export const FooterHeading = styled.p`
 
 export const FooterItem = styled.p`
   display: block;
-  color: ${({ theme }) => theme.color.darkerGray};
+  color: ${({ theme }) => theme.color.darkestGray};
   line-height: 32px;
   font-family: ${({ theme }) => theme.font.family.myriadPro.light};
   font-weight: 500;
