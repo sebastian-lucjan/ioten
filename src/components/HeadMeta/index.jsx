@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Script from 'next/script';
+// import Script from 'next/script';
 
 const HeadMeta = () => {
   return (
@@ -23,16 +23,16 @@ const HeadMeta = () => {
       <meta property="og:locale" content="pl_PL" />
 
       {/* <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} /> */}
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
+      {/* <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} strategy="afterInteractive" /> */}
+      {/* <Script id="google-analytics" strategy="afterInteractive"> */}
+      {/*  {` */}
+      {/*    window.dataLayer = window.dataLayer || []; */}
+      {/*    function gtag(){window.dataLayer.push(arguments);} */}
+      {/*    gtag('js', new Date()); */}
 
-          gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
-        `}
-      </Script>
+      {/*    gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}'); */}
+      {/*  `} */}
+      {/* </Script> */}
       {/* <script */}
       {/*  defer */}
       {/*  dangerouslySetInnerHTML={{ */}
