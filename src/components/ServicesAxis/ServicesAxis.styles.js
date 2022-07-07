@@ -164,6 +164,7 @@ export const StyledWrapper = styled.div`
 `;
 
 export const StageContainer = styled.div`
+  position: relative;
   display: flex;
   width: calc(100vw - 80px);
 `;

@@ -50,7 +50,7 @@ const MottoInterlude = () => {
       },
     });
 
-    tlRingOne.current.set([ringOneFront], { zIndex: 3 });
+    tlRingOne.current.set([ringOneFront], { zIndex: 3 }); // todo: add this to css not animation because it cause little bug
     tlRingOne.current.to([ringOneFront, ringOneBack], { y: -250 });
     // ringTwo ORIng - right site
     const { current: elTwo } = ringTwo;

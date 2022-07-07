@@ -5,7 +5,13 @@ import Design from './Design';
 import Development from './Development';
 import OptimizationSupport from './OptimizationSupport';
 
-const StageGraphicsWrapper = styled.div``;
+const StageGraphicsWrapper = styled.div`
+  display: none;
+
+  ${({ theme }) => theme.mq.desktop} {
+    display: block;
+  }
+`;
 
 export default function StageGraphics({ index }) {
   return (
