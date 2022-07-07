@@ -11,7 +11,7 @@ export const mainView = [
     heading: 'Design i Funkcjonalność',
     // "Uwolnij swój pełen potencjał" ?? tekst w takim stylu bardziej by pasował do animacji, ale jest trochę za bardzo w stylu taniej reklamy
     paragraph:
-      'Strona którą zaprojektujemy dla Ciebie będzie spójna wizualnie i estetyczna. Doświadczenie użytkownika będzie wypadkową pozytywnego odbioru wizualnego oraz świetnych doświadczeń związanych prostotą i logiką przyjętych rozwiązań.',
+      'Strona internetowa którą zaprojektujemy dla Ciebie będzie spójna wizualnie i estetyczna. Doświadczenie użytkownika będzie wypadkową pozytywnego odbioru wizualnego oraz świetnych doświadczeń związanych prostotą i logiką przyjętych rozwiązań.',
     short: { heading: 'Design i Funkcjonalność', paragraph: 'Estetyka oparta o indywidualny projekt oraz najlepsze doświadczenia dla użytkownika' },
   },
   {
