@@ -43,8 +43,6 @@ export default function WireframeCheckbox() {
     const emptyCheckbox = el.querySelector('.wireframe-checkbox');
     const checkSign = el.querySelector('#checkbox-selected');
 
-    console.log('checkSign', checkSign);
-
     ScrollTrigger.matchMedia({
       '(max-width: 1023px)': function () {
         tlCheckSignPath.current = gsap.timeline({

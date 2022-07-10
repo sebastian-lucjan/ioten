@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Bulb from '../Bulb';
 import WireframeCheckbox from '../WireframeCheckbox';
 import CrayonEraser from './CrayonEraser';
+import RocketDevelopment from './RocketDevelopment';
 
 const FlyingGraphics = styled.div`
   position: absolute;
@@ -23,7 +24,7 @@ export default function StageFlyingGraphics({ index }) {
       {index === 0 ? <Bulb /> : null}
       {index === 1 ? <WireframeCheckbox /> : null}
       {index === 2 ? <CrayonEraser /> : null}
-      {/* {index === 3 ? <Development /> : null} */}
+      {index === 3 ? <RocketDevelopment /> : null}
       {/* {index === 4 ? <OptimizationSupport /> : null} */}
     </FlyingGraphics>
   );

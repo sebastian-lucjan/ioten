@@ -23,7 +23,6 @@ export default function Bulb() {
   const bulbsWrapperRef = useRef(null);
   const tlDarkBulb = useRef(null);
   const tlLightY = useRef(null);
-  // const tlScaleBulbs = useRef(null);
 
   useEffect(() => {
     const { current: el } = bulbsWrapperRef;
