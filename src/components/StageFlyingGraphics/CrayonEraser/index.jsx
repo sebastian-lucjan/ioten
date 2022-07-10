@@ -15,7 +15,7 @@ const CheckboxWrapper = styled.div`
   .eraser {
     position: absolute;
     left: 2px;
-    top: 130px;
+    top: 137px;
     width: 60px;
     height: 160px;
     z-index: 1;
@@ -32,10 +32,10 @@ const CheckboxWrapper = styled.div`
 
   ${({ theme }) => theme.mq.smallDesktop} {
     .eraser {
-      top: 0px;
+      top: 0;
     }
     .crayon {
-      top: 0px;
+      top: 0;
     }
   } ;
 `;
@@ -60,7 +60,7 @@ export default function CrayonEraser() {
             trigger: crayonImage,
             start: '20% bottom',
             end: '10% top',
-            markers: true,
+            // markers: true,
             scrub: 0.4,
           },
         });
@@ -72,7 +72,7 @@ export default function CrayonEraser() {
             trigger: eraserImage,
             start: '20% bottom',
             end: '20% top',
-            markers: true,
+            // markers: true,
             scrub: 0.4,
           },
         });
@@ -88,7 +88,7 @@ export default function CrayonEraser() {
             trigger: crayonImage,
             start: '20% bottom',
             end: '10% top',
-            markers: true,
+            // markers: true,
             scrub: 0.4,
           },
         });
@@ -100,7 +100,7 @@ export default function CrayonEraser() {
             trigger: eraserImage,
             start: '20% bottom',
             end: '20% top',
-            markers: true,
+            // markers: true,
             scrub: 0.4,
           },
         });
