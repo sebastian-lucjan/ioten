@@ -29,7 +29,6 @@ const Animation = () => {
     const shape = el.getElementById('shape');
     const whirl = el.getElementById('whirl');
 
-    // const mainMobile = el.getElementById('main-mobile');
     const mainMobileBody = el.getElementById('mobile-body');
     const hamburger = el.getElementById('hamburger');
     const buttonSkip = el.getElementById('button-skip');
@@ -38,11 +37,9 @@ const Animation = () => {
     const paragraph = el.getElementById('paragraph');
     const mainMobileShadow = el.getElementById('main-mobile-shadow');
 
-    // const shopRoof = el.getElementById('shop-roof');
     const roof = el.getElementById('roof');
     const roofShadow = el.getElementById('roof-shadow');
 
-    // temporary
     const msgOneInfoPersonBgc = el.getElementById('info-person__background');
     const msgOneInfoPersonAvatar = el.getElementById('avatar');
     const msgOneInfoPersonLines = el.querySelectorAll('#texts > g');
@@ -65,7 +62,6 @@ const Animation = () => {
     const smallDevicesLines = el.getElementById('devices-lines');
 
     tl.current = gsap.timeline();
-    // tl.current.set([el], { autoAlpha: 0 });
 
     tl.current.set(
       [
