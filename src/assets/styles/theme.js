@@ -45,6 +45,8 @@ const theme = {
     navyBlue: 'linear-gradient(80deg, rgba(66,59,76,1) 0%, rgba(72,59,76,1) 100%)',
     yellow: 'linear-gradient(100deg, #DAFF4D 0%, #E3FA7D 100%)',
     yellowToGray: 'linear-gradient(0deg, hsl(0, 0%, 80%) 0%, hsl(0, 0%, 80%) 75%, hsl(65, 88%, 48%) 100%)',
+    yellowWhiteTransparent:
+      'linear-gradient(0deg, hsla(0, 0%, 80%, 0%) 0%, hsl(65, 88%, 48%) 20%, hsl(0, 0%, 100%) 30%, hsl(0, 0%, 100%) 50%, hsl(65, 88%, 48%) 100%)',
     yellowGrayYellow: 'linear-gradient(0deg, hsl(65, 88%, 48%) 0%, hsl(0, 0%, 80%) 10%,hsl(0, 0%, 80%) 90%, hsl(65, 88%, 48%) 100%)',
     yellowTransparentGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 1) 0%, hsl(0, 0%, 96%, 0) 10%, hsl(0, 0%, 96%, 0) 80% ,hsl(65, 88%, 48%) 100%)',
     grayTransparentGray: 'linear-gradient(180deg, hsl(0, 0%, 80%, 1) 0%, hsl(0, 0%, 96%, 0) 20%, hsl(0, 0%, 96%, 0) 80% ,hsl(0, 0%, 80%, 1) 100%)',

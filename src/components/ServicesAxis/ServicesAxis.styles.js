@@ -93,7 +93,7 @@ export const StyledWrapper = styled.div`
   align-items: flex-start;
   justify-content: space-around;
   color: ${({ theme }) => theme.color.darkestGray};
-  height: ${({ short }) => (short ? 'unset' : '300vh')};
+  height: ${({ short }) => (short ? 'unset' : '400vh')};
   //padding: ${({ short }) => (short ? '40px' : '100px 40px')};
   padding: 0 40px;
 
