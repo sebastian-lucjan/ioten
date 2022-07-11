@@ -31,8 +31,7 @@ export const ideaInterlude = {
 export const mainPage = {
   title: 'ioten - tworzenie firmowych stron internetowych',
   url: '/',
-  description:
-    'Ioten to tworzenie firmowych stron internetowych, projektowanie oraz budowa wizerunkowych i produktowych stron www. Estetyka i funkcjonalność mają u nas kluczowe znaczenie.',
+  description: 'Rozwiń swój biznes online. Ioten stworzy strony internetowe z którymi zdobędziesz więcej klientów. Zajrzyj do nas.',
   ogData: {
     title: 'ioten - tworzenie firmowych stron internetowych',
     description: 'Rozwiń swój biznes online. Ioten stworzy strony internetowe z którymi zdobędziesz więcej klientów. Zajrzyj do nas.',
