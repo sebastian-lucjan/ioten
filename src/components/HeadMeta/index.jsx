@@ -16,12 +16,12 @@ const HeadMeta = () => {
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
 
-      <meta name="title" content="ioten - tworzenie kreatywnych stron internetowych dla firm" />
+      <meta name="title" content="ioten - tworzenie firmowych stron internetowych" />
       <meta name="keywords" content="ioten, tworzenie kreatywnych stron internetowych, strony internetowe dla firm, budowanie stron internetowych" />
 
       <meta property="og:locale" content="pl_PL" />
 
-      <title>ioten - tworzenie kreatywnych stron internetowych dla firm</title>
+      <title>ioten - tworzenie firmowych stron internetowych</title>
     </Head>
   );
 };

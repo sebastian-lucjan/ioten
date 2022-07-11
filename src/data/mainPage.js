@@ -24,19 +24,19 @@ export const mainView = [
 
 export const ideaInterlude = {
   heading: 'Masz pomysł? Porozmawiajmy jak go wdrożyć!',
-  paragraph: 'Zaprojektujemy i zbudujemy niesamowicie szybką stronę www dla Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
+  paragraph: 'Zaprojektujemy i zbudujemy kreatywną i szybką stronę www dla Twojego biznesu. Estetyka i funkcjonalność ma u nas kluczowe znaczenie.',
   button: 'Porozmawiajmy',
 };
 
 export const mainPage = {
-  title: 'ioten - kreatywne i szybkie strony internetowe',
+  title: 'ioten - tworzenie firmowych stron internetowych',
   url: '/',
   description:
-    'Zaprojektujemy i zbudujemy niesamowicie szybką stronę internetową dla Twojego biznesu. Estetyka i funkcjonalność mają u nas kluczowe znaczenie.',
+    'Ioten to tworzenie firmowych stron internetowych, projektowanie oraz budowa wizerunkowych i produktowych stron www. Estetyka i funkcjonalność mają u nas kluczowe znaczenie.',
   ogData: {
-    title: 'Ioten.io - kreatywne i szybkie strony internetowe',
+    title: 'ioten - tworzenie firmowych stron internetowych',
     description:
-      'Zaprojektujemy i zbudujemy niesamowicie szybką stronę internetową dla Twojego biznesu. Estetyka i funkcjonalność mają u nas kluczowe znaczenie.',
+      'Ioten to tworzenie firmowych stron internetowych, projektowanie oraz budowa wizerunkowych i produktowych stron www. Estetyka i funkcjonalność mają u nas kluczowe znaczenie.',
     url: 'https://www.ioten.io',
   },
   canonical: 'https://www.ioten.io/',
