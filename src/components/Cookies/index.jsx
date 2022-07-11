@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react';
 import { useContext } from 'react';
 import Link from 'next/link';
 import { CookiesContext } from 'src/context/cookiesContext';
-import { Anchor, CookieButton, CookiesPopUp, ExitSign, Wrapper } from './Cookies.styles';
+import { CookieButton, CookiesPopUp, ExitSign, ParagraphInside, Wrapper } from './Cookies.styles';
 
 const Cookies = () => {
   const { handleCookiesPolicyAgree, handleDismissCookiesPopUp } = useContext(CookiesContext);
@@ -14,10 +14,8 @@ const Cookies = () => {
           W celu świadczenia usług na najwyższym poziomie stosujemy pliki cookies, które będą zamieszczane w Państwa urządzeniu (komputerze, laptopie,
           smartfonie). W każdym momencie mogą Państwo dokonać zmiany ustawień Państwa przeglądarki internetowej i wyłączyć opcję zapisu plików
           cookies. Ze szczegółowymi informacjami dotyczącymi cookies na tej stronie można się zapoznać tutaj:
-          <Link href="/polityka-prywatnosci">
-            <Anchor target="_blank" rel="noopener">
-              polityka prywatności
-            </Anchor>
+          <Link href="/policy" as="/polityka-prywatnosci">
+            <ParagraphInside>Polityka prywatności</ParagraphInside>
           </Link>
         </p>
         <CookieButton

@@ -20,7 +20,9 @@ const NavItem = ({ type, index }) => {
       </StyledLink>
 
       <StyledTextContent>
-        <StyledHeading type={type}>{heading}</StyledHeading>
+        <StyledHeading as="h2" type={type}>
+          {heading}
+        </StyledHeading>
         <StyledParagraph type={type}>{paragraph}</StyledParagraph>
       </StyledTextContent>
     </StyledNavItem>

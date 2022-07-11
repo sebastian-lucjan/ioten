@@ -84,7 +84,7 @@ export const CookieButton = styled.button`
   }
 `;
 
-export const Anchor = styled.a`
+export const ParagraphInside = styled.p`
   color: ${({ theme }) => theme.color.black};
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   cursor: pointer;

@@ -82,7 +82,7 @@ export default function RocketDevelopment() {
   return (
     <RocketWrapper ref={rocketWrapperRef}>
       <div className="rocket">
-        <Image z src={rocket} layout="fill" objectFit="contain" alt="rakieta" />
+        <Image z src={rocket} layout="fill" objectFit="contain" alt="lecąca do góry rakieta" />
         {/* <span className="rocket-line-tail" /> */}
       </div>
     </RocketWrapper>

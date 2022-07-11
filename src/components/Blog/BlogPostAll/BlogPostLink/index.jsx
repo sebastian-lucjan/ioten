@@ -30,7 +30,7 @@ const BlogPost = ({ post }) => {
     <Link href={`/blog/${articleSlug}`}>
       <StyledPost>
         <StyledImage>
-          <Image priority src={`https:${url}`} layout="fill" sizes="25vw" objectFit="cover" alt={imgDescription} />
+          <Image src={`https:${url}`} layout="fill" sizes="25vw" objectFit="cover" alt={imgDescription} />
         </StyledImage>
         <CategoryWrapper bottomSpace="2rem">
           {categoryArr.map((category) => (
