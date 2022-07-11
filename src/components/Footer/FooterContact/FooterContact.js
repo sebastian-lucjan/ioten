@@ -11,7 +11,7 @@ const StyledFooterContacts = styled.article`
   .footer__contact-label,
   .footer__contact-email,
   .footer__contact-mobile {
-    color: ${({ theme }) => `${theme.color.darkerGray} !important`}; //todo: check if telephone number has turned from blue to black on safari
+    color: ${({ theme }) => `${theme.color.darkestGray} !important`}; //todo: check if telephone number has turned from blue to black on safari
     line-height: 3rem;
   }
 
@@ -27,7 +27,7 @@ const StyledFooterContacts = styled.article`
   }
 
   .inactive {
-    color: ${({ theme }) => `${theme.color.lightGray} !important`};
+    color: ${({ theme }) => `${theme.color.gray} !important`};
   }
 
   .footer__contact-email.inactive {

@@ -4,7 +4,7 @@ import { soonLabel } from 'src/assets/styles/mixines';
 export const Wrapper = styled.div`
   padding: 60px 20px 0 40px;
   font-size: ${({ theme }) => theme.font.size.smallText};
-  color: ${({ theme }) => theme.color.darkerGray};
+  color: ${({ theme }) => theme.color.darkestGray};
 
   ${({ theme }) => theme.mq.tablet} {
     padding: 60px 20px 0 20px;
