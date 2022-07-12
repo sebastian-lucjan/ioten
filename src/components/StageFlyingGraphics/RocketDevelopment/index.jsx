@@ -8,7 +8,7 @@ import rocket from 'src/assets/images/rocket.png';
 const RocketWrapper = styled.div`
   .rocket {
     position: absolute;
-    top: 30vh;
+    top: 25vh;
     right: -5px;
     font-size: 60px;
     width: 60px;

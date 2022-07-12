@@ -18,13 +18,13 @@ export default function LumpCoreSVG() {
         y: 1.15 * y - 220,
       });
     }
-    if (device === 'touch') {
-      gsap.to(circe, {
-        duration: 2,
-        x: x / 1.5 - 130,
-        y: y / 1.5 - 120,
-      });
-    }
+    // if (device === 'touch') {
+    //   gsap.to(circe, {
+    //     duration: 2,
+    //     x: x / 1.5 - 130,
+    //     y: y / 1.5 - 120,
+    //   });
+    // }
   }, [x, y]);
 
   return (

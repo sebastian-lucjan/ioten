@@ -5,43 +5,43 @@ const useLumpCoordinates = () => {
 
   useEffect(() => {
     // touchable screen (mobile, tablet)
-    if (window.matchMedia('(pointer: coarse)').matches) {
-      const handleChangeDevicesOrientation = (e) => {
-        const { beta, gamma } = e;
-
-        let xCord;
-        let yCord;
-
-        if (beta >= -90 && beta <= 90) {
-          yCord = 200 - (5 * beta) / 4;
-        }
-        if (beta < -90) {
-          yCord = 200 + (5 * (beta + 180)) / 4;
-        }
-        if (beta > 90) {
-          yCord = 200 + (5 * (beta - 180)) / 4;
-        }
-        if (gamma >= 0) {
-          xCord = 190 - gamma;
-        }
-        if (gamma < 0) {
-          xCord = 190 - gamma;
-        }
-        if (gamma >= 0 && (beta >= 90 || beta <= -90)) {
-          xCord = 190 + gamma;
-        }
-        if (gamma < 0 && (beta >= 90 || beta <= -90)) {
-          xCord = 190 + gamma;
-        }
-
-        setCoordinates({ x: xCord, y: yCord, device: 'touch' });
-        // console.log('here');
-      };
-
-      window.addEventListener('deviceorientation', handleChangeDevicesOrientation);
-
-      return () => window.removeEventListener('deviceorientation', handleChangeDevicesOrientation);
-    }
+    // if (window.matchMedia('(pointer: coarse)').matches) {
+    //   const handleChangeDevicesOrientation = (e) => {
+    //     const { beta, gamma } = e;
+    //
+    //     let xCord;
+    //     let yCord;
+    //
+    //     if (beta >= -90 && beta <= 90) {
+    //       yCord = 200 - (5 * beta) / 4;
+    //     }
+    //     if (beta < -90) {
+    //       yCord = 200 + (5 * (beta + 180)) / 4;
+    //     }
+    //     if (beta > 90) {
+    //       yCord = 200 + (5 * (beta - 180)) / 4;
+    //     }
+    //     if (gamma >= 0) {
+    //       xCord = 190 - gamma;
+    //     }
+    //     if (gamma < 0) {
+    //       xCord = 190 - gamma;
+    //     }
+    //     if (gamma >= 0 && (beta >= 90 || beta <= -90)) {
+    //       xCord = 190 + gamma;
+    //     }
+    //     if (gamma < 0 && (beta >= 90 || beta <= -90)) {
+    //       xCord = 190 + gamma;
+    //     }
+    //
+    //     setCoordinates({ x: xCord, y: yCord, device: 'touch' });
+    //     // console.log('here');
+    //   };
+    //
+    //   window.addEventListener('deviceorientation', handleChangeDevicesOrientation);
+    //
+    //   return () => window.removeEventListener('deviceorientation', handleChangeDevicesOrientation);
+    // }
 
     const handleMouseMove = (e) => {
       const screenUsedWidth = window.innerWidth <= 768 ? window.innerWidth : window.innerWidth / 2;

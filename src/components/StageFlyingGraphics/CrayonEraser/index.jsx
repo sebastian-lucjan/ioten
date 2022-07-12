@@ -15,7 +15,7 @@ const CheckboxWrapper = styled.div`
   .eraser {
     position: absolute;
     left: 2px;
-    top: 137px;
+    top: 147px;
     width: 60px;
     height: 160px;
     z-index: 1;
@@ -77,7 +77,7 @@ export default function CrayonEraser() {
           },
         });
 
-        eraserMovement.current.fromTo(crayonImage, { y: 0 }, { y: -160 });
+        eraserMovement.current.fromTo(crayonImage, { y: 0 }, { y: -185 });
       },
     });
 

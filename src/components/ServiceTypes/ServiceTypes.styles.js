@@ -1,15 +1,5 @@
 import styled from 'styled-components';
 
-export const ImagePlaceholder = styled.div`
-  width: 100%;
-  background-color: lightgrey;
-  height: 40vh;
-
-  ${({ theme }) => theme.mq.desktop} {
-    height: 80vh;
-  }
-`;
-
 export const StyledHeadingWrapper = styled.div`
   & > * {
     margin: 2rem 0;
@@ -29,8 +19,10 @@ export const Wrapper = styled.div`
   padding: 80px 40px;
   display: flex;
   flex-direction: column;
-  //height: 100%;
-  //background-color: yellowgreen;
+
+  img {
+    object-position: left top;
+  }
 
   ${({ theme }) => theme.mq.tablet} {
     flex-direction: row;
@@ -46,7 +38,6 @@ export const Wrapper = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  //position: -webkit-sticky;
   position: sticky;
   top: 80px;
   margin: 20px 40px 0 0;

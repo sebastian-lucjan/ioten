@@ -64,10 +64,11 @@ export const StyledMenu = styled.nav`
 
 // font-family: ${({ theme, isBold }) => (isBold  ? theme.font.family.myriadPro.bold : theme.font.family.myriadPro.regular)};
 export const StyledLink = styled.button`
-  font-size: ${({ theme }) => theme.font.size.paragraphSmall};
+  font-size: ${({ theme }) => theme.font.size.paragraph};
   list-style: none;
   align-self: center;
-  margin: 20px auto;
+  padding: 1rem;
+  margin: 1rem auto;
   cursor: pointer;
   letter-spacing: 1px;
   transition: all 0.3s ease-in-out;
@@ -85,8 +86,14 @@ export const StyledLink = styled.button`
     transform: translateY(-3px);
     font-weight: 800;
   }
+  
+  ${({ theme }) => theme.mq.mediumMobile} {
+    margin: 2rem auto;
+    font-size: ${({ theme }) => theme.font.size.headingSmall};
+  }
 
   ${({ theme }) => theme.mq.tablet} {
+    font-size: ${({ theme }) => theme.font.size.paragraphSmall};
     color: ${({ theme, whiteNavigationText }) => whiteNavigationText && theme.color.white}};
   }
 `;
@@ -103,7 +110,7 @@ export const StyledLogo = styled.div`
 export const StyledValuationButton = styled.button`
   margin-bottom: 120px;
   text-transform: uppercase;
-  font-size: ${({ theme }) => theme.font.size.smallText};
+  font-size: ${({ theme }) => theme.font.size.paragraphSmall};
   border: none;
   position: relative;
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
