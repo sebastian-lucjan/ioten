@@ -78,7 +78,7 @@ export default function CrayonEraser() {
   return (
     <CheckboxWrapper ref={designToolsWrapperRef}>
       <div className="eraser-crayon">
-        <Image z src={eraserCrayon} layout="fill" objectFit="contain" alt="gumka do ścierania i kredka" />
+        <Image priority src={eraserCrayon} layout="fill" objectFit="contain" alt="gumka do ścierania i kredka" />
       </div>
     </CheckboxWrapper>
   );
