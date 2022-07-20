@@ -5,7 +5,7 @@ import FormStep from './ValuationFormSteps/FormStep';
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 65%;
+  height: 70%;
 
   display: flex;
   justify-content: center;
