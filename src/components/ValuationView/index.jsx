@@ -32,6 +32,7 @@ const Wrapper = styled.div`
     margin: unset;
     padding: 80px 30vw 0 30vw;
     height: 100vh;
+    //height: 90vh;
   }
 `;
 

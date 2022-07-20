@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   ${({ theme }) => theme.mq.smallDesktop} {
     position: relative;
     top: 0;
-
+    height: 60%;
     margin: 4rem 0;
   } ;
 `;

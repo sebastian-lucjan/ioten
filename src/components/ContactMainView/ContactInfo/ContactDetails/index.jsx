@@ -17,6 +17,12 @@ export default function ContactDetails() {
         <Link href={`mailto:${emailOffer}`}>
           <p>{emailOffer}</p>
         </Link>
+        <Link href="tel:+48508031010">
+          <p className="contact-details__telephone-number">
+            +48 508 03 <span>1010</span>
+          </p>
+          {/* <p>{mobile}</p> */}
+        </Link>
       </div>
 
       <div className="contact-details__info-item">
@@ -24,16 +30,8 @@ export default function ContactDetails() {
         <Link href={`mailto:${emailOther}`}>
           <p>{emailOther}</p>
         </Link>
-      </div>
-
-      <div className="contact-details__info-item">
-        <h3 className="contact-details__info-item-label">telefon</h3>
-        {/* <Link href={`tel:${mobile}`}> */}
-        <Link href="tel:+48508031010">
-          <p className="contact-details__telephone-number">
-            +48 508 03 <span>1010</span>
-          </p>
-          {/* <p>{mobile}</p> */}
+        <Link href="tel:+48602446335">
+          <p className="contact-details__telephone-number">+48 602 446 335</p>
         </Link>
       </div>
 
@@ -56,6 +54,7 @@ const StyledContactDetails = styled.div`
 
   p {
     cursor: pointer;
+    margin-bottom: 0.5rem;
   }
 
   .contact-details__info-item {
