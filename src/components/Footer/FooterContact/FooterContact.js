@@ -3,6 +3,10 @@ import { soonLabel } from 'src/assets/styles/mixines';
 
 const StyledFooterContacts = styled.article`
   margin: 2rem 0 0 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
   p {
     cursor: ${({ soon }) => (soon ? 'unset' : 'pointer')};
@@ -24,6 +28,12 @@ const StyledFooterContacts = styled.article`
   .footer__contact-email {
     font-family: ${({ theme }) => theme.font.family.myriadPro.black};
     font-weight: 800;
+  }
+
+  .footer__contact-mobile {
+    :hover {
+      color: ${({ theme }) => theme.color.greenDark} !important;
+    }
   }
 
   .inactive {

@@ -108,7 +108,7 @@ const servicesData = {
     },
     axisEnd: {
       heading: 'Zakończenie współpracy',
-      paragraph: 'Kiedy kończy się współpraca? To zależy od Ciebie. Bez problemy możemy zostać z Tobą i uczestniczyć w dalszym rozwoju Twojej firmy.',
+      paragraph: 'Kiedy kończy się współpraca? To zależy od Ciebie. Bez problemu możemy zostać z Tobą i uczestniczyć w dalszym rozwoju Twojej firmy.',
     },
   },
   stages: [

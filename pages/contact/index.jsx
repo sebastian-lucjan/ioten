@@ -14,6 +14,9 @@ const Contact = () => {
   return (
     <>
       <NextSeo title={title} description={description} canonical={canonical} openGraph={ogData} />
+      {/* <link rel="preconnect" href="https://fonts.googleapis.com" /> */}
+      {/* <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin /> */}
+      {/* <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet" /> */}
 
       <BaseLayout footerGridColor={theme.gradient.grayToBlack}>
         <Wrapper>

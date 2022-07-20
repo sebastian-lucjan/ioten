@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function ContactDetails() {
   const {
     contact: {
-      cooperation: { heading: headingOffer, email: emailOffer, mobile },
+      cooperation: { heading: headingOffer, email: emailOffer },
       other: { heading: headingOther, email: emailOther },
     },
   } = contactData.contactContent;
@@ -28,8 +28,12 @@ export default function ContactDetails() {
 
       <div className="contact-details__info-item">
         <h3 className="contact-details__info-item-label">telefon</h3>
-        <Link href={`tel:${mobile}`}>
-          <p>+48 {mobile}</p>
+        {/* <Link href={`tel:${mobile}`}> */}
+        <Link href="tel:+48508031010">
+          <p className="contact-details__telephone-number">
+            +48 508 03 <span>1010</span>
+          </p>
+          {/* <p>{mobile}</p> */}
         </Link>
       </div>
 
@@ -46,6 +50,9 @@ export default function ContactDetails() {
 const StyledContactDetails = styled.div`
   margin-top: 8rem;
   color: ${({ theme }) => theme.color.black};
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
   p {
     cursor: pointer;
@@ -73,6 +80,35 @@ const StyledContactDetails = styled.div`
   .contact-details__paragraph {
     margin-bottom: 2rem;
     font-size: ${({ theme }) => theme.font.size.paragraphSmall};
+  }
+
+  .contact-details__telephone-number {
+    font-family: ${({ theme }) => theme.font.family.myriadPro.light};
+    position: relative;
+
+    &:hover {
+      font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
+      color: ${({ theme }) => theme.color.greenDark};
+
+      span {
+        font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
+      }
+    }
+
+    span {
+      // color: ${({ theme }) => theme.color.greenDark};
+      font-family: ${({ theme }) => theme.font.family.myriadPro.regular};
+    }
+
+    // &::before {
+    //   display: block;
+    //   content: '';
+    //   width: 100%;
+    //   height: 2px;
+    //   position: absolute;
+    //   top: 100%;
+    //   background-color: ${({ theme }) => theme.color.greenDark};
+    // }
   }
 
   ${({ theme }) => theme.mq.tablet} {
