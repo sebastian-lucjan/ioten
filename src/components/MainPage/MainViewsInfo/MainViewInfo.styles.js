@@ -70,6 +70,11 @@ export const StyledMainViewsInfo = styled.div`
   z-index: ${({ theme }) => theme.zIndex.peak};
   color: ${({ currentPage }) => (currentPage === 1 ? 'white' : 'black')};
 
+  //really short browser view
+  @media (orientation: portrait) and (min-width: 360px) and (max-height: 640px) {
+    top: 65vh;
+  }
+
   ${({ theme }) => theme.mq.tablet} {
     top: 68vh;
   }
@@ -102,5 +107,9 @@ export const HeadingWrapper = styled.div`
 
   h1 {
     margin: 0;
+    //really short browser view
+    @media (orientation: portrait) and (min-width: 360px) and (max-height: 640px) {
+      font-size: 18px;
+    }
   }
 `;
