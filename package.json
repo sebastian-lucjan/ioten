@@ -1,6 +1,6 @@
 {
   "name": "ioten",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "ioten - tworzenie firmowych stron internetowych",
   "main": "index.jsx",
   "private": true,

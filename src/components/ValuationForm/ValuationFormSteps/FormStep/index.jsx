@@ -13,8 +13,10 @@ export const StyledCheckbox = styled.div`
   font-size: ${({ theme }) => theme.font.size.caption};
 
   ${({ theme }) => theme.mq.mediumMobile} {
-    font-size: ${({ theme }) => theme.font.size.smallText};
     margin-bottom: 1.4rem;
+  }
+  ${({ theme }) => theme.mq.bigMobile} {
+    font-size: ${({ theme }) => theme.font.size.smallText};
   }
 
   ${({ theme }) => theme.mq.tablet} {
@@ -98,7 +100,8 @@ const OptionHeading = styled.h2`
   font-size: ${({ theme }) => theme.font.size.headingSmall};
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   color: ${({ theme }) => theme.color.darkestGray};
-  ${({ theme }) => theme.mq.mediumMobile} {
+
+  ${({ theme }) => theme.mq.bigMobile} {
     font-size: ${({ theme }) => theme.font.size.paragraphBig};
   } ;
 `;

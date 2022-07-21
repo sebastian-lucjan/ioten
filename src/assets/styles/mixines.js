@@ -11,7 +11,7 @@ export const soonLabel = css`
     content: 'SOON';
     top: 2px;
     left: 100%;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
     width: 40px;
     height: 14px;
     text-align: center;

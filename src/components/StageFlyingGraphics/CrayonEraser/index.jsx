@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
-import eraser from 'src/assets/images/eraser.png';
-import crayon from 'src/assets/images/crayon.png';
+import eraserCrayon from 'src/assets/images/eraser-crayon.png';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -12,30 +11,19 @@ const CheckboxWrapper = styled.div`
   position: relative;
   justify-content: center;
 
-  .eraser {
+  .eraser-crayon {
     position: absolute;
-    left: 2px;
-    top: 137px;
-    width: 60px;
-    height: 160px;
+    left: -22px;
+    top: 147px;
+    width: 80px;
+    height: 260px;
     z-index: 1;
-  }
-
-  .crayon {
-    position: absolute;
-    left: -24px;
-    top: 200px;
-    width: 60px;
-    height: 240px;
-    z-index: 1;
+    display: block;
   }
 
   ${({ theme }) => theme.mq.smallDesktop} {
-    .eraser {
-      top: 0;
-    }
-    .crayon {
-      top: 0;
+    .eraser-crayon {
+      top: -40px;
     }
   } ;
 `;
@@ -44,83 +32,53 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function CrayonEraser() {
   const designToolsWrapperRef = useRef(null);
-  const eraserMovement = useRef(null);
-  const crayonMovement = useRef(null);
+  const eraserCrayonMovement = useRef(null);
 
   useEffect(() => {
     const { current: el } = designToolsWrapperRef;
 
-    const eraserImage = el.querySelector('.eraser');
-    const crayonImage = el.querySelector('.crayon');
+    const eraserCrayonImage = el.querySelector('.eraser-crayon');
 
     ScrollTrigger.matchMedia({
       '(max-width: 1023px)': function () {
-        crayonMovement.current = gsap.timeline({
+        eraserCrayonMovement.current = gsap.timeline({
           scrollTrigger: {
-            trigger: crayonImage,
+            trigger: eraserCrayonImage,
             start: '20% bottom',
             end: '10% top',
             // markers: true,
-            scrub: 0.4,
+            scrub: 0.2,
           },
         });
 
-        crayonMovement.current.fromTo(eraserImage, { y: 0 }, { y: -220 });
-
-        eraserMovement.current = gsap.timeline({
-          scrollTrigger: {
-            trigger: eraserImage,
-            start: '20% bottom',
-            end: '20% top',
-            // markers: true,
-            scrub: 0.4,
-          },
-        });
-
-        eraserMovement.current.fromTo(crayonImage, { y: 0 }, { y: -160 });
+        eraserCrayonMovement.current.fromTo(eraserCrayonImage, { y: 0 }, { y: -220 });
       },
     });
 
     ScrollTrigger.matchMedia({
       '(min-width: 1024px)': function () {
-        crayonMovement.current = gsap.timeline({
+        eraserCrayonMovement.current = gsap.timeline({
           scrollTrigger: {
-            trigger: crayonImage,
+            trigger: eraserCrayonImage,
             start: '20% bottom',
             end: '10% top',
             // markers: true,
-            scrub: 0.4,
+            scrub: 0.2,
           },
         });
 
-        crayonMovement.current.fromTo(eraserImage, { y: 0 }, { y: -220 });
-
-        eraserMovement.current = gsap.timeline({
-          scrollTrigger: {
-            trigger: eraserImage,
-            start: '20% bottom',
-            end: '20% top',
-            // markers: true,
-            scrub: 0.4,
-          },
-        });
-
-        eraserMovement.current.fromTo(crayonImage, { y: 0 }, { y: -160 });
+        eraserCrayonMovement.current.fromTo(eraserCrayonImage, { y: 0 }, { y: -220 });
       },
     });
 
     return () => {
-      eraserMovement.current?.kill();
-      crayonMovement.current?.kill();
+      eraserCrayonImage.current?.kill();
     };
   }, []);
   return (
     <CheckboxWrapper ref={designToolsWrapperRef}>
-      <div className="crayon">
-        <Image z src={crayon} layout="fill" objectFit="contain" alt="ołówek lub kredka" />
-      </div>
-      <div className="eraser">
-        <Image z src={eraser} layout="fill" objectFit="contain" alt="gumka do ścierania" />
+      <div className="eraser-crayon">
+        <Image priority src={eraserCrayon} layout="fill" objectFit="contain" alt="gumka do ścierania i kredka" />
       </div>
     </CheckboxWrapper>
   );

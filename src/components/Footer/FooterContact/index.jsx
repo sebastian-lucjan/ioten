@@ -1,12 +1,18 @@
 import { footerData } from 'src/data/pageData';
 import Link from 'next/link';
+import styled from 'styled-components';
 import StyledFooterContacts from './FooterContact';
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const FooterContact = () => {
   const { cooperation, other, job } = footerData.contact;
 
   return (
-    <div>
+    <Wrapper>
       <StyledFooterContacts>
         <h4 className="footer__contact-label">{footerData.contact.cooperation.heading}</h4>
 
@@ -14,7 +20,9 @@ const FooterContact = () => {
           <p className="footer__contact-email">{cooperation.email}</p>
         </Link>
         <Link href={`tel:${cooperation.mobile}`}>
-          <p className="footer__contact-mobile">{cooperation.mobile}</p>
+          <p className="footer__contact-mobile">
+            tel.: +48 508 03 <span>1010</span>
+          </p>
         </Link>
       </StyledFooterContacts>
 
@@ -25,7 +33,7 @@ const FooterContact = () => {
           <p className="footer__contact-email">{other.email}</p>
         </Link>
         <Link href={`tel:${other.mobile}`}>
-          <p className="footer__contact-mobile">{other.mobile}</p>
+          <p className="footer__contact-mobile">tel.: {other.mobile}</p>
         </Link>
       </StyledFooterContacts>
 
@@ -35,7 +43,7 @@ const FooterContact = () => {
         <p className="footer__contact-email inactive">{job.email}</p>
         {/* </Link> */}
       </StyledFooterContacts>
-    </div>
+    </Wrapper>
   );
 };
 

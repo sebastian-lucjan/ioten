@@ -45,7 +45,7 @@ export const Wrapper = styled.div`
 export const StyledFooterSection = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  //justify-content: space-between;
   margin-bottom: 80px;
   align-items: flex-start;
 

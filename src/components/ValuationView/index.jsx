@@ -12,10 +12,11 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   height: 100vh;
-  padding: 60px 40px 0 40px;
+  padding: 60px 40px 60px 40px;
 
   ${({ theme }) => theme.mq.mediumMobile} {
-    padding: 80px 40px 0 40px;
+    touch-action: none; //disable touch "scroll" when navigation open - touch available on really small devices
+    padding: 80px 40px 80px 40px;
   }
 
   ${({ theme }) => theme.mq.tablet} {
@@ -31,6 +32,7 @@ const Wrapper = styled.div`
     margin: unset;
     padding: 80px 30vw 0 30vw;
     height: 100vh;
+    //height: 90vh;
   }
 `;
 

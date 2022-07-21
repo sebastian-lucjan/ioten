@@ -41,8 +41,8 @@ export const footerData = {
     ],
   },
   contact: {
-    cooperation: { heading: 'Współpraca:', email: 'info@ioten.io', mobile: '602 446 335' }, // change mobile number
-    other: { heading: 'Inne:', email: 'hello@ioten.io', mobile: '602 446 335' },
+    cooperation: { heading: 'Współpraca:', email: 'info@ioten.io', mobile: '+48 508 03 1010' }, // change mobile number
+    other: { heading: 'Inne:', email: 'hello@ioten.io', mobile: '+48 602 446 335' },
     job: { heading: 'Praca:', email: 'career@ioten.io' },
   },
   socialMedia: { heading: 'Obserwuj nas' },

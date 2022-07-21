@@ -23,7 +23,7 @@ export default function ServicesTypes() {
   return (
     <Wrapper>
       <ImageContainer>
-        <Image src={servicesImageStages} layout="responsive" sizes="40vw" objectFit="cover" alt={heading} />
+        <Image src={servicesImageStages} layout="fill" sizes="40vw" objectFit="contain" alt={heading} />
       </ImageContainer>
       <StyledContentWrapper>
         <StyledHeadingWrapper>
