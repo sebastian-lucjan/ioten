@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   position: relative;
-  transition: all 0.3s ease-in-out;
   margin-left: 20px;
 
   ${({ theme }) => theme.mq.tablet} {

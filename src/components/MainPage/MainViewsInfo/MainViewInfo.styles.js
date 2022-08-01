@@ -72,7 +72,7 @@ export const StyledMainViewsInfo = styled.div`
 
   //really short browser view
   @media (orientation: portrait) and (min-width: 360px) and (max-height: 640px) {
-    top: 65vh;
+    top: 63vh;
   }
 
   ${({ theme }) => theme.mq.tablet} {

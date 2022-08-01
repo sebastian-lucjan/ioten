@@ -28,7 +28,7 @@ const StyledBurger = styled.button`
     height: 0.25rem;
     background: ${({ theme, isWhite, isOpen }) => (isWhite && !isOpen ? theme.color.white : theme.color.darkestGray)};
     border-radius: 10px;
-    transition: all 0.2s linear;
+    transition: transform 0.2s linear;
     position: relative;
     transform-origin: 1px;
   }
