@@ -71,7 +71,7 @@ export const StyledLink = styled.button`
   margin: 1rem auto;
   cursor: pointer;
   letter-spacing: 1px;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   border: none;
   background-color: transparent;
 

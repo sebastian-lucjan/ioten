@@ -17,7 +17,7 @@ const StyledMainViewsNavigation = styled(TextWrapper)`
   }
 
   @media (orientation: portrait) and (min-width: 360px) and (max-height: 640px) {
-    top: 80vh;
+    top: 78vh;
   }
 
   ${({ theme }) => theme.mq.landscape} {

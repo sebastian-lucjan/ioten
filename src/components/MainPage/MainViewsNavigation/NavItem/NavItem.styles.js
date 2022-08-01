@@ -12,7 +12,7 @@ export const StyledNavItem = styled.div`
   flex-direction: ${({ type }) => (type === 'prev' ? 'row' : 'row-reverse')};
   width: 50%;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 
   color: ${({ theme, pageIndex }) => {
     // if (typeof window !== 'undefined' && 'ontouchstart' in document.documentElement) {
@@ -35,8 +35,8 @@ export const StyledNavItem = styled.div`
     }};
 
     &:hover {
-      transform: scale(1.02);
-      transform-origin: ${({ type }) => (type === 'prev' ? 'left' : 'right')};
+      transform: scale(1.01);
+      transform-origin: ${({ type }) => (type === 'prev' ? 'right' : 'left')};
 
       color: ${({ theme, pageIndex }) => {
         if (pageIndex === 1) {
