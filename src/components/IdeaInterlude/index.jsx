@@ -27,7 +27,7 @@ const IdeaInterlude = () => {
           <StyledParagraph>{paragraph}</StyledParagraph>
           <Link href="/contact" as="/kontakt">
             <a tabIndex="-1">
-              <Button backgroundColor={black} type="button" text={button} />
+              <Button type="button" text={button} />
             </a>
           </Link>
         </StyledContentWrapper>
