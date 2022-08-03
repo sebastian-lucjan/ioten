@@ -6,7 +6,7 @@ export const CookiesPopUp = styled.div`
   height: 22vh;
   padding: 0 2rem;
 
-  background-color: hsla(360, 100%, 100%, 0.8);
+  background-color: hsla(360, 100%, 100%, 0.9);
   bottom: 0;
   z-index: ${({ theme }) => theme.zIndex.peak};
 
@@ -55,7 +55,8 @@ export const ExitSign = styled.div`
   position: absolute;
   right: 0;
   top: 0;
-  color: black;
+  color: ${({ theme }) => theme.color.lightGray};
+  cursor: pointer;
 
   * {
     padding: 2px;
@@ -65,10 +66,11 @@ export const ExitSign = styled.div`
 `;
 
 export const CookieButton = styled.button`
-  height: 28px;
-  background-color: transparent;
+  cursor: pointer;
+  height: 36px;
+  background-color: ${({ theme }) => theme.color.green};
   color: ${({ theme }) => theme.color.darkestGray};
-  border: 1px solid ${({ theme }) => theme.color.darkestGray};
+  border: none;
   font-size: ${({ theme }) => theme.font.size.caption};
   border-radius: 4px;
   margin: 0 20%;
@@ -88,5 +90,5 @@ export const ParagraphInside = styled.p`
   color: ${({ theme }) => theme.color.black};
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   cursor: pointer;
-  margin-left: 0.3rem;
+  //margin-left: 0.3rem;
 `;

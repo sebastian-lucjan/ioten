@@ -14,12 +14,20 @@ const StyledButton = styled.button`
   background: ${({ theme, backgroundColor }) => backgroundColor || theme.color.darkestGray};
   transition: 0.2s;
   box-shadow: ${({ backgroundColor }) =>
-    backgroundColor ? `4px 4px 0 ${backgroundColor.slice(0, -1)}, .5)` : 'hsla(0, 0%, 0%, 0.5)'}; //box-shadow with button color and some opacity
+    backgroundColor
+      ? `4px 4px 0 ${backgroundColor.slice(0, -1)}, .4)`
+      : `4px 4px hsla(0, 0%, 0%, 0.4)`}; //box-shadow with button color and some opacity
   cursor: pointer;
 
   &:active {
     box-shadow: 0 0 0 ${({ backgroundColor }) => (backgroundColor ? `${backgroundColor.slice(0, -1)}, .5)` : 'hsla(0, 0%, 0%, 0.5)')};
     transform: translate(4px, 4px);
+  }
+
+  &:hover {
+    background-color: ${({ theme, backgroundColor }) => backgroundColor || theme.color.white};
+    filter: ${({ backgroundColor }) => (backgroundColor ? 'brightness(90%)' : 'brightness(100%)')};
+    color: ${({ theme, backgroundColor }) => (backgroundColor ? theme.color.black : theme.color.black)};
   }
 
   ${({ theme }) => theme.mq.desktop} {

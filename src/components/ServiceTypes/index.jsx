@@ -3,16 +3,15 @@ import { StyledHeading, StyledParagraph } from 'src/components/Interlude/Interlu
 import theme from 'src/assets/styles/theme';
 import servicesData from 'src/data/servicesData';
 import Grid from 'src/components/Grid';
-import Button from 'src/components/Button';
 import { TextCaption } from 'src/components/TextComponents';
 import Image from 'next/image';
 import servicesImageStages from 'src/assets/images/komputer-strona-internetowa-restauracja.jpeg';
 import ServicesList from './ServicesList';
-import { ImageContainer, StyledContentWrapper, StyledHeadingWrapper, Wrapper } from './ServiceTypes.styles';
+import { ImageContainer, ServicesButton, StyledContentWrapper, StyledHeadingWrapper, Wrapper } from './ServiceTypes.styles';
 
 export default function ServicesTypes() {
   const {
-    color: { black, red },
+    color: { black, yellowLight },
     gradient: { navyToYellow },
   } = theme;
 
@@ -38,7 +37,9 @@ export default function ServicesTypes() {
 
         <Link href="/valuation" as="/wycena-projekt">
           <a>
-            <Button backgroundColor={red} text={buttonLabel} />
+            <ServicesButton backgroundColor={yellowLight} textColor={black}>
+              {buttonLabel}
+            </ServicesButton>
           </a>
         </Link>
       </StyledContentWrapper>

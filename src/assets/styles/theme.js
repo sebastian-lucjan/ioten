@@ -4,8 +4,8 @@ export const rainbowColors = ['#D6A3A2', '#F1753B', '#ffd500', '#3300ff', '#8611
 const theme = {
   color: {
     black: 'hsl(0, 0%, 15%)',
-    blue: '#015CC8',
-    blueLight: '#94b1f5',
+    blue: 'hsl(213, 99%, 39%)',
+    blueLight: 'hsl(222, 83%, 77%)',
     darkestGray: 'hsl(0, 0%, 22%)',
     darkerGray: 'hsl(0, 0%, 42%)',
     darkGray: 'hsl(0, 0%, 53%)',
@@ -20,7 +20,7 @@ const theme = {
     lightestGray: 'hsl(0, 0%, 95%)',
     beige: 'hsl(27, 33%, 62%)',
     yellow: 'hsl(65, 88%, 48%)',
-    yellowLight: '#DAFF4D',
+    yellowLight: 'hsl(72, 100%, 65%)',
     transparent: 'hsl(0, 0%, 0%, 0%)',
     red: 'hsl(0, 84%, 52%)',
     white: 'hsl(0, 0%, 100%)',

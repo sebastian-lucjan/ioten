@@ -116,11 +116,17 @@ export const StyledValuationButton = styled.button`
   font-family: ${({ theme }) => theme.font.family.myriadPro.bold};
   color: ${({ theme }) => theme.color.darkestGray};
   cursor: pointer;
-  transition: 0.2s;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  //transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out;
 
   &:active {
     box-shadow: 0 0 0 #0008;
     transform: translate(4px, 4px);
+  }
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color.yellowLight};
+    color: ${({ theme }) => theme.color.black};
   }
 
   ${({ theme }) => theme.mq.tablet} {

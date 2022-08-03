@@ -16,6 +16,12 @@ export const Button = styled.button`
     box-shadow: 0 0 4.1px rgba(0, 0, 0, 0.028), 4.2px 3.4px 13.6px rgba(0, 0, 0, 0.042), 19px 15px 61px rgba(0, 0, 0, 0.07);
     transform: translate(4px, 4px);
   }
+
+  &:hover {
+    color: white;
+    background: ${({ theme }) => theme.color.green};
+  }
+
   ${({ theme }) => theme.mq.smallDesktop} {
     width: 400px;
   } ;
